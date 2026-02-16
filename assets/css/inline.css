@@ -1,0 +1,32 @@
+/* 
+ * インラインCSSファイル
+ * index.html内の<style>タグの内容をここに移動してください
+ * 
+ * 現在のindex.htmlから以下のスタイルを抽出:
+ * - .page-enter-active, .page-leave-active など
+ * - :root 変数
+ * - その他のインラインスタイル
+ */
+
+/* ページトランジション */
+.page-enter-active {
+    transition: .6s cubic-bezier(.4, .4, 0, 1);
+}
+
+.page-leave-active {
+    transition: .3s cubic-bezier(.4, .4, 0, 1);
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+}
+
+/* CSS変数 */
+:root {
+    --rebranding-loading-bg: #e5e5e5;
+    --rebranding-loading-bar: #222;
+}
+
+/* その他のインラインスタイルをここに追加 */
+
