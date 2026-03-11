@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Notre（ノートル）株式会社 | 楽天EC運用支援 モニター募集</title>
+  <meta name="description" content="元楽天チームが成果報酬型で楽天EC運用を支援。モニター5社限定。固定5万円/月＋売上増加分の10%。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --red: #E60718;
+      --black: #111111;
+      --dark-bg: #0a0a0a;
+      --white: #ffffff;
+      --gray-light: #f7f7f7;
+      --gray-border: #e0e0e0;
+      --gray-text: #555555;
+      --gold: #CC9900;
+      --body-text: #333333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--body-text);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ─── Scrollbar ──────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--white);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+    }
+
+    /* ─── Utility ────────────────────────────────── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    /* ─── FV Marquee ───────────────────────────────── */
+    @keyframes marquee-left {
+      from {
+        transform: translateX(0%);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes marquee-right {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+    .marquee-left {
+      animation: marquee-left 30s linear infinite;
+    }
+
+    .marquee-right {
+      animation: marquee-right 30s linear infinite;
+    }
+
+    .marquee-row {
+      display: flex;
+      white-space: nowrap;
+    }
+
+    .marquee-set {
+      display: flex;
+      gap: 8px;
+      padding-right: 8px;
+    }
+
+    .marquee-set img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    .marquee-section {
+      overflow: hidden;
+      background: var(--white);
+      padding: 16px 0;
+    }
+
+    /* ─── FV Two-Column Layout ───────────────────────── */
+    .fv-geo {
+      overflow: hidden;
+      position: relative;
+      padding-top: 60px;
+      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+    }
+
+    .fv-geo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fv-geo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 120px 104px;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .fv-overlay {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 80px 40px;
+    }
+
+    .fv-inner {
+      display: flex;
+      align-items: stretch;
+      gap: 32px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* ── 左側 ── */
+    .fv-left {
+      flex: 0 0 55%;
+      padding: 32px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* 吹き出し */
+    .fv-bubble {
+      display: inline-block;
+      background: #fff;
+      color: var(--red);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      padding: 8px 20px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 24px;
+      position: relative;
+      letter-spacing: 0.03em;
+    }
+
+    .fv-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 28px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #fff;
+    }
+
+    /* メインコピー */
+    .fv-main-copy {
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    /* サブコピー */
+    .fv-sub-copy {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.8;
+    }
+
+    /* ── 右側 ── */
+    .fv-right {
+      flex: 0 0 420px;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fv-right-header {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── カスタムフォーム ── */
+    .custom-form {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .custom-form label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .custom-form label .req {
+      color: var(--red);
+      margin-left: 4px;
+      font-size: 12px;
+    }
+
+    .custom-form input[type="text"],
+    .custom-form input[type="email"],
+    .custom-form input[type="tel"],
+    .custom-form input[type="url"],
+    .custom-form select,
+    .custom-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--body-text);
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    .custom-form input:focus,
+    .custom-form select:focus,
+    .custom-form textarea:focus {
+      outline: none;
+      border-color: var(--red);
+    }
+
+    .custom-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .custom-form .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .custom-form .checkbox-group label {
+      font-weight: 400;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .custom-form .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--red);
+    }
+
+    .custom-form .form-submit {
+      background: #FFC200;
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background .2s, transform .2s;
+      margin-top: 8px;
+    }
+
+    .custom-form .form-submit:hover {
+      background: #e6af00;
+      transform: translateY(-1px);
+    }
+
+    .privacy-check {
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .privacy-check label {
+      font-size: 13px;
+      color: var(--gray-text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .privacy-check a {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .custom-form .form-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-success {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--red);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .fv-overlay {
+        padding: 24px 16px;
+      }
+
+      .fv-inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .fv-left {
+        flex: none;
+        width: 100%;
+        padding: 16px 0;
+        text-align: center;
+      }
+
+      .fv-main-copy {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+      }
+
+      .fv-bubble {
+        font-size: 0.8rem;
+        margin: 0 auto 40px;
+      }
+
+      .fv-bubble::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .fv-headline-row {
+        flex-wrap: wrap;
+      }
+
+      .fv-icons-row {
+        gap: 12px;
+      }
+
+      .fv-icon-circle {
+        width: 52px;
+        height: 52px;
+      }
+
+      .fv-icon-circle svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .fv-right {
+        flex: none;
+        width: 100%;
+      }
+
+      .custom-form {
+        padding: 20px 16px;
+      }
+    }
+
+
+    /* ─── Monitor Plan Intro ────────────────────────── */
+    .monitor-intro {
+      position: relative;
+      padding: 80px 0 60px;
+      background: #ffd6d6;
+      overflow: hidden;
+    }
+
+    .monitor-intro::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(230, 7, 24, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .monitor-intro::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(230, 7, 24, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .monitor-intro-honki {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: var(--red);
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .monitor-intro-honki::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 580px;
+      height: 220px;
+      background:
+        radial-gradient(ellipse 60% 70% at 40% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 65% at 65% 45%, rgba(255, 255, 255, 0.8) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 80% at 50% 55%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+      filter: blur(25px);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .monitor-plan-card {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 4px;
+      padding: 48px 40px;
+      box-shadow: 0 16px 48px rgba(230, 7, 24, 0.10);
+      text-align: center;
+    }
+
+    .monitor-plan-card::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      box-shadow:
+        14px 0 0 rgba(230, 7, 24, 0.6),
+        0 14px 0 rgba(230, 7, 24, 0.4),
+        14px 14px 0 rgba(230, 7, 24, 0.2);
+    }
+
+    .monitor-plan-card::after {
+      content: '';
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      box-shadow:
+        12px 0 0 rgba(230, 7, 24, 0.5),
+        0 12px 0 rgba(230, 7, 24, 0.3);
+    }
+
+    .monitor-plan-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      padding: 6px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .monitor-plan-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      line-height: 1.8;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .monitor-plan-title em {
+      font-style: normal;
+      color: var(--red);
+      font-size: 1.3em;
+      font-weight: 700;
+    }
+
+    .monitor-plan-price-box {
+      background: var(--gray-light);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .monitor-plan-price-main {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    .monitor-plan-price-main .highlight {
+      color: var(--red);
+    }
+
+    .monitor-plan-price-sub {
+      font-size: 13px;
+      color: var(--gray-text);
+      margin-top: 4px;
+    }
+
+    .monitor-plan-detail {
+      text-align: left;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .monitor-plan-detail h4 {
+      font-weight: 900;
+      font-size: 15px;
+      color: var(--black);
+      margin: 24px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--red);
+    }
+
+    .monitor-plan-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .monitor-plan-list li {
+      font-size: 14px;
+      padding: 6px 0;
+      display: flex;
+      gap: 8px;
+      color: var(--body-text);
+      line-height: 1.6;
+    }
+
+    .monitor-plan-list.check li::before {
+      content: '✓';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .monitor-plan-list.dot li::before {
+      content: '・';
+      flex-shrink: 0;
+      color: var(--body-text);
+    }
+
+    .monitor-comparison-box {
+      background: var(--gray-light);
+      border-radius: 4px;
+      padding: 16px 24px;
+      margin: 12px 0 28px;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .monitor-comparison-box .old {
+      color: var(--gray-text);
+      text-decoration: line-through;
+    }
+
+    .monitor-comparison-box .new {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .monitor-plan-cta {
+      display: inline-block;
+      background: #FFC200;
+      color: #fff;
+      padding: 18px 48px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background .2s, transform .2s;
+      margin-top: 8px;
+    }
+
+    .monitor-plan-cta:hover {
+      background: #e6af00;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .monitor-plan-card {
+        padding: 36px 24px;
+      }
+    }
+
+
+    /* ─── Header Bar ───────────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 60px;
+    }
+
+    .site-header-logo img {
+      height: 36px;
+      display: block;
+      filter: invert(1);
+    }
+
+    .site-header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .site-header-link {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      transition: opacity .2s;
+    }
+
+    .site-header-link:hover {
+      opacity: 0.7;
+    }
+
+    .site-header-cta {
+      background: #FFC200;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 10px 20px;
+      border-radius: 2px;
+      letter-spacing: .03em;
+      transition: background .2s, transform .2s;
+    }
+
+    .site-header-cta:hover {
+      background: #e6af00;
+      transform: translateY(-1px);
+    }
+
+    /* ─── Section Headings ───────────────────────── */
+    .sec-heading {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(24px, 4vw, 40px);
+      line-height: 1.4;
+      color: var(--black);
+      margin-bottom: 48px;
+      padding-left: 20px;
+      border-left: 4px solid var(--red);
+    }
+
+    /* ─── FV CTA Button ──────────────────────────── */
+    .fv-cta {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 17px;
+      padding: 20px 40px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: opacity .25s;
+      letter-spacing: .03em;
+    }
+
+    .fv-cta:hover {
+      opacity: 0.85;
+    }
+
+    /* ─── Problem Section ──────────────────────────── */
+    .problem-section {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .problem-bg-text {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: clamp(40px, 10vw, 160px);
+      font-weight: 900;
+      color: rgba(0, 0, 0, 0.04);
+      letter-spacing: .05em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .problem-subtitle {
+      font-size: 15px;
+      color: var(--gray-text);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-title {
+      font-weight: 900;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--black);
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--red);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    .pain-layout {
+      position: relative;
+      z-index: 1;
+      min-height: 560px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pain-grid {
+      display: contents;
+    }
+
+    .pain-card {
+      position: absolute;
+      width: 300px;
+      background: var(--gray-light);
+      border: none;
+      padding: 32px 28px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    /* 左上 */
+    .pain-card:nth-child(1) {
+      top: 0;
+      left: 120px;
+    }
+
+    /* 右上 */
+    .pain-card:nth-child(2) {
+      top: 0;
+      right: 120px;
+    }
+
+    /* 左下 */
+    .pain-card:nth-child(3) {
+      top: 200px;
+      left: 0;
+    }
+
+    /* 右下 */
+    .pain-card:nth-child(4) {
+      top: 200px;
+      right: 0;
+    }
+
+    .pain-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .pain-card ul li {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.7;
+    }
+
+    .problem-person {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .problem-person img {
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .problem-person-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-text);
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* ─── Speech Bubble ──────────────────────────── */
+    .speech-bubble {
+      background: var(--white);
+      border: 2px solid var(--gray-border);
+      border-radius: 4px;
+      padding: 24px 40px;
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 16px solid var(--white);
+      filter: drop-shadow(0 2px 0 var(--gray-border));
+    }
+
+    .speech-bubble-text {
+      font-weight: 900;
+      font-size: clamp(16px, 3vw, 22px);
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    /* ─── VS Layout ──────────────────────────────── */
+    .vs-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin-top: 16px;
+    }
+
+    .vs-card {
+      padding: 40px 32px;
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .vs-card.generic {
+      background: var(--gray-light);
+      text-align: center;
+    }
+
+    .vs-card.notre {
+      background: linear-gradient(135deg, #722F37 0%, #E60718 100%);
+      border-left: none;
+      text-align: center;
+    }
+
+    .vs-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      margin-bottom: 16px;
+    }
+
+    .vs-card.generic .vs-card-label {
+      color: var(--gray-text);
+    }
+
+    .vs-card.notre .vs-card-label {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .vs-card h3 {
+      font-weight: 900;
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .vs-card.generic h3 {
+      color: var(--gray-text);
+    }
+
+    .vs-card.notre h3 {
+      color: #fff;
+    }
+
+    .vs-card p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .vs-card.generic p {
+      color: var(--gray-text);
+    }
+
+    .vs-card.notre p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .vs-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      position: relative;
+    }
+
+    .vs-divider::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      border-left: 2px dashed var(--gray-border);
+      transform: translateX(-50%);
+    }
+
+    .vs-badge {
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: .05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── Results Cards ──────────────────────────── */
+    /* ─── 統合事例カード ─── */
+    .case-unified {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .case-unified-top {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .case-unified-img {
+      flex: 0 0 240px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-unified-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-unified-summary {
+      flex: 1;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .case-unified-badge {
+      display: inline-block;
+      background: var(--black);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 100px;
+      letter-spacing: .05em;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .case-unified-title {
+      font-size: clamp(16px, 2vw, 18px);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .case-unified-before {
+      font-size: 13px;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .case-unified-after {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .case-unified-after .num {
+      color: var(--red);
+      font-size: 1.1em;
+    }
+
+    .case-unified-detail {
+      border-top: 1px solid var(--gray-border);
+      padding: 24px 32px;
+      background: var(--gray-light);
+    }
+
+    .case-unified-detail p {
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.8;
+      margin-bottom: 4px;
+    }
+
+    .case-unified-detail strong {
+      color: var(--black);
+    }
+
+    @media (max-width: 768px) {
+      .case-unified-top {
+        flex-direction: column;
+      }
+
+      .case-unified-img {
+        flex: none;
+        height: 200px;
+      }
+
+      .case-unified-summary {
+        padding: 20px 16px;
+      }
+
+      .case-unified-detail {
+        padding: 16px;
+      }
+    }
+
+    .soy-award {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .soy-laurel {
+      width: 48px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .soy-laurel.right {
+      transform: scaleX(-1);
+    }
+
+    .soy-award-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      background: linear-gradient(135deg, #c9a84c, #f5d778, #c9a84c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: .08em;
+      line-height: 1.4;
+    }
+
+    /* ─── Detail Cases (Always visible) ──────────── */
+    .case-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      border-left: 4px solid var(--red);
+      margin-bottom: 8px;
+    }
+
+    .case-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .case-header h3 {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    .case-body-inner {
+      padding: 0 24px 24px;
+    }
+
+    .case-body-inner p {
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.85;
+      margin-bottom: 8px;
+    }
+
+    .case-body-inner strong {
+      color: var(--black);
+    }
+
+    /* ─── Service Cards ──────────────────────────── */
+    .service-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .service-card-item {
+      position: relative;
+      background: var(--red);
+      color: #fff;
+      border-radius: 4px;
+      padding: 32px 20px 28px;
+      text-align: center;
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .service-card-badge {
+      position: absolute;
+      top: -14px;
+      left: -10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card-badge svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .service-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .service-card-item {
+        padding: 28px 14px 22px;
+        font-size: 14px;
+      }
+    }
+
+    /* ─── Flow Steps ────────────────────────────── */
+    .flow-steps {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .flow-step-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border-radius: 100px;
+      overflow: hidden;
+      height: 64px;
+    }
+
+    .flow-step-1 {
+      background: #ff4d4d;
+    }
+
+    .flow-step-2 {
+      background: #e6202e;
+    }
+
+    .flow-step-3 {
+      background: #c4101c;
+    }
+
+    .flow-step-4 {
+      background: #9a0a14;
+    }
+
+    .flow-step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      flex-shrink: 0;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      border-right: 2px solid rgba(255, 255, 255, 0.25);
+      height: 100%;
+    }
+
+    .flow-step-title {
+      flex: 1;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: .05em;
+    }
+
+    .flow-step-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--red);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 6px;
+      color: var(--red);
+    }
+
+    .flow-step-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .flow-step-arrow {
+      display: flex;
+      justify-content: center;
+      padding: 6px 0;
+    }
+
+    .flow-step-arrow svg {
+      width: 20px;
+      height: 20px;
+      color: var(--red);
+    }
+
+    .flow-cta-banner {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+      padding: 48px 20px;
+    }
+
+    .flow-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .flow-cta-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 120px 104px;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .flow-cta-banner-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .flow-cta-wrap {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .flow-cta-note {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-text);
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .flow-step-item {
+        height: 56px;
+      }
+
+      .flow-step-num {
+        width: 52px;
+        font-size: 18px;
+      }
+
+      .flow-step-title {
+        font-size: 15px;
+      }
+
+      .flow-step-icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      .flow-step-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /* ─── FAQ ─────────────────────────────────────── */
+    .faq-section-title {
+      font-weight: 900;
+      font-size: clamp(24px, 4vw, 36px);
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .faq-section-sub {
+      font-size: 14px;
+      color: var(--gray-text);
+      text-align: center;
+      letter-spacing: .15em;
+      margin-bottom: 48px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 4px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: box-shadow .2s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .faq-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-q-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      color: var(--gray-text);
+      transition: transform .3s;
+      flex-shrink: 0;
+      font-weight: 300;
+    }
+
+    .faq-icon.open {
+      transform: rotate(45deg);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+    }
+
+    .faq-body.open {
+      max-height: 600px;
+    }
+
+    .faq-divider {
+      height: 1px;
+      border-top: 1px dashed var(--gray-border);
+      margin: 0 24px;
+    }
+
+    .faq-body-inner {
+      padding: 16px 24px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.85;
+    }
+
+    .faq-a-badge {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--gray-border);
+      color: var(--gray-text);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─── Closing CTA ────────────────────────────── */
+    #closing {
+      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #closing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 120px 104px;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #closing>.container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .closing-h2 {
+      font-weight: 900;
+      font-size: clamp(24px, 5vw, 40px);
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 40px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .closing-form {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .closing-form .custom-form {
+      text-align: left;
+    }
+
+    .closing-form .custom-form label {
+      color: var(--black);
+    }
+
+    .closing-company {
+      margin-top: 24px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ─── Footer ──────────────────────────────────── */
+    .site-footer {
+      background: #333333;
+      color: #ccc;
+      padding: 60px 0 0;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-left {
+      flex: 1;
+    }
+
+    .footer-company-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer-company-desc {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 64px;
+    }
+
+    .footer-nav-heading {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer-nav-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-nav-group ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav-group ul li a {
+      color: #999;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-group ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 48px auto 0;
+      padding: 24px 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* ─── Animations ─────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Responsive ─────────────────────────────── */
+    @media (max-width: 768px) {
+      .marquee-container {
+        gap: 4px !important;
+        justify-content: center !important;
+      }
+
+      .marquee-set {
+        gap: 4px;
+        padding-right: 4px;
+      }
+
+      .marquee-set img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .pain-layout {
+        min-height: auto;
+      }
+
+      .pain-grid {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .pain-card {
+        position: static !important;
+        width: auto !important;
+        padding: 16px 10px;
+      }
+
+      .pain-card ul li {
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .pain-card br {
+        display: none;
+      }
+
+      .monitor-plan-title {
+        font-size: 0.95rem;
+      }
+
+      .monitor-plan-title em {
+        font-size: 1.2em;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 24px;
+      }
+
+      .footer-right {
+        gap: 48px;
+      }
+
+      .footer-bottom {
+        padding: 20px 24px;
+      }
+
+      .problem-person {
+        position: static;
+        transform: none;
+        margin-top: 24px;
+      }
+
+      .problem-person img {
+        height: 140px;
+      }
+
+      .vs-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .vs-divider {
+        flex-direction: row;
+        padding: 20px 0;
+      }
+
+      .vs-divider::before {
+        top: 50%;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 2px;
+        border-left: none;
+        border-top: 2px dashed var(--gray-border);
+        transform: none;
+      }
+
+      .vs-card.notre {
+        border-left: 1px solid var(--gray-border);
+      }
+
+      .speech-bubble {
+        padding: 20px 24px;
+      }
+
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .fv-cta {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+
+
+      .site-header {
+        padding: 0 16px;
+      }
+
+      .site-header-cta {
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="#" class="site-header-logo">
+      <img src="images/notre_logo_ffffff.png" alt="Notre">
+    </a>
+    <div class="site-header-right">
+      <a href="#monitor-plan" class="site-header-link">料金</a>
+      <a href="#closing" class="site-header-cta">無料相談を申し込む</a>
+    </div>
+  </header>
+
+  <!-- ===== ① ファーストビュー ===== -->
+  <section id="fv" class="fv-geo">
+
+    <!-- テキストオーバーレイ（2カラム） -->
+    <div class="fv-overlay">
+      <div class="fv-inner">
+        <!-- 左：コピー -->
+        <div class="fv-left">
+          <p class="fv-bubble">楽天市場の売上を本気であげたい店舗オーナー様へ</p>
+          <h1 class="fv-main-copy">成果報酬型の<br>楽天市場運用</h1>
+          <p class="fv-sub-copy">5社限定で楽天1,000社以上支援のもと<br>楽天出身チームが成果が出るまで伴走サポート</p>
+        </div>
+        <!-- 右：Google Form -->
+        <div class="fv-right">
+          <form class="custom-form" id="fvForm" onsubmit="return submitForm(event, 'fv')">
+            <div>
+              <label>貴社名<span class="req">*</span></label>
+              <input type="text" name="company" required>
+            </div>
+            <div>
+              <label>担当者氏名<span class="req">*</span></label>
+              <input type="text" name="name" required>
+            </div>
+            <div>
+              <label>メールアドレス<span class="req">*</span></label>
+              <input type="email" name="email" required>
+            </div>
+            <div>
+              <label>電話番号<span class="req">*</span></label>
+              <input type="tel" name="phone" required>
+            </div>
+            <div class="privacy-check">
+              <label><input type="checkbox" name="privacy" required> <a
+                  href="https://www.notre.co.jp/privacy_policy.html" target="_blank"
+                  rel="noopener">プライバシーポリシー</a>に同意する</label>
+            </div>
+            <button type="submit" class="form-submit">無料相談を申し込む</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 商品画像マーキー ===== -->
+  <div class="marquee-section">
+    <div class="marquee-row marquee-left">
+      <div class="marquee-set">
+        <img src="images/20260119_1_v1.jpg" alt="商品画像">
+        <img src="images/20260119_2_v2.jpg" alt="商品画像">
+        <img src="images/20260119_3_v1.jpg" alt="商品画像">
+        <img src="images/20260119_4_v1.jpg" alt="商品画像">
+        <img src="images/20260119_5_v1.jpg" alt="商品画像">
+        <img src="images/20260119_6_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m1_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m2_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m3_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m4_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m5_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m6_v2.jpg" alt="商品画像">
+        <img src="images/b1_20260211.jpg" alt="商品画像">
+        <img src="images/b2_20260211.jpg" alt="商品画像">
+        <img src="images/b3_20260211.jpg" alt="商品画像">
+        <img src="images/b4_20260211.jpg" alt="商品画像">
+        <img src="images/b5_20260211.jpg" alt="商品画像">
+        <img src="images/b6_20260211.jpg" alt="商品画像">
+      </div>
+      <div class="marquee-set">
+        <img src="images/20260119_1_v1.jpg" alt="商品画像">
+        <img src="images/20260119_2_v2.jpg" alt="商品画像">
+        <img src="images/20260119_3_v1.jpg" alt="商品画像">
+        <img src="images/20260119_4_v1.jpg" alt="商品画像">
+        <img src="images/20260119_5_v1.jpg" alt="商品画像">
+        <img src="images/20260119_6_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m1_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m2_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m3_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m4_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m5_v1.jpg" alt="商品画像">
+        <img src="images/20260119_m6_v2.jpg" alt="商品画像">
+        <img src="images/b1_20260211.jpg" alt="商品画像">
+        <img src="images/b2_20260211.jpg" alt="商品画像">
+        <img src="images/b3_20260211.jpg" alt="商品画像">
+        <img src="images/b4_20260211.jpg" alt="商品画像">
+        <img src="images/b5_20260211.jpg" alt="商品画像">
+        <img src="images/b6_20260211.jpg" alt="商品画像">
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ② 共感セクション ===== -->
+  <section class="section problem-section" style="background:var(--white);">
+    <div class="problem-bg-text">PROBLEM</div>
+    <div class="container">
+      <p class="problem-subtitle fade-up">よくあるお悩み</p>
+      <h2 class="problem-title fade-up">こんな経験はありませんか？</h2>
+      <div class="pain-layout fade-up">
+        <div class="pain-grid">
+          <div class="pain-card">
+            <ul>
+              <li>担当者に連絡しても<br>なかなか動いてくれない</li>
+            </ul>
+          </div>
+          <div class="pain-card">
+            <ul>
+              <li>広告費だけどんどん増えて<br>数字の改善が実感できない</li>
+            </ul>
+          </div>
+          <div class="pain-card">
+            <ul>
+              <li>毎月固定費を払い続けているのに<br>売上が変わらない</li>
+            </ul>
+          </div>
+          <div class="pain-card">
+            <ul>
+              <li>自分の店舗に本気で<br>向き合ってもらえていない気がする</li>
+            </ul>
+          </div>
+        </div>
+        <div class="problem-person">
+          <img src="images/16564_color.png" alt="店舗オーナー">
+          <p class="problem-person-label">店舗オーナー</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ③ 問題の根因提示 ===== -->
+  <section class="section" style="background:var(--gray-light);">
+    <div class="container">
+      <div class="speech-bubble fade-up">
+        <p class="speech-bubble-text">それは、支援会社とあなたの<span style="color:var(--red);">利益が一致していない</span>からです。</p>
+      </div>
+
+      <div class="vs-wrapper fade-up">
+        <div class="vs-card generic">
+          <div class="vs-card-label">一般的な固定報酬型</div>
+          <h3>成果が出なくても<br>報酬は入る</h3>
+          <p>営業担当が契約を取り、運用は別の担当者へ。成果が出なくても報酬は入るため、いかに継続してもらうかに目が向きがち。</p>
+        </div>
+        <div class="vs-divider">
+          <div class="vs-badge">VS</div>
+        </div>
+        <div class="vs-card notre">
+          <div class="vs-card-label">Notreの成果報酬型</div>
+          <h3>売上が上がって初めて<br>報酬が入る</h3>
+          <p>だからこそ本気で動く。あなたの売上が上がることが、そのまま私たちの報酬になる。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ④ 私たちは本気です＋モニタープラン詳細【統合】 ===== -->
+  <section id="monitor-plan" class="monitor-intro fade-up">
+    <h2 class="monitor-intro-honki">私たちは本気です</h2>
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="monitor-plan-card">
+        <span class="monitor-plan-badge">今だけ限定</span>
+        <h3 class="monitor-plan-title">
+          だからこそ、本気で伴走するための<br>
+          <em>モニタープラン</em>をご用意しました
+        </h3>
+
+        <!-- 料金 -->
+        <div class="monitor-plan-price-box">
+          <div class="monitor-plan-price-main">
+            固定費：月<span class="highlight">5</span>万円（税別）
+          </div>
+          <div class="monitor-plan-price-main" style="margin-top:8px;">
+            成果報酬：売上増加分（前月比）の<span class="highlight">10</span>%
+          </div>
+        </div>
+
+        <div class="monitor-plan-detail">
+          <!-- 料金例 -->
+          <h4>料金例</h4>
+          <ul class="monitor-plan-list check">
+            <li>前月比+100万円 → 固定5万円＋成果報酬10万円 = 合計15万円</li>
+            <li>前月比+200万円 → 固定5万円＋成果報酬20万円 = 合計25万円</li>
+            <li>前月比±0円 → 固定5万円のみ（成果報酬なし）</li>
+          </ul>
+
+          <!-- サービス内容 -->
+          <h4>サービス内容（プレミアムプラン相当）</h4>
+          <ul class="monitor-plan-list check">
+            <li>運用代行（ページ管理・商品登録等）</li>
+            <li>広告運用（RPP・クーポン・イベント対応）</li>
+            <li>デザイン制作（バナー等1枚）</li>
+            <li>戦略立案・PDCAサポート</li>
+            <li>楽天を知るチームが直接担当</li>
+          </ul>
+
+          <!-- モニター条件 -->
+          <h4>モニター条件</h4>
+          <ul class="monitor-plan-list dot">
+            <li>事例としてHP・SNSで紹介させていただける店舗様</li>
+            <li>最低3ヶ月の契約（以降1ヶ月単位で解約可能）</li>
+            <li>月次ミーティングにご参加いただける方</li>
+          </ul>
+
+          <!-- 通常プランとの比較 -->
+          <h4>通常プランとの比較</h4>
+          <div class="monitor-comparison-box">
+            <span class="old">通常プラン：月25万円〜35万円（固定費のみ）</span><br>
+            <span class="new">モニタープラン：月5万円＋成果報酬（80%OFF）</span>
+          </div>
+        </div>
+
+        <a href="#closing" class="monitor-plan-cta">無料相談を申し込む</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ⑤ 実績 ===== -->
+  <section class="section" style="background:var(--gray-light);">
+    <div class="container">
+      <h2 class="sec-heading fade-up">楽天を知るチームが、直接担当します。</h2>
+      <p style="color:var(--gray-text); margin-bottom:40px; margin-top:-32px; padding-left:20px;" class="fade-up">
+        累計1,000社以上の支援実績</p>
+
+      <!-- 事例① 野菜農家 -->
+      <div class="case-unified fade-up">
+        <div class="case-unified-top">
+          <div class="case-unified-img">
+            <img src="images/野菜農家様.jpg" alt="野菜農家様">
+          </div>
+          <div class="case-unified-summary">
+            <span class="case-unified-badge">事例① 野菜農家</span>
+            <div class="case-unified-title">卸専業の農家をEC参入で初年度年商1億円へ</div>
+            <div class="case-unified-before">Before：開店後、月商数万円。EC未経験からの参入で大きな成果を実現。</div>
+            <div class="case-unified-after">EC出店1年目で年商<span class="num">1億円</span>突破</div>
+          </div>
+        </div>
+        <div class="case-unified-detail">
+          <p><strong>状況：</strong>長年卸販売のみの農家。EC未経験。自社ブランドなし。価格決定権が弱く利益率が低い。</p>
+          <p><strong>課題：</strong>卸依存からの脱却、利益率改善、自社で価格をコントロールできる販路の確立</p>
+          <p><strong>実施：</strong>EC参入の事業提案・3カ年計画策定・EC専用商品設計・価格戦略（粗利逆算型）・ページ設計・運用設計まで伴走</p>
+          <p><strong>結果：</strong>初年度で年商1億円達成 / 卸より高い粗利率を実現 / 自社ブランド確立 / 卸とECの両立モデルを構築</p>
+        </div>
+      </div>
+
+      <!-- 事例② 米農家 -->
+      <div class="case-unified fade-up">
+        <div class="case-unified-top">
+          <div class="case-unified-img">
+            <img src="images/米農家様.jpg" alt="米農家様">
+          </div>
+          <div class="case-unified-summary">
+            <span class="case-unified-badge">事例② 米農家</span>
+            <div class="case-unified-title">EC歴20年の老舗企業を売上1.5倍へ</div>
+            <div class="case-unified-before">Before：日商100万円からのスタート。楽天市場での売上を劇的に拡大。</div>
+            <div class="case-unified-after">ギネス日商<span class="num">5,000万円</span>超<span
+                style="font-size:14px; font-weight:400; color:var(--gray-text);">（50倍の成長率）</span></div>
+          </div>
+        </div>
+        <div class="case-unified-detail">
+          <p><strong>状況：</strong>ネットショップ歴20年。売上長年横ばい。値引き不可の方針。</p>
+          <p><strong>課題：</strong>価格を下げずに売上を伸ばす、新たな売上ドライバーの創出</p>
+          <p><strong>実施：</strong>市場分析・競合ポジション整理・新商品コンセプト設計・値引きに頼らない訴求設計・既存顧客データ活用</p>
+          <p><strong>結果：</strong>売上1.5倍達成 / 値引きなしで売上拡大 / 新商品が第二の柱に成長</p>
+        </div>
+      </div>
+
+      <!-- 事例③ 車用品店 -->
+      <div class="case-unified fade-up">
+        <div class="case-unified-top">
+          <div class="case-unified-img">
+            <img src="images/車用品店.jpg" alt="車用品店様">
+          </div>
+          <div class="case-unified-summary">
+            <span class="case-unified-badge">事例③ 車用品店</span>
+            <div class="case-unified-title">上場企業の出店企業を仕入れ改善で売上貢献</div>
+            <div class="case-unified-before">Before：昨対比-10%の下降トレンドからV字回復を達成。</div>
+            <div class="case-unified-after">昨対比<span class="num">+50%</span>の成長継続</div>
+          </div>
+        </div>
+        <div class="case-unified-detail">
+          <p><strong>状況：</strong>上場企業のEC出店。既存仕入れ先依存。原価改善余地が不透明。</p>
+          <p><strong>課題：</strong>利益率の改善、競争力ある商品ラインナップの確保</p>
+          <p><strong>実施：</strong>仕入れ先再選定・価格交渉・条件改善交渉・発注設計の見直し</p>
+          <p><strong>結果：</strong>昨年比+10%の発注条件改善 / 売上前年比±5%に貢献 / 原価構造の改善</p>
+        </div>
+      </div>
+
+      <!-- SOY受賞 -->
+      <div style="text-align:center; margin-top:16px;" class="fade-up">
+        <div class="soy-award">
+          <svg class="soy-laurel" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 115C30 115 8 95 5 65C2 35 15 10 30 5" stroke="url(#laurelGrad)" stroke-width="2.5"
+              fill="none" />
+            <ellipse cx="12" cy="30" rx="8" ry="14" transform="rotate(-25 12 30)" fill="url(#laurelGrad)"
+              opacity="0.85" />
+            <ellipse cx="8" cy="50" rx="7" ry="13" transform="rotate(-15 8 50)" fill="url(#laurelGrad)"
+              opacity="0.85" />
+            <ellipse cx="7" cy="70" rx="7" ry="12" transform="rotate(-5 7 70)" fill="url(#laurelGrad)" opacity="0.85" />
+            <ellipse cx="10" cy="88" rx="6" ry="11" transform="rotate(5 10 88)" fill="url(#laurelGrad)"
+              opacity="0.85" />
+            <ellipse cx="18" cy="102" rx="6" ry="10" transform="rotate(15 18 102)" fill="url(#laurelGrad)"
+              opacity="0.85" />
+            <ellipse cx="20" cy="18" rx="8" ry="13" transform="rotate(-35 20 18)" fill="url(#laurelGrad)"
+              opacity="0.85" />
+            <defs>
+              <linearGradient id="laurelGrad" x1="0" y1="0" x2="60" y2="120" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c9a84c" />
+                <stop offset="50%" stop-color="#f5d778" />
+                <stop offset="100%" stop-color="#c9a84c" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="soy-award-text">SOY・SOA受賞店舗を多数輩出</span>
+          <svg class="soy-laurel right" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 115C30 115 8 95 5 65C2 35 15 10 30 5" stroke="url(#laurelGrad2)" stroke-width="2.5"
+              fill="none" />
+            <ellipse cx="12" cy="30" rx="8" ry="14" transform="rotate(-25 12 30)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <ellipse cx="8" cy="50" rx="7" ry="13" transform="rotate(-15 8 50)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <ellipse cx="7" cy="70" rx="7" ry="12" transform="rotate(-5 7 70)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <ellipse cx="10" cy="88" rx="6" ry="11" transform="rotate(5 10 88)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <ellipse cx="18" cy="102" rx="6" ry="10" transform="rotate(15 18 102)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <ellipse cx="20" cy="18" rx="8" ry="13" transform="rotate(-35 20 18)" fill="url(#laurelGrad2)"
+              opacity="0.85" />
+            <defs>
+              <linearGradient id="laurelGrad2" x1="0" y1="0" x2="60" y2="120" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c9a84c" />
+                <stop offset="50%" stop-color="#f5d778" />
+                <stop offset="100%" stop-color="#c9a84c" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ⑥ サービス内容 ===== -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+      <p class="sec-sub fade-up">サービス内容</p>
+      <h2 class="sec-heading fade-up">楽天運用に関わるすべてを<br>お任せください。</h2>
+
+      <div class="service-cards-grid fade-up">
+        <div class="service-card-item">
+          <span class="service-card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg></span>
+          運用代行<br>（ページ管理・商品登録等）
+        </div>
+        <div class="service-card-item">
+          <span class="service-card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg></span>
+          広告運用<br>（RPP・クーポン・イベント対応）
+        </div>
+        <div class="service-card-item">
+          <span class="service-card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg></span>
+          デザイン制作<br>（バナー等1枚）
+        </div>
+        <div class="service-card-item">
+          <span class="service-card-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg></span>
+          戦略立案・<br>PDCAサポート
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ⑧ 支援開始までのステップ ===== -->
+  <section class="section" style="background:var(--gray-light);">
+    <div class="container">
+      <p class="sec-sub fade-up">FLOW</p>
+      <h2 class="sec-heading fade-up">支援開始までのステップ</h2>
+
+      <div class="flow-steps fade-up">
+        <div class="flow-step-item flow-step-1">
+          <div class="flow-step-num">01</div>
+          <div class="flow-step-title">ヒアリング</div>
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+        </div>
+        <div class="flow-step-arrow">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 16l-6-6h12z" />
+          </svg>
+        </div>
+        <div class="flow-step-item flow-step-2">
+          <div class="flow-step-num">02</div>
+          <div class="flow-step-title">戦略プランのご提案</div>
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+        </div>
+        <div class="flow-step-arrow">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 16l-6-6h12z" />
+          </svg>
+        </div>
+        <div class="flow-step-item flow-step-3">
+          <div class="flow-step-num">03</div>
+          <div class="flow-step-title">ご契約</div>
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+        </div>
+        <div class="flow-step-arrow">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 16l-6-6h12z" />
+          </svg>
+        </div>
+        <div class="flow-step-item flow-step-4">
+          <div class="flow-step-num">04</div>
+          <div class="flow-step-title">支援開始</div>
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA バナー ===== -->
+  <section class="flow-cta-banner">
+    <div class="flow-cta-banner-inner fade-up">
+      <p class="flow-cta-note" style="color:#fff;">残りのモニター枠の確認はこちら</p>
+      <a href="#closing" class="monitor-plan-cta">無料相談を申し込む</a>
+    </div>
+  </section>
+
+
+  <!-- ===== ⑨ FAQ ===== -->
+  <section class="section" style="background:var(--white);">
+    <div class="container" style="max-width:800px;">
+      <h2 class="faq-section-title fade-up">よくあるご質問</h2>
+      <p class="faq-section-sub fade-up">Q & A</p>
+
+      <!-- 最初から開いている3問 -->
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">成果報酬10%の計算方法は？</span>
+          <span class="faq-icon open">+</span>
+        </div>
+        <div class="faq-body open">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span class="faq-a-badge">A</span><span>前月比の売上増加分に対して10%です。<br>例）前月売上500万円→今月600万円
+              = 増加分100万円 → 成果報酬10万円<br>※売上が下がった場合は成果報酬なし（固定5万円のみ）</span></div>
+        </div>
+      </div>
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">契約期間の縛りは？</span>
+          <span class="faq-icon open">+</span>
+        </div>
+        <div class="faq-body open">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span class="faq-a-badge">A</span><span>最低3ヶ月、以降1ヶ月単位で解約可能です。</span></div>
+        </div>
+      </div>
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">途中解約の違約金は？</span>
+          <span class="faq-icon open">+</span>
+        </div>
+        <div class="faq-body open">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span class="faq-a-badge">A</span><span>一切ありません（3ヶ月以降）。</span></div>
+        </div>
+      </div>
+
+      <!-- 折りたたみ（クリックで開く） -->
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">モニター期間終了後はどうなりますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span
+              class="faq-a-badge">A</span><span>3ヶ月以降は1ヶ月単位で継続・解約をご選択いただけます。継続の場合も、モニター価格（固定5万円＋成果報酬10%）のままご利用いただけます（事例提供を継続していただく場合）。<br><br>事例提供を終了される場合は、通常プラン（月25万円〜）へ移行していただく形となります。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">モニター5社限定の理由は？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span
+              class="faq-a-badge">A</span><span>楽天専門チームが手厚くサポートするため、月間5社限定で募集しています。枠が埋まり次第、次回募集（未定）まで受付を停止いたします。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-up" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q">広告費は別途かかりますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-divider"></div>
+          <div class="faq-body-inner"><span
+              class="faq-a-badge">A</span><span>はい、楽天RPP広告費は別途実費でご負担いただきます。<br>※運用代行費（固定5万円＋成果報酬）には含まれません</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ⑩ 最終CTA ===== -->
+  <section id="closing" class="section">
+    <div class="container">
+      <h2 class="closing-h2 fade-up">モニター5社限定・まずは無料相談から</h2>
+      <div class="closing-form fade-up">
+        <form class="custom-form" id="closingForm" onsubmit="return submitForm(event, 'closing')">
+          <div>
+            <label>貴社名<span class="req">*</span></label>
+            <input type="text" name="company" required>
+          </div>
+          <div>
+            <label>担当者氏名<span class="req">*</span></label>
+            <input type="text" name="name" required>
+          </div>
+          <div>
+            <label>メールアドレス<span class="req">*</span></label>
+            <input type="email" name="email" required>
+          </div>
+          <div>
+            <label>電話番号<span class="req">*</span></label>
+            <input type="tel" name="phone" required>
+          </div>
+          <div class="privacy-check">
+            <label><input type="checkbox" name="privacy" required> <a href="https://www.notre.co.jp/privacy_policy.html"
+                target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label>
+          </div>
+          <button type="submit" class="form-submit">無料相談を申し込む</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p class="footer-company-name">Notre株式会社</p>
+        <p class="footer-company-desc">楽天市場 成果報酬型運用支援</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-nav-group">
+          <p class="footer-nav-heading">サービス</p>
+          <ul>
+            <li><a href="#fv">トップ</a></li>
+            <li><a href="#monitor-plan">モニタープラン</a></li>
+            <li><a href="#closing">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <p class="footer-nav-heading">会社情報</p>
+          <ul>
+            <li><a href="https://notre.co.jp/" target="_blank" rel="noopener">会社概要</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Notre Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // ─── Form Submission ───
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbyjh6EK_IUJbOvwmQpt-2PiMoVrBfhH647Py8Gzr96Co6to1XzE-5a9ACydbxzznmxK2g/exec';
+
+    function submitForm(e, formId) {
+      e.preventDefault();
+      const form = formId === 'fv' ? document.getElementById('fvForm') : document.getElementById('closingForm');
+      const btn = form.querySelector('.form-submit');
+      btn.disabled = true;
+      btn.textContent = '送信中…';
+
+      const data = {
+        company: form.company.value,
+        name: form.querySelector('[name="name"]').value,
+        email: form.email.value,
+        phone: form.phone.value
+      };
+
+      fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function () {
+        form.innerHTML = '<div class="form-success">お申し込みありがとうございます。<br>担当者より折り返しご連絡いたします。</div>';
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = '無料相談を申し込む';
+        alert('送信に失敗しました。お手数ですが再度お試しください。');
+      });
+
+      return false;
+    }
+
+    // ─── Accordion: FAQ ───
+    function toggleFaq(item) {
+      const body = item.querySelector('.faq-body');
+      const icon = item.querySelector('.faq-icon');
+      body.classList.toggle('open');
+      icon.classList.toggle('open');
+      item.classList.toggle('open');
+    }
+
+    // ─── Intersection Observer: fade-up ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+
+  </script>
+</body>
+
+</html>
