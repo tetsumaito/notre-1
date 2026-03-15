@@ -7,6 +7,21 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5NCSF7DH');</script>
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1411972386856677');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1411972386856677&ev=PageView&noscript=1"
+  /></noscript>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
@@ -2432,6 +2447,11 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(function () {
+        fbq('track', 'Lead', {
+          content_name: 'モニタープラン無料相談',
+          value: 10000,
+          currency: 'JPY'
+        });
         form.innerHTML = '<div class="form-success">お申し込みありがとうございます。<br>担当者より折り返しご連絡いたします。</div>';
       }).catch(function () {
         btn.disabled = false;
