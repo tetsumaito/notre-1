@@ -116,26 +116,35 @@ function initHeader() {
     }
 }
 
+/**
+ * フッターの読み込み
+ */
 function initFooter() {
     const p = document.getElementById('footer-placeholder');
     if (p) {
-        const path = window.location.pathname.split('/').filter(x => x && !x.includes('.html')).length > 0 ? '../assets/includes/footer.html' : 'assets/includes/footer.html';
+        const path = '/assets/includes/footer.html';
         fetch(path).then(r => r.text()).then(h => { p.outerHTML = h; }).catch(e => console.error(e));
     }
 }
 
+/**
+ * モーダルコンテンツの読み込み
+ */
 function initModalsInclude() {
     const p = document.getElementById('modals-placeholder');
     if (p) {
-        const path = window.location.pathname.split('/').filter(x => x && !x.includes('.html')).length > 0 ? '../assets/includes/modals.html' : 'assets/includes/modals.html';
+        const path = '/assets/includes/modals.html';
         fetch(path).then(r => r.text()).then(h => { p.outerHTML = h; }).catch(e => console.error(e));
     }
 }
 
+/**
+ * 会社情報セクションの読み込み
+ */
 function initCompanySectionInclude() {
     const p = document.getElementById('company-section-placeholder');
     if (p) {
-        const path = window.location.pathname.split('/').filter(x => x && !x.includes('.html')).length > 0 ? '../assets/includes/company-section.html' : 'assets/includes/company-section.html';
+        const path = '/assets/includes/company-section.html';
         fetch(path).then(r => r.text()).then(h => { p.outerHTML = h; }).catch(e => console.error(e));
     }
 }
