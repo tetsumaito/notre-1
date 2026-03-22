@@ -3,7 +3,7 @@
  * 後から読み込まれるヘッダーやモーダルにも対応
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // インクルード機能の実行
     initHeader();
     initFooter();
@@ -29,7 +29,7 @@ function initNavigationAndModals() {
     function closeModal() {
         const target = document.querySelector('.modals');
         if (!target) return;
-        
+
         const canvas = target.querySelector('.studio-canvas');
         const base = target.querySelector('.design-canvas__modal__base');
 
@@ -67,7 +67,7 @@ function initNavigationAndModals() {
     }
 
     // --- イベント委譲によるクリック判定 ---
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         // 1. メニューボタン（ハンバーガーボタン）をクリックした時
         if (e.target.closest('button[aria-label="menu"]')) {
             e.preventDefault();
@@ -92,7 +92,7 @@ function initNavigationAndModals() {
     });
 
     // ESCキーで閉じる
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeModal();
     });
 }
@@ -103,8 +103,16 @@ function initNavigationAndModals() {
 function initHeader() {
     const p = document.getElementById('header-placeholder');
     if (p) {
-        const path = window.location.pathname.split('/').filter(x => x && !x.includes('.html')).length > 0 ? '../assets/includes/header.html' : 'assets/includes/header.html';
-        fetch(path).then(r => r.text()).then(h => { p.outerHTML = h; }).catch(e => console.error(e));
+        // 先頭に / をつけることで、常にドメインのトップからパスを指定
+        const path = '/assets/includes/header.html';
+
+        fetch(path)
+            .then(r => {
+                if (!r.ok) throw new Error('Network response was not ok');
+                return r.text();
+            })
+            .then(h => { p.outerHTML = h; })
+            .catch(e => console.error('Header load error:', e));
     }
 }
 
@@ -177,7 +185,7 @@ function initSlideAnimation() {
 
 function initOtherFeatures() {
     document.querySelectorAll('a[href^="#"]').forEach(l => {
-        l.addEventListener('click', function(e) {
+        l.addEventListener('click', function (e) {
             const h = this.getAttribute('href');
             if (h !== '#' && h.length > 1) {
                 const t = document.querySelector(h);
