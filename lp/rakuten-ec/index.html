@@ -2,26 +2,31 @@
 <html lang="ja">
 
 <head>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5NCSF7DH');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5NCSF7DH');</script>
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1250132826712883');
-  fbq('track', 'PageView');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1250132826712883');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1" /></noscript>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
@@ -76,6 +81,8 @@
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     ::-webkit-scrollbar {
@@ -100,175 +107,190 @@
       padding: 100px 0;
     }
 
-    @keyframes marquee-left {
-      from {
-        transform: translateX(0%);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    @keyframes marquee-right {
-      from {
-        transform: translateX(-50%);
-      }
-
-      to {
-        transform: translateX(0%);
-      }
-    }
-
-    .marquee-left {
-      animation: marquee-left 30s linear infinite;
-    }
-
-    .marquee-right {
-      animation: marquee-right 30s linear infinite;
-    }
-
-    .marquee-row {
-      display: flex;
-      white-space: nowrap;
-    }
-
-    .marquee-set {
-      display: flex;
-      gap: 8px;
-      padding-right: 8px;
-    }
-
-    .marquee-set picture {
-      flex-shrink: 0;
-    }
-
-    .marquee-set img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    .marquee-section {
-      overflow: hidden;
-      background: var(--white);
-      padding: 16px 0;
-    }
-
     .fv-geo {
       overflow: hidden;
       position: relative;
       padding-top: 60px;
-      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+      background: #fff;
     }
 
-    .fv-geo::before {
-      content: '';
+    .fv-bg-wrap {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .fv-bg-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: calc(50% + 60px) 65%;
+    }
+
+    .fv-bg-gradient {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-      pointer-events: none;
+      background: linear-gradient(106deg,
+          rgba(255, 255, 255, 0.95) 22.5%,
+          rgba(255, 255, 255, 0.2) 61%,
+          rgba(255, 255, 255, 0.05) 88%);
       z-index: 1;
     }
 
-    .fv-geo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
-      background-size: 120px 104px;
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .fv-overlay {
+    .fv-ribbon {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      padding: 80px 40px;
-    }
-
-    .fv-inner {
-      display: flex;
-      align-items: stretch;
-      gap: 32px;
-      max-width: 1200px;
-      width: 100%;
-    }
-
-    .fv-left {
-      flex: 0 0 55%;
-      padding: 32px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .fv-bubble {
+      z-index: 2;
       display: inline-block;
-      background: #fff;
-      color: var(--red);
+      background: #A80A06;
+      color: #fff;
       font-weight: 700;
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-      padding: 8px 20px;
-      border-radius: 999px;
-      width: fit-content;
-      margin-bottom: 24px;
-      position: relative;
+      font-size: 14px;
+      padding: 6px 28px 6px 16px;
+      clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+      margin-top: 4px;
       letter-spacing: 0.03em;
     }
 
-    .fv-bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 28px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #fff;
+    .fv-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 16px 40px 0;
     }
 
-    .fv-main-copy {
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.25;
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
-      margin-bottom: 28px;
-      letter-spacing: 0.02em;
+    .fv-price-text {
+      color: #A80A06;
+      font-weight: 700;
+      line-height: 1.15;
+      text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, 0.8);
     }
 
-    .fv-sub-copy {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.8;
+    .fv-price-text p {
+      margin: 0;
     }
 
-    .fv-right {
-      flex: 0 0 420px;
-      background: rgba(255, 255, 255, 0.97);
-      border-radius: 4px;
-      overflow: hidden;
+    .fv-price-lg {
+      font-size: 28px;
+    }
+
+    .fv-price-sm {
+      font-size: 14px;
+    }
+
+    .fv-price-plus {
+      font-size: 22px;
+      padding-left: 3.5em;
+    }
+
+    .fv-lower {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: -8px;
+    }
+
+    .fv-arrow-img {
+      width: 120px;
+      height: auto;
+      opacity: 0.2;
+    }
+
+    .fv-right-area {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0;
+      align-self: flex-end;
     }
 
-    .fv-right-header {
-      background: var(--red);
-      color: #fff;
+    .fv-medal-icon {
+      width: 28px;
+      height: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fv-monitor-text {
       text-align: center;
-      padding: 14px 16px;
-      font-weight: 900;
-      font-size: 15px;
-      letter-spacing: 0.05em;
+      font-weight: 700;
+      font-size: 14px;
+      color: #2d2d2d;
+      line-height: 1.3;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .fv-monitor-num {
+      font-size: 18px;
+    }
+
+    .fv-seal-img {
+      width: 180px;
+      height: auto;
+      margin-top: -16px;
+    }
+
+    .fv-cta-wrap {
+      background: #fff;
+      text-align: center;
+      padding: 24px 40px;
+    }
+
+    .fv-cta-note {
+      color: #A80A06;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 8px;
+      width: 60%;
+      max-width: 240px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: note-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes note-pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .fv-cta-btn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FFAC06;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 12px 40px;
+      box-shadow: 0 3px 0 #be7f03;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .fv-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 0 #be7f03;
+    }
+
+    .fv-cta-sub {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .fv-cta-main {
+      font-size: 16px;
+      line-height: 1.4;
     }
 
     .custom-form {
@@ -394,58 +416,72 @@
       line-height: 1.8;
     }
 
-    @media (max-width: 768px) {
-      .fv-overlay {
-        padding: 24px 16px;
+    @media (max-width: 99999px) {
+      .fv-ribbon {
+        font-size: 13px;
+        padding: 6px 24px 6px 12px;
       }
 
-      .fv-inner {
-        flex-direction: column;
-        gap: 20px;
+      .fv-content {
+        padding: 12px 12px 0;
       }
 
-      .fv-left {
-        flex: none;
+      .fv-price-lg {
+        font-size: 34px;
+      }
+
+      .fv-price-sm {
+        font-size: 16px;
+      }
+
+      .fv-price-plus {
+        font-size: 26px;
+        padding-left: 2.5em;
+      }
+
+      .fv-lower {
+        margin-top: 0;
+      }
+
+      .fv-arrow-img {
+        width: 160px;
+      }
+
+      .fv-right-area {
+        position: relative;
+        margin-right: 8px;
+      }
+
+      .fv-medal-icon {
+        display: none;
+      }
+
+      .fv-monitor-text {
+        display: none;
+      }
+
+      .fv-seal-img {
+        width: 141px;
+        height: auto;
+        margin-top: 0;
+      }
+
+      .fv-cta-wrap {
+        padding: 16px 20px 20px;
+      }
+
+      .fv-cta-btn {
+        padding: 12px 32px;
         width: 100%;
-        padding: 16px 0;
-        text-align: center;
+        max-width: 340px;
       }
 
-      .fv-main-copy {
-        font-size: clamp(1.8rem, 8vw, 2.4rem);
+      .fv-cta-sub {
+        font-size: 13px;
       }
 
-      .fv-bubble {
-        font-size: 0.8rem;
-        margin: 0 auto 40px;
-      }
-
-      .fv-bubble::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .fv-headline-row {
-        flex-wrap: wrap;
-      }
-
-      .fv-icons-row {
-        gap: 12px;
-      }
-
-      .fv-icon-circle {
-        width: 52px;
-        height: 52px;
-      }
-
-      .fv-icon-circle svg {
-        width: 22px;
-        height: 22px;
-      }
-
-      .fv-right {
-        flex: none;
-        width: 100%;
+      .fv-cta-main {
+        font-size: 17px;
       }
 
       .custom-form {
@@ -485,7 +521,7 @@
     .monitor-intro-honki {
       font-family: 'Noto Serif JP', serif;
       font-weight: 700;
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-size: 2.2rem;
       color: var(--red);
       letter-spacing: 0.1em;
       text-align: center;
@@ -568,7 +604,7 @@
     .monitor-plan-title {
       font-family: 'Noto Serif JP', serif;
       font-weight: 700;
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-size: 1.2rem;
       line-height: 1.8;
       color: var(--black);
       margin-bottom: 28px;
@@ -589,7 +625,7 @@
     }
 
     .monitor-plan-price-main {
-      font-size: clamp(20px, 3vw, 28px);
+      font-size: 20px;
       font-weight: 900;
       color: var(--black);
       line-height: 1.4;
@@ -684,7 +720,7 @@
       transform: translateY(-2px);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 99999px) {
       .monitor-plan-card {
         padding: 36px 24px;
       }
@@ -693,8 +729,10 @@
     .site-header {
       position: fixed;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
+      max-width: 480px;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
@@ -733,49 +771,34 @@
     }
 
     .site-header-cta {
-      background: #FFC200;
+      background: #FFAC06;
       color: #fff;
       text-decoration: none;
       font-size: 13px;
       font-weight: 900;
       padding: 10px 20px;
-      border-radius: 2px;
+      border-radius: 999px;
       letter-spacing: .03em;
-      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 0 #be7f03;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .site-header-cta:hover {
-      background: #e6af00;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 0 #be7f03;
     }
 
     .sec-heading {
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 900;
-      font-size: clamp(24px, 4vw, 40px);
+      font-size: 22px;
       line-height: 1.4;
       color: var(--black);
-      margin-bottom: 48px;
-      padding-left: 20px;
+      margin-bottom: 32px;
+      padding-left: 16px;
       border-left: 4px solid var(--red);
     }
 
-    .fv-cta {
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      font-weight: 900;
-      font-size: 17px;
-      padding: 20px 40px;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: opacity .25s;
-      letter-spacing: .03em;
-    }
-
-    .fv-cta:hover {
-      opacity: 0.85;
-    }
 
     .problem-section {
       position: relative;
@@ -789,7 +812,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: clamp(40px, 10vw, 160px);
+      font-size: 48px;
       font-weight: 900;
       color: rgba(0, 0, 0, 0.04);
       letter-spacing: .05em;
@@ -809,9 +832,9 @@
 
     .problem-title {
       font-weight: 900;
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: 22px;
       color: var(--black);
-      margin-bottom: 48px;
+      margin-bottom: 32px;
       position: relative;
       z-index: 1;
     }
@@ -930,7 +953,7 @@
 
     .speech-bubble-text {
       font-weight: 900;
-      font-size: clamp(16px, 3vw, 22px);
+      font-size: 16px;
       color: var(--black);
       line-height: 1.5;
     }
@@ -988,7 +1011,7 @@
 
     .vs-card h3 {
       font-weight: 900;
-      font-size: clamp(18px, 2.5vw, 24px);
+      font-size: 18px;
       line-height: 1.4;
       margin-bottom: 16px;
     }
@@ -1099,7 +1122,7 @@
     }
 
     .case-unified-title {
-      font-size: clamp(16px, 2vw, 18px);
+      font-size: 16px;
       font-weight: 900;
       color: var(--black);
       line-height: 1.4;
@@ -1114,7 +1137,7 @@
     }
 
     .case-unified-after {
-      font-size: clamp(20px, 3vw, 26px);
+      font-size: 20px;
       font-weight: 900;
       color: var(--black);
       line-height: 1.3;
@@ -1142,7 +1165,7 @@
       color: var(--black);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 99999px) {
       .case-unified-top {
         flex-direction: column;
       }
@@ -1180,7 +1203,7 @@
 
     .soy-award-text {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(20px, 3vw, 28px);
+      font-size: 20px;
       font-weight: 700;
       background: linear-gradient(135deg, #c9a84c, #f5d778, #c9a84c);
       -webkit-background-clip: text;
@@ -1241,7 +1264,7 @@
       border-radius: 4px;
       padding: 32px 20px 28px;
       text-align: center;
-      font-size: clamp(15px, 1.8vw, 18px);
+      font-size: 15px;
       font-weight: 700;
       line-height: 1.7;
     }
@@ -1266,7 +1289,7 @@
       height: 20px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 99999px) {
       .service-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -1412,7 +1435,7 @@
       margin-bottom: 16px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 99999px) {
       .flow-step-item {
         height: 56px;
       }
@@ -1439,7 +1462,7 @@
 
     .faq-section-title {
       font-weight: 900;
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: 22px;
       color: var(--black);
       text-align: center;
       margin-bottom: 8px;
@@ -1572,7 +1595,7 @@
 
     .closing-h2 {
       font-weight: 900;
-      font-size: clamp(24px, 5vw, 40px);
+      font-size: 24px;
       color: #fff;
       line-height: 1.3;
       margin-bottom: 40px;
@@ -1687,22 +1710,7 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
-      .marquee-container {
-        gap: 4px !important;
-        justify-content: center !important;
-      }
-
-      .marquee-set {
-        gap: 4px;
-        padding-right: 4px;
-      }
-
-      .marquee-set img {
-        width: 100px;
-        height: 100px;
-      }
-
+    @media (max-width: 99999px) {
       .pain-layout {
         min-height: auto;
       }
@@ -1802,11 +1810,6 @@
         padding: 72px 0;
       }
 
-      .fv-cta {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-      }
-
       .site-header {
         padding: 0 16px;
       }
@@ -1816,12 +1819,50 @@
         font-size: 12px;
       }
     }
+
+    .sticky-cta {
+      display: none;
+    }
+
+    @media (max-width: 99999px) {
+      .sticky-cta {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 480px;
+        padding: 10px 16px 16px;
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+      }
+
+      .sticky-cta-btn {
+        display: block;
+        background: #FFAC06;
+        color: #fff;
+        text-align: center;
+        font-weight: 900;
+        font-size: 15px;
+        padding: 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        box-shadow: 0 3px 0 #be7f03;
+      }
+
+      body {
+        padding-bottom: 70px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="site-header">
     <a href="#" class="site-header-logo">
@@ -1829,94 +1870,40 @@
     </a>
     <div class="site-header-right">
       <a href="#monitor-plan" class="site-header-link">料金</a>
-      <a href="#closing" class="site-header-cta">無料相談を申し込む</a>
     </div>
   </header>
 
   <section id="fv" class="fv-geo">
+    <div class="fv-bg-wrap">
+      <img src="images/fv-bg.jpg?v=2" alt="" class="fv-bg-img" loading="eager">
+      <div class="fv-bg-gradient"></div>
+    </div>
 
-    <div class="fv-overlay">
-      <div class="fv-inner">
+    <div class="fv-ribbon">広告の無駄をなくす・利益を最大化する</div>
 
-        <div class="fv-left">
-          <p class="fv-bubble">楽天市場の売上を本気であげたい店舗オーナー様へ</p>
-          <h1 class="fv-main-copy">成果報酬型の<br>楽天市場運用</h1>
-          <p class="fv-sub-copy">5社限定で楽天1,000社以上支援のもと<br>楽天出身チームが成果が出るまで伴走サポート</p>
-        </div>
-
-        <div class="fv-right">
-          <form class="custom-form" id="fvForm" onsubmit="return submitForm(event, 'fv')">
-            <div>
-              <label>貴社名<span class="req">*</span></label>
-              <input type="text" name="company" placeholder="Notre株式会社" required>
-            </div>
-            <div>
-              <label>担当者氏名<span class="req">*</span></label>
-              <input type="text" name="name" placeholder="伊藤鉄馬" required>
-            </div>
-            <div>
-              <label>メールアドレス<span class="req">*</span></label>
-              <input type="email" name="email" placeholder="〇〇@〇〇.com" required>
-            </div>
-            <div>
-              <label>電話番号<span class="req">*</span></label>
-              <input type="tel" name="phone" placeholder="00000000000" required>
-            </div>
-            <div class="privacy-check">
-              <label><input type="checkbox" name="privacy" required> <a
-                  href="https://www.notre.co.jp/privacy_policy.html" target="_blank"
-                  rel="noopener">プライバシーポリシー</a>に同意する</label>
-            </div>
-            <button type="submit" class="form-submit">無料相談を申し込む</button>
-          </form>
+    <div class="fv-content">
+      <div class="fv-price-text">
+        <p><span class="fv-price-lg">月額5万円</span><span class="fv-price-sm">（税抜）</span></p>
+        <p class="fv-price-plus">＋</p>
+        <p><span class="fv-price-lg">成果報酬10%</span></p>
+        <p><span class="fv-price-lg">で伴走します</span></p>
+      </div>
+      <div class="fv-lower">
+        <img src="images/fv-arrow.png" alt="" class="fv-arrow-img">
+        <div class="fv-right-area">
+          <img src="images/fv-badge-full.png" alt="限定5社モニター募集" class="fv-seal-img">
         </div>
       </div>
     </div>
+
   </section>
 
-  <div class="marquee-section">
-    <div class="marquee-row marquee-left">
-      <div class="marquee-set">
-        <picture><source srcset="images/webp/20260119_1_v1.webp" type="image/webp"><img src="images/20260119_1_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_2_v2.webp" type="image/webp"><img src="images/20260119_2_v2.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_3_v1.webp" type="image/webp"><img src="images/20260119_3_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_4_v1.webp" type="image/webp"><img src="images/20260119_4_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_5_v1.webp" type="image/webp"><img src="images/20260119_5_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_6_v1.webp" type="image/webp"><img src="images/20260119_6_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m1_v1.webp" type="image/webp"><img src="images/20260119_m1_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m2_v1.webp" type="image/webp"><img src="images/20260119_m2_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m3_v1.webp" type="image/webp"><img src="images/20260119_m3_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m4_v1.webp" type="image/webp"><img src="images/20260119_m4_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m5_v1.webp" type="image/webp"><img src="images/20260119_m5_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m6_v2.webp" type="image/webp"><img src="images/20260119_m6_v2.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b1_20260211.webp" type="image/webp"><img src="images/b1_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b2_20260211.webp" type="image/webp"><img src="images/b2_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b3_20260211.webp" type="image/webp"><img src="images/b3_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b4_20260211.webp" type="image/webp"><img src="images/b4_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b5_20260211.webp" type="image/webp"><img src="images/b5_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b6_20260211.webp" type="image/webp"><img src="images/b6_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-      </div>
-      <div class="marquee-set">
-        <picture><source srcset="images/webp/20260119_1_v1.webp" type="image/webp"><img src="images/20260119_1_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_2_v2.webp" type="image/webp"><img src="images/20260119_2_v2.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_3_v1.webp" type="image/webp"><img src="images/20260119_3_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_4_v1.webp" type="image/webp"><img src="images/20260119_4_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_5_v1.webp" type="image/webp"><img src="images/20260119_5_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_6_v1.webp" type="image/webp"><img src="images/20260119_6_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m1_v1.webp" type="image/webp"><img src="images/20260119_m1_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m2_v1.webp" type="image/webp"><img src="images/20260119_m2_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m3_v1.webp" type="image/webp"><img src="images/20260119_m3_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m4_v1.webp" type="image/webp"><img src="images/20260119_m4_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m5_v1.webp" type="image/webp"><img src="images/20260119_m5_v1.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/20260119_m6_v2.webp" type="image/webp"><img src="images/20260119_m6_v2.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b1_20260211.webp" type="image/webp"><img src="images/b1_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b2_20260211.webp" type="image/webp"><img src="images/b2_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b3_20260211.webp" type="image/webp"><img src="images/b3_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b4_20260211.webp" type="image/webp"><img src="images/b4_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b5_20260211.webp" type="image/webp"><img src="images/b5_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-        <picture><source srcset="images/webp/b6_20260211.webp" type="image/webp"><img src="images/b6_20260211.jpg" alt="商品画像" width="150" height="150"></picture>
-      </div>
-    </div>
+  <div class="fv-cta-wrap">
+    <a href="#closing" class="fv-cta-btn">
+      <span class="fv-cta-sub">【無料】貴社専用診断レポート付き</span>
+      <span class="fv-cta-main">個別相談を申し込む</span>
+    </a>
+    <p class="fv-cta-note">モニター枠残り4枠！</p>
   </div>
 
   <section class="section problem-section" style="background:var(--white);">
@@ -1997,7 +1984,7 @@
             固定費：月<span class="highlight">5</span>万円（税別）
           </div>
           <div class="monitor-plan-price-main" style="margin-top:8px;">
-            成果報酬：売上増加分（前月比）の<span class="highlight">10</span>%
+            成果報酬：売上増加分（前年同月比）の<span class="highlight">10</span>%
           </div>
         </div>
 
@@ -2424,6 +2411,10 @@
     </div>
   </footer>
 
+  <div class="sticky-cta">
+    <a href="#closing" class="sticky-cta-btn">無料相談を申し込む（残り5社限定）</a>
+  </div>
+
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbyjh6EK_IUJbOvwmQpt-2PiMoVrBfhH647Py8Gzr96Co6to1XzE-5a9ACydbxzznmxK2g/exec';
 
@@ -2435,10 +2426,10 @@
       btn.textContent = '送信中…';
 
       const data = {
-        company: form.company.value,
-        name: form.querySelector('[name="name"]').value,
-        email: form.email.value,
-        phone: form.phone.value
+        company: form.company ? form.company.value : '',
+        name: form.querySelector('[name="name"]') ? form.querySelector('[name="name"]').value : '',
+        email: form.email ? form.email.value : '',
+        phone: form.phone ? form.phone.value : ''
       };
 
       fetch(GAS_URL, {
