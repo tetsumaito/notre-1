@@ -111,6 +111,7 @@
       overflow: hidden;
       position: relative;
       padding-top: 60px;
+      padding-bottom: 60px;
       background: #fff;
     }
 
@@ -235,7 +236,7 @@
     .fv-seal-img {
       width: 180px;
       height: auto;
-      margin-top: -16px;
+      margin-top: 28px;
     }
 
     .fv-cta-wrap {
@@ -259,6 +260,27 @@
     @keyframes note-pulse {
       0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
+    }
+
+    .fv-scroll-hint {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .fv-scroll-hint span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid #A80A06;
+      border-bottom: 2px solid #A80A06;
+      transform: rotate(45deg);
+      animation: scroll-bounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateY(0) rotate(45deg); }
+      50% { transform: translateY(10px) rotate(45deg); }
     }
 
     .fv-cta-btn {
@@ -464,6 +486,8 @@
         width: 141px;
         height: auto;
         margin-top: 0;
+        position: relative;
+        top: 28px;
       }
 
       .fv-cta-wrap {
@@ -1904,6 +1928,7 @@
       <span class="fv-cta-main">個別相談を申し込む</span>
     </a>
     <p class="fv-cta-note">モニター枠残り4枠！</p>
+    <div class="fv-scroll-hint"><span></span></div>
   </div>
 
   <section class="section problem-section" style="background:var(--white);">
@@ -2412,7 +2437,7 @@
   </footer>
 
   <div class="sticky-cta">
-    <a href="#closing" class="sticky-cta-btn">無料相談を申し込む（残り5社限定）</a>
+    <a href="#closing" class="sticky-cta-btn">無料相談を申し込む</a>
   </div>
 
   <script>
