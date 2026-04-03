@@ -64,6 +64,7 @@
 
     :root {
       --red: #E60718;
+      --red-dark: #a80a06;
       --black: #111111;
       --dark-bg: #0a0a0a;
       --white: #ffffff;
@@ -71,6 +72,10 @@
       --gray-border: #e0e0e0;
       --gray-text: #555555;
       --gold: #CC9900;
+      --gold-light: #fcd27e;
+      --gold-bright: #ffac06;
+      --yellow-cta: #FFC200;
+      --yellow-cta-hover: #e6af00;
       --body-text: #333333;
     }
 
@@ -113,212 +118,267 @@
       padding: 100px 0;
     }
 
-    .fv-geo {
+    /* ── FV New Design ── */
+    .fv-new {
       overflow: hidden;
       position: relative;
-      padding-top: 60px;
-      padding-bottom: 60px;
-      background: #fff;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    .fv-bg-wrap {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    .fv-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #000;
+      padding: 12px 16px;
     }
 
-    .fv-bg-img {
+    .fv-header-badge {
+      background: var(--red-dark);
+      color: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 6px 14px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .fv-header-badge span {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .fv-header-text {
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .fv-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fv-hero > picture:first-child {
       position: absolute;
-      right: 0;
       top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .fv-bg {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: calc(50% + 60px) 65%;
-    }
-
-    .fv-bg-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(106deg,
-          rgba(255, 255, 255, 0.95) 22.5%,
-          rgba(255, 255, 255, 0.2) 61%,
-          rgba(255, 255, 255, 0.05) 88%);
-      z-index: 1;
-    }
-
-    .fv-ribbon {
-      position: relative;
-      z-index: 2;
-      display: inline-block;
-      background: #A80A06;
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      padding: 6px 28px 6px 16px;
-      clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
-      margin-top: 4px;
-      letter-spacing: 0.03em;
-    }
-
-    .fv-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 16px 40px 0;
-    }
-
-    .fv-price-text {
-      color: #A80A06;
-      font-weight: 700;
-      line-height: 1.15;
-      text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, 0.8);
-    }
-
-    .fv-price-text p {
-      margin: 0;
-    }
-
-    .fv-price-lg {
-      font-size: 28px;
-    }
-
-    .fv-price-sm {
-      font-size: 14px;
-    }
-
-    .fv-price-plus {
-      font-size: 22px;
-      padding-left: 3.5em;
-    }
-
-    .fv-lower {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: -8px;
-    }
-
-    .fv-arrow-img {
-      width: 120px;
-      height: auto;
-      opacity: 0.2;
-    }
-
-    .fv-right-area {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0;
-      align-self: flex-end;
-    }
-
-    .fv-medal-icon {
-      width: 28px;
-      height: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .fv-monitor-text {
-      text-align: center;
-      font-weight: 700;
-      font-size: 14px;
-      color: #2d2d2d;
-      line-height: 1.3;
-      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-      position: relative;
-      z-index: 1;
-    }
-
-    .fv-monitor-num {
-      font-size: 18px;
-    }
-
-    .fv-seal-img {
-      width: 180px;
-      height: auto;
-      margin-top: 28px;
-    }
-
-    .fv-cta-wrap {
-      background: #fff;
-      text-align: center;
-      padding: 24px 40px;
-    }
-
-    .fv-cta-note {
-      color: #A80A06;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 8px;
-      width: 60%;
-      max-width: 240px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: note-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes note-pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    .fv-scroll-hint {
-      display: flex;
-      justify-content: center;
-      margin-top: 12px;
-    }
-
-    .fv-scroll-hint span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-right: 2px solid #A80A06;
-      border-bottom: 2px solid #A80A06;
-      transform: rotate(45deg);
-      animation: scroll-bounce 1.5s ease-in-out infinite;
     }
 
-    @keyframes scroll-bounce {
-      0%, 100% { transform: translateY(0) rotate(45deg); }
-      50% { transform: translateY(10px) rotate(45deg); }
+    .fv-hero > *:not(picture:first-child) {
+      position: relative;
+      z-index: 1;
     }
 
-    .fv-cta-btn {
-      display: inline-flex;
-      flex-direction: column;
+    .fv-subtitle-row {
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #FFAC06;
+      gap: 6px;
+      padding: 24px 16px 0;
+    }
+
+    .fv-subtitle {
       color: #fff;
-      text-decoration: none;
       font-weight: 700;
-      border-radius: 999px;
-      padding: 12px 40px;
-      box-shadow: 0 3px 0 #be7f03;
-      max-width: 400px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .fv-subtitle .fv-by {
+      font-size: 8px;
+    }
+
+    .fv-notre-logo {
+      height: 30px;
+      width: auto;
+    }
+
+    .fv-headline {
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      font-weight: 700;
+      font-size: 27px;
+      color: #fff;
+      line-height: 1.5;
+      padding: 16px 16px 0;
     }
 
-    .fv-cta-btn:hover {
+    .fv-highlight {
+      background: #fff;
+      color: var(--red-dark);
+      padding: 2px 4px;
+    }
+
+    .fv-features {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 28px 16px 0;
+    }
+
+    .fv-feature-card {
+      background: linear-gradient(to bottom, #fcd27e, #ffac06);
+      border-radius: 3px;
+      width: 104px;
+      padding: 12px 4px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fv-feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -36px;
+      margin-bottom: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .fv-feature-icon img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .fv-feature-card p {
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .fv-feature-card .fv-num {
+      font-size: 17px;
+    }
+
+    .fv-feature-card .fv-feature-label {
+      font-size: 17px;
+    }
+
+    .fv-tags {
+      background: #fff;
+      color: var(--red-dark);
+      font-weight: 700;
+      font-size: 17px;
+      text-align: center;
+      padding: 10px 16px;
+      margin: 12px 16px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .fv-mockup {
+      margin-top: -16px;
+      margin-bottom: -16px;
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .fv-mockup img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .fv-cta-card {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+      margin: 0px 18px 24px;
+      padding: 20px 24px 16px;
+      position: relative;
+      text-align: center;
+    }
+
+    .fv-cta-text {
+      font-weight: 700;
+      font-size: 13px;
+      color: #000;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+      text-align: left;
+      padding-left: 20px;
+      padding-right: 80px;
+    }
+
+    .fv-cta-reports {
+      position: absolute;
+      top: 18px;
+      right: 30px;
+      width: 80px;
+      height: 80px;
+      z-index: 1;
+    }
+
+    .fv-report {
+      position: absolute;
+    }
+
+    .fv-report img {
+      width: 44px;
+      height: auto;
+      border: 0.5px solid #dadada;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      display: block;
+    }
+
+    .fv-report-1 {
+      transform: rotate(3deg);
+      right: 20px;
+      top: 0;
+    }
+
+    .fv-report-2 {
+      transform: rotate(8deg);
+      right: 0;
+      top: 4px;
+    }
+
+    .fv-cta-button-img {
+      display: block;
+      margin-top: 10px;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.2s;
+    }
+
+    .fv-cta-button-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section-cta {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .fv-cta-button-img:hover {
+      transform: scale(1.02);
+    }
+
+    .fv-cta-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 0 #be7f03;
-    }
-
-    .fv-cta-sub {
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    .fv-cta-main {
-      font-size: 16px;
-      line-height: 1.4;
+      box-shadow: 0 4px 0 #bd7f02;
     }
 
     .custom-form {
@@ -393,7 +453,7 @@
     }
 
     .custom-form .form-submit {
-      background: #FFC200;
+      background: var(--yellow-cta);
       color: #fff;
       font-weight: 900;
       font-size: 16px;
@@ -407,7 +467,7 @@
     }
 
     .custom-form .form-submit:hover {
-      background: #e6af00;
+      background: var(--yellow-cta-hover);
       transform: translateY(-1px);
     }
 
@@ -444,80 +504,43 @@
       line-height: 1.8;
     }
 
-    @media (max-width: 99999px) {
-      .fv-ribbon {
-        font-size: 13px;
-        padding: 6px 24px 6px 12px;
+    @media (min-width: 500px) {
+      .fv-tags {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .fv-content {
-        padding: 12px 12px 0;
+      .fv-cta-card {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .fv-price-lg {
-        font-size: 34px;
-      }
-
-      .fv-price-sm {
-        font-size: 16px;
-      }
-
-      .fv-price-plus {
-        font-size: 26px;
-        padding-left: 2.5em;
-      }
-
-      .fv-lower {
-        margin-top: 0;
-      }
-
-      .fv-arrow-img {
-        width: 160px;
-      }
-
-      .fv-right-area {
-        position: relative;
-        margin-right: 8px;
-      }
-
-      .fv-medal-icon {
-        display: none;
-      }
-
-      .fv-monitor-text {
-        display: none;
-      }
-
-      .fv-seal-img {
-        width: 141px;
-        height: auto;
-        margin-top: 0;
-        position: relative;
-        top: 28px;
-      }
-
-      .fv-cta-wrap {
-        padding: 16px 20px 20px;
-      }
-
-      .fv-cta-btn {
-        padding: 12px 32px;
-        width: 100%;
-        max-width: 340px;
-      }
-
-      .fv-cta-sub {
-        font-size: 13px;
-      }
-
-      .fv-cta-main {
-        font-size: 17px;
-      }
-
-      .custom-form {
-        padding: 20px 16px;
+      .fv-cta-text {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+        white-space: nowrap;
       }
     }
+
+    .fv-ribbon { font-size: 13px; padding: 6px 24px 6px 12px; }
+    .fv-content { padding: 12px 12px 0; }
+    .fv-price-lg { font-size: 34px; }
+    .fv-price-sm { font-size: 16px; }
+    .fv-price-plus { font-size: 26px; padding-left: 2.5em; }
+    .fv-lower { margin-top: 0; }
+    .fv-arrow-img { width: 160px; }
+    .fv-right-area { position: relative; margin-right: 8px; }
+    .fv-medal-icon { display: none; }
+    .fv-monitor-text { display: none; }
+    .fv-seal-img { width: 141px; height: auto; margin-top: 0; position: relative; top: 28px; }
+    .fv-cta-wrap { padding: 16px 20px 20px; }
+    .fv-cta-btn { padding: 12px 32px; width: 100%; max-width: 340px; }
+    .fv-cta-sub { font-size: 13px; }
+    .fv-cta-main { font-size: 17px; }
+    .custom-form { padding: 20px 16px; }
 
     .monitor-intro {
       position: relative;
@@ -734,7 +757,7 @@
 
     .monitor-plan-cta {
       display: inline-block;
-      background: #FFC200;
+      background: var(--yellow-cta);
       color: #fff;
       padding: 18px 48px;
       text-decoration: none;
@@ -746,33 +769,14 @@
     }
 
     .monitor-plan-cta:hover {
-      background: #e6af00;
+      background: var(--yellow-cta-hover);
       transform: translateY(-2px);
     }
 
-    @media (max-width: 99999px) {
-      .monitor-plan-card {
-        padding: 36px 24px;
-      }
-    }
+    .monitor-plan-card { padding: 36px 24px; }
 
     .site-header {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 480px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--gray-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 32px;
-      height: 60px;
+      display: none;
     }
 
     .site-header-logo picture {
@@ -1184,24 +1188,10 @@
       color: var(--black);
     }
 
-    @media (max-width: 99999px) {
-      .case-unified-top {
-        flex-direction: column;
-      }
-
-      .case-unified-img {
-        flex: none;
-        height: 200px;
-      }
-
-      .case-unified-summary {
-        padding: 20px 16px;
-      }
-
-      .case-unified-detail {
-        padding: 16px;
-      }
-    }
+    .case-unified-top { flex-direction: column; }
+    .case-unified-img { flex: none; height: 200px; }
+    .case-unified-summary { padding: 20px 16px; }
+    .case-unified-detail { padding: 16px; }
 
     .soy-award {
       display: flex;
@@ -1271,17 +1261,8 @@
       height: 20px;
     }
 
-    @media (max-width: 99999px) {
-      .service-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .service-card-item {
-        padding: 28px 14px 22px;
-        font-size: 14px;
-      }
-    }
+    .service-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .service-card-item { padding: 28px 14px 22px; font-size: 14px; }
 
     .flow-steps {
       max-width: 700px;
@@ -1417,30 +1398,11 @@
       margin-bottom: 16px;
     }
 
-    @media (max-width: 99999px) {
-      .flow-step-item {
-        height: 56px;
-      }
-
-      .flow-step-num {
-        width: 52px;
-        font-size: 18px;
-      }
-
-      .flow-step-title {
-        font-size: 15px;
-      }
-
-      .flow-step-icon {
-        width: 44px;
-        height: 44px;
-      }
-
-      .flow-step-icon svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
+    .flow-step-item { height: 56px; }
+    .flow-step-num { width: 52px; font-size: 18px; }
+    .flow-step-title { font-size: 15px; }
+    .flow-step-icon { width: 44px; height: 44px; }
+    .flow-step-icon svg { width: 20px; height: 20px; }
 
     .faq-section-title {
       font-weight: 900;
@@ -1692,149 +1654,28 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 99999px) {
-      .pain-layout {
-        min-height: auto;
-      }
+    .pain-layout { min-height: auto; }
+    .pain-grid { display: grid !important; grid-template-columns: 1fr; gap: 12px; }
+    .pain-card { position: static !important; width: auto !important; padding: 16px 10px; }
+    .pain-card ul li { font-size: 13px; white-space: nowrap; }
+    .pain-card br { display: none; }
+    .monitor-plan-title { font-size: 0.95rem; }
+    .monitor-plan-title em { font-size: 1.2em; }
+    .footer-inner { flex-direction: column; gap: 32px; padding: 0 24px; }
+    .footer-right { gap: 48px; }
+    .footer-bottom { padding: 20px 24px; }
+    .problem-person { position: static; transform: none; margin-top: 24px; }
+    .problem-person img { height: 140px; }
+    .vs-wrapper { grid-template-columns: 1fr; gap: 0; }
+    .vs-divider { flex-direction: row; padding: 20px 0; }
+    .vs-divider::before { top: 50%; bottom: auto; left: 0; right: 0; width: auto; height: 2px; border-left: none; border-top: 2px dashed var(--gray-border); transform: none; }
+    .vs-card.notre { border-left: 1px solid var(--gray-border); }
+    .speech-bubble { padding: 20px 24px; }
+    .section-root-cause { padding: 72px 0; }
+    .section-root-cause .speech-bubble { max-width: none; }
+    .section { padding: 72px 0; }
+    .site-header { padding: 0 16px; }
 
-      .pain-grid {
-        display: grid !important;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .pain-card {
-        position: static !important;
-        width: auto !important;
-        padding: 16px 10px;
-      }
-
-      .pain-card ul li {
-        font-size: 13px;
-        white-space: nowrap;
-      }
-
-      .pain-card br {
-        display: none;
-      }
-
-      .monitor-plan-title {
-        font-size: 0.95rem;
-      }
-
-      .monitor-plan-title em {
-        font-size: 1.2em;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        gap: 32px;
-        padding: 0 24px;
-      }
-
-      .footer-right {
-        gap: 48px;
-      }
-
-      .footer-bottom {
-        padding: 20px 24px;
-      }
-
-      .problem-person {
-        position: static;
-        transform: none;
-        margin-top: 24px;
-      }
-
-      .problem-person img {
-        height: 140px;
-      }
-
-      .vs-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .vs-divider {
-        flex-direction: row;
-        padding: 20px 0;
-      }
-
-      .vs-divider::before {
-        top: 50%;
-        bottom: auto;
-        left: 0;
-        right: 0;
-        width: auto;
-        height: 2px;
-        border-left: none;
-        border-top: 2px dashed var(--gray-border);
-        transform: none;
-      }
-
-      .vs-card.notre {
-        border-left: 1px solid var(--gray-border);
-      }
-
-      .speech-bubble {
-        padding: 20px 24px;
-      }
-
-      .section-root-cause {
-        padding: 72px 0;
-      }
-
-      .section-root-cause .speech-bubble {
-        max-width: none;
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-
-      .site-header {
-        padding: 0 16px;
-      }
-
-    }
-
-    .sticky-cta {
-      display: none;
-    }
-
-    @media (max-width: 99999px) {
-      .sticky-cta {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 480px;
-        padding: 10px 16px 16px;
-        background: rgba(255, 255, 255, 0.97);
-        box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
-        z-index: 999;
-      }
-
-      .sticky-cta-btn {
-        display: block;
-        background: #FFAC06;
-        color: #fff;
-        text-align: center;
-        font-weight: 900;
-        font-size: 15px;
-        padding: 14px;
-        border-radius: 999px;
-        text-decoration: none;
-        letter-spacing: 0.03em;
-        box-shadow: 0 3px 0 #be7f03;
-      }
-
-      body {
-        padding-bottom: 70px;
-      }
-    }
   </style>
 </head>
 
@@ -1854,48 +1695,76 @@
     </div>
   </header>
 
-  <section id="fv" class="fv-geo">
-    <div class="fv-bg-wrap">
-      <picture>
-        <source srcset="images/webp/fv-bg.webp" type="image/webp">
-        <img src="images/fv-bg.jpg" alt="" class="fv-bg-img" loading="eager" fetchpriority="high" width="1200" height="654">
-      </picture>
-      <div class="fv-bg-gradient"></div>
+  <section id="fv" class="fv-new">
+    <div class="fv-header">
+      <div class="fv-header-badge">残り<span>4</span>社</div>
+      <p class="fv-header-text">5社限定！モニタープラン提供</p>
     </div>
 
-    <div class="fv-ribbon">広告の無駄をなくす・利益を最大化する</div>
+    <div class="fv-hero">
+      <picture>
+        <source srcset="images/webp/fv-bg-red.webp" type="image/webp">
+        <img class="fv-bg" src="images/fv-bg-red.png" alt="">
+      </picture>
 
-    <div class="fv-content">
-      <div class="fv-price-text">
-        <p><span class="fv-price-lg">月額5万円</span><span class="fv-price-sm">（税抜）</span></p>
-        <p class="fv-price-plus">＋</p>
-        <p><span class="fv-price-lg">成果報酬10%</span></p>
-        <p><span class="fv-price-lg">で伴走します</span></p>
+      <div class="fv-subtitle-row">
+        <p class="fv-subtitle">成果報酬型 楽天市場運用支援 <span class="fv-by">by</span></p>
+        <img class="fv-notre-logo" src="images/notre_logo_ffffff.png" alt="Notre">
       </div>
-      <div class="fv-lower">
-        <picture>
-          <source srcset="images/webp/fv-arrow.webp" type="image/webp">
-          <img src="images/fv-arrow.png" alt="" class="fv-arrow-img" width="509" height="360">
-        </picture>
-        <div class="fv-right-area">
-          <picture>
-            <source srcset="images/webp/fv-badge-full.webp" type="image/webp">
-            <img src="images/fv-badge-full.png" alt="限定5社モニター募集" class="fv-seal-img" width="336" height="336">
-          </picture>
+
+      <h1 class="fv-headline">
+        <span class="fv-highlight">楽天運用のプロ</span> が<br>
+        店舗の売り上げを引き上げ
+      </h1>
+
+      <div class="fv-features">
+        <div class="fv-feature-card">
+          <div class="fv-feature-icon">
+            <img src="images/fv-icon-money.png" alt="コスト">
+          </div>
+          <p><span class="fv-feature-label">固定</span><span class="fv-num">5</span>万円+<br>成果報酬<span class="fv-num">10</span>%</p>
+        </div>
+        <div class="fv-feature-card">
+          <div class="fv-feature-icon">
+            <img src="images/fv-icon-person.png" alt="担当者">
+          </div>
+          <p><span class="fv-feature-label">元楽天ECC</span><br>が直接担当</p>
+        </div>
+        <div class="fv-feature-card">
+          <div class="fv-feature-icon">
+            <img src="images/fv-icon-web.png" alt="デザイン">
+          </div>
+          <p><span class="fv-feature-label">デザイン</span>も<br>まるっと対応</p>
         </div>
       </div>
+
+      <div class="fv-tags">
+        SEO　RPP広告　SS対策　ページ制作
+      </div>
+
+      <div class="fv-mockup">
+        <picture>
+          <source srcset="images/webp/fv-mockup.webp" type="image/webp">
+          <img src="images/fv-mockup.png" alt="楽天市場運用画面">
+        </picture>
+      </div>
+
+      <div class="fv-cta-card">
+        <p class="fv-cta-text">無料相談参加者限定！店舗改善<br>診断レポートプレゼント中！</p>
+        <div class="fv-cta-reports">
+          <picture class="fv-report fv-report-1">
+            <source srcset="images/webp/fv-report1.webp" type="image/webp">
+            <img src="images/fv-report1.jpg" alt="診断レポート" loading="lazy">
+          </picture>
+          <picture class="fv-report fv-report-2">
+            <source srcset="images/webp/fv-report2.webp" type="image/webp">
+            <img src="images/fv-report2.jpg" alt="診断レポート" loading="lazy">
+          </picture>
+        </div>
+        <a href="#closing" class="fv-cta-button-img"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+      </div>
     </div>
-
   </section>
-
-  <div class="fv-cta-wrap">
-    <a href="#closing" class="fv-cta-btn">
-      <span class="fv-cta-sub">【無料】貴社専用診断レポート付き</span>
-      <span class="fv-cta-main">個別相談を申し込む</span>
-    </a>
-    <p class="fv-cta-note">モニター枠残り4枠！</p>
-    <div class="fv-scroll-hint"><span></span></div>
-  </div>
 
   <section class="section problem-section" style="background:var(--white);">
     <div class="problem-bg-text">PROBLEM</div>
@@ -1928,15 +1797,16 @@
         <div class="problem-person">
           <picture>
             <source srcset="images/webp/shop-owner.webp" type="image/webp">
-            <picture>
-              <source srcset="images/webp/shop-owner.webp" type="image/webp">
-              <img src="images/shop-owner.png" alt="店舗オーナー" width="1080" height="1080">
-            </picture>
+            <img src="images/shop-owner.png" alt="店舗オーナー" width="1080" height="1080" loading="lazy">
           </picture>
           <p class="problem-person-label">店舗オーナー</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="intermediate-cta" style="background:var(--red); padding:32px 20px; text-align:center;">
+    <a href="#closing" class="fv-cta-button-img section-cta fade-up"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
   </section>
 
   <section class="section section-root-cause" style="background:var(--gray-light);">
@@ -2014,7 +1884,7 @@
           </div>
         </div>
 
-        <a href="#closing" class="monitor-plan-cta">無料相談を申し込む</a>
+        <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
       </div>
     </div>
   </section>
@@ -2095,7 +1965,12 @@
         </div>
       </div>
 
-      <div style="text-align:center; margin-top:16px;" class="fade-up">
+      <div style="text-align:center; margin:32px 0 0;" class="fade-up">
+        <p style="font-weight:900; font-size:16px; color:var(--black); margin-bottom:20px;">実績あるチームに相談してみませんか？</p>
+        <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+      </div>
+
+      <div style="text-align:center; margin-top:32px;" class="fade-up">
         <div class="soy-award">
           <svg class="soy-laurel" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M30 115C30 115 8 95 5 65C2 35 15 10 30 5" stroke="url(#laurelGrad)" stroke-width="2.5"
@@ -2261,7 +2136,7 @@
   <section class="flow-cta-banner">
     <div class="flow-cta-banner-inner fade-up">
       <p class="flow-cta-note" style="color:#fff;">残りのモニター枠の確認はこちら</p>
-      <a href="#closing" class="monitor-plan-cta">無料相談を申し込む</a>
+      <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
     </div>
   </section>
 
@@ -2346,6 +2221,11 @@
     </div>
   </section>
 
+  <section class="intermediate-cta" style="background:linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%); padding:40px 20px; text-align:center;">
+    <p class="fade-up" style="color:#fff; font-weight:900; font-size:18px; margin-bottom:20px;">モニター5社限定・まずは無料相談から</p>
+    <a href="#closing" class="fv-cta-button-img section-cta fade-up"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+  </section>
+
   <section id="closing" class="section">
     <div class="container">
       <h2 class="closing-h2 fade-up">モニター5社限定・まずは無料相談から</h2>
@@ -2405,9 +2285,6 @@
     </div>
   </footer>
 
-  <div class="sticky-cta">
-    <a href="#closing" class="sticky-cta-btn">無料相談を申し込む</a>
-  </div>
 
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbyjh6EK_IUJbOvwmQpt-2PiMoVrBfhH647Py8Gzr96Co6to1XzE-5a9ACydbxzznmxK2g/exec';
