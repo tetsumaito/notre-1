@@ -16,7 +16,7 @@
   <meta property="og:description" content="元楽天チームが成果報酬型で楽天EC運用を支援。モニター5社限定。固定5万円/月＋売上増加分の10%。" />
   <meta property="og:image" content="https://notre.co.jp/lp/rakuten-ec/images/ogp.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preload" as="image" imagesrcset="images/webp/fv-bg.webp" href="images/fv-bg.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" imagesrcset="images/webp/fv-bg-new.webp" href="images/fv-bg-new.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -109,7 +109,7 @@
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 480px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -122,191 +122,195 @@
     .fv-new {
       overflow: hidden;
       position: relative;
-      max-width: 480px;
-      margin: 0 auto;
     }
 
-    .fv-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #000;
-      padding: 12px 16px;
+    @media (min-width: 480px) {
+      .fv-new {
+        max-width: 480px;
+        margin: 0 auto;
+      }
     }
 
-    .fv-header-badge {
-      background: var(--red-dark);
-      color: #fff;
-      font-weight: 400;
-      font-size: 14px;
-      padding: 6px 14px;
-      white-space: nowrap;
-      line-height: 1;
+    .fv-gold-bar {
+      background: linear-gradient(to right, #bd7f04 1%, #8a5d03 59%, #cfb15e);
+      padding: 16px 0 16px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.25);
     }
 
-    .fv-header-badge span {
+    .fv-gold-bar::before,
+    .fv-gold-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, #cfb15e, #fcd27e, #cfb15e);
+    }
+
+    .fv-gold-bar::before { top: 6px; }
+    .fv-gold-bar::after { bottom: 6px; }
+
+    .fv-gold-bar p {
       font-weight: 700;
-      font-size: 24px;
-    }
-
-    .fv-header-text {
+      font-size: clamp(16px, 5.4vw, 21px);
       color: #fff;
-      font-weight: 700;
-      font-size: 18px;
-      white-space: nowrap;
+      text-shadow: 0 2px 2px rgba(0,0,0,0.25);
+      letter-spacing: 0.03em;
     }
 
-    .fv-hero {
+    .fv-hero-new {
       position: relative;
       overflow: hidden;
     }
 
-    .fv-hero > picture:first-child {
+    .fv-hero-bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: 0;
     }
 
-    .fv-bg {
+    .fv-hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .fv-confetti {
+      position: absolute;
+      top: -15%; left: 50%;
+      transform: translateX(-50%);
+      width: 110%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .fv-confetti img {
+      width: 100%; height: auto;
+      opacity: 0.7;
+    }
+
+    .fv-content-new {
+      position: relative;
+      z-index: 2;
+    }
+
+    .fv-bubble-wrap {
+      position: relative;
+      margin: -20px 18px 0;
+    }
+
+    .fv-bubble-svg {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
-    .fv-hero > *:not(picture:first-child) {
-      position: relative;
-      z-index: 1;
-    }
-
-    .fv-subtitle-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 24px 16px 0;
-    }
-
-    .fv-subtitle {
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .fv-subtitle .fv-by {
-      font-size: 8px;
-    }
-
-    .fv-notre-logo {
-      height: 30px;
-      width: auto;
-    }
-
-    .fv-headline {
-      text-align: center;
-      font-weight: 700;
-      font-size: 27px;
-      color: #fff;
-      line-height: 1.5;
-      padding: 16px 16px 0;
-    }
-
-    .fv-highlight {
-      background: #fff;
-      color: var(--red-dark);
-      padding: 2px 4px;
-    }
-
-    .fv-features {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      padding: 28px 16px 0;
-    }
-
-    .fv-feature-card {
-      background: linear-gradient(to bottom, #fcd27e, #ffac06);
-      border-radius: 3px;
-      width: 104px;
-      padding: 12px 4px 10px;
+    .fv-bubble-inner {
+      position: absolute;
+      top: 12%;
+      left: 8%;
+      right: 8%;
+      bottom: 10%;
       text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
-    }
-
-    .fv-feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #fff;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      margin-top: -36px;
-      margin-bottom: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 2;
     }
 
-    .fv-feature-icon img {
-      width: 26px;
-      height: 26px;
-      object-fit: contain;
-    }
-
-    .fv-feature-card p {
-      color: #fff;
+    .fv-bubble-inner h1 p {
       font-weight: 700;
-      font-size: 14px;
-      line-height: 1.3;
+      font-size: clamp(24px, 9.2vw, 36px);
+      line-height: 1.4;
+      color: #000;
     }
 
-    .fv-feature-card .fv-num {
-      font-size: 17px;
-    }
-
-    .fv-feature-card .fv-feature-label {
-      font-size: 17px;
-    }
-
-    .fv-tags {
-      background: #fff;
+    .fv-bubble-inner .fv-red {
       color: var(--red-dark);
+    }
+
+    .fv-price-row {
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .fv-discount-badge {
+      position: absolute;
+      left: -5px;
+      top: -7px;
+      background: linear-gradient(to right, #981c14, #c82a21 57%, #97190f);
+      padding: 3px 11px;
+      transform: rotate(-7deg);
+      box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    .fv-discount-badge span {
       font-weight: 700;
-      font-size: 17px;
-      text-align: center;
-      padding: 10px 16px;
-      margin: 12px 16px 0;
-      letter-spacing: -0.03em;
+      color: #fff;
+      line-height: 1;
     }
 
-    .fv-mockup {
-      margin-top: -16px;
-      margin-bottom: -16px;
-      padding: 0 32px;
+    .fv-discount-num { font-size: 19px; }
+    .fv-discount-pct { font-size: 8px; }
+    .fv-discount-label { font-size: 14px; }
+
+    .fv-price-bar {
+      background: #173a60;
+      padding: 10px 0;
+      margin: 0 20px;
       text-align: center;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.25);
     }
 
-    .fv-mockup img {
-      width: 100%;
-      max-width: 320px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    .fv-price-text {
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .fv-price-big {
+      font-size: clamp(46px, 18vw, 70px);
+      letter-spacing: -0.02em;
+    }
+
+    .fv-price-unit {
+      font-size: clamp(32px, 12.3vw, 48px);
+    }
+
+    .fv-characters {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: -95px;
+      margin-bottom: -10px;
+      padding: 0 28px;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .fv-char-woman { width: 60px; height: auto; }
+    .fv-char-man { width: 95px; height: auto; }
+
+    .fv-char-man-pic {
+      position: relative;
+      z-index: 3;
     }
 
     .fv-cta-card {
-      background: #fff;
+      background: var(--gray-light);
       border-radius: 5px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-      margin: 0px 18px 24px;
+      margin: 0 18px;
       padding: 20px 24px 16px;
       position: relative;
       text-align: center;
+      z-index: 2;
     }
 
     .fv-cta-text {
@@ -322,38 +326,19 @@
 
     .fv-cta-reports {
       position: absolute;
-      top: 18px;
-      right: 30px;
+      top: 12px;
+      right: 20px;
       width: 80px;
-      height: 80px;
       z-index: 1;
     }
 
-    .fv-report {
-      position: absolute;
-    }
-
-    .fv-report img {
-      width: 44px;
+    .fv-cta-reports img {
+      width: 100%;
       height: auto;
-      border: 0.5px solid #dadada;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
       display: block;
     }
 
-    .fv-report-1 {
-      transform: rotate(3deg);
-      right: 20px;
-      top: 0;
-    }
-
-    .fv-report-2 {
-      transform: rotate(8deg);
-      right: 0;
-      top: 4px;
-    }
-
-    .fv-cta-button-img {
+    .fv-cta-btn-img {
       display: block;
       margin-top: 10px;
       position: relative;
@@ -361,24 +346,40 @@
       transition: transform 0.2s;
     }
 
-    .fv-cta-button-img img {
+    .fv-cta-btn-img img {
       width: 100%;
       height: auto;
       display: block;
     }
 
+    .fv-cta-btn-img:hover {
+      transform: scale(1.02);
+    }
+
+    .fv-scroll-bar {
+      background: #000;
+      padding: 18px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .fv-scroll-bar p {
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+
     .section-cta {
+      display: block;
       max-width: 320px;
       margin: 0 auto;
     }
 
-    .fv-cta-button-img:hover {
-      transform: scale(1.02);
-    }
-
-    .fv-cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 0 #bd7f02;
+    .section-cta img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .custom-form {
@@ -505,18 +506,6 @@
     }
 
     @media (min-width: 500px) {
-      .fv-tags {
-        max-width: 375px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .fv-cta-card {
-        max-width: 375px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
       .fv-cta-text {
         text-align: center;
         padding-left: 0;
@@ -525,21 +514,6 @@
       }
     }
 
-    .fv-ribbon { font-size: 13px; padding: 6px 24px 6px 12px; }
-    .fv-content { padding: 12px 12px 0; }
-    .fv-price-lg { font-size: 34px; }
-    .fv-price-sm { font-size: 16px; }
-    .fv-price-plus { font-size: 26px; padding-left: 2.5em; }
-    .fv-lower { margin-top: 0; }
-    .fv-arrow-img { width: 160px; }
-    .fv-right-area { position: relative; margin-right: 8px; }
-    .fv-medal-icon { display: none; }
-    .fv-monitor-text { display: none; }
-    .fv-seal-img { width: 141px; height: auto; margin-top: 0; position: relative; top: 28px; }
-    .fv-cta-wrap { padding: 16px 20px 20px; }
-    .fv-cta-btn { padding: 12px 32px; width: 100%; max-width: 340px; }
-    .fv-cta-sub { font-size: 13px; }
-    .fv-cta-main { font-size: 17px; }
     .custom-form { padding: 20px 16px; }
 
     .monitor-intro {
@@ -613,34 +587,6 @@
       text-align: center;
     }
 
-    .monitor-plan-card::before {
-      content: '';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 8px;
-      height: 8px;
-      background: var(--red);
-      border-radius: 50%;
-      box-shadow:
-        14px 0 0 rgba(230, 7, 24, 0.6),
-        0 14px 0 rgba(230, 7, 24, 0.4),
-        14px 14px 0 rgba(230, 7, 24, 0.2);
-    }
-
-    .monitor-plan-card::after {
-      content: '';
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      width: 6px;
-      height: 6px;
-      background: var(--red);
-      border-radius: 50%;
-      box-shadow:
-        12px 0 0 rgba(230, 7, 24, 0.5),
-        0 12px 0 rgba(230, 7, 24, 0.3);
-    }
 
     .monitor-plan-badge {
       display: inline-block;
@@ -671,27 +617,55 @@
     }
 
     .monitor-plan-price-box {
-      background: var(--gray-light);
-      border-radius: 4px;
-      padding: 24px;
       margin-bottom: 24px;
     }
 
-    .monitor-plan-price-main {
+    .price-card {
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .price-card-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--red);
+      display: inline-block;
+      padding: 2px 16px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .price-card-value {
       font-size: 20px;
       font-weight: 900;
       color: var(--black);
       line-height: 1.4;
     }
 
-    .monitor-plan-price-main .highlight {
+    .price-card-value .highlight {
       color: var(--red);
+      font-size: 28px;
     }
 
-    .monitor-plan-price-sub {
-      font-size: 13px;
+    .price-card-tax {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .price-card-note {
+      font-size: 12px;
       color: var(--gray-text);
       margin-top: 4px;
+    }
+
+    .price-plus {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--red);
+      margin: 8px 0;
     }
 
     .monitor-plan-detail {
@@ -1354,36 +1328,16 @@
     .flow-cta-banner {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+      background: url('images/webp/fv-bg-new.webp') center/cover no-repeat;
       padding: 48px 20px;
-    }
-
-    .flow-cta-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .flow-cta-banner::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
-      background-size: 120px 104px;
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 0;
     }
 
     .flow-cta-banner-inner {
       position: relative;
       z-index: 2;
       text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     .flow-cta-wrap {
@@ -1515,21 +1469,10 @@
     }
 
     #closing {
-      background: linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%);
+      background: url('images/webp/fv-bg-new.webp') center/cover no-repeat;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    #closing::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104'%3E%3Cpolygon points='30,0 60,52 0,52' fill='white' opacity='0.35'/%3E%3Cpolygon points='30,52 0,0 60,0' fill='white' opacity='0.15'/%3E%3Cpolygon points='90,0 120,52 60,52' fill='white' opacity='0.5'/%3E%3Cpolygon points='90,52 60,0 120,0' fill='white' opacity='0.25'/%3E%3Cpolygon points='30,52 60,104 0,104' fill='white' opacity='0.4'/%3E%3Cpolygon points='30,104 0,52 60,52' fill='white' opacity='0.1'/%3E%3Cpolygon points='90,52 120,104 60,104' fill='white' opacity='0.2'/%3E%3Cpolygon points='90,104 60,52 120,52' fill='white' opacity='0.45'/%3E%3C/svg%3E");
-      background-size: 120px 104px;
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 0;
     }
 
     #closing>.container {
@@ -1576,9 +1519,9 @@
     }
 
     .footer-inner {
-      max-width: 1100px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 24px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -1634,7 +1577,7 @@
     }
 
     .footer-bottom {
-      max-width: 1100px;
+      max-width: 480px;
       margin: 48px auto 0;
       padding: 24px 40px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1696,72 +1639,83 @@
   </header>
 
   <section id="fv" class="fv-new">
-    <div class="fv-header">
-      <div class="fv-header-badge">残り<span>4</span>社</div>
-      <p class="fv-header-text">5社限定！モニタープラン提供</p>
+    <!-- Gold header bar -->
+    <div class="fv-gold-bar">
+      <p>楽天市場の店舗オーナー様へ</p>
     </div>
 
-    <div class="fv-hero">
-      <picture>
-        <source srcset="images/webp/fv-bg-red.webp" type="image/webp">
-        <img class="fv-bg" src="images/fv-bg-red.png" alt="">
-      </picture>
-
-      <div class="fv-subtitle-row">
-        <p class="fv-subtitle">成果報酬型 楽天市場運用支援 <span class="fv-by">by</span></p>
-        <img class="fv-notre-logo" src="images/notre_logo_ffffff.png" alt="Notre">
-      </div>
-
-      <h1 class="fv-headline">
-        <span class="fv-highlight">楽天運用のプロ</span> が<br>
-        店舗の売り上げを引き上げ
-      </h1>
-
-      <div class="fv-features">
-        <div class="fv-feature-card">
-          <div class="fv-feature-icon">
-            <img src="images/fv-icon-money.png" alt="コスト">
-          </div>
-          <p><span class="fv-feature-label">固定</span><span class="fv-num">5</span>万円+<br>成果報酬<span class="fv-num">10</span>%</p>
-        </div>
-        <div class="fv-feature-card">
-          <div class="fv-feature-icon">
-            <img src="images/fv-icon-person.png" alt="担当者">
-          </div>
-          <p><span class="fv-feature-label">元楽天ECC</span><br>が直接担当</p>
-        </div>
-        <div class="fv-feature-card">
-          <div class="fv-feature-icon">
-            <img src="images/fv-icon-web.png" alt="デザイン">
-          </div>
-          <p><span class="fv-feature-label">デザイン</span>も<br>まるっと対応</p>
-        </div>
-      </div>
-
-      <div class="fv-tags">
-        SEO　RPP広告　SS対策　ページ制作
-      </div>
-
-      <div class="fv-mockup">
+    <!-- Hero area -->
+    <div class="fv-hero-new">
+      <!-- Background -->
+      <div class="fv-hero-bg">
         <picture>
-          <source srcset="images/webp/fv-mockup.webp" type="image/webp">
-          <img src="images/fv-mockup.png" alt="楽天市場運用画面">
+          <source srcset="images/webp/fv-bg-new.webp" type="image/webp">
+          <img src="images/fv-bg-new.png" alt="">
         </picture>
       </div>
+      <div class="fv-content-new">
+        <!-- Speech bubble with price inside -->
+        <div class="fv-bubble-wrap">
+          <svg class="fv-bubble-svg" viewBox="0 0 339 353" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M160.221 0C195.34 0 225.161 22.6866 235.828 54.2041C243.22 51.9435 251.067 50.7266 259.199 50.7266C303.272 50.7267 339 86.4545 339 130.527C339 151.312 331.053 170.239 318.033 184.439C325.827 196.764 330.34 211.371 330.34 227.031C330.34 271.104 294.611 306.832 250.538 306.832C244.211 306.832 238.057 306.094 232.155 304.702C219.847 332.9 191.717 352.609 158.983 352.609C127.002 352.609 99.4156 333.796 86.6855 306.633C84.82 306.763 82.9368 306.832 81.0381 306.832C36.9653 306.832 1.23743 271.104 1.2373 227.031C1.2373 209.264 7.04384 192.854 16.8623 179.593C6.29623 166.058 0 149.028 0 130.527C1.44315e-05 86.4545 35.728 50.7267 79.8008 50.7266C81.8177 50.7266 83.8175 50.8012 85.7969 50.9482C97.3625 21.1363 126.323 0 160.221 0Z" fill="white"/>
+          </svg>
+          <!-- Confetti overlay (above bubble, behind text) -->
+          <div class="fv-confetti">
+            <picture>
+              <source srcset="images/webp/fv-confetti.webp" type="image/webp">
+              <img src="images/fv-confetti.png" alt="">
+            </picture>
+          </div>
+          <div class="fv-bubble-inner">
+            <h1>
+              <p>広告費だけ増えて</p>
+              <p>売上が上がらない</p>
+              <p class="fv-red">成果報酬で解決</p>
+            </h1>
+            <div class="fv-price-row">
+              <div class="fv-discount-badge">
+                <span class="fv-discount-num">80</span><span class="fv-discount-pct">%</span><span class="fv-discount-label">オフ</span>
+              </div>
+              <div class="fv-price-bar">
+                <span class="fv-price-text"><span class="fv-price-unit">月</span><span class="fv-price-big">5</span><span class="fv-price-unit">万円〜</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="fv-cta-card">
-        <p class="fv-cta-text">無料相談参加者限定！店舗改善<br>診断レポートプレゼント中！</p>
-        <div class="fv-cta-reports">
-          <picture class="fv-report fv-report-1">
-            <source srcset="images/webp/fv-report1.webp" type="image/webp">
-            <img src="images/fv-report1.jpg" alt="診断レポート" loading="lazy">
+        <!-- Characters -->
+        <div class="fv-characters">
+          <picture>
+            <source srcset="images/webp/fv-woman.webp" type="image/webp">
+            <img class="fv-char-woman" src="images/fv-woman.png" alt="">
           </picture>
-          <picture class="fv-report fv-report-2">
-            <source srcset="images/webp/fv-report2.webp" type="image/webp">
-            <img src="images/fv-report2.jpg" alt="診断レポート" loading="lazy">
+          <picture class="fv-char-man-pic">
+            <source srcset="images/webp/fv-man.webp" type="image/webp">
+            <img class="fv-char-man" src="images/fv-man.png" alt="">
           </picture>
         </div>
-        <a href="#closing" class="fv-cta-button-img"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+
+        <!-- CTA card -->
+        <div class="fv-cta-card">
+          <p class="fv-cta-text">お打ち合わせで店舗運営改善！<br>無料診断レポートプレゼント中！</p>
+          <div class="fv-cta-reports">
+            <picture>
+              <source srcset="images/webp/fv-reports.webp" type="image/webp">
+              <img src="images/fv-reports.png" alt="診断レポート" loading="lazy">
+            </picture>
+          </div>
+          <a href="#closing" class="fv-cta-btn-img">
+            <picture>
+              <source srcset="images/webp/fv-cta-btn-new.webp" type="image/webp">
+              <img src="images/fv-cta-btn-new.png" alt="モニター枠残り4社 無料で診断レポートをもらう">
+            </picture>
+          </a>
+        </div>
+
+        <!-- Scroll guide bar -->
+        <div class="fv-scroll-bar">
+          <p>▼特別なモニタープランをご案内中▼</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1805,14 +1759,14 @@
     </div>
   </section>
 
-  <section class="intermediate-cta" style="background:var(--red); padding:32px 20px; text-align:center;">
-    <a href="#closing" class="fv-cta-button-img section-cta fade-up"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+  <section class="intermediate-cta" style="background:url('images/webp/fv-bg-new.webp') center/cover no-repeat; padding:32px 20px; text-align:center;">
+    <a href="#closing" class="fv-cta-button-img section-cta fade-up"><picture><source srcset="images/webp/fv-cta-btn-new.webp" type="image/webp"><img src="images/fv-cta-btn-new.png" alt="モニター枠残り4社 無料で診断レポートをもらう"></picture></a>
   </section>
 
   <section class="section section-root-cause" style="background:var(--gray-light);">
     <div class="container">
       <div class="speech-bubble fade-up">
-        <p class="speech-bubble-text">それは、支援会社とあなたの<span style="color:var(--red);">利益が一致していない</span>からです。</p>
+        <p class="speech-bubble-text">それは、支援会社とあなたの<br><span style="color:var(--red);">利益が一致していない</span>からです。</p>
       </div>
 
       <div class="vs-wrapper fade-up">
@@ -1827,7 +1781,7 @@
         <div class="vs-card notre">
           <div class="vs-card-label">Notreの成果報酬型</div>
           <h3>売上が上がって初めて<br>報酬が入る</h3>
-          <p>だからこそ本気で動く。あなたの売上が上がることが、そのまま私たちの報酬になる。</p>
+          <p>だからこそ本気で動く。<br>あなたの売上が上がることが、<br>そのまま私たちの報酬になる。</p>
         </div>
       </div>
     </div>
@@ -1844,11 +1798,15 @@
         </h3>
 
         <div class="monitor-plan-price-box">
-          <div class="monitor-plan-price-main">
-            固定費：月<span class="highlight">5</span>万円（税別）
+          <div class="price-card">
+            <div class="price-card-label">固定費</div>
+            <div class="price-card-value">月<span class="highlight">5</span>万円<span class="price-card-tax">（税別）</span></div>
           </div>
-          <div class="monitor-plan-price-main" style="margin-top:8px;">
-            成果報酬：売上増加分（前年同月比）の<span class="highlight">10</span>%
+          <div class="price-plus">＋</div>
+          <div class="price-card">
+            <div class="price-card-label">成果報酬</div>
+            <div class="price-card-value">売上増加分の<span class="highlight">10</span>%</div>
+            <div class="price-card-note">※前年同月比</div>
           </div>
         </div>
 
@@ -1880,11 +1838,11 @@
           <h4>通常プランとの比較</h4>
           <div class="monitor-comparison-box">
             <span class="old">通常プラン：月25万円〜35万円（固定費のみ）</span><br>
-            <span class="new">モニタープラン：月5万円＋成果報酬（80%OFF）</span>
+            <span class="new">モニタープラン：月5万円＋成果報酬（80%OFF相当）</span>
           </div>
         </div>
 
-        <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+        <a href="#closing" class="fv-cta-button-img section-cta"><picture><source srcset="images/webp/fv-cta-btn-new.webp" type="image/webp"><img src="images/fv-cta-btn-new.png" alt="モニター枠残り4社 無料で診断レポートをもらう"></picture></a>
       </div>
     </div>
   </section>
@@ -1967,7 +1925,7 @@
 
       <div style="text-align:center; margin:32px 0 0;" class="fade-up">
         <p style="font-weight:900; font-size:16px; color:var(--black); margin-bottom:20px;">実績あるチームに相談してみませんか？</p>
-        <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+        <a href="#closing" class="fv-cta-button-img section-cta"><picture><source srcset="images/webp/fv-cta-btn-new.webp" type="image/webp"><img src="images/fv-cta-btn-new.png" alt="モニター枠残り4社 無料で診断レポートをもらう"></picture></a>
       </div>
 
       <div style="text-align:center; margin-top:32px;" class="fade-up">
@@ -2136,7 +2094,7 @@
   <section class="flow-cta-banner">
     <div class="flow-cta-banner-inner fade-up">
       <p class="flow-cta-note" style="color:#fff;">残りのモニター枠の確認はこちら</p>
-      <a href="#closing" class="fv-cta-button-img section-cta"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
+      <a href="#closing" class="fv-cta-button-img section-cta"><picture><source srcset="images/webp/fv-cta-btn-new.webp" type="image/webp"><img src="images/fv-cta-btn-new.png" alt="モニター枠残り4社 無料で診断レポートをもらう"></picture></a>
     </div>
   </section>
 
@@ -2221,12 +2179,7 @@
     </div>
   </section>
 
-  <section class="intermediate-cta" style="background:linear-gradient(135deg, #f2838a 0%, #e85560 30%, #d63440 60%, #c41a28 100%); padding:40px 20px; text-align:center;">
-    <p class="fade-up" style="color:#fff; font-weight:900; font-size:18px; margin-bottom:20px;">モニター5社限定・まずは無料相談から</p>
-    <a href="#closing" class="fv-cta-button-img section-cta fade-up"><img src="images/cta-button.png" alt="モニター枠残り4社 お問い合わせはこちら"></a>
-  </section>
-
-  <section id="closing" class="section">
+  <section id="closing" class="section" style="background:url('images/webp/fv-bg-new.webp') center/cover no-repeat;">
     <div class="container">
       <h2 class="closing-h2 fade-up">モニター5社限定・まずは無料相談から</h2>
       <div class="closing-form fade-up">
