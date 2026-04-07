@@ -1962,7 +1962,8 @@
       left: 50%;
       bottom: 10px;
       transform: translateX(-50%);
-      width: min(448px, calc(100% - 20px));
+      width: calc(min(100vw, 480px) - 16px);
+      max-width: 464px;
       background: rgba(17,17,17,0.94);
       color: #fff;
       border-radius: 18px;
@@ -2192,7 +2193,7 @@
     .lp-strength-copy strong { font-size: 14px; }
     .closing-quick-points { gap: 8px; }
     .closing-quick-point { padding: 11px 12px; }
-    .mobile-sticky-cta { bottom: 8px; width: calc(100% - 16px); padding: 8px 10px 10px; border-radius: 16px; }
+    .mobile-sticky-cta { bottom: 8px; width: calc(min(100vw, 480px) - 16px); max-width: 464px; padding: 8px 10px 10px; border-radius: 16px; }
     .mobile-sticky-cta-text { margin-bottom: 6px; font-size: 10px; }
     .fv-discount-badge {position: absolute;
     left: -5px;
@@ -2290,12 +2291,12 @@
                   <img src="images/fv-reports.png" alt="診断レポート" loading="lazy">
                 </picture>
               </div>
-              <p class="fv-cta-text">無料相談で、今の店舗にどんな改善余地があるかを整理します。参加者には店舗改善診断レポートもお渡しします。</p>
+              <p class="fv-cta-text">無料相談で、店舗にどんな改善余地があるかを整理します。参加者には店舗改善診断レポートもお渡しします。</p>
             </div>
             <a href="#closing" class="cta-button">
               <span>
-                <span class="cta-button-sub">無料で改善余地をチェック</span>
-                <span class="cta-button-main">店舗改善診断を受けてみる</span>
+                <span class="cta-button-sub">今の課題を整理</span>
+                <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
               </span>
             </a>
           </div>
@@ -2395,8 +2396,8 @@
   <section class="intermediate-cta" style="background:url('images/webp/fv-bg-new.webp') center/cover no-repeat; padding:32px 20px; text-align:center;">
     <a href="#closing" class="cta-button section-cta fade-up">
       <span>
-        <span class="cta-button-sub">まずは無料で相性確認</span>
-        <span class="cta-button-main">店舗改善診断を受ける</span>
+        <span class="cta-button-sub">今の課題を整理</span>
+        <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
       </span>
     </a>
   </section>
@@ -2463,8 +2464,8 @@
 
         <a href="#closing" class="cta-button section-cta">
           <span>
-            <span class="cta-button-sub">料金と相性を無料で確認</span>
-            <span class="cta-button-main">店舗改善診断を受ける</span>
+            <span class="cta-button-sub">今の課題を整理</span>
+            <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
           </span>
         </a>
       </div>
@@ -2631,8 +2632,8 @@
         <p style="font-weight:900; font-size:16px; color:var(--black); margin-bottom:20px;">実績あるチームに相談してみませんか？</p>
         <a href="#closing" class="cta-button section-cta">
           <span>
-            <span class="cta-button-sub">事例を踏まえて無料相談</span>
-            <span class="cta-button-main">自社に近い改善パターンを聞く</span>
+            <span class="cta-button-sub">今の課題を整理</span>
+            <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
           </span>
         </a>
       </div>
@@ -2806,8 +2807,8 @@
       <p class="flow-cta-note" style="color:#fff;">無料相談で、改善ポイントと<br>モニター枠の空き状況をご案内します</p>
       <a href="#closing" class="cta-button section-cta">
         <span>
-          <span class="cta-button-sub">空き状況と改善余地を確認</span>
-            <span class="cta-button-main">自社の改善余地を無料で相談する</span>
+          <span class="cta-button-sub">今の課題を整理</span>
+            <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
         </span>
       </a>
     </div>
@@ -2939,7 +2940,7 @@
             <label><input type="checkbox" name="privacy" required> <a href="https://www.notre.co.jp/privacy_policy.html"
                 target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label>
           </div>
-          <button type="submit" class="form-submit">無料で店舗改善診断を受ける</button>
+          <button type="submit" class="form-submit">店舗の改善ポイントを無料で知る</button>
         </form>
       </div>
      
@@ -2950,7 +2951,8 @@
     <p class="mobile-sticky-cta-text">元楽天ECCが直接担当。まずは無料で改善余地と料金感を確認できます。</p>
     <a href="#closing" class="cta-button">
       <span>
-        <span class="cta-button-main">無料で改善余地を相談する</span>
+        <span class="cta-button-sub">今の課題を整理</span>
+        <span class="cta-button-main">店舗の改善ポイントを無料で知る</span>
       </span>
     </a>
   </div>
@@ -3015,7 +3017,7 @@
         form.innerHTML = '<div class="form-success">お申し込みありがとうございます。<br>担当者より折り返しご連絡いたします。</div>';
       }).catch(function () {
         btn.disabled = false;
-        btn.textContent = '無料で店舗改善診断を受ける';
+        btn.textContent = '店舗の改善ポイントを無料で知る';
         alert('送信に失敗しました。お手数ですが再度お試しください。');
       });
 
