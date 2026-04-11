@@ -250,6 +250,31 @@
       margin-top: 8px;
     }
 
+    .fv-discount-badge {
+      position: absolute;
+      left: -5px;
+      top: -7px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      padding: 4px 11px;
+      background: linear-gradient(to right, #981c14, #c82a21 57%, #97190f);
+      box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+      transform: rotate(-7deg);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .fv-discount-badge span {
+      color: #fff;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .fv-discount-num { font-size: 19px; }
+    .fv-discount-label { font-size: 14px; }
+
     .fv-price-bar {
       background: #173a60;
       padding: 10px 0;
@@ -2194,21 +2219,215 @@
     .closing-quick-point { padding: 11px 12px; }
     .mobile-sticky-cta { bottom: 8px; width: calc(min(100vw, 480px) - 16px); max-width: 464px; padding: 8px 10px 10px; border-radius: 16px; }
     .mobile-sticky-cta-text { margin-bottom: 6px; font-size: 10px; }
-    .fv-discount-badge {position: absolute;
-    left: -5px;
-    top: -7px;
-    background: linear-gradient(to right, #981c14, #c82a21 57%, #97190f);
-    padding: 3px 11px;
-    transform: rotate(-7deg);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-    z-index: 3;
-    white-space: nowrap;
-  }
-  .fv-discount-badge span {font-weight: 700;
-    color: #fff;
-    line-height: 1;
-    font-size: 19px;
-  }
+
+    @media (max-width: 370px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .fv-gold-bar p {
+        font-size: 15px;
+        letter-spacing: 0.01em;
+      }
+
+      .fv-bubble-wrap {
+        margin: -14px 10px 0;
+      }
+
+      .fv-bubble-inner {
+        left: 7%;
+        right: 7%;
+      }
+
+      .fv-bubble-inner h1 {
+        margin-bottom: 6px;
+      }
+
+      .fv-bubble-inner h1 p {
+        font-size: clamp(21px, 8.3vw, 28px);
+        line-height: 1.35;
+      }
+
+      .fv-price-bar {
+        margin: 0 6px;
+        padding: 8px 4px;
+      }
+
+      .fv-discount-badge {
+        left: -2px;
+        top: -10px;
+        padding: 3px 8px;
+      }
+
+      .fv-discount-num {
+        font-size: 16px;
+      }
+
+      .fv-discount-label {
+        font-size: 12px;
+      }
+
+      .fv-price-big {
+        font-size: clamp(42px, 17vw, 54px);
+      }
+
+      .fv-price-unit {
+        font-size: clamp(28px, 11vw, 36px);
+      }
+
+      .fv-lead {
+        margin: 10px 14px 0;
+        font-size: 11px;
+        line-height: 1.75;
+      }
+      .pain-card ul li {
+        font-size: 12px;
+      }
+      .speech-bubble {
+        padding: 20px 23px;
+      }
+ 
+      .fv-simple-pricing {
+        margin: 10px 10px 0;
+        padding: 16px 10px 14px;
+      }
+
+      .fv-simple-pricing-title {
+        font-size: 13px;
+        letter-spacing: 0.06em;
+      }
+
+      .fv-simple-pricing-list {
+        gap: 8px;
+      }
+
+      .fv-simple-pricing-list li {
+        padding: 10px 10px;
+        font-size: 12px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+
+      .fv-decision-group {
+        margin: 12px 6px 0;
+        padding: 8px 0;
+      }
+
+      .fv-limit-reason {
+        margin: 0 6px;
+        padding: 14px 12px 16px;
+        font-size: 11px;
+        line-height: 1.75;
+      }
+
+      .fv-limit-reason strong {
+        font-size: 13px;
+      }
+
+      .fv-cta-card {
+        margin: 18px 6px 0;
+        padding: 14px 10px 16px;
+      }
+
+      .fv-cta-summary {
+        grid-template-columns: 72px 1fr;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .fv-cta-reports {
+        width: 72px;
+      }
+
+      .fv-cta-text {
+        font-size: 11px;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
+      }
+
+      .cta-button {
+        min-height: 58px;
+        padding: 12px 12px;
+      }
+
+      .cta-button-sub {
+        font-size: 10px;
+      }
+
+      .cta-button-main {
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+        overflow-wrap: anywhere;
+      }
+
+      .section-cta {
+        max-width: 100%;
+      }
+
+      .sec-heading,
+      .case-unified-overlay-title,
+      .case-unified-tag,
+      .case-unified-before,
+      .case-unified-after,
+      .case-detail-body,
+      .price-card-value,
+      .monitor-plan-list li,
+      .faq-q,
+      .closing-h2,
+      .form-submit {
+        overflow-wrap: anywhere;
+      }
+
+      .case-unified-img {
+        height: 190px;
+      }
+
+      .case-unified-overlay {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .case-unified-overlay-title {
+        font-size: 16px;
+      }
+
+      .case-unified-tag {
+        font-size: 11px;
+      }
+
+      .service-cards-grid {
+        gap: 14px;
+      }
+
+      .service-card-item {
+        font-size: 12px;
+        padding: 20px 10px 16px;
+      }
+
+      .custom-form {
+        padding: 18px 12px;
+      }
+
+      .custom-form .form-submit {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .mobile-sticky-cta {
+        width: calc(100vw - 12px);
+        padding: 8px 8px 10px;
+      }
+      .sp_none {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -2369,7 +2588,7 @@
 
   <section class="qualification-section">
     <div class="container">
-      <h2 class="sec-heading fade-up">このモニタープランが向いている<br>店舗様</h2>
+      <h2 class="sec-heading fade-up">このモニタープランが向いている店舗様</h2>
       <div class="qualification-grid fade-up">
         <div class="qualification-card good">
           <h3>向いている店舗様</h3>
@@ -2661,7 +2880,7 @@
               </linearGradient>
             </defs>
           </svg>
-          <span class="soy-award-text">SOY・SOA受賞店舗を<br>多数輩出</span>
+          <span class="soy-award-text">SOY・SOA受賞店舗を<br class="sp_none">多数輩出</span>
           <svg class="soy-laurel right" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M30 115C30 115 8 95 5 65C2 35 15 10 30 5" stroke="url(#laurelGrad2)" stroke-width="2.5"
               fill="none" />
