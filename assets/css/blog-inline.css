@@ -210,10 +210,16 @@
 .blog-card-link {
   align-self: start;
   color: var(--blog-blue);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  letter-spacing: 0.06em;
   line-height: 1.6;
-  text-align: left;
+  justify-self: end;
+  text-align: right;
+}
+
+.blog-card[href] .blog-card-link::after {
+  content: "→";
+  margin-left: 8px;
 }
 
 .blog-topic-list {
@@ -475,10 +481,6 @@
 
   .blog-grid {
     grid-template-columns: 1fr;
-  }
-
-  .blog-card-link {
-    text-align: left;
   }
 
   .blog-topic {
