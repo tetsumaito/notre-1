@@ -1027,3 +1027,8 @@ body { background: #fff; transition: background 0.5s cubic-bezier(0.4, 0.4, 0, 1
 .studio-canvas, .design-canvas__modal__base {
   opacity: 0;
 }
+
+.form-container-7 .form-container-8,
+.form-container-7 .form-container-9 {
+  justify-content: flex-start;
+}
