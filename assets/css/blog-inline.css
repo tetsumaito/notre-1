@@ -1,4 +1,6 @@
 .blog-page {
+  --blog-page-gutter: 64px;
+  --blog-page-max: 1120px;
   --blog-blue: #4974dd;
   --blog-ink: #1e1e1e;
   --blog-muted: #777;
@@ -42,10 +44,15 @@
 
 .blog-hero-inner,
 .blog-section,
-.blog-article-layout {
+.blog-article-layout,
+.blog-page .site-breadcrumb {
   margin: 0 auto;
-  max-width: 1120px;
-  width: calc(100% - 64px);
+  max-width: var(--blog-page-max);
+  width: calc(100% - var(--blog-page-gutter));
+}
+
+.blog-page .site-breadcrumb {
+  margin-bottom: 56px;
 }
 
 .blog-eyebrow {
@@ -308,6 +315,12 @@
   grid-template-columns: minmax(0, 720px) 260px;
 }
 
+.blog-article-layout > article {
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+}
+
 .blog-article-header {
   border-bottom: 1px solid var(--blog-line);
   padding-bottom: 56px;
@@ -350,11 +363,13 @@
 .blog-article-body {
   margin-top: 72px;
   max-width: 680px;
+  min-width: 0;
+  width: 100%;
 }
 
 .blog-article-body h2 {
   color: var(--blog-ink);
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(22px, 3vw, 36px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.6;
@@ -396,6 +411,115 @@
 
 .blog-article-body li {
   list-style: disc;
+}
+
+.blog-article-body strong {
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-author-box {
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  margin: 0 0 72px;
+  padding: 32px;
+}
+
+.blog-author-label {
+  color: var(--blog-blue);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.blog-author-box h2 {
+  color: var(--blog-ink);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.blog-author-box h2::before {
+  display: none;
+}
+
+.blog-author-sp-break {
+  display: none;
+}
+
+.blog-author-box p {
+  font-size: 14px;
+  line-height: 2;
+  margin: 0;
+}
+
+.blog-table-wrap {
+  border: 1px solid var(--blog-line);
+  margin: 32px 0;
+  overflow-x: auto;
+}
+
+.blog-table-wrap table {
+  border-collapse: collapse;
+  min-width: 640px;
+  width: 100%;
+}
+
+.blog-table-wrap th,
+.blog-table-wrap td {
+  border-bottom: 1px solid var(--blog-line);
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-table-wrap th {
+  background: var(--blog-soft);
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.blog-checklist {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.blog-checklist li {
+  border-bottom: 1px solid var(--blog-line);
+  list-style: none;
+  padding: 12px 0 12px 28px;
+  position: relative;
+}
+
+.blog-checklist li::before {
+  color: var(--blog-blue);
+  content: "□";
+  left: 0;
+  position: absolute;
+  top: 12px;
+}
+
+.blog-reference-list li {
+  color: var(--blog-muted);
+  font-size: 14px;
+}
+
+.blog-article-note {
+  border-top: 1px solid var(--blog-line);
+  color: var(--blog-muted) !important;
+  font-size: 13px !important;
+  margin-top: 48px;
+  padding-top: 24px;
 }
 
 .blog-answer-box {
@@ -522,14 +646,23 @@
 }
 
 @media (max-width: 600px) {
+  .blog-page {
+    --blog-page-gutter: 48px;
+  }
+
   .blog-hero {
     padding: 128px 0 72px;
   }
 
   .blog-hero-inner,
   .blog-section,
-  .blog-article-layout {
-    width: calc(100% - 48px);
+  .blog-article-layout,
+  .blog-page .site-breadcrumb {
+    width: calc(100% - var(--blog-page-gutter));
+  }
+
+  .blog-page .site-breadcrumb {
+    margin-bottom: 44px;
   }
 
   .blog-title {
@@ -573,6 +706,15 @@
     padding: 24px;
   }
 
+  .blog-author-box {
+    margin-bottom: 56px;
+    padding: 24px;
+  }
+
+  .blog-author-sp-break {
+    display: block;
+  }
+
   .blog-article-body {
     margin-top: 56px;
   }
@@ -591,9 +733,17 @@
 }
 
 @media (max-width: 380px) {
+  .blog-page {
+    --blog-page-gutter: 36px;
+  }
+
   .blog-hero-inner,
   .blog-section,
   .blog-article-layout,
+  .blog-page .site-breadcrumb {
+    width: calc(100% - var(--blog-page-gutter));
+  }
+
   .blog-title {
     font-size: 34px;
   }
@@ -610,6 +760,10 @@
   }
 
   .blog-answer-box {
+    padding: 20px;
+  }
+
+  .blog-author-box {
     padding: 20px;
   }
 }
