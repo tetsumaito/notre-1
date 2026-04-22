@@ -20,6 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="assets/rakuten-logo-white.webp" as="image" type="image/webp" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
@@ -28,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap"
       rel="stylesheet" />
   </noscript>
-  <!-- GTM -->
+  
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -37,7 +38,7 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5NCSF7DH');</script>
-  <!-- Facebook Pixel -->
+  
   <script>
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -1853,25 +1854,23 @@
 </head>
 
 <body>
-  <!-- GTM noscript -->
+  
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Gold banner header -->
+  
   <div class="gold-banner">楽天市場の店舗オーナー様へ</div>
 
-  <!-- ============================
-       ① FV (First View)
-  ============================= -->
+  
   <section class="fv">
-    <div class="fv-bubble">成果報酬でリスクを最小限に</div>
+    <div class="fv-bubble">固定5万円＋成果報酬10%でリスクを最小限に</div>
     <h1 class="fv-headline" style="text-align: center; font-family: 'Noto Serif JP', serif;">
       "<span class="accent-mark">利益</span>"を増やす<br>
       <span class="last">楽天市場運用</span>
     </h1>
     <p class="fv-sub" style="font-size: 16px;">「先月は月商300万を超えた。スーパーSALEでは過去最高の売上だった。なのに利益は、先月とほとんど変わっていなかった——」</p>
     <div class="fv-logo-lockup" aria-label="楽天市場">
-      <img src="assets/rakuten-logo-white.png" alt="楽天市場" />
+      <img src="assets/rakuten-logo-white.webp" alt="楽天市場" fetchpriority="high" />
     </div>
     <div class="fv-limited">
       <p class="fv-limited-title" style="font-family: &quot;Noto Sans&quot;; font-weight: 900;">期間限定・5社限定</p>
@@ -1889,7 +1888,7 @@
     </div>
   </section>
 
-  <!-- CTA #1 — right after FV, soft / minimal (gateway) -->
+  
   <div class="cta-block">
     <p class="cta-prelude">まずは1分、<br>現状を診断してみませんか？</p>
     <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="after-fv" target="_blank"
@@ -1908,9 +1907,7 @@
     </div>
   </div>
 
-  <!-- ============================
-       ② Pain Points (4 items)
-  ============================= -->
+  
   <section class="section pain-section">
     <div class="container">
       <span class="eyebrow fade-up">よく聞くお声</span>
@@ -1943,9 +1940,7 @@
     </div>
   </section>
 
-  <!-- ============================
-       ③ Bottleneck Insight — 記事の転換点
-  ============================= -->
+  
   <section class="insight-section">
     <div class="container">
       <div class="insight-block fade-up">
@@ -1959,9 +1954,7 @@
     </div>
   </section>
 
-  <!-- ============================
-       ④ Mechanism + Solution
-  ============================= -->
+  
   <section class="section section-white">
     <div class="container">
       <span class="eyebrow fade-up">これらの原因</span>
@@ -2042,7 +2035,7 @@
     </div>
   </section>
 
-  <!-- CTA #2 — framed "card" variant, follows the solution steps -->
+  
   <div class="cta-block">
     <div class="cta-framed" style="padding: var(--space-xl) var(--space-lg);">
       <p class="cta-prelude" style="position:relative;"><small>STEP 1 / 3</small>最初の1分、ここから。</p>
@@ -2058,16 +2051,14 @@
     </div>
   </div>
 
-  <!-- ============================
-       ⑤ Before→After Cases
-  ============================= -->
+  
   <section class="section section-low">
     <div class="container">
       <span class="eyebrow fade-up">支援事例</span>
       <h2 class="section-title fade-up">支援を受けた企業の変化</h2>
 
       <div class="cases">
-        <!-- Case ① 野菜農家 -->
+        
         <div class="case-card fade-up">
           <div class="case-head">
             <span class="case-label">CASE 01</span>
@@ -2106,7 +2097,7 @@
           <p class="case-note">卸より高い粗利率を実現・自社ブランド確立・卸とECの両立モデルを構築</p>
         </div>
 
-        <!-- Case ② 米農家 -->
+        
         <div class="case-card fade-up">
           <div class="case-head">
             <span class="case-label">CASE 02</span>
@@ -2145,7 +2136,7 @@
           <p class="case-note">値引きなしで売上拡大・新商品が第二の柱に成長</p>
         </div>
 
-        <!-- Case ③ 車用品店 -->
+        
         <div class="case-card fade-up">
           <div class="case-head">
             <span class="case-label">CASE 03</span>
@@ -2189,15 +2180,13 @@
     </div>
   </section>
 
-  <!-- ============================
-       ⑥ Cost + Credentials
-  ============================= -->
+  
   <section class="section cost-section">
     <div class="container">
       <span class="eyebrow fade-up">モニター制度について</span>
       <h2 class="section-title fade-up">費用について</h2>
       <div class="about-text fade-up">
-        <p>今回のモニター制度の私たちの報酬は、<strong>売上の増加分からいただく成果報酬型</strong>です。</p>
+        <p>今回のモニター制度の私たちの報酬は、<strong>固定5万円＋成果報酬10%（前年同月比）</strong>です。</p>
         <p>短期的には広告をかければ売上は上がりますが、利益が残っていなければ、次月には契約解除になるかと思います。</p>
         <p>我々は長期的な関係を構築したいと願っています。そのため、<strong>利益を残せるようにし、その利益を売上をアップするための施策に再投資する</strong>、というサイクルを回すことが重要です。</p>
         <p>あなたの売上が増えないと、私たちにも報酬が入らない。<br>だからこそ最初に「本当に売上が増やせる店舗か」をお互いに確認したいと考えています。</p>
@@ -2210,7 +2199,7 @@
 
       <p class="about-text fade-up" style="font-size:var(--text-sm); color:var(--on-surface-variant); text-align:center; margin-bottom:0;">診断フォームへの回答もレポートも、<strong>完全無料</strong>です。</p>
 
-      <!-- stats row (count-up) -->
+      
       <div class="stat-row fade-up" aria-label="実績">
         <div class="stat-cell">
           <div class="num"><span class="countup" data-to="1000">0</span><span class="plus">+</span><span class="unit">店舗</span></div>
@@ -2228,12 +2217,12 @@
 
       <p class="credentials-title fade-up" style="margin-top: var(--space-xl);">モニタープランの詳細</p>
 
-      <p class="about-text fade-up" style="font-size:var(--text-sm); color:var(--on-surface-variant); text-align:center; max-width: 620px; margin: 0 auto var(--space-md);">Notreの楽天EC支援は、「モニタープラン」として成果報酬型で始められます。</p>
+      <p class="about-text fade-up" style="font-size:var(--text-sm); color:var(--on-surface-variant); text-align:center; max-width: 620px; margin: 0 auto var(--space-md);">Notreの楽天EC支援は、「モニタープラン」として固定5万円＋成果報酬10%で始められます。</p>
 
       <dl class="monitor-plan fade-up">
         <div class="monitor-row">
           <dt>料金形態</dt>
-          <dd><strong>成果報酬型</strong>（売上の増加分からお支払い）</dd>
+          <dd><strong>固定5万円＋成果報酬10%</strong>（前年同月比）</dd>
         </div>
         <div class="monitor-row">
           <dt>参加条件</dt>
@@ -2286,15 +2275,13 @@
     </div>
   </section>
 
-  <!-- ============================
-       ⑦ FAQ
-  ============================= -->
+  
   <section class="section section-white">
     <div class="container">
       <span class="eyebrow fade-up">FAQ</span>
       <h2 class="section-title fade-up">よくある質問</h2>
       <div class="faq-list fade-up">
-        <!-- Q1 -->
+        
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-header">
             <div class="faq-q">
@@ -2311,7 +2298,7 @@
           </div>
         </div>
 
-        <!-- Q2 -->
+        
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-header">
             <div class="faq-q">
@@ -2328,7 +2315,7 @@
           </div>
         </div>
 
-        <!-- Q3 -->
+        
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-header">
             <div class="faq-q">
@@ -2345,7 +2332,7 @@
           </div>
         </div>
 
-        <!-- Q4 -->
+        
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-header">
             <div class="faq-q">
@@ -2362,7 +2349,7 @@
           </div>
         </div>
 
-        <!-- Q5 -->
+        
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-header">
             <div class="faq-q">
@@ -2374,7 +2361,7 @@
           <div class="faq-body">
             <div class="faq-a">
               <span class="faq-a-badge">A</span>
-              <span class="faq-a-text">成果を事例として公開させていただくことを条件に、<strong>成果報酬型</strong>で始められるプランです。初回3ヶ月を成果を出すための最低期間とし、4～6ヶ月目は1ヶ月単位で更新、7ヶ月目以降は半年契約の固定費プランへ移行します。成果を見ながら柔軟に継続判断できる設計です。</span>
+              <span class="faq-a-text">成果を事例として公開させていただくことを条件に、<strong>固定5万円＋成果報酬10%（前年同月比）</strong>で始められるプランです。初回3ヶ月を成果を出すための最低期間とし、4～6ヶ月目は1ヶ月単位で更新、7ヶ月目以降は半年契約の固定費プランへ移行します。成果を見ながら柔軟に継続判断できる設計です。</span>
             </div>
           </div>
         </div>
@@ -2382,9 +2369,7 @@
     </div>
   </section>
 
-  <!-- ============================
-       CTA #3 (Final) — hero variant on primary
-  ============================= -->
+  
   <div class="cta-final-wrap">
     <p class="cta-prelude">
       <small>次のステップ</small>
@@ -2406,9 +2391,7 @@
     </div>
   </div>
 
-  <!-- ============================
-       Footer
-  ============================= -->
+  
   <footer class="footer">
     <p class="footer-company">Notre株式会社</p>
     <a href="https://www.notre.co.jp/privacy_policy.html" class="footer-link" target="_blank"
@@ -2416,10 +2399,8 @@
     <p class="footer-copy">&copy; 2026 Notre Inc.</p>
   </footer>
 
-  <!-- ============================
-       Sticky CTA
-  ============================= -->
-  <!-- TODO: Replace PLACEHOLDER_LIFF_ID with actual LIFF URL -->
+  
+  
   <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
     <div class="sticky-nudge">今すぐ1分で診断</div>
     <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="sticky" target="_blank"
@@ -2432,9 +2413,7 @@
     </a>
   </div>
 
-  <!-- ============================
-       JavaScript
-  ============================= -->
+  
   <script>
     // FAQ accordion
     function toggleFaq(item) {
