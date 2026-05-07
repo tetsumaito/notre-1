@@ -9,30 +9,30 @@ Vercelの自動デプロイ機能を利用しています。
 
 * **本番環境（mainブランチ）**
   * URL: [https://www.notre.co.jp/](https://www.notre.co.jp/)
-  * `develop`の内容が最終確認された後、こちらにマージ（統合）することで本番公開されます。
+  * `main` にマージ（統合）された内容が本番公開されます。
 
-* **検証環境（developブランチ）**
-  * URL: [https://notre-git-develop-tetsuma-itos-projects.vercel.app/](https://notre-git-develop-tetsuma-itos-projects.vercel.app/)
-  * 日々の修正や新機能の確認用です。**必ずまずはこちらに反映させてください。**
+* **プレビュー環境（作業ブランチ）**
+  * Pull Request ごとに発行される Vercel のプレビューURLで確認します。
+  * 日々の修正や新機能は、`main` から作成した作業ブランチで行います。
 
 ---
 
 ##  修正・開発の流れ
 
 1. **最新状態の取得**
-   作業前に必ず `git checkout develop` → `git pull origin develop` を行い、最新の状態から開始してください。
+   作業前に必ず `git checkout main` → `git pull origin main` を行い、最新の状態から開始してください。
 
 2. **作業用ブランチの作成**
-   直接 `develop` をいじらず、新しいブランチを作ります（命名規則は後述）。
+   直接 `main` をいじらず、新しいブランチを作ります（命名規則は後述）。
 
 3. **実装・テスト**
    ローカル環境で表示を確認してください。
 
 4. **Push と Pull Request (PR)**
-   作業が終わったらGitHubへPushし、`develop` に向けて Pull Request を作成します。
+   作業が終わったらGitHubへPushし、`main` に向けて Pull Request を作成します。
 
 5. **確認とマージ**
-   VercelのプレビューURLで動作確認し、問題なければ `develop` へマージします。
+   VercelのプレビューURLで動作確認し、問題なければ `main` へマージします。
 
 ---
 
