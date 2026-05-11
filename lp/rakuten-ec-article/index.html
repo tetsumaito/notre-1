@@ -416,119 +416,6 @@
       line-height: 1.5;
     }
 
-    /* Article meta row (category + date + read time) */
-    .article-breadcrumb {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.18em;
-      margin-bottom: var(--space-md);
-      padding-left: var(--space-md);
-      position: relative;
-    }
-    .article-breadcrumb::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 10px;
-      height: 1px;
-      background: var(--primary);
-    }
-    .article-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.74rem;
-      color: var(--on-surface-variant);
-      margin-bottom: var(--space-lg);
-      letter-spacing: 0.02em;
-    }
-    .article-meta .dot {
-      width: 3px;
-      height: 3px;
-      background: var(--outline-variant);
-      border-radius: 50%;
-    }
-
-    /* Lead paragraph (just below headline) */
-    .article-lead {
-      font-size: 0.98rem;
-      color: var(--on-surface-variant);
-      line-height: 1.95;
-      margin-bottom: var(--space-xl);
-      text-align: left;
-      letter-spacing: 0.01em;
-    }
-    .article-lead strong {
-      color: var(--on-surface);
-      font-weight: 700;
-      background: linear-gradient(transparent 65%, rgba(191,1,1,0.12) 65%);
-      padding: 0 1px;
-    }
-
-    /* Author byline (boxed, between FV and body) */
-    .article-byline {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-md) 0;
-      border-top: 1px solid var(--outline-variant);
-      border-bottom: 1px solid var(--outline-variant);
-      margin-top: var(--space-md);
-    }
-    .article-byline-avatar {
-      flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary) 0%, #8a0000 100%);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-serif);
-      font-weight: 900;
-      font-size: 1.3rem;
-      letter-spacing: -0.02em;
-      box-shadow: 0 4px 12px -4px rgba(191,1,1,0.4);
-    }
-    .article-byline-info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      flex: 1;
-      min-width: 0;
-    }
-    .article-byline-name {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--on-surface);
-      line-height: 1.3;
-    }
-    .article-byline-name .badge {
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: rgba(191,1,1,0.08);
-      border: 1px solid rgba(191,1,1,0.18);
-      padding: 1px 6px;
-      border-radius: 4px;
-      margin-left: 6px;
-      letter-spacing: 0.05em;
-      vertical-align: 2px;
-    }
-    .article-byline-role {
-      font-size: 0.74rem;
-      color: var(--on-surface-variant);
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    }
-
     /* decorative vertical rule on the left of FV */
     .fv::before {
       content: none;
@@ -2356,44 +2243,32 @@
 
   
   <section class="fv">
-    <div class="fv-bubble">楽天市場 出店者様 限定</div>
-    <h1 class="fv-headline" style="text-align: center; font-family: 'Noto Serif JP', serif;">
-      広告費だけが増え、<br>
-      "<span class="accent-mark">利益</span>"が残らない<br>
-      <span class="last">原因を5営業日で診断</span>
+    <div class="article-breadcrumb">楽天市場運営・利益改善</div>
+    <div class="article-meta">
+      <span>公開 2026.05.11</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>読了 約7分</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>取材 / 解説</span>
+    </div>
+
+    <h1 class="fv-headline">
+      楽天市場で<span class="accent-mark">"売上は伸びたのに利益が残らない"</span>店舗が陥る5つの構造的要因
+      <br><span class="last">— 元楽天ECC出身者が解説</span>
     </h1>
-    <p class="fv-sub" style="font-size: 16px;">元楽天ECC出身のプロが、貴店専用の<strong>利益改善レポート</strong>を<br>完全無料でお届けします。</p>
-    <div class="fv-logo-lockup" aria-label="楽天市場">
-      <img src="assets/rakuten-logo-white.webp" alt="楽天市場" fetchpriority="high" />
-    </div>
 
+    <p class="article-lead">
+      広告費は年々上昇し、セールのたびに利益が削られる——。多くの楽天出店者が抱えるこの「<strong>売上は立つが手元に残らない</strong>」問題には、共通する5つの構造的要因が存在する。本記事では、元楽天ECC(EC コンサルタント)出身のプロが、現場で見えてきた<strong>利益侵食のメカニズム</strong>と、自店舗で検証する方法を解説する。
+    </p>
 
-    <div class="fv-cta-inline">
-      <a href="#diagnosis-form" class="cta-line" data-location="fv-primary">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-        </svg>
-        無料診断レポートを申し込む（1分）
-      </a>
-      <div class="cta-meta" aria-hidden="true">
-        <span>5営業日でお届け</span>
-        <span>完全無料</span>
-        <span>強引な営業なし</span>
+    <div class="article-byline">
+      <div class="article-byline-avatar" aria-hidden="true">伊</div>
+      <div class="article-byline-info">
+        <span class="article-byline-name">伊藤 鉄馬<span class="badge">著者</span></span>
+        <span class="article-byline-role">Notre株式会社 代表取締役 / 元楽天ECC・累計1,000店舗以上の支援実績</span>
       </div>
-      <a href="#pain-section" class="fv-sub-link">▼ サービス内容を先に見る</a>
     </div>
-
-
-    <div class="fv-trust">
-      <span>元楽天ECC出身チーム</span>
-      <span>累計1,000店舗以上</span>
-      <span>期間限定 5社のみ</span>
-    </div>
-
-    <div class="scroll-hint" aria-hidden="true">
-      <span class="scroll-hint-arrow"></span>
-    </div>
+  </section>
 
   
   <section class="section pain-section" id="pain-section">
@@ -2867,7 +2742,7 @@
         完全無料 / 売り込みは一切ありません。
       </p>
       <form id="diagnosis-form-el" class="form-grid"
-            action="https://formsubmit.co/REPLACE_WITH_NOTRE_EMAIL"
+            action="https://ssgform.com/s/oo9y6ksMmQMJ"
             method="POST" novalidate>
         <input type="hidden" name="_subject" value="【無料診断申込】楽天EC利益診断 from rakuten-ec-article LP">
         <input type="hidden" name="_next" value="https://www.notre.co.jp/lp/rakuten-ec-article/thanks/">
