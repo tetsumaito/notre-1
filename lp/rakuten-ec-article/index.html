@@ -5,17 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>売上は伸びた。でも通帳を見て、絶望した。｜Notre</title>
+  <title>楽天市場の利益改善レポート【無料診断・5営業日】｜Notre</title>
   <meta name="description"
-    content="楽天出店者のための無料利益診断。LINEで1分のフォームに回答するだけ。商品ごとの利益構造を可視化し、利益改善レポートを2営業日以内にお届けします。" />
+    content="楽天出店者のための無料利益診断。フォームに1分でご記入いただくだけ。商品ごとの利益構造を可視化し、利益改善レポートを5営業日以内にお届けします。" />
   <link rel="canonical" href="https://notre.co.jp/lp/rakuten-ec-article/" />
   <link rel="icon" href="images/Notre_favicon.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="images/Notre_favicon.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://notre.co.jp/lp/rakuten-ec-article/" />
-  <meta property="og:title" content="売上は伸びた。でも通帳を見て、絶望した。｜Notre" />
+  <meta property="og:title" content="楽天市場の利益改善レポート【無料診断・5営業日】｜Notre" />
   <meta property="og:description"
-    content="楽天出店者のための無料利益診断。LINEで1分。利益改善レポートを無料でお届けします。" />
+    content="楽天出店者のための無料利益診断。フォームに1分。利益改善レポートを無料でお届けします。" />
   <meta property="og:image" content="https://notre.co.jp/lp/rakuten-ec-article/images/ogp.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -132,7 +132,11 @@
       /* Outline */
       --outline-variant: #E7BDB6;
 
-      /* LINE */
+      /* CTA (orange — high contrast vs brand red & cream bg) */
+      --cta-bg: #F97316;
+      --cta-bg-hover: #EA580C;
+
+      /* LINE (legacy — kept for backward compat, not used in CTAs) */
       --line-green: #06C755;
       --line-green-hover: #05B34C;
 
@@ -285,20 +289,131 @@
     }
 
     /* ==============================
-       ① FV (First View)
+       ① FV (Article masthead)
     ============================== */
     .fv {
-      background:
-        radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,0.08), transparent 55%),
-        radial-gradient(120% 80% at 100% 100%, rgba(0,0,0,0.18), transparent 60%),
-        var(--primary);
-      color: #fff;
+      background: var(--surface-container-lowest);
+      color: var(--on-surface);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: var(--space-lg) var(--space-lg) var(--space-xl);
+      padding: var(--space-xl) var(--space-lg) var(--space-lg);
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    /* Article meta row (category + date + read time) */
+    .article-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.18em;
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-md);
+      position: relative;
+    }
+    .article-breadcrumb::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 10px;
+      height: 1px;
+      background: var(--primary);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.74rem;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--space-lg);
+      letter-spacing: 0.02em;
+    }
+    .article-meta .dot {
+      width: 3px;
+      height: 3px;
+      background: var(--outline-variant);
+      border-radius: 50%;
+    }
+
+    /* Lead paragraph (just below headline) */
+    .article-lead {
+      font-size: 0.98rem;
+      color: var(--on-surface-variant);
+      line-height: 1.95;
+      margin-bottom: var(--space-xl);
+      text-align: left;
+      letter-spacing: 0.01em;
+    }
+    .article-lead strong {
+      color: var(--on-surface);
+      font-weight: 700;
+      background: linear-gradient(transparent 65%, rgba(191,1,1,0.12) 65%);
+      padding: 0 1px;
+    }
+
+    /* Author byline (boxed, between FV and body) */
+    .article-byline {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md) 0;
+      border-top: 1px solid var(--outline-variant);
+      border-bottom: 1px solid var(--outline-variant);
+      margin-top: var(--space-md);
+    }
+    .article-byline-avatar {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, #8a0000 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+      box-shadow: 0 4px 12px -4px rgba(191,1,1,0.4);
+    }
+    .article-byline-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex: 1;
+      min-width: 0;
+    }
+    .article-byline-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      line-height: 1.3;
+    }
+    .article-byline-name .badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(191,1,1,0.08);
+      border: 1px solid rgba(191,1,1,0.18);
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      letter-spacing: 0.05em;
+      vertical-align: 2px;
+    }
+    .article-byline-role {
+      font-size: 0.74rem;
+      color: var(--on-surface-variant);
+      letter-spacing: 0.02em;
+      line-height: 1.5;
     }
 
     /* decorative vertical rule on the left of FV */
@@ -356,11 +471,12 @@
     .fv-headline {
       font-family: var(--font-serif);
       font-weight: 900;
-      font-size: clamp(1.95rem, 8.5vw, 2.55rem);
-      line-height: 1.35;
-      color: #fff;
-      margin-bottom: var(--space-lg);
+      font-size: clamp(1.55rem, 6.5vw, 2.1rem);
+      line-height: 1.55;
+      color: var(--on-surface);
+      margin-bottom: var(--space-md);
       letter-spacing: 0.01em;
+      text-align: left;
     }
 
     /* Speech bubble above the hero headline */
@@ -390,21 +506,19 @@
       border-radius: 2px;
     }
     .fv-headline .accent-mark {
-      background: linear-gradient(transparent 62%, rgba(255,255,255,0.22) 62%);
+      background: linear-gradient(transparent 66%, rgba(191,1,1,0.16) 66%);
       padding: 0 2px;
+      color: var(--primary);
     }
     .fv-headline .last {
       display: inline-block;
       position: relative;
+      color: var(--on-surface-variant);
+      font-size: 0.72em;
+      font-weight: 700;
     }
     .fv-headline .last::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0;
-      bottom: -6px;
-      height: 3px;
-      background: #fff;
-      opacity: 0.9;
+      content: none;
     }
 
     .fv-sub {
@@ -574,7 +688,7 @@
       align-items: center;
       justify-content: center;
       gap: var(--space-xs);
-      background: var(--line-green);
+      background: var(--cta-bg);
       color: #fff;
       font-family: var(--font-body);
       font-size: 0.92rem;
@@ -588,7 +702,7 @@
       text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
-      box-shadow: 0 10px 24px -10px rgba(6, 199, 85, 0.55), 0 2px 0 rgba(0,0,0,0.04);
+      box-shadow: 0 10px 24px -10px rgba(249, 115, 22, 0.55), 0 2px 0 rgba(0,0,0,0.04);
       position: relative;
     }
 
@@ -605,7 +719,7 @@
 
     .cta-line:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 28px -10px rgba(6, 199, 85, 0.65), 0 2px 0 rgba(0,0,0,0.04);
+      box-shadow: 0 14px 28px -10px rgba(249, 115, 22, 0.65), 0 2px 0 rgba(0,0,0,0.04);
     }
     .cta-line:hover::after {
       transform: translateX(4px);
@@ -1194,18 +1308,27 @@
       color: var(--on-surface-variant);
     }
 
-    /* giant number result */
+    /* giant number result — hero-styled */
     .case-result {
       display: flex;
-      align-items: flex-end;
-      gap: var(--space-md);
-      padding: var(--space-md) 0 0;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-lg) var(--space-md);
+      margin-top: var(--space-md);
       position: relative;
+      background: linear-gradient(180deg, rgba(191,1,1,0.04), rgba(191,1,1,0.0));
+      border-top: 1px solid var(--outline-variant);
+      border-bottom: 1px solid var(--outline-variant);
+      text-align: center;
     }
     .case-result-stamp {
+      position: absolute;
+      top: -16px;
+      right: var(--space-md);
       flex-shrink: 0;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1213,50 +1336,71 @@
       background: var(--primary);
       color: #fff;
       border-radius: 50%;
-      font-size: 0.55rem;
+      font-size: 0.52rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       line-height: 1.1;
       text-align: center;
+      box-shadow: 0 6px 14px -6px rgba(191,1,1,0.5);
     }
     .case-result-stamp strong {
       font-family: var(--font-serif);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 900;
       margin-top: 1px;
     }
 
     .case-result-body {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      gap: 4px;
     }
 
     .case-result-label {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--on-surface-variant);
-      letter-spacing: 0.15em;
+      letter-spacing: 0.3em;
       font-weight: 700;
+      padding-right: 0;
+    }
+    .case-result-label::before,
+    .case-result-label::after {
+      content: '—';
+      color: var(--outline-variant);
+      margin: 0 8px;
+      font-weight: 400;
     }
 
     .case-result-value {
       font-family: var(--font-serif);
-      font-size: clamp(1.3rem, 5.5vw, 1.65rem);
+      font-size: 1.05rem;
       font-weight: 900;
       color: var(--primary);
-      line-height: 1.25;
+      line-height: 1.05;
       letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 4px;
     }
     .case-result-value .big {
-      font-size: 1.45em;
+      font-size: clamp(3.6rem, 14vw, 5rem);
       display: inline-block;
-      line-height: 1;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      background: linear-gradient(180deg, var(--primary) 0%, #8a0000 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
     }
     .case-result-value .unit {
-      font-size: 0.6em;
-      font-weight: 700;
-      color: var(--on-surface-variant);
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.05em;
     }
 
     /* before→after compact bar */
@@ -1825,14 +1969,14 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--line-green);
-      box-shadow: 0 0 0 0 rgba(6,199,85,0.6);
+      background: var(--cta-bg);
+      box-shadow: 0 0 0 0 rgba(249,115,22,0.6);
       animation: pulse 1.8s infinite;
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(6,199,85,0.55); }
-      70% { box-shadow: 0 0 0 8px rgba(6,199,85,0); }
-      100% { box-shadow: 0 0 0 0 rgba(6,199,85,0); }
+      0% { box-shadow: 0 0 0 0 rgba(249,115,22,0.55); }
+      70% { box-shadow: 0 0 0 8px rgba(249,115,22,0); }
+      100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
     }
 
     /* ==============================
@@ -1850,6 +1994,242 @@
       .sticky-nudge .dot { animation: none; }
       .fade-up { opacity: 1; transform: none; transition: none; }
     }
+
+    /* ==============================
+       FV Trust chips (credibility row) — demoted to subtle markers
+    ============================== */
+    .fv-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 12px;
+      margin: var(--space-md) auto var(--space-sm);
+      max-width: 560px;
+      padding: 0 var(--space-md);
+    }
+    .fv-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      background: transparent;
+      border: none;
+      padding: 2px 0;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .fv-trust span::before {
+      content: '✓';
+      color: rgba(255,255,255,0.55);
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+    .fv-trust span + span::before {
+      content: '・✓';
+    }
+    @media (max-width: 480px) {
+      .fv-trust span { font-size: 0.66rem; }
+    }
+
+    /* ==============================
+       FV in-hero CTA (primary, above the fold)
+    ============================== */
+    .fv-cta-inline {
+      margin: var(--space-md) auto var(--space-md);
+      max-width: 440px;
+      text-align: center;
+    }
+    .fv-cta-inline .cta-line {
+      width: 100%;
+      max-width: none;
+      height: 64px;
+      font-size: 1rem;
+      box-shadow:
+        0 12px 28px -8px rgba(0,0,0,0.35),
+        0 2px 0 rgba(255,255,255,0.08) inset,
+        0 0 0 1px rgba(255,255,255,0.15);
+    }
+    .fv-cta-inline .cta-meta {
+      margin-top: var(--space-sm);
+      gap: 4px 8px;
+    }
+    .fv-cta-inline .cta-meta span {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      font-weight: 700;
+    }
+    .fv-sub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.82);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: var(--space-md);
+      letter-spacing: 0.02em;
+    }
+    .fv-sub-link:hover { color: #fff; }
+
+    /* ==============================
+       Diagnosis Form
+    ============================== */
+    .form-section {
+      background: var(--surface-container-low);
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    .form-card {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--surface-container-lowest);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl) var(--space-xl);
+      box-shadow: 0 10px 30px -18px rgba(0,0,0,0.18);
+    }
+    .form-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      margin-bottom: var(--space-sm);
+    }
+    .form-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 900;
+      color: var(--on-surface);
+      line-height: 1.4;
+      margin-bottom: var(--space-sm);
+    }
+    .form-lead {
+      font-size: var(--text-sm);
+      color: var(--on-surface-variant);
+      line-height: 1.8;
+      margin-bottom: var(--space-xl);
+    }
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .form-required {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+      padding: 2px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+    .form-optional {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      background: rgba(0,0,0,0.06);
+      padding: 2px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: #fff;
+      color: var(--on-surface);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(191,1,1,0.12);
+    }
+    .form-input:invalid:not(:placeholder-shown) {
+      border-color: var(--primary);
+    }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      background: var(--cta-bg);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0 2.5rem;
+      height: 60px;
+      width: 100%;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 24px -10px rgba(249, 115, 22, 0.55), 0 2px 0 rgba(0,0,0,0.04);
+      margin-top: var(--space-md);
+    }
+    .form-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -10px rgba(249, 115, 22, 0.65), 0 2px 0 rgba(0,0,0,0.04);
+    }
+    .form-submit:active:not(:disabled) { transform: translateY(0); }
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin-top: var(--space-md);
+    }
+    .form-meta span {
+      font-size: 0.72rem;
+      color: var(--on-surface-variant);
+      padding: 4px 10px;
+      background: rgba(0,0,0,0.03);
+      border-radius: 999px;
+    }
+    .form-error {
+      display: none;
+      font-size: 0.85rem;
+      color: var(--primary);
+      background: rgba(191,1,1,0.06);
+      border: 1px solid rgba(191,1,1,0.2);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      margin-top: var(--space-md);
+    }
+    .form-error.visible { display: block; }
+    @media (max-width: 640px) {
+      .form-card { padding: var(--space-xl) var(--space-md); }
+      .form-title { font-size: var(--text-lg); }
+    }
   </style>
 </head>
 
@@ -1863,52 +2243,35 @@
 
   
   <section class="fv">
-    <div class="fv-bubble">固定5万円＋成果報酬10%でリスクを最小限に</div>
-    <h1 class="fv-headline" style="text-align: center; font-family: 'Noto Serif JP', serif;">
-      "<span class="accent-mark">利益</span>"を増やす<br>
-      <span class="last">楽天市場運用</span>
+    <div class="article-breadcrumb">楽天市場運営・利益改善</div>
+    <div class="article-meta">
+      <span>公開 2026.05.11</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>読了 約7分</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>取材 / 解説</span>
+    </div>
+
+    <h1 class="fv-headline">
+      楽天市場で<span class="accent-mark">"売上は伸びたのに利益が残らない"</span>店舗が陥る5つの構造的要因
+      <br><span class="last">— 元楽天ECC出身者が解説</span>
     </h1>
-    <p class="fv-sub" style="font-size: 16px;">「先月は月商300万を超えた。スーパーSALEでは過去最高の売上だった。なのに利益は、先月とほとんど変わっていなかった——」</p>
-    <div class="fv-logo-lockup" aria-label="楽天市場">
-      <img src="assets/rakuten-logo-white.webp" alt="楽天市場" fetchpriority="high" />
-    </div>
-    <div class="fv-limited">
-      <p class="fv-limited-title" style="font-family: &quot;Noto Sans&quot;; font-weight: 900;">期間限定・5社限定</p>
-      <p class="fv-limited-body">
-        楽天専門チームが分析・広告運用・ページ改善・<br>
-        実行まで直接担当します。<br>
-        品質を落とさず伴走できる数だけ募集中です。
-      </p>
-    </div>
-    <div class="fv-intro">
-      <p>これは、ある楽天店舗オーナーの実話を元にしています。同じ悩みを抱えている店舗は驚くほど多い。</p>
-    </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <span class="scroll-hint-arrow"></span>
+
+    <p class="article-lead">
+      広告費は年々上昇し、セールのたびに利益が削られる——。多くの楽天出店者が抱えるこの「<strong>売上は立つが手元に残らない</strong>」問題には、共通する5つの構造的要因が存在する。本記事では、元楽天ECC(EC コンサルタント)出身のプロが、現場で見えてきた<strong>利益侵食のメカニズム</strong>と、自店舗で検証する方法を解説する。
+    </p>
+
+    <div class="article-byline">
+      <div class="article-byline-avatar" aria-hidden="true">伊</div>
+      <div class="article-byline-info">
+        <span class="article-byline-name">伊藤 鉄馬<span class="badge">著者</span></span>
+        <span class="article-byline-role">Notre株式会社 代表取締役 / 元楽天ECC・累計1,000店舗以上の支援実績</span>
+      </div>
     </div>
   </section>
 
   
-  <div class="cta-block">
-    <p class="cta-prelude">まずは1分、<br>現状を診断してみませんか？</p>
-    <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="after-fv" target="_blank"
-      rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path
-          d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386c-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.627.627-.627h2.386c.349 0 .63.281.63.63 0 .346-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.627-.631.627-.346 0-.626-.283-.626-.627V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.627.63-.627.345 0 .63.282.63.627v4.771zm-5.741 0c0 .344-.282.627-.631.627-.345 0-.627-.283-.627-.627V8.108c0-.345.282-.627.627-.627.349 0 .631.282.631.627v4.771zm-2.466.627H4.917c-.345 0-.63-.283-.63-.627V8.108c0-.345.285-.627.63-.627.348 0 .63.282.63.627v4.141h1.756c.348 0 .629.283.629.63 0 .349-.281.631-.629.631M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-      </svg>
-      LINEで無料診断を受ける（1分）
-    </a>
-    <p class="cta-sub">1分で終わる質問に答えるだけ。<br>5営業日以内にあなた専用のレポートをお届けします。</p>
-    <div class="cta-meta" aria-hidden="true">
-      <span>完全無料</span>
-      <span>約1分</span>
-      <span>売り込みなし</span>
-    </div>
-  </div>
-
-  
-  <section class="section pain-section">
+  <section class="section pain-section" id="pain-section">
     <div class="container">
       <span class="eyebrow fade-up">よく聞くお声</span>
       <p class="section-lead fade-up">こんな状態に<br>なっていませんか？</p>
@@ -2009,7 +2372,7 @@
           <div class="step">
             <span class="step-num">1</span>
             <div class="step-content">
-              <strong>LINEで簡単な質問に回答</strong>
+              <strong>フォームに簡単な質問に回答</strong>
               <span>約1分で完了します</span>
               <span class="step-meta">所要 1分</span>
             </div>
@@ -2039,13 +2402,12 @@
   <div class="cta-block">
     <div class="cta-framed" style="padding: var(--space-xl) var(--space-lg);">
       <p class="cta-prelude" style="position:relative;"><small>STEP 1 / 3</small>最初の1分、ここから。</p>
-      <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="after-solution" target="_blank"
-        rel="noopener" style="position:relative;">
+      <a href="#diagnosis-form" class="cta-line" data-location="after-solution" style="position:relative;">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path
-            d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386c-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.627.627-.627h2.386c.349 0 .63.281.63.63 0 .346-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.627-.631.627-.346 0-.626-.283-.626-.627V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.627.63-.627.345 0 .63.282.63.627v4.771zm-5.741 0c0 .344-.282.627-.631.627-.345 0-.627-.283-.627-.627V8.108c0-.345.282-.627.627-.627.349 0 .631.282.631.627v4.771zm-2.466.627H4.917c-.345 0-.63-.283-.63-.627V8.108c0-.345.285-.627.63-.627.348 0 .63.282.63.627v4.141h1.756c.348 0 .629.283.629.63 0 .349-.281.631-.629.631M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+            d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
         </svg>
-        LINEで無料診断を受ける（1分）
+        無料診断レポートを申し込む（1分）
       </a>
       <p class="cta-sub" style="position:relative;">売り込みは一切ありません。<br>レポートを見て、ご自身で判断してください</p>
     </div>
@@ -2327,7 +2689,7 @@
           <div class="faq-body">
             <div class="faq-a">
               <span class="faq-a-badge">A</span>
-              <span class="faq-a-text">フォーム回答後、5営業日以内にLINEでお届けします。さらに詳しい分析をご希望の方には、オンライン面談（30分・夜間土日OK）もご案内しています。</span>
+              <span class="faq-a-text">フォーム送信後、5営業日以内にご記入いただいたメールアドレス宛にお届けします。さらに詳しい分析をご希望の方には、オンライン面談（30分・夜間土日OK）もご案内しています。</span>
             </div>
           </div>
         </div>
@@ -2370,26 +2732,73 @@
   </section>
 
   
-  <div class="cta-final-wrap">
-    <p class="cta-prelude">
-      <small>次のステップ</small>
-      貴店の「楽天の戦い方」<br>まずは1分で確認してみませんか？
-    </p>
-    <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="final" target="_blank"
-      rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path
-          d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386c-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.627.627-.627h2.386c.349 0 .63.281.63.63 0 .346-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.627-.631.627-.346 0-.626-.283-.626-.627V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.627.63-.627.345 0 .63.282.63.627v4.771zm-5.741 0c0 .344-.282.627-.631.627-.345 0-.627-.283-.627-.627V8.108c0-.345.282-.627.627-.627.349 0 .631.282.631.627v4.771zm-2.466.627H4.917c-.345 0-.63-.283-.63-.627V8.108c0-.345.285-.627.63-.627.348 0 .63.282.63.627v4.141h1.756c.348 0 .629.283.629.63 0 .349-.281.631-.629.631M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-      </svg>
-      LINEで無料診断を受ける（1分）
-    </a>
-    <p class="cta-sub">1分で終わる質問に答えるだけ。<br>5営業日以内にあなた専用のレポートをお届けします。</p>
-    <div class="cta-meta" aria-hidden="true">
-      <span>完全無料</span>
-      <span>約1分</span>
-      <span>売り込みなし</span>
+  <section id="diagnosis-form" class="form-section">
+    <div class="form-card">
+      <span class="form-eyebrow">次のステップ</span>
+      <h2 class="form-title">貴店の「楽天の戦い方」<br>まずは1分で確認してみませんか？</h2>
+      <p class="form-lead">
+        以下のフォームにご記入のうえ送信してください。<br>
+        5営業日以内にあなた専用の利益改善レポートをメールでお届けします。<br>
+        完全無料 / 売り込みは一切ありません。
+      </p>
+      <form id="diagnosis-form-el" class="form-grid"
+            action="https://formsubmit.co/REPLACE_WITH_NOTRE_EMAIL"
+            method="POST" novalidate>
+        <input type="hidden" name="_subject" value="【無料診断申込】楽天EC利益診断 from rakuten-ec-article LP">
+        <input type="hidden" name="_next" value="https://www.notre.co.jp/lp/rakuten-ec-article/thanks/">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-field">
+          <label class="form-label" for="form-company">
+            会社名・店舗名 <span class="form-required">必須</span>
+          </label>
+          <input class="form-input" id="form-company" name="company" type="text"
+                 placeholder="株式会社○○" required maxlength="100" autocomplete="organization">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="form-name">
+            ご担当者名 <span class="form-required">必須</span>
+          </label>
+          <input class="form-input" id="form-name" name="name" type="text"
+                 placeholder="山田 太郎" required maxlength="60" autocomplete="name">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="form-email">
+            メールアドレス <span class="form-required">必須</span>
+          </label>
+          <input class="form-input" id="form-email" name="email" type="email"
+                 placeholder="example@example.com" required maxlength="120" autocomplete="email">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="form-phone">
+            電話番号 <span class="form-optional">任意</span>
+          </label>
+          <input class="form-input" id="form-phone" name="phone" type="tel"
+                 placeholder="03-0000-0000" maxlength="20" autocomplete="tel"
+                 pattern="^[0-9\-\+\(\)\s]*$">
+        </div>
+
+        <button type="submit" class="form-submit" id="form-submit-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+          無料診断レポートを申し込む
+        </button>
+
+        <div class="form-meta" aria-hidden="true">
+          <span>完全無料</span>
+          <span>約1分</span>
+          <span>売り込みなし</span>
+        </div>
+
+        <div id="form-error" class="form-error" role="alert" aria-live="polite"></div>
+      </form>
     </div>
-  </div>
+  </section>
 
   
   <footer class="footer">
@@ -2403,17 +2812,16 @@
   
   <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
     <div class="sticky-nudge">今すぐ1分で診断</div>
-    <a href="https://lin.ee/Yrt25J2" class="cta-line" data-location="sticky" target="_blank"
-      rel="noopener">
+    <a href="#diagnosis-form" class="cta-line" data-location="sticky">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path
-          d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .349-.281.63-.63.63h-2.386c-.345 0-.627-.281-.627-.63V8.108c0-.345.282-.627.627-.627h2.386c.349 0 .63.281.63.63 0 .346-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.627-.631.627-.346 0-.626-.283-.626-.627V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.627.63-.627.345 0 .63.282.63.627v4.771zm-5.741 0c0 .344-.282.627-.631.627-.345 0-.627-.283-.627-.627V8.108c0-.345.282-.627.627-.627.349 0 .631.282.631.627v4.771zm-2.466.627H4.917c-.345 0-.63-.283-.63-.627V8.108c0-.345.285-.627.63-.627.348 0 .63.282.63.627v4.141h1.756c.348 0 .629.283.629.63 0 .349-.281.631-.629.631M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+          d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
       </svg>
-      LINEで無料診断を受ける
+      無料診断レポートを申し込む
     </a>
   </div>
 
-  
+
   <script>
     // FAQ accordion
     function toggleFaq(item) {
@@ -2428,7 +2836,7 @@
     (function () {
       var stickyCta = document.getElementById('sticky-cta');
       var fv = document.querySelector('.fv');
-      var finalCta = document.querySelector('.cta-final-wrap');
+      var finalCta = document.querySelector('#diagnosis-form');
       var lastVisible = false;
 
       function update() {
@@ -2527,26 +2935,70 @@
       els.forEach(function (el) { observer.observe(el); });
     })();
 
-    // CTA click tracking (GTM + Facebook Pixel) — unchanged contract
+    // CTA click tracking (form CTA — anchor scroll to form section)
     document.querySelectorAll('.cta-line').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        // GTM
         if (typeof dataLayer !== 'undefined') {
           dataLayer.push({
-            event: 'line_cta_click',
+            event: 'form_cta_click',
             cta_location: this.dataset.location || 'unknown'
           });
         }
-        // Facebook Pixel
         if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead', {
-            content_name: 'LINE無料診断',
-            value: 0,
-            currency: 'JPY'
+          fbq('track', 'InitiateCheckout', {
+            content_name: '無料診断フォームへスクロール',
+            content_category: 'rakuten-ec-article'
           });
         }
       });
     });
+
+    // Form submit tracking + UX
+    (function () {
+      var formEl = document.getElementById('diagnosis-form-el');
+      var submitBtn = document.getElementById('form-submit-btn');
+      var errorEl = document.getElementById('form-error');
+      if (!formEl) return;
+
+      formEl.addEventListener('submit', function (e) {
+        // Honeypot check (anti-spam)
+        var honey = formEl.querySelector('input[name="_honey"]');
+        if (honey && honey.value) {
+          e.preventDefault();
+          return;
+        }
+
+        // HTML5 validity
+        if (!formEl.checkValidity()) {
+          e.preventDefault();
+          errorEl.textContent = '入力内容に不備があります。必須項目をご確認ください。';
+          errorEl.classList.add('visible');
+          var firstInvalid = formEl.querySelector(':invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        errorEl.classList.remove('visible');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = '送信中...';
+        }
+
+        // Track submit attempt (actual conversion fires on thanks page)
+        if (typeof dataLayer !== 'undefined') {
+          dataLayer.push({
+            event: 'form_submit_attempt',
+            form_name: 'rakuten_ec_article_diagnosis'
+          });
+        }
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: '無料診断フォーム送信',
+            content_category: 'rakuten-ec-article'
+          });
+        }
+      });
+    })();
   </script>
 </body>
 
