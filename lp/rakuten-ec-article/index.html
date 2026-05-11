@@ -2744,10 +2744,10 @@
       <form id="diagnosis-form-el" class="form-grid"
             action="https://ssgform.com/s/oo9y6ksMmQMJ"
             method="POST" novalidate>
-        <input type="hidden" name="_subject" value="【無料診断申込】楽天EC利益診断 from rakuten-ec-article LP">
-        <input type="hidden" name="_next" value="https://www.notre.co.jp/lp/rakuten-ec-article/thanks/">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- SSGForm: 件名・thanksリダイレクトはダッシュボードで設定。下記hiddenは送信元LPの識別用。 -->
+        <input type="hidden" name="送信元LP" value="rakuten-ec-article (記事LP)">
+        <!-- honeypot (spam対策) -->
+        <input type="text" name="hp_field" style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-field">
           <label class="form-label" for="form-company">
