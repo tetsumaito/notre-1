@@ -1,0 +1,11 @@
+# Cloudflare Pages ヘッダー設定
+# (旧 vercel.json の "headers" セクションから移植)
+# 参考: https://developers.cloudflare.com/pages/configuration/headers/
+
+# LP 配下の画像は1年の immutable キャッシュ
+/lp/*/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# LP の index.html は毎回再検証(コンテンツ差し替え即時反映)
+/lp/*/index.html
+  Cache-Control: public, max-age=0, must-revalidate
