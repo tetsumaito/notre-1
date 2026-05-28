@@ -1106,3 +1106,20 @@ body { background: #fff; transition: background 0.5s cubic-bezier(0.4, 0.4, 0, 1
 .form-container-7 .form-container-9 {
   justify-content: flex-start;
 }
+
+/* ------------------------------------------------------------
+ * Fix: 固定ヘッダーが後続セクション(news等)に下に隠れる問題の修正
+ *
+ * 原因: .sd クラスが `position:relative; z-index:0` でスタッキング
+ *       コンテキストを作るため、ヘッダーを内包する .sd と後続の .sd が
+ *       同階層になり、DOM順で後の .sd(news等)が上に描画される。
+ *
+ * 対応(最小変更): ヘッダーを内包する親 .sd だけ z-index を引き上げ。
+ *                JS / DOM 構造 / モーダル系には一切影響しない。
+ *
+ * 追記日: 2026-05-28
+ * ------------------------------------------------------------ */
+.sd:has(> header.component-676d) {
+  z-index: 100 !important;
+}
+
