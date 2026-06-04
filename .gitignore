@@ -1,7 +1,7 @@
-# Astro (ブログ生成ツール) のローカル成果物・依存は追跡しない
-_blog-astro/node_modules/
-_blog-astro/dist/
-_blog-astro/.astro/
+# Astro (ブログ生成ツール) のソース一式はデプロイリポジトリに含めない
+# Cloudflare Pages はリポジトリをそのまま配信するため、ソースが公開されてしまう。
+# ソースはローカル/Driveで管理し、ビルド済みの /blog だけをコミットする。
+_blog-astro/
 
 # その他
 node_modules/
