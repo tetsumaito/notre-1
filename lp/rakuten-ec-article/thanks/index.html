@@ -32,12 +32,47 @@
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1250132826712883');
     fbq('track', 'PageView');
-    fbq('track', 'Lead', {
-      content_name: '無料診断申込',
-      content_category: 'rakuten-ec-article',
-      value: 0,
-      currency: 'JPY'
-    });
+    // サンクス到達＝フォーム送信成功（ssgform のリダイレクト先）。
+    // LPで保存したリード情報があれば eventID 付き Lead + サーバー側CAPI を送り重複排除する。
+    (function () {
+      var lead = null;
+      try { lead = JSON.parse(localStorage.getItem('notre_capi_lead') || 'null'); } catch (e) {}
+      if (lead && lead.eventId) {
+        fbq('track', 'Lead', {
+          content_name: '無料診断申込',
+          content_category: 'rakuten-ec-article',
+          value: lead.value || 5000,
+          currency: lead.currency || 'JPY'
+        }, { eventID: lead.eventId });
+        try {
+          fetch('/api/capi-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+            body: JSON.stringify({
+              eventId: lead.eventId,
+              email: lead.email,
+              phone: lead.phone,
+              name: lead.name,
+              fbc: lead.fbc,
+              fbp: lead.fbp,
+              eventSourceUrl: lead.eventSourceUrl || location.href,
+              value: lead.value || 5000,
+              currency: lead.currency || 'JPY'
+            })
+          }).catch(function () {});
+        } catch (e) {}
+        try { localStorage.removeItem('notre_capi_lead'); } catch (e) {}
+      } else {
+        // 保存データが無い場合（localStorage不可/直接訪問）でも、到達＝CV として Lead は送る
+        fbq('track', 'Lead', {
+          content_name: '無料診断申込',
+          content_category: 'rakuten-ec-article',
+          value: 0,
+          currency: 'JPY'
+        });
+      }
+    })();
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1" /></noscript>
