@@ -1,0 +1,195 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+export async function getStaticPaths() {
+  // externalUrl（既存静的HTML）とdraftはページ生成しない
+  const posts = await getCollection('blog', (p) => !p.data.draft && !p.data.externalUrl);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const d = post.data;
+
+const iso = (date) => date.toISOString().slice(0, 10);
+const url = `https://notre.co.jp/blog/${post.id}.html`;
+const ogImageAbs = d.ogImage.startsWith('http') ? d.ogImage : `https://notre.co.jp${d.ogImage}`;
+const pageTitle = `${d.metaTitle ?? d.title}｜Notre株式会社`;
+
+// 目次: 著者情報 + 本文のh2 + (FAQ) + (チェックリスト)
+const toc = [
+  { label: '著者情報', anchor: 'author' },
+  ...headings.filter((h) => h.depth === 2).map((h) => ({ label: h.text, anchor: h.slug })),
+  ...(d.faq.length ? [{ label: 'よくある質問', anchor: 'faq' }] : []),
+  ...(d.checklist.length ? [{ label: 'まとめ・チェックリスト', anchor: 'checklist' }] : []),
+];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: d.title,
+      description: d.description,
+      datePublished: iso(d.publishDate),
+      ...(d.updateDate ? { dateModified: iso(d.updateDate) } : {}),
+      mainEntityOfPage: url,
+      image: ogImageAbs,
+      author: {
+        '@type': 'Person',
+        name: '伊藤 鉄馬',
+        jobTitle: 'Notre株式会社 代表取締役',
+        worksFor: { '@type': 'Organization', name: 'Notre株式会社', url: 'https://notre.co.jp/' },
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Notre株式会社',
+        logo: { '@type': 'ImageObject', url: 'https://notre.co.jp/assets/img/notre_logo.webp' },
+      },
+      ...(d.about.length ? { about: d.about } : {}),
+      ...(d.faq.length
+        ? {
+            mainEntity: d.faq.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }
+        : {}),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'トップ', item: 'https://notre.co.jp/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://notre.co.jp/blog/' },
+        { '@type': 'ListItem', position: 3, name: d.title, item: url },
+      ],
+    },
+  ],
+};
+---
+
+<BlogLayout
+  title={pageTitle}
+  description={d.description}
+  canonical={url}
+  ogType="article"
+  ogImage={ogImageAbs}
+  bodyClass="blog-page"
+  jsonld={jsonld}
+>
+  <main class="blog-article">
+    <nav class="site-breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li aria-current="page">{d.title}</li>
+      </ol>
+    </nav>
+
+    <div class="blog-article-layout">
+      <article>
+        <header class="blog-article-header">
+          <span class="blog-pill">{d.category}</span>
+          <h1>{d.title}</h1>
+          <div class="blog-card-meta blog-article-meta">
+            <time datetime={iso(d.publishDate)}>{d.displayDate}</time><span>{d.readingTime}</span>
+          </div>
+          {d.lead && <p class="blog-article-description">{d.lead}</p>}
+          {
+            d.thumbnail && (
+              <figure class="blog-article-thumb">
+                <img src={d.thumbnail} alt={d.thumbnailAlt} loading="eager" width="584" height="329" />
+              </figure>
+            )
+          }
+        </header>
+
+        <div class="blog-answer-box">
+          <strong>SUMMARY</strong>
+          <p>{d.summary}</p>
+        </div>
+
+        <nav class="blog-mobile-toc" aria-label="記事の目次">
+          <p>Contents</p>
+          {toc.map((t) => <a href={`#${t.anchor}`}>{t.label}</a>)}
+        </nav>
+
+        <div class="blog-article-body">
+          <section id="author" class="blog-author-box" aria-label="著者情報">
+            <p class="blog-author-label">著者情報</p>
+            <h2>執筆・監修：伊藤 鉄馬<br class="blog-author-sp-break" />（Notre株式会社 代表取締役）</h2>
+            <p>
+              Notre株式会社代表。元楽天ECコンサルタント（ECC）として100社以上の店舗を直接担当した経験を持つ。LINEマーケティング・Lステップ設計・自社データ学習型AIチャットボット活用を軸に、業界横断で企業のCRM・顧客接点設計を支援しています。
+            </p>
+          </section>
+
+          <Content />
+
+          {
+            d.faq.length > 0 && (
+              <>
+                <h2 id="faq">よくある質問</h2>
+                {d.faq.map((f) => (
+                  <>
+                    <h3>{f.q}</h3>
+                    <p>{f.a}</p>
+                  </>
+                ))}
+              </>
+            )
+          }
+
+          {
+            d.checklist.length > 0 && (
+              <>
+                <h2 id="checklist">{d.checklistTitle ?? 'まとめ：チェックリスト'}</h2>
+                <ul class="blog-checklist">
+                  {d.checklist.map((c) => (
+                    <li>{c}</li>
+                  ))}
+                </ul>
+                {d.checklistNote && <p>{d.checklistNote}</p>}
+              </>
+            )
+          }
+
+          {
+            d.references.length > 0 && (
+              <>
+                <h2 id="references">参考情報</h2>
+                <ul class="blog-reference-list">
+                  {d.references.map((r) => (
+                    <li>{r}</li>
+                  ))}
+                </ul>
+              </>
+            )
+          }
+
+          {d.note && <p class="blog-article-note">{d.note}</p>}
+        </div>
+
+        <div class="blog-cta">
+          <div>
+            <h2>{d.ctaTitle ?? '今の課題を整理しませんか。'}</h2>
+            <p>{d.ctaText ?? '現状を確認し、改善の優先順位を一緒に整理します。'}</p>
+          </div>
+          <a href="/contact/" class="blog-button">無料で相談する</a>
+        </div>
+
+        <div class="blog-related">
+          <a href="/blog/" class="blog-button">ブログ一覧に戻る</a>
+        </div>
+      </article>
+
+      <aside class="blog-article-aside" aria-label="記事の目次">
+        <nav class="blog-toc">
+          <p>Contents</p>
+          {toc.map((t) => <a href={`#${t.anchor}`}>{t.label}</a>)}
+        </nav>
+      </aside>
+    </div>
+  </main>
+</BlogLayout>

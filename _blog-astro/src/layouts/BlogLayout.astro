@@ -1,0 +1,59 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  bodyClass?: string;
+  jsonld?: unknown;
+}
+const {
+  title,
+  description,
+  canonical,
+  ogType = 'website',
+  ogTitle,
+  ogDescription,
+  ogImage = 'https://notre.co.jp/assets/img/works/works_notre.webp',
+  bodyClass = 'blog-page',
+  jsonld,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogType={ogType}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+      ogImage={ogImage}
+    />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body class={bodyClass}>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- 共通ヘッダー/フッター/モーダルは既存 main.js が /assets/includes/ から実行時に挿入する -->
+    <div id="modals-placeholder"></div>
+    <div id="header-placeholder"></div>
+
+    <slot />
+
+    <div id="footer-placeholder"></div>
+    <script is:inline src="/assets/js/main.js"></script>
+  </body>
+</html>
