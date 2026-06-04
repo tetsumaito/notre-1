@@ -2985,12 +2985,34 @@
             form_name: 'rakuten_ec_article_diagnosis'
           });
         }
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead', {
-            content_name: '無料診断フォーム送信',
-            content_category: 'rakuten-ec-article'
-          });
-        }
+
+        // CAPI/Pixel 用にリード情報を保存。実際の Lead はサンクスページで
+        // eventID 付きで発火し、サーバー側(CAPI)と重複排除する（ここでは発火しない）。
+        try {
+          var eventId = (window.crypto && crypto.randomUUID)
+            ? crypto.randomUUID()
+            : (Date.now() + '-' + Math.random().toString(16).slice(2));
+          var getCookie = function (n) {
+            var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)');
+            return m ? m.pop() : '';
+          };
+          var fv = function (name) {
+            var el = formEl.querySelector('[name="' + name + '"]');
+            return el ? el.value : '';
+          };
+          localStorage.setItem('notre_capi_lead', JSON.stringify({
+            eventId: eventId,
+            email: fv('email'),
+            phone: fv('phone'),
+            name: fv('name'),
+            fbc: getCookie('_fbc'),
+            fbp: getCookie('_fbp'),
+            eventSourceUrl: location.href,
+            value: 5000,
+            currency: 'JPY',
+            ts: Date.now()
+          }));
+        } catch (err) { /* localStorage 不可でも送信は継続 */ }
       });
     })();
   </script>
