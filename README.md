@@ -4,16 +4,16 @@
 
 ---
 
-##  運用フロー（Git / Vercel）
-Vercelの自動デプロイ機能を利用しています。
+##  運用フロー（Git / Cloudflare Pages）
+Cloudflare Pages の自動デプロイ機能を利用しています（旧Vercelから2026-06-04に移行済み）。
 
 * **本番環境（mainブランチ）**
   * URL: [https://www.notre.co.jp/](https://www.notre.co.jp/)
   * `main` にマージ（統合）された内容が本番公開されます。
 
 * **プレビュー環境（作業ブランチ）**
-  * Pull Request ごとに発行される Vercel のプレビューURLで確認します。
-  * 日々の修正や新機能は、`main` から作成した作業ブランチで行います。
+  * 作業ブランチ／Pull Request ごとに Cloudflare Pages が自動発行するプレビューURL（`*.pages.dev`）で確認します。
+  * 日々の修正や新機能は、`main` から作成した作業ブランチで行います（develop ブランチは廃止）。
 
 ---
 
@@ -32,7 +32,7 @@ Vercelの自動デプロイ機能を利用しています。
    作業が終わったらGitHubへPushし、`main` に向けて Pull Request を作成します。
 
 5. **確認とマージ**
-   VercelのプレビューURLで動作確認し、問題なければ `main` へマージします。
+   Cloudflare Pages のプレビューURLで動作確認し、問題なければ `main` へマージします。
 
 ---
 
