@@ -9,3 +9,6 @@ node_modules/
 
 # Claude Code ローカル設定（コミットしない）
 .claude/
+
+# Cloudflare Pages ビルド出力
+dist/
