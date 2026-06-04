@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+const postUrl = (p) => p.data.externalUrl ?? `/blog/${p.id}.html`;
+const iso = (date) => date.toISOString().slice(0, 10);
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Notre Blog',
+  url: 'https://notre.co.jp/blog/',
+  description:
+    'LINE公式アカウント運用、Lステップ、AIチャットボット、顧客導線設計に関する実践知を発信するNotre株式会社のブログです。',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Notre株式会社',
+    url: 'https://notre.co.jp/',
+    logo: { '@type': 'ImageObject', url: 'https://notre.co.jp/assets/img/notre_logo.webp' },
+  },
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.data.title,
+    url: `https://notre.co.jp${postUrl(p)}`,
+    datePublished: iso(p.data.publishDate),
+    ...(p.data.updateDate ? { dateModified: iso(p.data.updateDate) } : {}),
+  })),
+};
+---
+
+<BlogLayout
+  title="Blog｜LINE・AIマーケティングの実践知｜Notre株式会社"
+  description="Notre株式会社のブログ。LINE公式アカウント運用、Lステップ、AIチャットボット、顧客導線設計など、売上と業務効率を高めるマーケティング実践知を発信します。"
+  canonical="https://notre.co.jp/blog/"
+  ogType="website"
+  ogImage="https://notre.co.jp/assets/img/works/works_notre.webp"
+  bodyClass="blog-page"
+  jsonld={jsonld}
+>
+  <main class="blog-main">
+    <section class="blog-hero">
+      <div class="blog-hero-inner">
+        <h1 class="blog-title">Notre Blog</h1>
+        <p class="blog-lead">
+          LINE、Lステップ、AIチャットボット、顧客導線設計。Notreが現場で向き合っているテーマを発信します。
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-section" aria-labelledby="latest-posts">
+      <div class="blog-section-head blog-section-head-split">
+        <div class="blog-section-copy-wrap">
+          <h2 id="latest-posts" class="blog-section-title">最新記事</h2>
+          <p class="blog-section-copy">
+            LINE運用・Lステップ・AIチャットボットなど、Notreが支援現場で得た改善の考え方をまとめています。
+          </p>
+        </div>
+        <p class="blog-eyebrow">Latest articles</p>
+      </div>
+
+      <div class="blog-grid">
+        {
+          posts.map((p) => (
+            <a href={postUrl(p)} class="blog-card">
+              <div class="blog-card-thumb">
+                <img
+                  src={p.data.thumbnail}
+                  alt={p.data.thumbnailAlt}
+                  loading="lazy"
+                  width="584"
+                  height="329"
+                />
+              </div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">{p.data.category}</span>
+                <time datetime={iso(p.data.publishDate)}>{p.data.cardDate ?? p.data.displayDate}</time>
+                <span>{p.data.readingTime}</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>{p.data.title}</h3>
+                <p>{p.data.excerpt}</p>
+              </div>
+              <span class="blog-card-link">記事の詳細を見る</span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="blog-section" aria-labelledby="blog-topics">
+      <div class="blog-section-head">
+        <p class="blog-eyebrow">Topics</p>
+        <h2 id="blog-topics" class="blog-section-title">Notreが発信するテーマ</h2>
+        <p class="blog-section-copy">
+          単なるツール紹介ではなく、「顧客が本当に価値あるものに最短でたどり着けること」を基準に、実装・運用・改善まで扱います。
+        </p>
+      </div>
+      <div class="blog-topic-list">
+        <div class="blog-topic">
+          <strong>LINE運用代行</strong><span>公式アカウントの導線設計、配信改善、CRM活用。</span>
+        </div>
+        <div class="blog-topic">
+          <strong>Lステップ</strong><span>シナリオ、タグ、セグメント、計測の設計。</span>
+        </div>
+        <div class="blog-topic">
+          <strong>AIチャットボット</strong><span>問い合わせ対応、FAQ整備、社内データ活用。</span>
+        </div>
+        <div class="blog-topic">
+          <strong>顧客体験設計</strong><span>Web、SNS、LINEをつなぐ購入前後のコミュニケーション。</span>
+        </div>
+      </div>
+
+      <div class="blog-cta">
+        <div>
+          <h2>LINEやAI活用について、今の課題を整理しませんか。</h2>
+          <p>現状のアカウントや導線を確認し、改善の優先順位を一緒に整理します。</p>
+        </div>
+        <a href="/contact/" class="blog-button">無料で相談する</a>
+      </div>
+    </section>
+  </main>
+</BlogLayout>

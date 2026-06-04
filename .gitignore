@@ -1,0 +1,11 @@
+# Astro (ブログ生成ツール) のローカル成果物・依存は追跡しない
+_blog-astro/node_modules/
+_blog-astro/dist/
+_blog-astro/.astro/
+
+# その他
+node_modules/
+.DS_Store
+
+# Claude Code ローカル設定（コミットしない）
+.claude/
