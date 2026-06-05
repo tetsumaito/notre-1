@@ -63,7 +63,9 @@
               fbp: lead.fbp,
               eventSourceUrl: lead.eventSourceUrl || location.href,
               value: lead.value || 5000,
-              currency: lead.currency || 'JPY'
+              currency: lead.currency || 'JPY',
+              contentName: '無料相談会申込',
+              contentCategory: 'rakuten-ec-article-v2'
             })
           }).catch(function () {});
         } catch (e) {}
