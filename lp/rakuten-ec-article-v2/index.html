@@ -44,17 +44,10 @@
     fbq('init', '1250132826712883');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
+  <noscript><img height="1" width="1" style="display:none" alt=""
       src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1" /></noscript>
 
   <style>
-    /* Hallmark · macrostructure: Long Document · genre: editorial (restrained)
-     * theme: custom (vibe: "news article, gothic sans, warm-neutral, crimson accent")
-     * paper-band: light · display-style: system-native-gothic · accent-hue: warm (22)
-     * tone: austere-explanatory · nav: N6 (newspaper masthead, simplified) · footer: Ft2 (inline single line)
-     * contrast: pass · mobile: pass (overflow-x clip, minmax(0,1fr), table-collapse) · honest: pass
-     */
-    /* Hallmark · pre-emit critique: P5 H4 E5 S5 R5 V4 */
 
     /* ============ TOKENS ============ */
     :root {
@@ -100,21 +93,17 @@
 
       --ls-display: -0.01em;
       --ls-label: 0.1em;
-      --ls-nameplate: 0.1em;
 
       /* Spacing (4pt) */
-      --s-2xs: 4px;
       --s-xs: 8px;
       --s-sm: 12px;
       --s-md: 16px;
       --s-lg: 24px;
       --s-xl: 40px;
       --s-2xl: 64px;
-      --s-3xl: 88px;
 
       /* Geometry */
       --max-prose: 680px;
-      --max-wide: 880px;
       --pad-inline: clamp(1.125rem, 5vw, 2rem);
 
       --radius: 5px;
@@ -174,7 +163,6 @@
       margin-inline: auto;
       padding-inline: var(--pad-inline);
     }
-    .container.wide { max-width: var(--max-wide); }
 
     .section { padding-block: var(--s-2xl); }
     .section.tight { padding-block: var(--s-xl); }
@@ -207,17 +195,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .masthead-tag {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: var(--ls-label);
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: var(--radius-tag);
-      padding: 2px 7px;
-      line-height: 1.4;
-      flex-shrink: 0;
     }
     .masthead-link {
       margin-left: auto;
@@ -303,21 +280,6 @@
 
     /* ============ FIGURE (hero / inline image placeholders) ============ */
     figure { margin-block: var(--s-lg); }
-    .figph {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: var(--paper-2);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--ink-3);
-      text-align: center;
-      padding: var(--s-md);
-    }
     .hero-img {
       width: 100%;
       height: auto;
@@ -325,9 +287,6 @@
       border: 1px solid var(--rule);
       border-radius: var(--radius);
     }
-    .figph svg { width: 34px; height: 34px; opacity: 0.5; }
-    .figph .l { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.04em; }
-    .figph .d { font-size: var(--text-xs); max-width: 34ch; line-height: 1.7; }
     figcaption {
       margin-top: var(--s-xs);
       font-size: var(--text-sm);
@@ -448,34 +407,6 @@
     .structure p { color: var(--ink); }
     .structure + .structure { margin-top: var(--s-lg); padding-top: var(--s-lg); border-top: 1px solid var(--rule); }
 
-    /* ============ CTA INSERT ============ */
-    .cta-insert {
-      background: var(--paper-2);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      padding: var(--s-lg);
-      text-align: center;
-    }
-    .cta-insert h2 {
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--ink);
-      line-height: var(--lh-snug);
-      margin-bottom: var(--s-xs);
-    }
-    .cta-insert p {
-      font-size: var(--text-sm);
-      color: var(--ink-2);
-      line-height: var(--lh-snug);
-      margin-bottom: var(--s-md);
-    }
-    .cta-note {
-      margin-top: var(--s-sm);
-      font-size: var(--text-xs);
-      color: var(--ink-3);
-      line-height: var(--lh-snug);
-    }
-
     /* ============ CTA CARD (featured) ============ */
     .cta-card {
       position: relative;
@@ -572,6 +503,8 @@
       color: var(--ink-3);
       letter-spacing: 0.02em;
     }
+    .cta-card.is-spaced { margin-top: var(--s-xl); }
+    .fact-num .suffix { font-size: 0.5em; }
 
     /* ============ BUTTON ============ */
     .btn {
@@ -835,7 +768,9 @@
       transition: border-color var(--dur-fast) var(--ease);
     }
     .field input::placeholder { color: var(--ink-3); }
-    .field input:focus { outline: none; border-color: var(--accent); }
+    .field input:focus { border-color: var(--accent); }
+    .field input:focus:not(:focus-visible) { outline: none; }
+    .field input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
     .form .btn { margin-top: var(--s-xs); }
     .form-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: var(--text-xs); color: var(--ink-2); }
     .form-error {
@@ -924,7 +859,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Hallmark · section: masthead · macrostructure: Long Document · genre: editorial -->
   <header class="masthead">
     <div class="masthead-inner">
       <span class="nameplate">Notre Journal</span>
@@ -933,7 +867,6 @@
   </header>
 
   <main>
-    <!-- Hallmark · section: article-header · macrostructure: Long Document · genre: editorial -->
     <header class="article-header container">
       <p class="kicker"><span class="cat">特集</span>楽天市場運営・利益改善</p>
       <h1 class="article-title">楽天で「売上は伸びたのに、利益が残らない」現象。店舗が見落としている6つの構造</h1>
@@ -953,7 +886,6 @@
       </div>
     </header>
 
-    <!-- Hallmark · section: hero-image · macrostructure: Long Document · genre: editorial -->
     <div class="container">
       <figure>
         <picture>
@@ -964,13 +896,11 @@
       </figure>
     </div>
 
-    <!-- Hallmark · section: lead · macrostructure: Long Document · genre: editorial -->
     <section class="container lead prose section tight">
       <p>スーパーSALEが終わった。クーポンを切って、RPPも回した。RMSの店舗カルテで売上は、確かに伸びている。——なのに、入金額を見て、ため息が出る。「利益は前と変わってないな」と。</p>
       <p>競合のシェアは増え、広告費は年々上がり、セールのたびに利益が削られていく。運用代行も何社か試したが、多くはRPP広告を消化するだけで中長期の成果が出ない。もしこの感覚に覚えがあるなら、あと7分だけ読んでほしい。利益が残らないのには、共通する<strong>6つの構造的な理由</strong>がある。先に言っておくと、それは<strong>あなたの運用がヘタだからではない</strong>。</p>
     </section>
 
-    <!-- Hallmark · section: summary-bullets · macrostructure: Long Document · genre: editorial -->
     <section class="container section tight">
       <div class="summary">
         <h2>この記事のポイント</h2>
@@ -982,7 +912,6 @@
       </div>
     </section>
 
-    <!-- Hallmark · section: checklist · macrostructure: Long Document · genre: editorial -->
     <section class="container checklist section tight">
       <h2 class="h2">こんな状態の人だけ、読んでください</h2>
       <div class="checklist-box">
@@ -995,7 +924,6 @@
       <p class="checklist-note">いくつ当てはまりましたか？ 一つも当てはまらない方は、ここでページを閉じていただいて構いません。</p>
     </section>
 
-    <!-- Hallmark · section: reframe + data · macrostructure: Long Document · genre: editorial -->
     <section class="container prose section">
       <h2 class="h2">なぜ、売上があっても利益が残らないのか</h2>
       <p>ここまで読んで、心当たりがあった方へ。おそらくあなたは、これまで真面目にやってきた。広告も学んだ、ページも直した、業者にも頼んだ。それでも結果が出ず、「自分のやり方が悪いのか」と、どこかで自分を責めてきたのではないでしょうか。</p>
@@ -1004,7 +932,6 @@
       <p>「ECなんて、楽天もAmazonも自社ECも、やることは同じでしょう」——よく言われます。でも実際には、同じ店舗でも<strong>Amazonでは60%のシェアを取れているのに、楽天では10番手から抜け出せない</strong>、そんな例を何度も見てきました。本人の能力の問題ではありません。楽天には、Amazonとも自社ECとも違う独自ルールが、少なくとも6つの領域に存在するからです。そのルールが見えないまま戦うと、広告費だけが増え、利益が削られていきます。</p>
     </section>
 
-    <!-- Hallmark · section: cta-insert-1 · macrostructure: Long Document · genre: editorial -->
     <section class="container section tight">
       <div class="cta-card">
         <span class="cta-card-deco" aria-hidden="true">
@@ -1026,7 +953,6 @@
       </div>
     </section>
 
-    <!-- Hallmark · section: six-structures · macrostructure: Long Document · genre: editorial -->
     <section class="container prose section">
       <h2 class="h2">楽天で利益を残すための、6つの構造</h2>
 
@@ -1056,7 +982,6 @@
       </div>
     </section>
 
-    <!-- Hallmark · section: agency-fail + flow · macrostructure: Long Document · genre: editorial -->
     <section class="container prose section">
       <h2 class="h2">なぜ、“業者”に頼んでもダメだったのか</h2>
       <p>この6つのルールは、無数の改善を繰り返さない限り蓄積されません。「どのジャンルで、どの時期に、どの施策を、どの順番で打つか」——これはネット記事やセミナーでは手に入らない、現場の知見です。</p>
@@ -1068,7 +993,7 @@
         <li><strong>オンライン無料相談会（30分・夜間/土日OK）</strong><span>現状をヒアリングし、その場で「どこから利益が漏れているか」の見立てを共有します。</span></li>
         <li><strong>ご要望に応じて個別レポート（無料）</strong><span>広告・SEO・商品設計まで踏み込んだ精密診断も可能です。</span></li>
       </ol>
-      <div class="cta-card" style="margin-top:var(--s-xl);">
+      <div class="cta-card is-spaced">
         <span class="cta-card-deco" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-6"/><path d="M3 4v16h16"/><circle cx="17.5" cy="7.5" r="3.2"/><path d="M19.8 9.8L22 12"/></svg>
         </span>
@@ -1088,7 +1013,6 @@
       </div>
     </section>
 
-    <!-- Hallmark · section: case-studies · macrostructure: Long Document · genre: editorial -->
     <section class="container section">
       <h2 class="h2">実際の支援事例</h2>
       <div class="cases-grid">
@@ -1150,7 +1074,6 @@
       <p class="cases-disclaimer">※ 実際のNotre支援事例に基づく構成です。成果を保証するものではありません。</p>
     </section>
 
-    <!-- Hallmark · section: pricing · macrostructure: Long Document · genre: editorial -->
     <section class="container prose section">
       <h2 class="h2">費用・サポートプラン</h2>
       <p>モニタープランの報酬は、<strong>固定5万円＋成果報酬10%</strong>（前年同月比の売上増分）です。短期的には広告をかければ売上は上がりますが、利益が残らなければ、あなたは次月に契約を切るはずです。だから私たちは、増えた分の10%しかいただきません。売上が増えなければ報酬も入らない——こちらも同じリスクを取る、ということです。</p>
@@ -1165,14 +1088,13 @@
         </tbody>
       </table>
       <div class="facts">
-        <div class="fact"><div class="fact-num">1,100<span style="font-size:.5em;">店舗+</span></div><div class="fact-lbl">支援実績</div></div>
-        <div class="fact"><div class="fact-num">0<span style="font-size:.5em;">円</span></div><div class="fact-lbl">相談会・レポート</div></div>
-        <div class="fact"><div class="fact-num">0<span style="font-size:.5em;">回</span></div><div class="fact-lbl">売り込み</div></div>
+        <div class="fact"><div class="fact-num">1,100<span class="suffix">店舗+</span></div><div class="fact-lbl">支援実績</div></div>
+        <div class="fact"><div class="fact-num">0<span class="suffix">円</span></div><div class="fact-lbl">相談会・レポート</div></div>
+        <div class="fact"><div class="fact-num">0<span class="suffix">回</span></div><div class="fact-lbl">売り込み</div></div>
       </div>
       <p class="price-foot">「モニター」と名乗るのは、支援結果を事例として共有いただくことで、楽天出店者全体のナレッジ蓄積にNotre自身が寄与していきたいからです。</p>
     </section>
 
-    <!-- Hallmark · section: trust · macrostructure: Long Document · genre: editorial -->
     <section class="container prose section tight">
       <h2 class="h2">支援体制について</h2>
       <ul class="trust-list">
@@ -1182,7 +1104,6 @@
       </ul>
     </section>
 
-    <!-- Hallmark · section: faq · macrostructure: Long Document · genre: editorial -->
     <section class="container section">
       <h2 class="h2">よくある質問</h2>
       <div class="faq">
@@ -1209,7 +1130,6 @@
       </div>
     </section>
 
-    <!-- Hallmark · section: form · macrostructure: Long Document · genre: editorial -->
     <section id="apply" class="apply section">
       <div class="container">
         <h2 class="h2">楽天の利益改善、まずは無料相談会で。</h2>
@@ -1239,7 +1159,7 @@
           </div>
           <div class="field">
             <label for="f-phone">電話番号 <span class="req">必須</span></label>
-            <input id="f-phone" name="phone" type="tel" placeholder="03-0000-0000" required maxlength="20" autocomplete="tel" pattern="^[0-9\-\+\(\)\s]*$">
+            <input id="f-phone" name="phone" type="tel" placeholder="03-0000-0000" required maxlength="20" autocomplete="tel" pattern="(?=.*[0-9])[0-9\-\+\(\)\s]+" title="数字を含む電話番号を入力してください">
           </div>
 
           <button type="submit" class="btn block" id="apply-submit">
@@ -1255,7 +1175,6 @@
     </section>
   </main>
 
-  <!-- Hallmark · section: footer · macrostructure: Long Document · genre: editorial -->
   <footer class="footer">
     <p><b>Notre株式会社</b> ｜ 楽天市場 運営支援</p>
     <p><a href="https://www.notre.co.jp/privacy_policy.html" target="_blank" rel="noopener">プライバシーポリシー</a></p>
@@ -1263,7 +1182,7 @@
   </footer>
 
   <!-- Sticky bottom CTA -->
-  <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
+  <div id="sticky-cta" class="sticky-cta" aria-hidden="true" inert>
     <button class="sticky-cta-close" id="sticky-close" aria-label="閉じる" type="button">×</button>
     <span class="sticky-cta-txt"><b>無料・売り込みなし</b>まずは1分で相談会を予約</span>
     <a href="#apply" class="btn" data-loc="sticky">相談会に申し込む</a>
@@ -1290,6 +1209,7 @@
           last = vis;
           el.classList.toggle('show', vis);
           el.setAttribute('aria-hidden', vis ? 'false' : 'true');
+          el.inert = !vis;
         }
       }
       if (closeBtn) closeBtn.addEventListener('click', function () {
@@ -1328,11 +1248,11 @@
         err.classList.remove('show');
         if (btn) { btn.disabled = true; btn.textContent = '送信中...'; }
         if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'form_submit_attempt', form_name: 'rakuten_ec_article_v2_consult' });
-        // localStorage は origin 共有。実Lead+CAPIは /lp/rakuten-ec-article/thanks/ で重複排除発火。
+        // localStorage は origin 共有。実Lead+CAPIは /lp/rakuten-ec-article-v2/thanks/ で重複排除発火（SSGFormのリダイレクト先をv2 thanksに設定すること）。
         try {
           var eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
           var getCookie = function (n) { var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)'); return m ? m.pop() : ''; };
-          var fv = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
+          var fv = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
           localStorage.setItem('notre_capi_lead', JSON.stringify({
             eventId: eventId, email: fv('email'), phone: fv('phone'), name: fv('name'),
             fbc: getCookie('_fbc'), fbp: getCookie('_fbp'),
