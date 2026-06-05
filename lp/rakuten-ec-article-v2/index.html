@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>楽天で「売上は伸びたのに利益が残らない」現象。店舗が見落とす6つの構造｜EC GROWTH JOURNAL</title>
+  <meta name="description"
+    content="売上は伸びているのに利益が残らない——楽天市場の店舗が見落としている6つの構造的な理由を、元楽天ECC出身者が解説。運用代行を何社替えても変わらなかった本当の理由とは。" />
+  <link rel="canonical" href="https://notre.co.jp/lp/rakuten-ec-article-v2/" />
+  <link rel="icon" href="images/Notre_favicon.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="images/Notre_favicon.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://notre.co.jp/lp/rakuten-ec-article-v2/" />
+  <meta property="og:title" content="楽天で「売上は伸びたのに利益が残らない」現象。店舗が見落とす6つの構造" />
+  <meta property="og:description" content="運用代行を何社替えても変わらなかった理由を、元楽天ECC出身者が解説。" />
+  <meta property="og:image" content="https://notre.co.jp/lp/rakuten-ec-article-v2/images/ogp.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <!-- ===== Google Tag Manager ===== -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5NCSF7DH');</script>
+
+  <!-- ===== Meta Pixel (楽天EC_LP_Pixel) ===== -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1250132826712883');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+      src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1" /></noscript>
+
+  <style>
+
+    /* ============ TOKENS ============ */
+    :root {
+      /* Paper & surfaces (warm neutral) */
+      --paper:    #ffffff;
+      --paper-2:  #f1edeb;
+      --paper-3:  #e8e2df;
+
+      /* Ink */
+      --ink:    #1f1a19;
+      --ink-2:  #5c5350;
+      --ink-3:  #837a76;
+
+      /* Brand: Rakuten crimson (used on ≤3% of any viewport) */
+      --accent:      #bf0000;
+      --accent-deep: #8f0000;
+      --accent-ink:  #ffffff;
+      --accent-tint: #fbedeb;
+
+      /* Rules */
+      --rule:       #ddd5d2;
+      --rule-heavy: #b8aeaa;
+
+      --focus: #bf0000;
+
+      /* Type */
+      --font-body: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                   "Yu Gothic Medium", "Yu Gothic", Meiryo, system-ui, sans-serif;
+
+      --text-xs: 0.7rem;
+      --text-sm: 0.8rem;
+      --text-base: 1rem;
+      --text-md: 1.125rem;
+      --text-lg: 1.25rem;
+      --text-xl: 1.5625rem;
+      --text-2xl: clamp(1.5rem, 3vw + 0.75rem, 1.95rem);
+      --text-display: clamp(1.125rem, 2vw + 0.7rem, 1.375rem);
+
+      --lh-tight: 1.3;
+      --lh-snug: 1.5;
+      --lh-base: 1.85;
+      --lh-loose: 2;
+
+      --ls-display: -0.01em;
+      --ls-label: 0.1em;
+
+      /* Spacing (4pt) */
+      --s-xs: 8px;
+      --s-sm: 12px;
+      --s-md: 16px;
+      --s-lg: 24px;
+      --s-xl: 40px;
+      --s-2xl: 64px;
+
+      /* Geometry */
+      --max-prose: 680px;
+      --pad-inline: clamp(1.125rem, 5vw, 2rem);
+
+      --radius: 5px;
+      --radius-input: 6px;
+      --radius-tag: 3px;
+
+      --shadow-whisper: 0 1px 3px rgba(31,26,25,0.07);
+
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --dur-fast: 150ms;
+      --dur-base: 220ms;
+
+      --z-sticky: 200;
+    }
+
+    /* ============ RESET / BASE ============ */
+    html { overflow-x: clip; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { overflow-x: clip; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: var(--text-base);
+      line-height: var(--lh-base);
+      font-feature-settings: "palt" 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: left;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 700; }
+    ::selection { background: var(--accent-tint); }
+
+    /* heading overflow guards (mobile-safe) */
+    h1, h2, h3, .nameplate, .kicker, .fact-num {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      min-width: 0;
+    }
+
+    /* focus */
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    summary:focus-visible, label:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ============ LAYOUT ============ */
+    .container {
+      width: 100%;
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      padding-inline: var(--pad-inline);
+    }
+
+    .section { padding-block: var(--s-2xl); }
+    .section.tight { padding-block: var(--s-xl); }
+
+    .prose > * + * { margin-top: 1.4em; }
+    .prose p { line-height: var(--lh-base); color: var(--ink); }
+
+    /* ============ MASTHEAD (N6, simplified, not sticky) ============ */
+    .masthead {
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      background: var(--accent);
+      border-bottom: 1px solid var(--accent-deep);
+    }
+    .masthead-inner {
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      padding: 12px var(--pad-inline);
+      display: flex;
+      align-items: center;
+      gap: var(--s-sm);
+    }
+    .nameplate {
+      font-family: "Montserrat", var(--font-body);
+      font-weight: 800;
+      font-size: var(--text-display);
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .masthead-link {
+      margin-left: auto;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .masthead-link:hover { color: #fff; }
+
+    /* ============ ARTICLE HEADER ============ */
+    .article-header { padding-top: var(--s-lg); padding-bottom: var(--s-lg); }
+    .kicker {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: var(--ls-label);
+      color: var(--ink-2);
+      margin-bottom: var(--s-md);
+    }
+    .kicker .cat {
+      color: var(--accent-ink);
+      background: var(--accent);
+      padding: 3px 9px;
+      border-radius: var(--radius-tag);
+      margin-right: 10px;
+    }
+    .article-title {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      line-height: var(--lh-tight);
+      letter-spacing: var(--ls-display);
+      color: var(--ink);
+    }
+    .article-deck {
+      margin-top: var(--s-md);
+      font-size: var(--text-md);
+      font-weight: 500;
+      line-height: var(--lh-snug);
+      color: var(--ink-2);
+    }
+    .article-meta {
+      margin-top: var(--s-lg);
+      padding-top: var(--s-md);
+      border-top: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 0 8px;
+      white-space: nowrap;
+      font-size: clamp(0.62rem, 2.9vw, 0.8rem);
+      color: var(--ink-2);
+    }
+    .article-meta .dot { color: var(--rule-heavy); }
+    .article-meta .meta-pr {
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: var(--ls-label);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-tag);
+      padding: 1px 5px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+    .byline {
+      margin-top: var(--s-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--s-sm);
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+    }
+    .byline-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+    }
+    .byline b { font-weight: 700; color: var(--ink); }
+
+    /* ============ FIGURE (hero / inline image placeholders) ============ */
+    figure { margin-block: var(--s-lg); }
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+    }
+    figcaption {
+      margin-top: var(--s-xs);
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-snug);
+    }
+
+    /* ============ LEAD ============ */
+    .lead p {
+      font-size: var(--text-md);
+      line-height: var(--lh-loose);
+      color: var(--ink);
+    }
+    .lead p + p { margin-top: 1.2em; }
+    .lead strong { font-weight: 700; }
+
+    /* ============ SECTION HEADS ============ */
+    .h2 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      line-height: var(--lh-snug);
+      letter-spacing: var(--ls-display);
+      color: var(--ink);
+      margin-bottom: var(--s-lg);
+    }
+    .h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: var(--lh-snug);
+      color: var(--ink);
+    }
+
+    /* ============ SUMMARY (この記事のポイント) ============ */
+    .summary {
+      background: var(--paper-2);
+      border-left: 2px solid var(--rule-heavy);
+      padding: var(--s-lg);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .summary h2 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: var(--s-sm);
+    }
+    .summary ul { list-style: none; display: grid; gap: 10px; }
+    .summary li {
+      position: relative;
+      padding-left: 20px;
+      font-size: var(--text-sm);
+      line-height: var(--lh-snug);
+      color: var(--ink);
+    }
+    .summary li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.55em;
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
+    /* ============ CHECKLIST ============ */
+    .checklist h2 { margin-bottom: var(--s-md); }
+    .checklist-box {
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: var(--s-md) var(--s-lg);
+    }
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-sm);
+      padding: var(--s-sm) 0;
+    }
+    .check-row + .check-row { border-top: 1px solid var(--rule); }
+    .check-mark {
+      width: 18px; height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .check-row span { font-size: var(--text-sm); line-height: var(--lh-snug); color: var(--ink); }
+    .checklist-note {
+      margin-top: var(--s-md);
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-snug);
+    }
+
+    /* ============ BLOCKQUOTE (key lines) ============ */
+    blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 4px 0 4px var(--s-md);
+      margin-block: 1.4em;
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: var(--lh-snug);
+      color: var(--ink);
+    }
+
+    /* ============ SIX STRUCTURES ============ */
+    .structure { margin-top: 1.6em; }
+    .structure h3 { margin-bottom: 0.5em; }
+    .structure h3 .n {
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .structure p { color: var(--ink); }
+    .structure + .structure { margin-top: var(--s-lg); padding-top: var(--s-lg); border-top: 1px solid var(--rule); }
+
+    /* ============ CTA CARD (featured) ============ */
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(130% 90% at 100% 0%, var(--accent-tint) 0%, rgba(251,237,235,0) 52%),
+        linear-gradient(180deg, #fdf6f3 0%, #f9efea 100%);
+      border: 1px solid var(--rule);
+      border-radius: calc(var(--radius) + 7px);
+      padding: var(--s-xl) var(--s-lg) var(--s-lg);
+      text-align: center;
+      box-shadow: 0 1px 2px rgba(31,26,25,0.04), 0 18px 40px -26px rgba(143,0,0,0.28);
+    }
+    .cta-card-deco {
+      position: absolute;
+      top: var(--s-md); right: var(--s-md);
+      width: 40px; height: 40px;
+      color: var(--accent);
+      opacity: 0.16;
+      pointer-events: none;
+    }
+    .cta-card-deco svg { width: 100%; height: 100%; }
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      background: var(--paper);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--s-md);
+    }
+    .cta-card h2 {
+      font-size: clamp(1.1rem, 4.6vw, 1.4rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--s-sm);
+    }
+    .cta-card h2 .em { color: var(--accent); }
+    .cta-card-lead {
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-base);
+      max-width: 30em;
+      margin: 0 auto var(--s-lg);
+    }
+    .cta-points {
+      list-style: none;
+      display: grid;
+      gap: var(--s-xs);
+      max-width: 22em;
+      margin: 0 auto var(--s-lg);
+      text-align: left;
+    }
+    .cta-points li {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: var(--s-sm);
+      align-items: center;
+      padding: 10px var(--s-md);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      font-size: var(--text-sm);
+      color: var(--ink);
+      line-height: var(--lh-snug);
+    }
+    .cta-points .ck {
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cta-points .ck svg { width: 12px; height: 12px; color: #fff; }
+    .cta-card .btn {
+      font-size: clamp(0.92rem, 4.2vw, 1.05rem);
+      min-height: 56px;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      padding-block: 12px;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+    .cta-card-note {
+      margin-top: var(--s-sm);
+      font-size: var(--text-xs);
+      color: var(--ink-3);
+      letter-spacing: 0.02em;
+    }
+    .cta-card.is-spaced { margin-top: var(--s-xl); }
+    .fact-num .suffix { font-size: 0.5em; }
+
+    /* ============ BUTTON ============ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 var(--s-lg);
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-family: inherit;
+      font-size: var(--text-base);
+      font-weight: 700;
+      line-height: 1;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      transition: background-color var(--dur-fast) var(--ease);
+    }
+    .btn:hover { background: var(--accent-deep); box-shadow: var(--shadow-whisper); }
+    .btn:active { background: var(--accent-deep); }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn.block { display: flex; width: 100%; }
+
+    /* ============ STEPS ============ */
+    .steps { list-style: none; counter-reset: st; margin-top: 1em; display: grid; gap: var(--s-md); }
+    .steps li {
+      counter-increment: st;
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: var(--s-sm);
+      align-items: start;
+    }
+    .steps li::before {
+      content: counter(st);
+      grid-column: 1; grid-row: 1;
+      width: 30px; height: 30px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .steps li strong { grid-column: 2; display: block; color: var(--ink); margin-bottom: 2px; }
+    .steps li span { grid-column: 2; font-size: var(--text-sm); color: var(--ink-2); line-height: var(--lh-snug); }
+
+    /* ============ CASES ============ */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-lg);
+      margin-top: var(--s-md);
+    }
+    .case {
+      position: relative;
+      background: linear-gradient(180deg, #f8f2ea 0%, #f3ebe0 100%);
+      border: 1px solid #ece2d5;
+      border-radius: 24px;
+      padding: clamp(24px, 6vw, 40px);
+      box-shadow: 0 1px 2px rgba(31,26,25,0.03), 0 24px 54px -36px rgba(31,26,25,0.5);
+    }
+    .case-photo {
+      float: right;
+      width: 36%;
+      max-width: 280px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 0 0 var(--s-md) var(--s-md);
+    }
+    .case-label {
+      font-size: clamp(0.875rem, 3.6vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      margin-bottom: var(--s-md);
+    }
+    .case-label .case-no { color: var(--accent); font-weight: 900; white-space: nowrap; margin-right: 0.7em; }
+    .case-label .case-client { white-space: nowrap; }
+    .case-title {
+      font-size: clamp(1.05rem, 4.3vw, 1.9rem);
+      font-weight: 900;
+      line-height: 1.55;
+      letter-spacing: 0.005em;
+      color: var(--ink);
+      margin-bottom: var(--s-md);
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: anywhere;
+    }
+    .case-title .em { color: var(--accent); }
+    .nb { white-space: nowrap; }
+    .case-body {
+      clear: both;
+      font-size: 0.9rem;
+      color: var(--ink-2);
+      line-height: 1.95;
+    }
+    .case-rule {
+      clear: both;
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: var(--s-lg) 0;
+    }
+    .case-result {
+      display: flex;
+      align-items: center;
+      gap: var(--s-md);
+    }
+    .case-result .ic {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--accent-tint);
+      color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .case-result .ic svg { width: 34px; height: 34px; }
+    .case-result-body { display: flex; flex-direction: column; min-width: 0; }
+    .case-result .k { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.16em; color: var(--accent); }
+    .case-result .v {
+      display: flex;
+      align-items: baseline;
+      gap: 0.12em;
+      color: var(--accent);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .case-result .v .lbl { font-size: clamp(1.05rem, 4.2vw, 1.4rem); font-weight: 900; }
+    .case-result .v strong {
+      font-size: clamp(1.6rem, 6.8vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      font-variant-numeric: tabular-nums;
+    }
+    .case-sub {
+      margin-top: 5px;
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-snug);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .case-sub b { color: var(--ink-2); font-weight: 400; margin: 0 0.35em; }
+    .cases-disclaimer { margin-top: var(--s-lg); font-size: var(--text-xs); color: var(--ink-3); line-height: var(--lh-snug); }
+
+    /* ============ PRICING TABLE ============ */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-block: 1.4em;
+      font-size: var(--text-sm);
+    }
+    .price-table th, .price-table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+      padding: var(--s-xs) 0;
+      line-height: var(--lh-snug);
+    }
+    .price-table tr {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      padding: var(--s-sm) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .price-table th { font-weight: 700; color: var(--ink); }
+    .price-table td { color: var(--ink-2); }
+    .price-table td strong { color: var(--accent); }
+
+    .facts {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-md);
+      margin-block: 1.6em;
+      padding: var(--s-lg) 0;
+      border-block: 1px solid var(--rule);
+    }
+    .fact { text-align: center; }
+    .fact-num {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .fact-lbl { font-size: var(--text-sm); color: var(--ink-2); margin-top: 2px; }
+    .price-foot { font-size: var(--text-sm); color: var(--ink-2); line-height: var(--lh-snug); }
+
+    /* ============ TRUST ============ */
+    .trust-list { list-style: none; display: grid; gap: var(--s-md); margin-top: 1em; }
+    .trust-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: var(--text-sm);
+      line-height: var(--lh-snug);
+      color: var(--ink-2);
+    }
+    .trust-list li::before {
+      content: "";
+      position: absolute; left: 0; top: 0.6em;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .trust-list b { color: var(--ink); }
+
+    /* ============ FAQ ============ */
+    .faq { margin-top: var(--s-md); border-top: 1px solid var(--rule); }
+    .faq details { border-bottom: 1px solid var(--rule); }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: var(--s-md) 0;
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: var(--lh-snug);
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .q { color: var(--accent); font-weight: 900; flex-shrink: 0; }
+    .faq summary .mk { margin-left: auto; color: var(--ink-3); flex-shrink: 0; transition: transform var(--dur-fast) var(--ease); }
+    .faq details[open] summary .mk { transform: rotate(45deg); }
+    .faq-a {
+      padding: 0 0 var(--s-md) 26px;
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-base);
+    }
+    .faq-a strong { color: var(--ink); }
+
+    /* ============ FORM ============ */
+    .apply { max-width: var(--max-prose); margin-inline: auto; background: var(--paper-2); border-top: 1px solid var(--rule); }
+    .apply .h2 { margin-bottom: var(--s-sm); }
+    .apply-lead { font-size: var(--text-sm); color: var(--ink-2); line-height: var(--lh-base); margin-bottom: var(--s-lg); }
+    .form { display: grid; gap: var(--s-md); }
+    .field label { display: block; font-size: var(--text-sm); font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .field .req { color: var(--accent-ink); background: var(--accent); font-size: var(--text-xs); padding: 1px 6px; border-radius: var(--radius-tag); margin-left: 6px; }
+    .field .opt { color: var(--ink-3); border: 1px solid var(--rule); font-size: var(--text-xs); padding: 1px 6px; border-radius: var(--radius-tag); margin-left: 6px; }
+    .field input {
+      width: 100%;
+      min-height: 48px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-input);
+      padding: 0 14px;
+      transition: border-color var(--dur-fast) var(--ease);
+    }
+    .field input::placeholder { color: var(--ink-3); }
+    .field input:focus { border-color: var(--accent); }
+    .field input:focus:not(:focus-visible) { outline: none; }
+    .field input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .form .btn { margin-top: var(--s-xs); }
+    .form-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: var(--text-xs); color: var(--ink-2); }
+    .form-error {
+      display: none;
+      font-size: var(--text-sm);
+      color: var(--accent);
+      background: var(--accent-tint);
+      border: 1px solid #f0cfcb;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      line-height: var(--lh-snug);
+    }
+    .form-error.show { display: block; }
+    .form-privacy { font-size: var(--text-xs); color: var(--ink-3); line-height: var(--lh-snug); }
+    .form-privacy a { color: var(--accent); text-decoration: underline; }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      border-top: 1px solid var(--rule-heavy);
+      padding: var(--s-lg) var(--pad-inline) calc(var(--s-2xl) + 56px);
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-base);
+    }
+    .footer b { color: var(--ink); font-weight: 700; }
+    .footer a { color: var(--ink-2); text-decoration: underline; }
+    .footer .copy { font-size: var(--text-xs); color: var(--ink-3); margin-top: 6px; }
+
+    /* ============ STICKY BOTTOM CTA ============ */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: var(--z-sticky);
+      width: 100%;
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      background: var(--ink);
+      border-top: 2px solid var(--accent);
+      border-radius: 12px 12px 0 0;
+      padding: 10px var(--pad-inline);
+      padding-bottom: max(10px, env(safe-area-inset-bottom));
+      display: flex;
+      align-items: center;
+      gap: var(--s-sm);
+      transform: translateY(110%);
+      transition: transform var(--dur-base) var(--ease);
+    }
+    .sticky-cta.show { transform: translateY(0); }
+    .sticky-cta-txt { flex: 1; min-width: 0; font-size: var(--text-xs); color: #d8d2d0; line-height: 1.4; }
+    .sticky-cta-txt b { display: block; color: #fff; font-size: var(--text-sm); font-weight: 700; }
+    .sticky-cta .btn { flex-shrink: 0; min-height: 44px; padding: 0 var(--s-md); font-size: var(--text-sm); }
+    .sticky-cta-close {
+      position: absolute;
+      top: -30px; right: 10px;
+      width: 28px; height: 28px;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      border-radius: 6px 6px 0 0;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (min-width: 640px) {
+      .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .price-table th, .price-table td { display: table-cell; padding: var(--s-md) var(--s-md) var(--s-md) 0; }
+      .price-table tr { display: table-row; }
+      .price-table th { width: 36%; vertical-align: top; }
+      .sticky-cta-txt b { display: inline; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="nameplate">Notre Journal</span>
+      <a href="#apply" class="masthead-link" data-loc="masthead">↓ 相談会を見る</a>
+    </div>
+  </header>
+
+  <main>
+    <header class="article-header container">
+      <p class="kicker"><span class="cat">特集</span>楽天市場運営・利益改善</p>
+      <h1 class="article-title">楽天で「売上は伸びたのに、利益が残らない」現象。店舗が見落としている6つの構造</h1>
+      <p class="article-deck">運用代行を何社替えても変わらなかった理由を、元楽天ECC出身者が解説します。</p>
+      <div class="article-meta">
+        <span class="meta-pr">PR</span><span class="dot">・</span>
+        <span>公開 2026.06.05</span><span class="dot">・</span>
+        <span>読了 約7分</span><span class="dot">・</span>
+        <span>取材／解説</span>
+      </div>
+      <div class="byline">
+        <picture>
+          <source srcset="images/author-ito.webp" type="image/webp">
+          <img class="byline-avatar" src="images/author-ito.jpg" alt="伊藤 鉄馬" width="40" height="40" loading="lazy" decoding="async">
+        </picture>
+        <span><b>伊藤 鉄馬</b>（Notre株式会社 代表取締役 ／ 元楽天ECC）</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <figure>
+        <picture>
+          <source srcset="images/hero.webp" type="image/webp">
+          <img class="hero-img" src="images/hero.jpg" alt="RMS店舗カルテを前に考え込む店舗オーナー／楽天運営のイメージ" width="1440" height="1080" decoding="async">
+        </picture>
+        <figcaption>スーパーSALE後、売上は伸びても入金額にため息——多くの楽天店舗が抱える共通の感覚。</figcaption>
+      </figure>
+    </div>
+
+    <section class="container lead prose section tight">
+      <p>スーパーSALEが終わった。クーポンを切って、RPPも回した。RMSの店舗カルテで売上は、確かに伸びている。——なのに、入金額を見て、ため息が出る。「利益は前と変わってないな」と。</p>
+      <p>競合のシェアは増え、広告費は年々上がり、セールのたびに利益が削られていく。運用代行も何社か試したが、多くはRPP広告を消化するだけで中長期の成果が出ない。もしこの感覚に覚えがあるなら、あと7分だけ読んでほしい。利益が残らないのには、共通する<strong>6つの構造的な理由</strong>がある。先に言っておくと、それは<strong>あなたの運用がヘタだからではない</strong>。</p>
+    </section>
+
+    <section class="container section tight">
+      <div class="summary">
+        <h2>この記事のポイント</h2>
+        <ul>
+          <li>売上が伸びても利益が残らないのは、楽天特有の「独自ルール」が見えていないから。少なくとも6つの領域に存在する。</li>
+          <li>運用代行で結果が出なかったのは、多くの業者が「作業」はできても楽天内側の地図を持たないため。</li>
+          <li>まずは無料相談会で、自店のどこから利益が漏れているかを一緒に確認できる（報酬はモニター契約後のみ）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container checklist section tight">
+      <h2 class="h2">こんな状態の人だけ、読んでください</h2>
+      <div class="checklist-box">
+        <div class="check-row"><span class="check-mark" aria-hidden="true">✓</span><span>RPP広告に月20万かけているが、消化されない／意図しないタイミングで消化される</span></div>
+        <div class="check-row"><span class="check-mark" aria-hidden="true">✓</span><span>スーパーSALEのたびにクーポンを出して、売上は立つが<strong>実質赤字</strong></span></div>
+        <div class="check-row"><span class="check-mark" aria-hidden="true">✓</span><span>手数料・ポイント・送料…「<strong>見えないコスト</strong>」が毎月積み上がっている</span></div>
+        <div class="check-row"><span class="check-mark" aria-hidden="true">✓</span><span><strong>RMSの売上は上がったのに、通帳の残高は変わっていない</strong></span></div>
+        <div class="check-row"><span class="check-mark" aria-hidden="true">✓</span><span><strong>運用代行を頼んだが費用対効果が合わず、結局解約した</strong>（しかも一度ではない）</span></div>
+      </div>
+      <p class="checklist-note">いくつ当てはまりましたか？ 一つも当てはまらない方は、ここでページを閉じていただいて構いません。</p>
+    </section>
+
+    <section class="container prose section">
+      <h2 class="h2">なぜ、売上があっても利益が残らないのか</h2>
+      <p>ここまで読んで、心当たりがあった方へ。おそらくあなたは、これまで真面目にやってきた。広告も学んだ、ページも直した、業者にも頼んだ。それでも結果が出ず、「自分のやり方が悪いのか」と、どこかで自分を責めてきたのではないでしょうか。</p>
+      <p>結論から言うと、これはあなたのせいではありません。原因はすべて、たった一つに行き着きます。</p>
+      <blockquote>「楽天特有の戦い方」が、まだ見えていないこと。</blockquote>
+      <p>「ECなんて、楽天もAmazonも自社ECも、やることは同じでしょう」——よく言われます。でも実際には、同じ店舗でも<strong>Amazonでは60%のシェアを取れているのに、楽天では10番手から抜け出せない</strong>、そんな例を何度も見てきました。本人の能力の問題ではありません。楽天には、Amazonとも自社ECとも違う独自ルールが、少なくとも6つの領域に存在するからです。そのルールが見えないまま戦うと、広告費だけが増え、利益が削られていきます。</p>
+    </section>
+
+    <section class="container section tight">
+      <div class="cta-card">
+        <span class="cta-card-deco" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-6"/><path d="M3 4v16h16"/><circle cx="17.5" cy="7.5" r="3.2"/><path d="M19.8 9.8L22 12"/></svg>
+        </span>
+        <span class="cta-badge">無料診断</span>
+        <h2>売上は伸びているのに、<br><span class="em">利益が残らない原因</span>を見つけます</h2>
+        <p class="cta-card-lead">RPP・クーポン・ポイント・送料・手数料など、楽天店舗で見落としやすい利益漏れを一緒に整理します。</p>
+        <ul class="cta-points">
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>売上はあるのに入金額が少ない</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>RPPを止めると売上も止まる</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>クーポン・ポイント施策の正解が分からない</span></li>
+        </ul>
+        <a href="#apply" class="btn block" data-loc="insert-1">
+          自店の利益構造を無料で見てもらう
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <p class="cta-card-note">売り込みなし ／ 30分程度 ／ RMSの画面共有だけでもOK</p>
+      </div>
+    </section>
+
+    <section class="container prose section">
+      <h2 class="h2">楽天で利益を残すための、6つの構造</h2>
+
+      <div class="structure">
+        <h3 class="h3"><span class="n">01</span>RPPの運用</h3>
+        <p>CPCを上げれば露出は取れます。でも、ただ上げるだけでは利益は残りません。勝敗を分けるのは「いくら上げるか」ではなく「<strong>いつ上げるか</strong>」。競合より有利なタイミングで認知を取りに行けるか——同じ予算でも、ROASはここで二極化します。</p>
+      </div>
+      <div class="structure">
+        <h3 class="h3"><span class="n">02</span>楽天市場広告の活用</h3>
+        <p>RPPの他にも、純広告・スーパーSALE先行枠・メルマガ・バナー…楽天には多種多様なメニューがあります。どれが“目玉”で、自店に最適な一手はどれか。これは公式情報では分からず、<strong>経験則がすべてを決める世界</strong>です。しかも有利な広告は、枠を押さえる難易度も高い。</p>
+      </div>
+      <div class="structure">
+        <h3 class="h3"><span class="n">03</span>ベンチマーク指標</h3>
+        <p>自店のROAS・CVR・転換率が「良い」のか「悪い」のかは、ジャンルごとの基準値を持っていなければ判断できません。基準値がないまま次の一手を打つ——<strong>これが、改善が空回りする最大の原因</strong>です。</p>
+      </div>
+      <div class="structure">
+        <h3 class="h3"><span class="n">04</span>デザイン制作（第一画像）</h3>
+        <p>社内にデザイナーがいても、CVR改善まで手が回っている店舗は多くありません。一番に見られる「第一画像」が弱いまま広告やSEOに投資しても効果は出ません。<strong>順番を間違えると、他のすべての施策が空振り</strong>に終わります。</p>
+      </div>
+      <div class="structure">
+        <h3 class="h3"><span class="n">05</span>レビュー獲得</h3>
+        <p>レビュー施策といえばレビュークーポン。とりあえずこれをやればいい、と思っていませんか。「なぜ書くべきか」を、どの場所で、どのタイミングで、どう伝えるか。<strong>この設計ができている店舗だけが、レビュー数と評価で上位に立てます</strong>。</p>
+      </div>
+      <div class="structure">
+        <h3 class="h3"><span class="n">06</span>セール対策</h3>
+        <p>スーパーSALE、お買い物マラソン、ブラックフライデー——<strong>いつから、何を準備すべきか</strong>を知らないまま当日を迎えていませんか。事前準備の質が、セール期間の売上を10倍にも、1/10にも変えます。</p>
+      </div>
+    </section>
+
+    <section class="container prose section">
+      <h2 class="h2">なぜ、“業者”に頼んでもダメだったのか</h2>
+      <p>この6つのルールは、無数の改善を繰り返さない限り蓄積されません。「どのジャンルで、どの時期に、どの施策を、どの順番で打つか」——これはネット記事やセミナーでは手に入らない、現場の知見です。</p>
+      <p>なぜ、運用代行を頼んでも結果が出なかったのか。理由はシンプルです。多くの代行業者は、RPPの入札やページ更新といった「作業」はできても、6領域を貫く「楽天の内側のルール」を持っていないからです。地図を持たずに、戦術だけを実行していた。だから、お金は減っても利益は残らなかった。</p>
+      <blockquote>売上が伸びても利益が残らないのは、運用がヘタだからではない。楽天のゲームルールが、まだ見えていないだけです。</blockquote>
+      <p>では、その「見えていないルール」を、どうやって自店に当てはめて確かめるのか。無料相談会は、次の3ステップで進みます。</p>
+      <ol class="steps">
+        <li><strong>フォームから申し込む</strong><span>入力は約1分で完了します。</span></li>
+        <li><strong>オンライン無料相談会（30分・夜間/土日OK）</strong><span>現状をヒアリングし、その場で「どこから利益が漏れているか」の見立てを共有します。</span></li>
+        <li><strong>ご要望に応じて個別レポート（無料）</strong><span>広告・SEO・商品設計まで踏み込んだ精密診断も可能です。</span></li>
+      </ol>
+      <div class="cta-card is-spaced">
+        <span class="cta-card-deco" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-6"/><path d="M3 4v16h16"/><circle cx="17.5" cy="7.5" r="3.2"/><path d="M19.8 9.8L22 12"/></svg>
+        </span>
+        <span class="cta-badge">無料相談会</span>
+        <h2>まずは1分の申し込みで、<br><span class="em">自店の利益の漏れ</span>を見てみませんか？</h2>
+        <p class="cta-card-lead">オンライン30分（夜間・土日OK）。その場で「どこから利益が漏れているか」の見立てを共有します。</p>
+        <ul class="cta-points">
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>入力は約1分・売り込みは一切なし</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>その場で利益漏れの見立てを共有</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>ご要望に応じて個別レポートも無料</span></li>
+        </ul>
+        <a href="#apply" class="btn block" data-loc="insert-2">
+          無料相談会を申し込む（1分）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <p class="cta-card-note">報酬が発生するのはモニター契約後のみ。相談会・レポートは完全無料です。</p>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="h2">実際の支援事例</h2>
+      <div class="cases-grid">
+        <article class="case">
+          <picture>
+            <source srcset="images/case-01.webp" type="image/webp">
+            <img class="case-photo" src="images/case-01.jpg" alt="野菜農家の支援事例" width="138" height="138" loading="lazy" decoding="async">
+          </picture>
+          <p class="case-label"><span class="case-no">CASE 01</span><span class="case-client">野菜農家</span></p>
+          <h3 class="case-title">卸専業から、EC参入で<span class="em">初年度 年商1億円へ</span></h3>
+          <p class="case-body">卸販売のみ・EC未経験・自社ブランドなしの状態から、事業提案・価格戦略・ページ設計・運用設計まで伴走。</p>
+          <hr class="case-rule">
+          <div class="case-result">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
+            <div class="case-result-body">
+              <span class="k">結果</span>
+              <div class="v"><span class="lbl">年商</span><strong>1億円</strong></div>
+              <span class="case-sub">開店後 月商数万円 <b>→</b> 初年度で突破</span>
+            </div>
+          </div>
+        </article>
+        <article class="case">
+          <picture>
+            <source srcset="images/case-02.webp" type="image/webp">
+            <img class="case-photo" src="images/case-02.jpg" alt="米農家の支援事例" width="138" height="138" loading="lazy" decoding="async">
+          </picture>
+          <p class="case-label"><span class="case-no">CASE 02</span><span class="case-client">米農家</span></p>
+          <h3 class="case-title">EC歴20年の老舗を、<span class="em">値引きなしで<span class="nb">売上1.5倍へ</span></span></h3>
+          <p class="case-body">長年横ばい・値引き不可の方針のなか、市場分析・競合整理・新商品コンセプト設計・既存顧客データ活用で第二の柱を作った。</p>
+          <hr class="case-rule">
+          <div class="case-result">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
+            <div class="case-result-body">
+              <span class="k">結果</span>
+              <div class="v"><span class="lbl">日商</span><strong>150万円超</strong></div>
+              <span class="case-sub">日商100万円 <b>→</b> 1.5倍</span>
+            </div>
+          </div>
+        </article>
+        <article class="case">
+          <picture>
+            <source srcset="images/case-03.webp" type="image/webp">
+            <img class="case-photo" src="images/case-03.jpg" alt="車用品店の支援事例" width="138" height="138" loading="lazy" decoding="async">
+          </picture>
+          <p class="case-label"><span class="case-no">CASE 03</span><span class="case-client">車用品店（上場企業）</span></p>
+          <h3 class="case-title">仕入れ改善で、<span class="em">売上V字回復</span></h3>
+          <p class="case-body">既存仕入れ先依存・原価改善余地が不透明な状態から、仕入れ先の再選定・価格交渉・発注設計を見直した。</p>
+          <hr class="case-rule">
+          <div class="case-result">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
+            <div class="case-result-body">
+              <span class="k">結果（昨対比）</span>
+              <div class="v"><span class="lbl">売上</span><strong>+50%</strong></div>
+              <span class="case-sub">昨対比 −10% <b>→</b> +50%</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="cases-disclaimer">※ 実際のNotre支援事例に基づく構成です。成果を保証するものではありません。</p>
+    </section>
+
+    <section class="container prose section">
+      <h2 class="h2">費用・サポートプラン</h2>
+      <p>モニタープランの報酬は、<strong>固定5万円＋成果報酬10%</strong>（前年同月比の売上増分）です。短期的には広告をかければ売上は上がりますが、利益が残らなければ、あなたは次月に契約を切るはずです。だから私たちは、増えた分の10%しかいただきません。売上が増えなければ報酬も入らない——こちらも同じリスクを取る、ということです。</p>
+      <table class="price-table">
+        <tbody>
+          <tr><th>相談会・レポート</th><td><strong>0円（完全無料）</strong></td></tr>
+          <tr><th>料金形態</th><td><strong>固定5万円＋成果報酬10%</strong>（前年同月比）</td></tr>
+          <tr><th>参加条件</th><td>支援結果を事例として公開（社名の匿名化は可）</td></tr>
+          <tr><th>初回契約</th><td>3ヶ月（スーパーSALEを一回跨ぐ期間ご支援します）</td></tr>
+          <tr><th>4〜6ヶ月目</th><td>1ヶ月単位で更新（手応えを見ながら判断）</td></tr>
+          <tr><th>7ヶ月目以降</th><td>半年契約・固定費プランへ移行</td></tr>
+        </tbody>
+      </table>
+      <div class="facts">
+        <div class="fact"><div class="fact-num">1,100<span class="suffix">店舗+</span></div><div class="fact-lbl">支援実績</div></div>
+        <div class="fact"><div class="fact-num">0<span class="suffix">円</span></div><div class="fact-lbl">相談会・レポート</div></div>
+        <div class="fact"><div class="fact-num">0<span class="suffix">回</span></div><div class="fact-lbl">売り込み</div></div>
+      </div>
+      <p class="price-foot">「モニター」と名乗るのは、支援結果を事例として共有いただくことで、楽天出店者全体のナレッジ蓄積にNotre自身が寄与していきたいからです。</p>
+    </section>
+
+    <section class="container prose section tight">
+      <h2 class="h2">支援体制について</h2>
+      <ul class="trust-list">
+        <li><b>元楽天ECC出身メンバーが担当。</b>楽天の“内側”でしか得られない経験則をもとに、どこから利益が漏れているかを診断します。</li>
+        <li><b>SOY（ショップ・オブ・ザ・イヤー）受賞店の支援経験</b>があります。</li>
+        <li><b>楽天運営の全領域に対応。</b>RPP・純広告・楽天SEO・商品設計・レビュー獲得・セール対策まで。</li>
+      </ul>
+    </section>
+
+    <section class="container section">
+      <h2 class="h2">よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary><span class="q">Q</span><span>他社の運用代行で失敗しました。何が違うのですか？</span><span class="mk">＋</span></summary>
+          <div class="faq-a">多くの代行は「作業」を代行しますが、当社は<strong>元楽天ECC出身メンバー</strong>が、楽天の内側でしか得られない経験則をもとに「どこから利益が漏れているか」を診断します。作業者ではなく、地図を持った人間が見ます。まずは無料診断で、その違いをご自身で確かめてください。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span><span>本当に無料ですか？ 相談会で売り込みされませんか？</span><span class="mk">＋</span></summary>
+          <div class="faq-a">相談会もレポートも完全無料です。相談会は現状を一緒に見て課題を共有する場であって、無理な営業はしません。「自分でやれそう」と思ったら、それでOKです。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span><span>どのくらいの規模の店舗が対象ですか？</span><span class="mk">＋</span></summary>
+          <div class="faq-a">制限は設けていませんが、売上がほぼなく販促費もかけられない場合は成果を出しにくいため、お断りすることがあります。成果に本気だからです。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span><span>相談会では何をしますか？ レポートはもらえますか？</span><span class="mk">＋</span></summary>
+          <div class="faq-a">まずオンライン相談会（30分・夜間/土日OK）で現状をヒアリングし、その場で楽天運営の課題の見立てを共有します。そのうえで、より詳しい分析をご希望の方には、ご要望に応じて店舗専用の個別レポートを無料でお届けします。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span><span>モニタープランはいつまで続けるものですか？</span><span class="mk">＋</span></summary>
+          <div class="faq-a">成果を事例公開いただくことを条件に、<strong>固定5万円＋成果報酬10%</strong>で始められます。スーパーSALEを跨ぎしっかり成果を出すため、初回3ヶ月を最低期間とし、以降は手応えを見ながら柔軟に継続判断できます。</div>
+        </details>
+      </div>
+    </section>
+
+    <section id="apply" class="apply section">
+      <div class="container">
+        <h2 class="h2">楽天の利益改善、まずは無料相談会で。</h2>
+        <p class="apply-lead">以下のフォームにご記入のうえ送信してください。日程を調整し、オンライン無料相談会をご案内します。ご要望に応じて、あなた専用の利益改善レポートも無料でお届けします。<br>完全無料 ／ 申し込み約1分 ／ 売り込みは一切ありません。</p>
+
+        <form id="apply-form" class="form" action="https://ssgform.com/s/SxDTDKR9hwsR" method="POST" novalidate>
+          <!-- SSGForm: 件名・thanksリダイレクト・自動応答は既存フォーム(SxDTDKR9hwsR)の設定を共用。hiddenで送信元LPを識別。 -->
+          <input type="hidden" name="送信元LP" value="rakuten-ec-article-v2 (記事LP / ニュース版・hallmark)">
+          <input type="text" name="hp_field" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:0;height:0;overflow:hidden;">
+
+          <div class="field">
+            <label for="f-company">会社名・店舗名 <span class="req">必須</span></label>
+            <input id="f-company" name="company" type="text" placeholder="株式会社○○" required maxlength="100" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-name">ご担当者名 <span class="req">必須</span></label>
+            <input id="f-name" name="name" type="text" placeholder="山田 太郎" required maxlength="60" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-url">店舗URL <span class="opt">任意</span></label>
+            <input id="f-url" name="shop_url" type="url" placeholder="https://www.rakuten.co.jp/your-shop/" maxlength="200" autocomplete="url" inputmode="url">
+          </div>
+          <div class="field">
+            <label for="f-email">メールアドレス <span class="req">必須</span></label>
+            <input id="f-email" name="email" type="email" placeholder="example@example.com" required maxlength="120" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-phone">電話番号 <span class="req">必須</span></label>
+            <input id="f-phone" name="phone" type="tel" placeholder="03-0000-0000" required maxlength="20" autocomplete="tel" pattern="(?=.*[0-9])[0-9\-\+\(\)\s]+" title="数字を含む電話番号を入力してください">
+          </div>
+
+          <button type="submit" class="btn block" id="apply-submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            無料相談会を申し込む
+          </button>
+
+          <div class="form-meta" aria-hidden="true"><span>完全無料</span><span>約1分</span><span>売り込みなし</span></div>
+          <div id="form-error" class="form-error" role="alert" aria-live="polite"></div>
+          <p class="form-privacy">送信により <a href="https://www.notre.co.jp/privacy_policy.html" target="_blank" rel="noopener">プライバシーポリシー</a> に同意したものとみなされます。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><b>Notre株式会社</b> ｜ 楽天市場 運営支援</p>
+    <p><a href="https://www.notre.co.jp/privacy_policy.html" target="_blank" rel="noopener">プライバシーポリシー</a></p>
+    <p class="copy">&copy; 2026 Notre Inc. ／ 本記事はNotre株式会社による広告企画（PR）です。</p>
+  </footer>
+
+  <!-- Sticky bottom CTA -->
+  <div id="sticky-cta" class="sticky-cta" aria-hidden="true" inert>
+    <button class="sticky-cta-close" id="sticky-close" aria-label="閉じる" type="button">×</button>
+    <span class="sticky-cta-txt"><b>無料・売り込みなし</b>まずは1分で相談会を予約</span>
+    <a href="#apply" class="btn" data-loc="sticky">相談会に申し込む</a>
+  </div>
+
+  <script>
+    /* ---- Sticky CTA: show after header, hide when form in view, dismissible ---- */
+    (function () {
+      var el = document.getElementById('sticky-cta');
+      var closeBtn = document.getElementById('sticky-close');
+      var header = document.querySelector('.article-header');
+      var form = document.getElementById('apply');
+      if (!el) return;
+      var dismissed = false;
+      try { dismissed = localStorage.getItem('notre_sticky_dismissed') === '1'; } catch (e) {}
+      var last = null;
+      function update() {
+        if (dismissed) { el.classList.remove('show'); return; }
+        var pastHeader = header ? (window.scrollY > header.offsetTop + header.offsetHeight) : window.scrollY > 400;
+        var formOn = false;
+        if (form) { var r = form.getBoundingClientRect(); formOn = r.top < window.innerHeight * 0.9 && r.bottom > 0; }
+        var vis = pastHeader && !formOn;
+        if (vis !== last) {
+          last = vis;
+          el.classList.toggle('show', vis);
+          el.setAttribute('aria-hidden', vis ? 'false' : 'true');
+          el.inert = !vis;
+        }
+      }
+      if (closeBtn) closeBtn.addEventListener('click', function () {
+        dismissed = true; el.classList.remove('show');
+        try { localStorage.setItem('notre_sticky_dismissed', '1'); } catch (e) {}
+      });
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    /* ---- CTA click tracking ---- */
+    document.querySelectorAll('a[data-loc]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'form_cta_click', cta_location: this.dataset.loc || 'unknown' });
+        if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: '無料相談会フォームへスクロール', content_category: 'rakuten-ec-article' });
+      });
+    });
+
+    /* ---- Form submit: validation + CAPI lead save (Lead は既存サンクスページで eventID 付き発火) ---- */
+    (function () {
+      var f = document.getElementById('apply-form');
+      var btn = document.getElementById('apply-submit');
+      var err = document.getElementById('form-error');
+      if (!f) return;
+      f.addEventListener('submit', function (e) {
+        var honey = f.querySelector('input[name="hp_field"]');
+        if (honey && honey.value) { e.preventDefault(); return; }
+        if (!f.checkValidity()) {
+          e.preventDefault();
+          err.textContent = '入力内容に不備があります。必須項目をご確認ください。';
+          err.classList.add('show');
+          var bad = f.querySelector(':invalid'); if (bad) bad.focus();
+          return;
+        }
+        err.classList.remove('show');
+        if (btn) { btn.disabled = true; btn.textContent = '送信中...'; }
+        if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'form_submit_attempt', form_name: 'rakuten_ec_article_v2_consult' });
+        // localStorage は origin 共有。実Lead+CAPIは /lp/rakuten-ec-article-v2/thanks/ で重複排除発火（SSGFormのリダイレクト先をv2 thanksに設定すること）。
+        try {
+          var eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
+          var getCookie = function (n) { var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)'); return m ? m.pop() : ''; };
+          var fv = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+          localStorage.setItem('notre_capi_lead', JSON.stringify({
+            eventId: eventId, email: fv('email'), phone: fv('phone'), name: fv('name'),
+            fbc: getCookie('_fbc'), fbp: getCookie('_fbp'),
+            eventSourceUrl: location.href, value: 5000, currency: 'JPY', ts: Date.now()
+          }));
+        } catch (err2) { /* localStorage 不可でも送信は継続 */ }
+      });
+    })();
+  </script>
+</body>
+
+</html>

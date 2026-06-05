@@ -7,6 +7,7 @@
 //   META_CAPI_ACCESS_TOKEN    ... 必須。Events Manager で発行した Lead 用トークン
 //   META_CAPI_PIXEL_ID        ... 必須。楽天EC_LP_Pixel = 1250132826712883
 //   META_CAPI_TEST_EVENT_CODE ... 任意。Test Events 確認時のみ設定し、確認後に削除する
+//                                 （リクエスト body の testEventCode でも指定可。body 指定が優先）
 //
 // 未設定時は何も送らず {skipped:true} を返す（＝LP側に害を出さない）。
 
@@ -84,7 +85,10 @@ export async function onRequestPost(context) {
   }
 
   try {
-    const { eventId, email, phone, name, fbc, fbp, eventSourceUrl, value, currency } = body;
+    const {
+      eventId, email, phone, name, fbc, fbp, eventSourceUrl, value, currency,
+      contentName, contentCategory, testEventCode,
+    } = body;
 
     // 氏名を 姓/名 に分割（空白区切り。区切りが無ければ全体を姓に）
     let ln = '', fn = '';
@@ -116,15 +120,18 @@ export async function onRequestPost(context) {
       event_id: eventId || undefined, // ← ブラウザPixelと同じIDで dedup
       user_data: userData,
       custom_data: {
-        content_name: '無料診断申込',
-        content_category: 'rakuten-ec-article',
+        content_name: contentName || '無料診断申込',
+        content_category: contentCategory || 'rakuten-ec-article',
         value: typeof value === 'number' ? value : 5000,
         currency: currency || 'JPY',
       },
     };
 
     const payload = { data: [event] };
-    if (env.META_CAPI_TEST_EVENT_CODE) payload.test_event_code = env.META_CAPI_TEST_EVENT_CODE;
+    // Test Events 確認用コード。リクエスト body 優先、無ければ env。
+    // body 指定時は必ず Test Events に振り分くため、本番計測を汚さずに検証できる。
+    const tec = (typeof testEventCode === 'string' && testEventCode) || env.META_CAPI_TEST_EVENT_CODE;
+    if (tec) payload.test_event_code = tec;
 
     const url = `https://graph.facebook.com/${GRAPH_VERSION}/${env.META_CAPI_PIXEL_ID}/events?access_token=${encodeURIComponent(env.META_CAPI_ACCESS_TOKEN)}`;
     const res = await fetch(url, {
