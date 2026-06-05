@@ -37,8 +37,33 @@ async function hashName(v) {
   return sha256Hex(String(v).trim().toLowerCase());
 }
 
+// 正規の呼び出し元（サンクスページ）のオリジン許可リスト
+const ALLOWED_ORIGINS = ['https://notre.co.jp', 'https://www.notre.co.jp'];
+// Cloudflare Pages のプレビュー（*.notre-1.pages.dev）も許可。Access保護下＝自社のみ。
+const ALLOWED_HOST_SUFFIX = '.notre-1.pages.dev';
+
+// Origin / Referer が自社（本番 or プレビュー）由来かを判定
+function isAllowedRef(value) {
+  if (!value) return false;
+  if (ALLOWED_ORIGINS.includes(value)) return true;                       // Origin 完全一致
+  if (ALLOWED_ORIGINS.some((o) => value.startsWith(o + '/'))) return true; // Referer 前方一致
+  try {
+    return new URL(value).hostname.endsWith(ALLOWED_HOST_SUFFIX);          // プレビュー
+  } catch (e) {
+    return false;
+  }
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
+
+  // --- 簡易アクセス制御: 無認証エンドポイントへのCV注入(汚染)を防ぐ ---
+  // 正規の呼び出し元はサンクスページのブラウザ fetch のみ。自社オリジン外は拒否。
+  const origin = request.headers.get('Origin') || '';
+  const referer = request.headers.get('Referer') || '';
+  if (!isAllowedRef(origin) && !isAllowedRef(referer)) {
+    return Response.json({ ok: false, error: 'forbidden origin' }, { status: 403 });
+  }
 
   // 環境変数未設定なら no-op（トークン投入前でもLPを壊さない）
   if (!env.META_CAPI_ACCESS_TOKEN || !env.META_CAPI_PIXEL_ID) {
@@ -50,6 +75,12 @@ export async function onRequestPost(context) {
     body = await request.json();
   } catch (e) {
     return Response.json({ ok: false, error: 'invalid json' }, { status: 400 });
+  }
+
+  // 必須項目チェック: eventId と最低1つの識別子が無いリクエストは弾く
+  // （疎通テスト/ボットの空Lead注入による計測汚染を防ぐ）
+  if (!body.eventId || !(body.email || body.phone)) {
+    return Response.json({ ok: false, error: 'missing required fields' }, { status: 400 });
   }
 
   try {

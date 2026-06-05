@@ -63,15 +63,9 @@
           }).catch(function () {});
         } catch (e) {}
         try { localStorage.removeItem('notre_capi_lead'); } catch (e) {}
-      } else {
-        // 保存データが無い場合（localStorage不可/直接訪問）でも、到達＝CV として Lead は送る
-        fbq('track', 'Lead', {
-          content_name: '無料診断申込',
-          content_category: 'rakuten-ec-article',
-          value: 0,
-          currency: 'JPY'
-        });
       }
+      // 直アクセス・リロード・ブックマーク再訪では保存データが無い → 何も送らない。
+      // （旧 else 分岐は value:0 の幽霊Lead／リロード時の重複CVの原因だったため削除）
     })();
   </script>
   <noscript><img height="1" width="1" style="display:none"
