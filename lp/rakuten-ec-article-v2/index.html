@@ -184,11 +184,13 @@
 
     /* ============ MASTHEAD (N6, simplified, not sticky) ============ */
     .masthead {
-      background: var(--paper-3);
-      border-bottom: 1px solid var(--rule);
+      max-width: var(--max-prose);
+      margin-inline: auto;
+      background: var(--accent);
+      border-bottom: 1px solid var(--accent-deep);
     }
     .masthead-inner {
-      max-width: var(--max-wide);
+      max-width: var(--max-prose);
       margin-inline: auto;
       padding: 12px var(--pad-inline);
       display: flex;
@@ -199,7 +201,7 @@
       font-weight: 900;
       font-size: var(--text-display);
       letter-spacing: var(--ls-nameplate);
-      color: var(--accent);
+      color: #fff;
       line-height: 1;
       white-space: nowrap;
       overflow: hidden;
@@ -220,14 +222,14 @@
       margin-left: auto;
       font-size: var(--text-sm);
       font-weight: 500;
-      color: var(--ink-2);
+      color: rgba(255,255,255,0.9);
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .masthead-link:hover { color: var(--accent); }
+    .masthead-link:hover { color: #fff; }
 
     /* ============ ARTICLE HEADER ============ */
-    .article-header { padding-top: var(--s-2xl); padding-bottom: var(--s-lg); }
+    .article-header { padding-top: var(--s-lg); padding-bottom: var(--s-lg); }
     .kicker {
       font-size: var(--text-xs);
       font-weight: 700;
@@ -261,12 +263,25 @@
       padding-top: var(--s-md);
       border-top: 1px solid var(--rule);
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px 12px;
-      font-size: var(--text-sm);
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 0 8px;
+      white-space: nowrap;
+      font-size: clamp(0.62rem, 2.9vw, 0.8rem);
       color: var(--ink-2);
     }
     .article-meta .dot { color: var(--rule-heavy); }
+    .article-meta .meta-pr {
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: var(--ls-label);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-tag);
+      padding: 1px 5px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
     .byline {
       margin-top: var(--s-sm);
       display: flex;
@@ -626,31 +641,35 @@
     }
     .case-photo {
       float: right;
-      width: 40%;
-      max-width: 300px;
+      width: 36%;
+      max-width: 280px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 20px;
-      margin: 0 0 var(--s-md) var(--s-lg);
+      margin: 0 0 var(--s-md) var(--s-md);
     }
     .case-label {
-      font-size: var(--text-base);
+      font-size: clamp(0.875rem, 3.6vw, 1rem);
       font-weight: 700;
       letter-spacing: 0.06em;
       color: var(--ink);
       margin-bottom: var(--s-md);
     }
-    .case-label .case-no { color: var(--accent); font-weight: 900; }
-    .case-label .sep { color: var(--rule-heavy); font-weight: 400; margin: 0 0.7em; }
+    .case-label .case-no { color: var(--accent); font-weight: 900; white-space: nowrap; margin-right: 0.7em; }
+    .case-label .case-client { white-space: nowrap; }
     .case-title {
-      font-size: clamp(1.5rem, 6.5vw, 2.1rem);
+      font-size: clamp(1.05rem, 4.3vw, 1.9rem);
       font-weight: 900;
-      line-height: 1.5;
+      line-height: 1.55;
       letter-spacing: 0.005em;
       color: var(--ink);
       margin-bottom: var(--s-md);
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: anywhere;
     }
     .case-title .em { color: var(--accent); }
+    .nb { white-space: nowrap; }
     .case-body {
       clear: both;
       font-size: 0.9rem;
@@ -685,20 +704,22 @@
       gap: 0.12em;
       color: var(--accent);
       line-height: 1.1;
+      white-space: nowrap;
     }
-    .case-result .v .lbl { font-size: clamp(1.25rem, 5vw, 1.65rem); font-weight: 900; }
+    .case-result .v .lbl { font-size: clamp(1.05rem, 4.2vw, 1.4rem); font-weight: 900; }
     .case-result .v strong {
-      font-size: clamp(2.1rem, 9.5vw, 3rem);
+      font-size: clamp(1.6rem, 6.8vw, 2.5rem);
       font-weight: 900;
       letter-spacing: 0.01em;
       font-variant-numeric: tabular-nums;
-      overflow-wrap: anywhere;
     }
     .case-sub {
       margin-top: 5px;
       font-size: var(--text-sm);
       color: var(--ink-2);
       line-height: var(--lh-snug);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
     }
     .case-sub b { color: var(--ink-2); font-weight: 400; margin: 0 0.35em; }
     .cases-disclaimer { margin-top: var(--s-lg); font-size: var(--text-xs); color: var(--ink-3); line-height: var(--lh-snug); }
@@ -793,10 +814,10 @@
     .faq-a strong { color: var(--ink); }
 
     /* ============ FORM ============ */
-    .apply { background: var(--paper-2); border-top: 1px solid var(--rule); }
+    .apply { max-width: var(--max-prose); margin-inline: auto; background: var(--paper-2); border-top: 1px solid var(--rule); }
     .apply .h2 { margin-bottom: var(--s-sm); }
     .apply-lead { font-size: var(--text-sm); color: var(--ink-2); line-height: var(--lh-base); margin-bottom: var(--s-lg); }
-    .form { display: grid; gap: var(--s-md); max-width: 460px; }
+    .form { display: grid; gap: var(--s-md); }
     .field label { display: block; font-size: var(--text-sm); font-weight: 500; color: var(--ink); margin-bottom: 6px; }
     .field .req { color: var(--accent-ink); background: var(--accent); font-size: var(--text-xs); padding: 1px 6px; border-radius: var(--radius-tag); margin-left: 6px; }
     .field .opt { color: var(--ink-3); border: 1px solid var(--rule); font-size: var(--text-xs); padding: 1px 6px; border-radius: var(--radius-tag); margin-left: 6px; }
@@ -832,6 +853,8 @@
 
     /* ============ FOOTER ============ */
     .footer {
+      max-width: var(--max-prose);
+      margin-inline: auto;
       border-top: 1px solid var(--rule-heavy);
       padding: var(--s-lg) var(--pad-inline) calc(var(--s-2xl) + 56px);
       text-align: center;
@@ -849,8 +872,11 @@
       bottom: 0; left: 0; right: 0;
       z-index: var(--z-sticky);
       width: 100%;
+      max-width: var(--max-prose);
+      margin-inline: auto;
       background: var(--ink);
       border-top: 2px solid var(--accent);
+      border-radius: 12px 12px 0 0;
       padding: 10px var(--pad-inline);
       padding-bottom: max(10px, env(safe-area-inset-bottom));
       display: flex;
@@ -879,7 +905,6 @@
 
     /* ============ RESPONSIVE ============ */
     @media (min-width: 640px) {
-      .cases-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .price-table th, .price-table td { display: table-cell; padding: var(--s-md) var(--s-md) var(--s-md) 0; }
       .price-table tr { display: table-row; }
@@ -901,8 +926,7 @@
   <!-- Hallmark · section: masthead · macrostructure: Long Document · genre: editorial -->
   <header class="masthead">
     <div class="masthead-inner">
-      <span class="nameplate">EC GROWTH JOURNAL</span>
-      <span class="masthead-tag">PR</span>
+      <span class="nameplate">Notre Journal</span>
       <a href="#apply" class="masthead-link" data-loc="masthead">↓ 相談会を見る</a>
     </div>
   </header>
@@ -914,7 +938,8 @@
       <h1 class="article-title">楽天で「売上は伸びたのに、利益が残らない」現象。店舗が見落としている6つの構造</h1>
       <p class="article-deck">運用代行を何社替えても変わらなかった理由を、元楽天ECC出身者が解説します。</p>
       <div class="article-meta">
-        <span>公開 2026.05.11</span><span class="dot">・</span>
+        <span class="meta-pr">PR</span><span class="dot">・</span>
+        <span>公開 2026.06.05</span><span class="dot">・</span>
         <span>読了 約7分</span><span class="dot">・</span>
         <span>取材／解説</span>
       </div>
@@ -1042,14 +1067,28 @@
         <li><strong>オンライン無料相談会（30分・夜間/土日OK）</strong><span>現状をヒアリングし、その場で「どこから利益が漏れているか」の見立てを共有します。</span></li>
         <li><strong>ご要望に応じて個別レポート（無料）</strong><span>広告・SEO・商品設計まで踏み込んだ精密診断も可能です。</span></li>
       </ol>
-      <div class="cta-insert" style="margin-top:var(--s-xl);">
-        <a href="#apply" class="btn block" data-loc="insert-2">無料相談会を申し込む（1分）</a>
-        <p class="cta-note">報酬が発生するのはモニター契約後のみ。相談会・レポートは完全無料です。</p>
+      <div class="cta-card" style="margin-top:var(--s-xl);">
+        <span class="cta-card-deco" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l4-4 3 3 5-6"/><path d="M3 4v16h16"/><circle cx="17.5" cy="7.5" r="3.2"/><path d="M19.8 9.8L22 12"/></svg>
+        </span>
+        <span class="cta-badge">無料相談会</span>
+        <h2>まずは1分の申し込みで、<br><span class="em">自店の利益の漏れ</span>を見てみませんか？</h2>
+        <p class="cta-card-lead">オンライン30分（夜間・土日OK）。その場で「どこから利益が漏れているか」の見立てを共有します。</p>
+        <ul class="cta-points">
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>入力は約1分・売り込みは一切なし</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>その場で利益漏れの見立てを共有</span></li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span><span>ご要望に応じて個別レポートも無料</span></li>
+        </ul>
+        <a href="#apply" class="btn block" data-loc="insert-2">
+          無料相談会を申し込む（1分）
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <p class="cta-card-note">報酬が発生するのはモニター契約後のみ。相談会・レポートは完全無料です。</p>
       </div>
     </section>
 
     <!-- Hallmark · section: case-studies · macrostructure: Long Document · genre: editorial -->
-    <section class="container wide section">
+    <section class="container section">
       <h2 class="h2">実際の支援事例</h2>
       <div class="cases-grid">
         <article class="case">
@@ -1057,14 +1096,14 @@
             <source srcset="images/case-01.webp" type="image/webp">
             <img class="case-photo" src="images/case-01.jpg" alt="野菜農家の支援事例" width="138" height="138" loading="lazy" decoding="async">
           </picture>
-          <p class="case-label"><span class="case-no">CASE 01</span><span class="sep">｜</span>野菜農家</p>
+          <p class="case-label"><span class="case-no">CASE 01</span><span class="case-client">野菜農家</span></p>
           <h3 class="case-title">卸専業から、EC参入で<span class="em">初年度 年商1億円へ</span></h3>
           <p class="case-body">卸販売のみ・EC未経験・自社ブランドなしの状態から、事業提案・価格戦略・ページ設計・運用設計まで伴走。</p>
           <hr class="case-rule">
           <div class="case-result">
             <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
             <div class="case-result-body">
-              <span class="k">RESULT</span>
+              <span class="k">結果</span>
               <div class="v"><span class="lbl">年商</span><strong>1億円</strong></div>
               <span class="case-sub">開店後 月商数万円 <b>→</b> 初年度で突破</span>
             </div>
@@ -1075,14 +1114,14 @@
             <source srcset="images/case-02.webp" type="image/webp">
             <img class="case-photo" src="images/case-02.jpg" alt="米農家の支援事例" width="138" height="138" loading="lazy" decoding="async">
           </picture>
-          <p class="case-label"><span class="case-no">CASE 02</span><span class="sep">｜</span>米農家</p>
-          <h3 class="case-title">EC歴20年の老舗を、<span class="em">値引きなしで売上1.5倍へ</span></h3>
+          <p class="case-label"><span class="case-no">CASE 02</span><span class="case-client">米農家</span></p>
+          <h3 class="case-title">EC歴20年の老舗を、<span class="em">値引きなしで<span class="nb">売上1.5倍へ</span></span></h3>
           <p class="case-body">長年横ばい・値引き不可の方針のなか、市場分析・競合整理・新商品コンセプト設計・既存顧客データ活用で第二の柱を作った。</p>
           <hr class="case-rule">
           <div class="case-result">
             <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
             <div class="case-result-body">
-              <span class="k">RESULT</span>
+              <span class="k">結果</span>
               <div class="v"><span class="lbl">日商</span><strong>150万円超</strong></div>
               <span class="case-sub">日商100万円 <b>→</b> 1.5倍</span>
             </div>
@@ -1093,14 +1132,14 @@
             <source srcset="images/case-03.webp" type="image/webp">
             <img class="case-photo" src="images/case-03.jpg" alt="車用品店の支援事例" width="138" height="138" loading="lazy" decoding="async">
           </picture>
-          <p class="case-label"><span class="case-no">CASE 03</span><span class="sep">｜</span>車用品店（上場企業）</p>
+          <p class="case-label"><span class="case-no">CASE 03</span><span class="case-client">車用品店（上場企業）</span></p>
           <h3 class="case-title">仕入れ改善で、<span class="em">売上V字回復</span></h3>
           <p class="case-body">既存仕入れ先依存・原価改善余地が不透明な状態から、仕入れ先の再選定・価格交渉・発注設計を見直した。</p>
           <hr class="case-rule">
           <div class="case-result">
             <span class="ic" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l7-7 5 4 8-9"/><path d="M21 8h6v6"/><path d="M8 28v-3"/><path d="M14 28v-6"/><path d="M20 28v-4"/><path d="M26 28v-8"/></svg></span>
             <div class="case-result-body">
-              <span class="k">RESULT（昨対比）</span>
+              <span class="k">結果（昨対比）</span>
               <div class="v"><span class="lbl">売上</span><strong>+50%</strong></div>
               <span class="case-sub">昨対比 −10% <b>→</b> +50%</span>
             </div>
@@ -1190,12 +1229,16 @@
             <input id="f-name" name="name" type="text" placeholder="山田 太郎" required maxlength="60" autocomplete="name">
           </div>
           <div class="field">
+            <label for="f-url">店舗URL <span class="opt">任意</span></label>
+            <input id="f-url" name="shop_url" type="url" placeholder="https://www.rakuten.co.jp/your-shop/" maxlength="200" autocomplete="url" inputmode="url">
+          </div>
+          <div class="field">
             <label for="f-email">メールアドレス <span class="req">必須</span></label>
             <input id="f-email" name="email" type="email" placeholder="example@example.com" required maxlength="120" autocomplete="email">
           </div>
           <div class="field">
-            <label for="f-phone">電話番号 <span class="opt">任意</span></label>
-            <input id="f-phone" name="phone" type="tel" placeholder="03-0000-0000" maxlength="20" autocomplete="tel" pattern="^[0-9\-\+\(\)\s]*$">
+            <label for="f-phone">電話番号 <span class="req">必須</span></label>
+            <input id="f-phone" name="phone" type="tel" placeholder="03-0000-0000" required maxlength="20" autocomplete="tel" pattern="^[0-9\-\+\(\)\s]*$">
           </div>
 
           <button type="submit" class="btn block" id="apply-submit">
