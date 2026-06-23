@@ -590,6 +590,13 @@
   width: 1%;
 }
 
+.blog-spec td a {
+  color: var(--blog-blue);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* 記事内インラインCTA（中間導線） */
 .blog-inline-cta {
   align-items: center;
