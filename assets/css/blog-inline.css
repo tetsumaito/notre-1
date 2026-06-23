@@ -518,84 +518,43 @@
   max-width: 100%;
 }
 
-/* 比較表（.blog-compare）: 全幅でカード型表示（1社=1カード）。企業名をカード見出しに */
-.blog-table-wrap.blog-compare {
-  border: 0;
-  overflow-x: visible;
-}
-
-.blog-compare table,
-.blog-compare tbody,
-.blog-compare tr,
-.blog-compare td {
-  display: block;
-  width: 100%;
-}
-
-.blog-compare thead {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
+/* 比較表（.blog-compare）: 強弱・ゼブラ・推奨行ハイライトで一覧性を上げる */
 .blog-compare caption {
+  caption-side: top;
   color: var(--blog-muted);
-  display: block;
   font-size: 12.5px;
   line-height: 1.7;
-  padding: 0 0 14px;
+  padding: 4px 16px 14px;
   text-align: left;
 }
 
-.blog-compare tbody tr {
-  background: #fff;
-  border: 1px solid var(--blog-line);
-  margin-bottom: 16px;
-  padding: 8px 22px;
+.blog-compare table {
+  table-layout: auto;
+}
+
+/* 4列でも窮屈になりにくいよう、比較表はフォント・余白を少し小さめに */
+.blog-compare th,
+.blog-compare td {
+  font-size: 13px;
+  line-height: 1.75;
+  padding: 12px 12px;
+}
+
+.blog-compare th:first-child,
+.blog-compare td:first-child {
+  white-space: nowrap;
+}
+
+.blog-compare tbody tr:nth-child(even) {
+  background: #fcfcfc;
 }
 
 .blog-compare tbody tr.is-recommended {
-  background: rgba(73, 116, 221, 0.04);
-  border-color: var(--blog-blue);
-  box-shadow: inset 3px 0 0 var(--blog-blue);
-}
-
-.blog-compare td {
-  border-bottom: 1px solid var(--blog-line);
-  padding: 12px 0;
-}
-
-.blog-compare td:last-child {
-  border-bottom: 0;
-}
-
-.blog-compare td::before {
-  color: var(--blog-muted);
-  content: attr(data-label);
-  display: block;
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  margin-bottom: 4px;
-}
-
-/* 1列目（企業名）はカード見出し扱い: ラベル非表示・大きめ */
-.blog-compare td:first-child::before {
-  display: none;
-}
-
-.blog-compare td:first-child {
-  padding-top: 4px;
+  background: rgba(73, 116, 221, 0.06);
 }
 
 .blog-compare td .company {
   color: var(--blog-ink);
-  font-size: 17px;
   font-weight: 600;
 }
 
@@ -893,6 +852,75 @@
 
   .blog-cta {
     margin-top: 72px;
+  }
+
+  /* 比較表: スマホは横スクロールをやめてカード型に切り替える */
+  .blog-compare {
+    border: 0;
+    overflow-x: visible;
+  }
+
+  .blog-compare table,
+  .blog-compare tbody,
+  .blog-compare tr,
+  .blog-compare td {
+    display: block;
+    width: 100%;
+  }
+
+  .blog-compare table {
+    min-width: 0;
+  }
+
+  .blog-compare thead {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .blog-compare caption {
+    padding: 0 0 14px;
+  }
+
+  .blog-compare tbody tr,
+  .blog-compare tbody tr:nth-child(even) {
+    background: #fff;
+    border: 1px solid var(--blog-line);
+    margin-bottom: 16px;
+    padding: 6px 18px;
+  }
+
+  .blog-compare tbody tr.is-recommended {
+    border-color: var(--blog-blue);
+    box-shadow: inset 3px 0 0 var(--blog-blue);
+  }
+
+  .blog-compare td {
+    border-bottom: 1px solid var(--blog-line);
+    padding: 12px 0;
+  }
+
+  .blog-compare td:last-child {
+    border-bottom: 0;
+  }
+
+  .blog-compare td:first-child {
+    white-space: normal;
+  }
+
+  .blog-compare td::before {
+    color: var(--blog-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
   }
 }
 
