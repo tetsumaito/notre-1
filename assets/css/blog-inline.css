@@ -194,17 +194,13 @@
 
 .blog-card-thumb img {
   display: block;
-  filter: grayscale(1);
   height: 100%;
   object-fit: cover;
-  opacity: .9;
-  transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+  transition: transform .2s ease;
   width: 100%;
 }
 
 .blog-card[href]:hover .blog-card-thumb img {
-  filter: grayscale(.3);
-  opacity: 1;
   transform: scale(1.03);
 }
 
@@ -371,10 +367,8 @@
 
 .blog-article-thumb img {
   display: block;
-  filter: grayscale(1);
   height: 100%;
   object-fit: cover;
-  opacity: .92;
   width: 100%;
 }
 
@@ -383,6 +377,16 @@
   max-width: 680px;
   min-width: 0;
   width: 100%;
+}
+
+.blog-article-body img {
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 36px auto;
+  max-width: 100%;
 }
 
 .blog-article-body h2 {
@@ -505,6 +509,89 @@
 
 .blog-table-wrap tr:last-child td {
   border-bottom: 0;
+}
+
+/* 本文画像: 明示的な width/height 指定でCLSを抑えつつ、列幅からはみ出させない */
+.blog-article-body img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* 比較表（.blog-compare）: 強弱・ゼブラ・推奨行ハイライトで一覧性を上げる */
+.blog-compare caption {
+  caption-side: top;
+  color: var(--blog-muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+  padding: 4px 16px 14px;
+  text-align: left;
+}
+
+.blog-compare table {
+  table-layout: auto;
+}
+
+.blog-compare th:first-child,
+.blog-compare td:first-child {
+  white-space: nowrap;
+}
+
+.blog-compare tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+.blog-compare tbody tr.is-recommended {
+  background: rgba(73, 116, 221, 0.06);
+}
+
+.blog-compare td .company {
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-compare td .badge {
+  background: var(--blog-blue);
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin-left: 8px;
+  padding: 1px 8px;
+  vertical-align: middle;
+}
+
+.blog-compare td .price-main {
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-compare td .ask {
+  color: var(--blog-muted);
+}
+
+/* 記事内インラインCTA（中間導線） */
+.blog-inline-cta {
+  align-items: center;
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  border-left: 3px solid var(--blog-blue);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  justify-content: space-between;
+  margin: 56px 0;
+  padding: 24px 28px;
+}
+
+.blog-inline-cta p {
+  color: var(--blog-ink);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0;
+  max-width: 34em;
 }
 
 .blog-checklist {
@@ -757,6 +844,75 @@
 
   .blog-cta {
     margin-top: 72px;
+  }
+
+  /* 比較表: スマホは横スクロールをやめてカード型に切り替える */
+  .blog-compare {
+    border: 0;
+    overflow-x: visible;
+  }
+
+  .blog-compare table,
+  .blog-compare tbody,
+  .blog-compare tr,
+  .blog-compare td {
+    display: block;
+    width: 100%;
+  }
+
+  .blog-compare table {
+    min-width: 0;
+  }
+
+  .blog-compare thead {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .blog-compare caption {
+    padding: 0 0 14px;
+  }
+
+  .blog-compare tbody tr,
+  .blog-compare tbody tr:nth-child(even) {
+    background: #fff;
+    border: 1px solid var(--blog-line);
+    margin-bottom: 16px;
+    padding: 6px 18px;
+  }
+
+  .blog-compare tbody tr.is-recommended {
+    border-color: var(--blog-blue);
+    box-shadow: inset 3px 0 0 var(--blog-blue);
+  }
+
+  .blog-compare td {
+    border-bottom: 1px solid var(--blog-line);
+    padding: 12px 0;
+  }
+
+  .blog-compare td:last-child {
+    border-bottom: 0;
+  }
+
+  .blog-compare td:first-child {
+    white-space: normal;
+  }
+
+  .blog-compare td::before {
+    color: var(--blog-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
   }
 }
 
