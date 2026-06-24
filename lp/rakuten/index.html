@@ -42,7 +42,9 @@
   .fv-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
   .fv-art::after{content:"";position:absolute;inset:0;background:linear-gradient(96deg,#fff 19%,rgba(255,255,255,.5) 44%,rgba(255,255,255,0) 64%)}
   .fv-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .ribbon{filter:blur(2px)}
+  .ribbon{filter:blur(2px);transform-box:fill-box;transform-origin:center;will-change:transform;animation:fvsway 22s ease-in-out infinite}
+  @keyframes fvsway{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-28px,16px) rotate(1.5deg)}}
+  @media(prefers-reduced-motion:reduce){.ribbon{animation:none}}
   .hero-center{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;width:100%;max-width:1200px;margin:0 auto;padding:150px 44px 50px}
   .hero-eyebrow{font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--red);margin-bottom:24px}
   h1{font-size:clamp(38px,5.6vw,66px);font-weight:700;line-height:1.3;letter-spacing:-.02em;margin-bottom:24px;color:var(--ink)}
@@ -58,21 +60,31 @@
   .btn-link{color:#fff;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:10px 4px;border-bottom:1.5px solid rgba(255,255,255,.5)}
   .btn-link:hover{border-color:#fff}
   .hero-free{font-size:12.5px;color:var(--ink-3);margin-bottom:30px}
+  /* CTA "無料" chip inside the button */
+  .free-cta{padding-left:10px;gap:14px}
+  .free{background:#fff;color:var(--red);font-family:var(--dp);font-size:10.5px;font-weight:800;letter-spacing:.04em;line-height:1;padding:3px 8px;border-radius:999px}
+  .btn-w .free{background:var(--red);color:#fff}
   .laurels{display:flex;gap:30px;flex-wrap:wrap;justify-content:flex-start;align-items:center}
   .laurel{position:relative;width:228px;height:96px;display:flex;align-items:center;justify-content:center;background:url('images/laurel.png') no-repeat center center;background-size:contain}
-  .lr-mid{display:flex;flex-direction:column;align-items:center;line-height:1.1;text-align:center}
-  .lr-top{font-size:12.5px;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
-  .lr-big{font-family:var(--dp);font-size:34px;font-weight:800;color:var(--red);letter-spacing:-.01em;margin:1px 0}
-  .lr-sub{font-size:11px;color:var(--ink-3)}
+  .lr-mid{display:flex;flex-direction:column;align-items:center;line-height:1.05;text-align:center}
+  .lr-top{font-size:14px;font-weight:700;color:var(--ink-2);letter-spacing:.06em}
+  .lr-big{font-family:var(--dp);font-size:48px;font-weight:800;letter-spacing:-.02em;line-height:1;margin:3px 0;background:linear-gradient(180deg,#F7E08C 0%,#E3BE58 32%,#C49A38 58%,#A87C28 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  .lr-big.w{font-size:38px}
+  .lr-sub{font-size:12px;color:var(--ink-3)}
   .laurel-note{font-size:10.5px;color:var(--ink-3);margin-top:16px;text-align:left}
-  /* product first-image strip (KEA portrait row → 第一画像) */
-  .strip{display:flex;width:100%;margin-top:auto;border-top:1px solid var(--line);position:relative}
-  .ftile{flex:1;min-width:0;aspect-ratio:1/1.06;padding:15px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.1);overflow:hidden}
-  .ftile:last-child{border-right:none}
-  .ftile .rib{font-family:var(--dp);font-size:9.5px;font-weight:700;letter-spacing:.03em;background:rgba(0,0,0,.3);padding:3px 8px;border-radius:3px;align-self:flex-start;color:#fff}
-  .ftile .cat{font-size:14px;font-weight:700;line-height:1.45;color:#fff}
-  .ftile .pr{font-family:var(--dp);font-size:13px;font-weight:700;color:rgba(255,255,255,.94)}
-  .strip-note{position:absolute;top:-22px;right:14px;font-family:var(--dp);font-size:10px;color:var(--ink-3)}
+  /* product first-image deck (制作実績 — tilted card fan) */
+  .strip{width:100%;margin-top:auto;position:relative;overflow:hidden;padding:58px 0 72px}
+  .strip-note{position:absolute;top:22px;left:0;right:0;text-align:center;font-family:var(--dp);font-size:11px;letter-spacing:.05em;color:var(--ink-3)}
+  .deck{display:flex;justify-content:center;align-items:flex-end}
+  .card{position:relative;flex:0 0 auto;width:210px;margin-right:-26px;border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(28,23,25,.06);box-shadow:0 26px 48px -24px rgba(28,23,25,.5)}
+  .card:last-child{margin-right:0}
+  .card img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+  .card:nth-child(1){transform:rotate(-5deg) translateY(8px);z-index:2}
+  .card:nth-child(2){transform:rotate(4deg) translateY(20px);z-index:3}
+  .card:nth-child(3){transform:rotate(-3deg) translateY(2px);z-index:5}
+  .card:nth-child(4){transform:rotate(6deg) translateY(12px);z-index:4}
+  .card:nth-child(5){transform:rotate(-6deg) translateY(6px);z-index:3}
+  .card:nth-child(6){transform:rotate(3deg) translateY(16px);z-index:2}
 
   /* generic section */
   section{padding:104px 0}
@@ -221,7 +233,8 @@
   @media(max-width:760px){
     .nav-links a:not(.nav-cta),.nav-div{display:none}
     .hero-center{padding:120px 20px 30px}
-    .ftile:nth-child(n+6){display:none}
+    .strip{padding:38px 0 50px}
+    .card{width:150px;margin-right:-20px;border-radius:12px}
   }
 </style>
 </head>
@@ -250,9 +263,9 @@
         <linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF4D6D"/><stop offset="1" stop-color="#B00020"/></linearGradient>
       </defs>
       <g class="ribbon" fill="none" stroke-linecap="round">
-        <path stroke="url(#g1)" stroke-width="230" d="M1520 40 C1150 240 860 280 820 500 C780 720 1120 700 1440 920"><animate attributeName="d" dur="15s" repeatCount="indefinite" values="M1520 40 C1150 240 860 280 820 500 C780 720 1120 700 1440 920;M1540 90 C1090 200 930 330 880 520 C830 710 1180 640 1420 880;M1520 40 C1150 240 860 280 820 500 C780 720 1120 700 1440 920"/></path>
-        <path stroke="url(#g2)" stroke-width="150" opacity=".92" d="M1520 220 C1200 320 980 400 1000 600 C1020 780 1280 800 1540 740"><animate attributeName="d" dur="12s" repeatCount="indefinite" values="M1520 220 C1200 320 980 400 1000 600 C1020 780 1280 800 1540 740;M1520 180 C1150 360 1030 380 980 620 C930 820 1300 720 1540 780;M1520 220 C1200 320 980 400 1000 600 C1020 780 1280 800 1540 740"/></path>
-        <path stroke="url(#g3)" stroke-width="105" opacity=".85" d="M1400 -20 C1260 200 1100 240 1160 470 C1210 680 1440 620 1560 520"><animate attributeName="d" dur="17s" repeatCount="indefinite" values="M1400 -20 C1260 200 1100 240 1160 470 C1210 680 1440 620 1560 520;M1420 30 C1220 240 1150 220 1120 490 C1090 720 1470 600 1560 560;M1400 -20 C1260 200 1100 240 1160 470 C1210 680 1440 620 1560 520"/></path>
+        <path stroke="url(#g1)" stroke-width="230" d="M1520 40 C1150 240 860 280 820 500 C780 720 1120 700 1440 920"/>
+        <path stroke="url(#g2)" stroke-width="150" opacity=".92" d="M1520 220 C1200 320 980 400 1000 600 C1020 780 1280 800 1540 740"/>
+        <path stroke="url(#g3)" stroke-width="105" opacity=".85" d="M1400 -20 C1260 200 1100 240 1160 470 C1210 680 1440 620 1560 520"/>
       </g>
     </svg>
   </div>
@@ -261,28 +274,28 @@
     <h1>値上げが続く楽天で、<br><span class="q">“利益”</span>を残す。</h1>
     <p class="hero-sub">売上ではなく、口座に残る“手残り”を。<br>楽天市場専門・固定報酬の、利益最適化コンサルティング。</p>
     <div class="hero-cta">
-      <a class="btn-red" href="#cta">無料・楽天“利益”診断を申し込む <span class="dp">→</span></a>
+      <a class="btn-red free-cta" href="#cta"><span class="free">無料</span>楽天“利益”診断を申し込む <span class="dp">→</span></a>
       <a class="btn-out" href="#price">料金・プランを見る <span class="dp">→</span></a>
     </div>
-    <p class="hero-free">※診断・ご相談は無料です。費用が発生するのは本契約のみ。</p>
+    <p class="hero-free">※費用が発生するのは本契約のみです。</p>
     <div class="laurels">
       <div class="laurel">
         <div class="lr-mid"><span class="lr-top">元 楽天</span><span class="lr-big">ECC</span><span class="lr-sub">在籍メンバーが診断</span></div>      </div>
       <div class="laurel">
-        <div class="lr-mid"><span class="lr-top">ECCとして担当</span><span class="lr-big">1,000社+</span><span class="lr-sub">累計実績 ※1</span></div>      </div>
+        <div class="lr-mid"><span class="lr-top">ECCとして担当</span><span class="lr-big w">1,000社+</span><span class="lr-sub">累計実績 ※1</span></div>      </div>
     </div>
     <p class="laurel-note">※1 在籍メンバーが楽天ECC在籍時に担当した累計店舗数です。</p>
   </div>
   <div class="strip">
-    <span class="strip-note">商品ページ 第一画像 ─ 制作イメージ</span>
-    <div class="ftile" style="background:#1B2A4A"><span class="rib">ランキング1位</span><div class="cat">全機種対応<br>手帳型ケース</div><span class="pr">¥2,980</span></div>
-    <div class="ftile" style="background:#5C1620"><span class="rib">送料無料</span><div class="cat">とろける<br>濃厚ケーキ</div><span class="pr">¥3,480</span></div>
-    <div class="ftile" style="background:#3A2540"><span class="rib">★4.8</span><div class="cat">毛穴ケア<br>美容液</div><span class="pr">¥4,200</span></div>
-    <div class="ftile" style="background:#123A33"><span class="rib">定期便</span><div class="cat">続く美味しい<br>習慣へ</div><span class="pr">¥1,980</span></div>
-    <div class="ftile" style="background:#2C3340"><span class="rib">大容量</span><div class="cat">毎日使う<br>つめかえ</div><span class="pr">¥1,580</span></div>
-    <div class="ftile" style="background:#3A2A18"><span class="rib">限定</span><div class="cat">大人の<br>カジュアル</div><span class="pr">¥5,900</span></div>
-    <div class="ftile" style="background:#102A45"><span class="rib">NEW</span><div class="cat">急速充電<br>バッテリー</div><span class="pr">¥3,280</span></div>
-    <div class="ftile" style="background:#42121C"><span class="rib">のし対応</span><div class="cat">贈って<br>喜ばれる</div><span class="pr">¥4,800</span></div>
+    <span class="strip-note">制作実績 ─ 商品ページ 第一画像</span>
+    <div class="deck">
+      <div class="card"><img src="images/cascara-tea.webp" alt="カスカラティー 選べる4箱セット 第一画像" width="210" height="210"></div>
+      <div class="card"><img src="images/mango-tart.webp" alt="手作りマンゴータルト 第一画像" width="210" height="210"></div>
+      <div class="card"><img src="images/phone-case.webp" alt="本革手帳型スマホケース 第一画像" width="210" height="210"></div>
+      <div class="card"><img src="images/oyster.webp" alt="宮城産 殻付き牡蠣 第一画像" width="210" height="210"></div>
+      <div class="card"><img src="images/mixed-berry.webp" alt="4種のミックスベリー 第一画像" width="210" height="210"></div>
+      <div class="card"><img src="images/shoulder-belt.webp" alt="5Way付け替えショルダーベルト 第一画像" width="210" height="210"></div>
+    </div>
   </div>
 </header>
 
@@ -441,7 +454,7 @@
   <div class="wrap cta-in">
     <h2>「売上を上げます」は、もう全社が言っています。<br>約束するのは、口座に残る金額です。</h2>
     <p>専任で深く伴走するため、同時にご支援できる店舗数には限りがあります。</p>
-    <a class="btn-w" href="#">無料・楽天“利益”診断を申し込む <span class="dp">→</span></a>
+    <a class="btn-w free-cta" href="#"><span class="free">無料</span>楽天“利益”診断を申し込む <span class="dp">→</span></a>
   </div>
 </div>
 
