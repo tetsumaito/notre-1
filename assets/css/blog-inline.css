@@ -194,17 +194,13 @@
 
 .blog-card-thumb img {
   display: block;
-  filter: grayscale(1);
   height: 100%;
   object-fit: cover;
-  opacity: .9;
-  transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+  transition: transform .2s ease;
   width: 100%;
 }
 
 .blog-card[href]:hover .blog-card-thumb img {
-  filter: grayscale(.3);
-  opacity: 1;
   transform: scale(1.03);
 }
 
@@ -371,10 +367,8 @@
 
 .blog-article-thumb img {
   display: block;
-  filter: grayscale(1);
   height: 100%;
   object-fit: cover;
-  opacity: .92;
   width: 100%;
 }
 
@@ -383,6 +377,16 @@
   max-width: 680px;
   min-width: 0;
   width: 100%;
+}
+
+.blog-article-body img {
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 36px auto;
+  max-width: 100%;
 }
 
 .blog-article-body h2 {
@@ -505,6 +509,114 @@
 
 .blog-table-wrap tr:last-child td {
   border-bottom: 0;
+}
+
+/* 本文画像: 明示的な width/height 指定でCLSを抑えつつ、列幅からはみ出させない */
+.blog-article-body img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* 比較表（.blog-compare）: 強弱・ゼブラ・推奨行ハイライトで一覧性を上げる */
+.blog-compare caption {
+  caption-side: top;
+  color: var(--blog-muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+  padding: 4px 16px 14px;
+  text-align: left;
+}
+
+.blog-compare table {
+  table-layout: auto;
+}
+
+/* 4列でも窮屈になりにくいよう、比較表はフォント・余白を少し小さめに */
+.blog-compare th,
+.blog-compare td {
+  font-size: 13px;
+  line-height: 1.75;
+  padding: 12px 12px;
+}
+
+.blog-compare th:first-child,
+.blog-compare td:first-child {
+  white-space: nowrap;
+}
+
+.blog-compare tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+.blog-compare tbody tr.is-recommended {
+  background: rgba(73, 116, 221, 0.06);
+}
+
+.blog-compare td .company {
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-compare td .badge {
+  background: var(--blog-blue);
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin-left: 8px;
+  padding: 1px 8px;
+  vertical-align: middle;
+}
+
+.blog-compare td .price-main {
+  color: var(--blog-ink);
+  font-weight: 600;
+}
+
+.blog-compare td .ask {
+  color: var(--blog-muted);
+}
+
+/* 各社の詳細スペック表（2列のキー・バリュー。狭幅でも収まる） */
+.blog-spec table {
+  min-width: 0;
+}
+
+.blog-spec th[scope="row"] {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.blog-spec td a {
+  color: var(--blog-blue);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 記事内インラインCTA（中間導線） */
+.blog-inline-cta {
+  align-items: center;
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  border-left: 3px solid var(--blog-blue);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  justify-content: space-between;
+  margin: 56px 0;
+  padding: 24px 28px;
+}
+
+.blog-inline-cta p {
+  color: var(--blog-ink);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0;
+  max-width: 34em;
 }
 
 .blog-checklist {
@@ -757,6 +869,34 @@
 
   .blog-cta {
     margin-top: 72px;
+  }
+
+  /* 比較表: スマホは文字サイズを詰めて横スクロールで見せる（カード化はしない） */
+  .blog-compare table {
+    min-width: 600px;
+  }
+
+  .blog-compare caption {
+    font-size: 12px;
+  }
+
+  .blog-compare th,
+  .blog-compare td {
+    font-size: 12.5px;
+    line-height: 1.7;
+    padding: 10px 12px;
+  }
+
+  .blog-compare td .badge {
+    font-size: 10px;
+    margin-left: 6px;
+    padding: 1px 6px;
+  }
+
+  .blog-spec th,
+  .blog-spec td {
+    font-size: 13px;
+    padding: 11px 12px;
   }
 }
 
