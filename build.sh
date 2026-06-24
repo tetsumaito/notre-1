@@ -8,7 +8,7 @@ OUT="dist"
 rm -rf "$OUT"; mkdir -p "$OUT"
 
 # 配信しないトップレベル項目（開発用ファイル・設定・ビルド成果物）
-EXCLUDE=(".git" ".github" ".claude" "node_modules" "dist" "_blog-astro" "build.sh"
+EXCLUDE=(".git" ".github" ".claude" "node_modules" "dist" "build.sh"
          "CLAUDE.md" "AGENTS.md" "README.md"
          ".gitignore" ".assetsignore" ".DS_Store" ".vercel" ".wrangler")
 
