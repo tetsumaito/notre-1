@@ -619,6 +619,58 @@
   max-width: 34em;
 }
 
+/* Notre節のFVバナー（自社のみ） */
+.blog-notre-hero {
+  align-items: center;
+  background: var(--blog-soft);
+  border: 1px solid var(--blog-line);
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  margin: 8px 0 28px;
+  padding: 32px;
+}
+
+.blog-notre-hero .blog-notre-hero-eyebrow {
+  color: var(--blog-blue);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.blog-notre-hero .blog-notre-hero-title {
+  color: var(--blog-ink);
+  font-size: clamp(20px, 2.6vw, 24px);
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.blog-notre-hero .blog-notre-hero-title strong {
+  font-weight: 500;
+}
+
+.blog-notre-hero .blog-notre-hero-text {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0 0 22px;
+}
+
+.blog-notre-hero .blog-notre-hero-img {
+  height: auto;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .blog-notre-hero {
+    gap: 24px;
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
 .blog-checklist {
   list-style: none;
   padding-left: 0 !important;
