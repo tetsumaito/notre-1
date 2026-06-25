@@ -119,8 +119,11 @@
   }
 
   /* 因数分解 (factorization) — boxed factors + levers below each */
-  .fx-lead{font-size:15px;font-weight:700;color:var(--red);letter-spacing:.02em}
-  .fx-h{font-size:clamp(23px,2.7vw,32px);font-weight:700;line-height:1.45;letter-spacing:-.01em;color:var(--ink);margin-top:14px;max-width:24em}
+  .fx{position:relative}
+  .fx>.wrap{position:relative;z-index:1}
+  .fx::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-color:#EFE3D7;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"),radial-gradient(60% 46% at 88% 20%,rgba(255,170,95,.28),rgba(255,170,95,0) 60%),radial-gradient(125% 95% at 50% 50%,rgba(70,28,18,0) 50%,rgba(70,28,18,.16) 100%),linear-gradient(180deg,#F3E8DD 0%,#EBDDCE 55%,#F1E6DB 100%);background-size:200px 200px,cover,cover,cover;background-repeat:repeat,no-repeat,no-repeat,no-repeat;-webkit-mask:linear-gradient(180deg,transparent 0,#000 13%,#000 85%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 13%,#000 85%,transparent 100%)}
+  .fx-lead{font-size:15px;font-weight:700;color:var(--red);letter-spacing:.02em;text-align:center}
+  .fx-h{font-size:clamp(23px,2.7vw,32px);font-weight:700;line-height:1.45;letter-spacing:-.01em;color:var(--ink);margin:14px auto 0;max-width:32em;text-align:center}
   .fx-h .r{color:var(--red)}
   .fx-eq{display:flex;align-items:flex-start;gap:16px;margin-top:34px}
   .fx-col{flex:1;min-width:0}
@@ -128,9 +131,8 @@
   .fx-etc{display:block;text-align:right;font-family:var(--dp);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink-3);margin-top:10px}
   .fx-op{flex:0 0 auto;font-family:var(--dp);font-size:clamp(22px,2.4vw,30px);font-weight:600;color:var(--line-2);margin-top:20px}
   .fx-levers{list-style:none;margin-top:16px;border-top:2px solid var(--line-2);padding-top:16px;display:flex;flex-direction:column;gap:8px}
-  .fx-levers li{background:var(--paper);border-radius:9px;padding:11px 14px;font-size:14px;font-weight:600;color:var(--ink-2);text-align:center}
-  .fx-levers li.warn{background:var(--red-soft);color:var(--red-ink)}
-  .fx-q{margin-top:46px;font-size:clamp(21px,2.6vw,28px);font-weight:700;line-height:1.5;color:var(--ink);letter-spacing:-.01em}
+  .fx-levers li{background:#FBF7F2;border:1px solid rgba(70,28,18,.08);border-radius:9px;padding:11px 14px;font-size:14px;font-weight:600;color:var(--ink-2);text-align:center}
+  .fx-q{margin-top:46px;font-size:clamp(21px,2.6vw,28px);font-weight:700;line-height:1.5;color:var(--ink);letter-spacing:-.01em;text-align:center}
   .fx-q .hl{color:var(--red);background:linear-gradient(transparent 58%,rgba(176,0,32,.15) 58%);padding:0 3px}
   @media(max-width:680px){
     .fx-eq{flex-direction:column;gap:10px}
@@ -356,7 +358,7 @@
 <section id="formula" class="fx">
   <div class="wrap">
     <p class="fx-lead">少し、立ち戻ってみましょう。</p>
-    <h2 class="fx-h">楽天の売上は、結局この<span class="r">“3つの掛け算”</span>。それぞれに「効かせるレバー」があります。</h2>
+    <h2 class="fx-h">楽天の売上は、結局この<span class="r">“3つの掛け算”</span>。<br>それぞれに「効かせるレバー」があります。</h2>
     <div class="fx-eq">
       <div class="fx-col">
         <div class="fx-box">アクセス数</div>
@@ -366,7 +368,7 @@
       <span class="fx-op">×</span>
       <div class="fx-col">
         <div class="fx-box">転換率</div>
-        <ul class="fx-levers"><li>LPデザイン</li><li class="warn">クーポン・値引き</li><li>レビュー獲得</li></ul>
+        <ul class="fx-levers"><li>LPデザイン</li><li>クーポン・値引き</li><li>レビュー獲得</li></ul>
         <span class="fx-etc">etc...</span>
       </div>
       <span class="fx-op">×</span>
@@ -376,7 +378,7 @@
         <span class="fx-etc">etc...</span>
       </div>
     </div>
-    <p class="fx-q">——あなたの店舗は、いま<span class="hl">“どこ”が問題なのか</span>、もう特定できていますか？</p>
+    <p class="fx-q">あなたの店舗は、いま<span class="hl">“どこ”が問題なのか</span>、もう特定できていますか？</p>
   </div>
 </section>
 
