@@ -1090,50 +1090,58 @@
             }
 
             /* 選ばれる理由 alternating */
+            .reasons-head {
+                text-align: center;
+                max-width: 30em;
+                margin: 0 auto;
+            }
+            .reasons-head h2 {
+                font-size: 34px;
+            }
             .reasons {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                margin-top: 48px;
             }
             .reason {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 60px;
-                align-items: center;
-                padding: 56px 0;
-                border-top: 1px solid var(--line);
-            }
-            .reason:last-child {
-                border-bottom: 1px solid var(--line);
-            }
-            .reason.flip .r-vis {
-                order: -1;
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                padding: 34px 30px;
             }
             .r-no {
                 font-family: var(--dp);
-                font-size: 15px;
+                font-size: 13px;
                 font-weight: 700;
+                letter-spacing: 0.04em;
                 color: var(--red);
                 margin-bottom: 14px;
             }
             .r-h {
-                font-size: 27px;
+                font-size: 20px;
                 font-weight: 700;
-                line-height: 1.45;
+                line-height: 1.5;
+                letter-spacing: -0.01em;
                 margin-bottom: 14px;
             }
             .r-p {
-                font-size: 15px;
+                flex: 1;
+                font-size: 14px;
                 color: var(--ink-2);
                 font-weight: 500;
+                line-height: 1.8;
             }
             .r-vis {
+                margin-top: 24px;
                 background: var(--paper);
                 border-radius: var(--r);
-                min-height: 230px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 32px;
+                padding: 22px;
                 border: 1px solid var(--line);
             }
             .vbars {
@@ -1567,7 +1575,7 @@
                     padding: 0 22px;
                 }
                 .issue,
-                .reason,
+                .reasons,
                 .svc-grid,
                 .voices {
                     grid-template-columns: 1fr;
@@ -1960,13 +1968,8 @@
             style="background: var(--paper); border-top: 1px solid var(--line)"
         >
             <div class="wrap">
-                <div class="lede" style="margin-bottom: 8px">
-                    <span class="idx">02 選ばれる理由</span>
-                    <h2>
-                        “売上を盛る”のではなく、<br /><span class="r"
-                            >手残りを設計する。</span
-                        >
-                    </h2>
+                <div class="reasons-head">
+                    <h2>Notre が選ばれる理由</h2>
                 </div>
                 <div class="reasons">
                     <div class="reason">
@@ -1993,7 +1996,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="reason flip">
+                    <div class="reason">
                         <div>
                             <div class="r-no">理由 02</div>
                             <div class="r-h">
@@ -2066,7 +2069,7 @@
             <div class="wrap">
                 <div class="lede">
                     <span class="idx" style="color: #ff8a90"
-                        >03 ご支援内容</span
+                        >02 ご支援内容</span
                     >
                     <h2>
                         楽天の戦い方を、<span class="r" style="color: #ff8a90"
@@ -2142,7 +2145,7 @@
         >
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">04 ご支援の流れ</span>
+                    <span class="idx">03 ご支援の流れ</span>
                     <h2>無料診断から、<span class="r">伴走まで。</span></h2>
                 </div>
                 <div class="flow" style="margin-top: 48px">
@@ -2178,7 +2181,7 @@
         <section id="price">
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">05 料金</span>
+                    <span class="idx">04 料金</span>
                     <h2>
                         固定報酬・月額。<br /><span class="r"
                             >広告費は実費別途。</span
@@ -2256,7 +2259,7 @@
         >
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">06 お客様の声</span>
+                    <span class="idx">05 お客様の声</span>
                     <h2><span class="r">手残り</span>で語る、ご支援の成果。</h2>
                 </div>
                 <div class="voices" style="margin-top: 44px">
@@ -2285,7 +2288,7 @@
         <section id="faq">
             <div class="wrap" style="max-width: 880px">
                 <div class="lede" style="margin-bottom: 36px">
-                    <span class="idx">07 よくある質問</span>
+                    <span class="idx">06 よくある質問</span>
                 </div>
                 <div class="faq">
                     <div class="qa">
