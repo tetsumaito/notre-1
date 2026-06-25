@@ -38,13 +38,15 @@
   .nav-cta:hover{background:var(--red-d)}
 
   /* hero — white field with flowing red ribbons (Stripe-style) */
-  .hero{position:relative;min-height:100vh;background:#fff;color:var(--ink);overflow:hidden;display:flex;flex-direction:column}
-  .fv-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .hero{position:relative;min-height:100vh;background:#fff;color:var(--ink);overflow-x:clip;overflow-y:visible;display:flex;flex-direction:column}
+  .fv-art{position:absolute;inset:0;overflow-x:clip;overflow-y:visible;pointer-events:none;z-index:0}
   .fv-art::after{content:"";position:absolute;inset:0;background:linear-gradient(96deg,#fff 19%,rgba(255,255,255,.5) 44%,rgba(255,255,255,0) 64%)}
-  .fv-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .ribbon{filter:blur(2px);transform-box:fill-box;transform-origin:center;will-change:transform;animation:fvsway 22s ease-in-out infinite}
-  @keyframes fvsway{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-28px,16px) rotate(1.5deg)}}
-  @media(prefers-reduced-motion:reduce){.ribbon{animation:none}}
+  .blob{position:absolute;will-change:transform}
+  .blob1{width:46%;aspect-ratio:1;top:-8%;right:-6%;border-radius:58% 42% 60% 40% / 48% 55% 45% 52%;background:linear-gradient(135deg,#FF8A2E 0%,#FF2D6B 50%,#C70028 100%);animation:spinA 26s linear infinite}
+  .blob2{width:38%;aspect-ratio:1;bottom:-14%;right:5%;border-radius:46% 54% 42% 58% / 56% 44% 60% 40%;background:linear-gradient(210deg,#FF7A5A 0%,#E4002B 56%,#B00020 100%);animation:spinB 34s linear infinite reverse}
+  @keyframes spinA{to{transform:rotate(360deg)}}
+  @keyframes spinB{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.blob{animation:none}}
   .hero-center{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;width:100%;max-width:1200px;margin:0 auto;padding:150px 44px 50px}
   .hero-eyebrow{font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--red);margin-bottom:24px}
   h1{font-size:clamp(38px,5.6vw,66px);font-weight:700;line-height:1.3;letter-spacing:-.02em;margin-bottom:24px;color:var(--ink)}
@@ -57,6 +59,9 @@
   .btn-red:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(176,0,32,.55)}
   .btn-out{background:#fff;color:var(--ink);border:1.5px solid var(--line-2);font-size:16px;font-weight:700;padding:15px 28px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;transition:.18s}
   .btn-out:hover{border-color:var(--ink)}
+  .text-link{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--ink-2);transition:color .2s}
+  .text-link span:first-child{border-bottom:1.5px solid currentColor;padding-bottom:2px}
+  .text-link:hover{color:var(--ink)}
   .btn-link{color:#fff;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:10px 4px;border-bottom:1.5px solid rgba(255,255,255,.5)}
   .btn-link:hover{border-color:#fff}
   .hero-free{font-size:12.5px;color:var(--ink-3);margin-bottom:30px}
@@ -67,13 +72,13 @@
   .laurels{display:flex;gap:30px;flex-wrap:wrap;justify-content:flex-start;align-items:center}
   .laurel{position:relative;width:228px;height:96px;display:flex;align-items:center;justify-content:center;background:url('images/laurel.png') no-repeat center center;background-size:contain}
   .lr-mid{display:flex;flex-direction:column;align-items:center;line-height:1.05;text-align:center}
-  .lr-top{font-size:14px;font-weight:700;color:var(--ink-2);letter-spacing:.06em}
+  .lr-top{font-size:14px;font-weight:700;letter-spacing:.06em;background:linear-gradient(180deg,#F7E08C 0%,#E3BE58 32%,#C49A38 58%,#A87C28 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
   .lr-big{font-family:var(--dp);font-size:48px;font-weight:800;letter-spacing:-.02em;line-height:1;margin:3px 0;background:linear-gradient(180deg,#F7E08C 0%,#E3BE58 32%,#C49A38 58%,#A87C28 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
   .lr-big.w{font-size:38px}
   .lr-sub{font-size:12px;color:var(--ink-3)}
   .laurel-note{font-size:10.5px;color:var(--ink-3);margin-top:16px;text-align:left}
   /* product first-image deck (制作実績 — tilted card fan) */
-  .strip{width:100%;margin-top:auto;position:relative;overflow:hidden;padding:58px 0 72px}
+  .strip{width:100%;margin-top:auto;position:relative;overflow-x:clip;overflow-y:visible;padding:58px 0 52px}
   .strip-note{position:absolute;top:22px;left:0;right:0;text-align:center;font-family:var(--dp);font-size:11px;letter-spacing:.05em;color:var(--ink-3)}
   .deck{display:flex;justify-content:center;align-items:flex-end}
   .card{position:relative;flex:0 0 auto;width:210px;margin-right:-26px;border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(28,23,25,.06);box-shadow:0 26px 48px -24px rgba(28,23,25,.5)}
@@ -94,15 +99,44 @@
   h2 .r{color:var(--red)}
   .sub{font-size:16px;color:var(--ink-2);margin-top:18px;font-weight:500}
 
-  /* 課題 asymmetric */
-  .issue{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-  .issue-fig{background:var(--paper);border-radius:var(--r);padding:34px 36px}
-  .eqrow{display:flex;justify-content:space-between;align-items:center;font-family:var(--dp);font-size:17px;font-weight:700;padding:16px 0;border-bottom:1px solid var(--line-2)}
-  .eqrow:last-child{border-bottom:none}
-  .eqrow .lab{font-family:var(--jp);font-size:13px;font-weight:500;color:var(--ink-3)}
-  .eqrow.cost{color:var(--red)}
-  .eqrow.keep{color:var(--ink)}
-  .eqrow.keep .v{background:var(--ink);color:#fff;padding:3px 12px;border-radius:3px}
+  /* お悩み (worry) — immersive editorial thread (no boxy section) */
+  .flowq{background:transparent;position:relative;z-index:1;padding-top:24px}
+  .flowq-intro{font-size:15px;font-weight:700;color:var(--red);letter-spacing:.02em}
+  .qthread{position:relative;margin-top:30px}
+  .qthread::before{content:"";position:absolute;left:19px;top:16px;bottom:56px;width:2px;background:linear-gradient(180deg,var(--red),rgba(176,0,32,.1))}
+  .qbeat{position:relative;display:grid;grid-template-columns:40px 1fr;gap:28px;align-items:start;padding:28px 0}
+  .qnum{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;font-family:var(--dp);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 7px #fff}
+  .qline{font-size:clamp(22px,3vw,31px);font-weight:700;line-height:1.5;letter-spacing:-.01em;color:var(--ink)}
+  .qline .r{color:var(--red)}
+  .qsub{font-size:15.5px;line-height:1.85;color:var(--ink-3);font-weight:500;margin-top:12px;max-width:34em}
+  .flowq-out{margin-top:36px;padding-left:68px;font-size:clamp(22px,2.7vw,29px);font-weight:700;line-height:1.55;letter-spacing:-.01em;color:var(--ink)}
+  .flowq-out .r{color:var(--red);background:linear-gradient(transparent 58%,rgba(176,0,32,.15) 58%);padding:0 3px}
+  @media(max-width:680px){
+    .qbeat{grid-template-columns:30px 1fr;gap:18px;padding:22px 0}
+    .qnum{width:30px;height:30px;font-size:12px;box-shadow:0 0 0 6px #fff}
+    .qthread::before{left:14px}
+    .flowq-out{padding-left:48px}
+  }
+
+  /* 因数分解 (factorization) — boxed factors + levers below each */
+  .fx-lead{font-size:15px;font-weight:700;color:var(--red);letter-spacing:.02em}
+  .fx-h{font-size:clamp(23px,2.7vw,32px);font-weight:700;line-height:1.45;letter-spacing:-.01em;color:var(--ink);margin-top:14px;max-width:24em}
+  .fx-h .r{color:var(--red)}
+  .fx-eq{display:flex;align-items:flex-start;gap:16px;margin-top:34px}
+  .fx-col{flex:1;min-width:0}
+  .fx-box{border-radius:14px;padding:20px 12px;text-align:center;font-size:clamp(19px,2.2vw,27px);font-weight:700;letter-spacing:-.01em;color:#fff;background:var(--red);box-shadow:0 14px 28px -18px rgba(176,0,32,.5)}
+  .fx-etc{display:block;text-align:right;font-family:var(--dp);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink-3);margin-top:10px}
+  .fx-op{flex:0 0 auto;font-family:var(--dp);font-size:clamp(22px,2.4vw,30px);font-weight:600;color:var(--line-2);margin-top:20px}
+  .fx-levers{list-style:none;margin-top:16px;border-top:2px solid var(--line-2);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+  .fx-levers li{background:var(--paper);border-radius:9px;padding:11px 14px;font-size:14px;font-weight:600;color:var(--ink-2);text-align:center}
+  .fx-levers li.warn{background:var(--red-soft);color:var(--red-ink)}
+  .fx-q{margin-top:46px;font-size:clamp(21px,2.6vw,28px);font-weight:700;line-height:1.5;color:var(--ink);letter-spacing:-.01em}
+  .fx-q .hl{color:var(--red);background:linear-gradient(transparent 58%,rgba(176,0,32,.15) 58%);padding:0 3px}
+  @media(max-width:680px){
+    .fx-eq{flex-direction:column;gap:10px}
+    .fx-op{align-self:center;margin-top:0}
+    .fx-col{width:100%}
+  }
 
   /* 選ばれる理由 alternating */
   .reasons{display:flex;flex-direction:column}
@@ -256,26 +290,16 @@
 
 <header class="hero">
   <div class="fv-art" aria-hidden="true">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A2E"/><stop offset=".5" stop-color="#FF2D6B"/><stop offset="1" stop-color="#C70028"/></linearGradient>
-        <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4002B"/><stop offset=".5" stop-color="#FF5E7C"/><stop offset="1" stop-color="#FF9A5A"/></linearGradient>
-        <linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF4D6D"/><stop offset="1" stop-color="#B00020"/></linearGradient>
-      </defs>
-      <g class="ribbon" fill="none" stroke-linecap="round">
-        <path stroke="url(#g1)" stroke-width="230" d="M1520 40 C1150 240 860 280 820 500 C780 720 1120 700 1440 920"/>
-        <path stroke="url(#g2)" stroke-width="150" opacity=".92" d="M1520 220 C1200 320 980 400 1000 600 C1020 780 1280 800 1540 740"/>
-        <path stroke="url(#g3)" stroke-width="105" opacity=".85" d="M1400 -20 C1260 200 1100 240 1160 470 C1210 680 1440 620 1560 520"/>
-      </g>
-    </svg>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
   </div>
   <div class="hero-center">
     <div class="hero-eyebrow">楽天市場 専門 ・ 固定報酬制</div>
     <h1>値上げが続く楽天で、<br><span class="q">“利益”</span>を残す。</h1>
     <p class="hero-sub">売上ではなく、口座に残る“手残り”を。<br>楽天市場専門・固定報酬の、利益最適化コンサルティング。</p>
     <div class="hero-cta">
-      <a class="btn-red free-cta" href="#cta"><span class="free">無料</span>楽天“利益”診断を申し込む <span class="dp">→</span></a>
-      <a class="btn-out" href="#price">料金・プランを見る <span class="dp">→</span></a>
+      <a class="btn-red free-cta" href="#cta"><span class="free">無料</span>楽天“利益”診断を申し込む</a>
+      <a class="text-link" href="#price"><span>料金・プランを見る</span> <span class="dp">→</span></a>
     </div>
     <p class="hero-free">※費用が発生するのは本契約のみです。</p>
     <div class="laurels">
@@ -299,18 +323,60 @@
   </div>
 </header>
 
-<section id="issue">
-  <div class="wrap issue">
-    <div class="lede">
-      <span class="idx">01 課題</span>
-      <h2>売れているのに、<br><span class="r">利益が残らない。</span></h2>
-      <p class="sub">広告・クーポン・ポイント・送料という“出ていくお金”で、同じ売上でも手元に残る利益が削られています。原因がどこにあるかは、店ごとに違います。</p>
+<section id="issue" class="flowq">
+  <div class="wrap">
+    <p class="flowq-intro">— もし、ひとつでも心当たりがあるなら。</p>
+    <div class="qthread">
+      <div class="qbeat">
+        <span class="qnum">01</span>
+        <div>
+          <p class="qline">ROASは高い。なのに、<span class="r">売上は落ちている。</span></p>
+          <p class="qsub">ROAS重視でRPPを運用できているのに、肝心の売上が右肩下がりになっている。</p>
+        </div>
+      </div>
+      <div class="qbeat">
+        <span class="qnum">02</span>
+        <div>
+          <p class="qline">去年は売れた。今年は、<span class="r">同じ施策でも売れない。</span></p>
+          <p class="qsub">前年の同じ時期は好調だったのに、今年は同じ打ち手では売れ行きが戻らない。</p>
+        </div>
+      </div>
+      <div class="qbeat">
+        <span class="qnum">03</span>
+        <div>
+          <p class="qline">値引きでしか、勝てない。<span class="r">なのに利益は残らない。</span></p>
+          <p class="qsub">競合に打ち勝つには値引き頼み。売上は立っても、利益が残っていない。</p>
+        </div>
+      </div>
     </div>
-    <div class="issue-fig">
-      <div class="eqrow"><span class="lab">売上の作り方</span><span>集客 × 転換率 × 客単価</span></div>
-      <div class="eqrow cost"><span class="lab">出ていくお金</span><span>− 広告 ＋ クーポン ＋ 送料</span></div>
-      <div class="eqrow keep"><span class="lab">口座に残る</span><span class="v">＝ 手残り利益</span></div>
+    <p class="flowq-out">その「なぜ」を解くのが、<span class="r">“利益”の設計</span>です。</p>
+  </div>
+</section>
+
+<section id="formula" class="fx">
+  <div class="wrap">
+    <p class="fx-lead">少し、立ち戻ってみましょう。</p>
+    <h2 class="fx-h">楽天の売上は、結局この<span class="r">“3つの掛け算”</span>。それぞれに「効かせるレバー」があります。</h2>
+    <div class="fx-eq">
+      <div class="fx-col">
+        <div class="fx-box">アクセス数</div>
+        <ul class="fx-levers"><li>RPP広告</li><li>商品第一画像</li><li>広告枠の選別</li></ul>
+        <span class="fx-etc">etc...</span>
+      </div>
+      <span class="fx-op">×</span>
+      <div class="fx-col">
+        <div class="fx-box">転換率</div>
+        <ul class="fx-levers"><li>LPデザイン</li><li class="warn">クーポン・値引き</li><li>レビュー獲得</li></ul>
+        <span class="fx-etc">etc...</span>
+      </div>
+      <span class="fx-op">×</span>
+      <div class="fx-col">
+        <div class="fx-box">客単価</div>
+        <ul class="fx-levers"><li>抱き合わせ提案</li><li>セット・まとめ買い</li><li>送料設計</li></ul>
+        <span class="fx-etc">etc...</span>
+      </div>
     </div>
+    <p class="fx-q">——あなたの店舗は、いま<span class="hl">“どこ”が問題なのか</span>、もう特定できていますか？</p>
   </div>
 </section>
 
@@ -454,7 +520,7 @@
   <div class="wrap cta-in">
     <h2>「売上を上げます」は、もう全社が言っています。<br>約束するのは、口座に残る金額です。</h2>
     <p>専任で深く伴走するため、同時にご支援できる店舗数には限りがあります。</p>
-    <a class="btn-w free-cta" href="#"><span class="free">無料</span>楽天“利益”診断を申し込む <span class="dp">→</span></a>
+    <a class="btn-w free-cta" href="#"><span class="free">無料</span>楽天“利益”診断を申し込む</a>
   </div>
 </div>
 
@@ -471,7 +537,7 @@
   function navScroll(){nav.classList.toggle('solid',window.scrollY>window.innerHeight*0.82)}
   window.addEventListener('scroll',navScroll,{passive:true});navScroll();
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('section .lede, .reason, .voice, .qa, .fstep, .svc-item').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=(i%5*.05)+'s';io.observe(el)});
+  document.querySelectorAll('section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .reason, .voice, .qa, .fstep, .svc-item').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=(i%5*.05)+'s';io.observe(el)});
 </script>
 </body>
 </html>
