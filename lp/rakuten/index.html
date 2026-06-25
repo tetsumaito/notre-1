@@ -1261,93 +1261,6 @@
                 font-weight: 500;
             }
 
-            /* 第一画像 split */
-            .fvshow {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                border: 1px solid var(--line);
-                border-radius: var(--r);
-                overflow: hidden;
-            }
-            .fvshow .col {
-                padding: 40px;
-            }
-            .fvshow .before {
-                background: var(--paper);
-                border-right: 1px solid var(--line);
-            }
-            .fvshow .tag {
-                font-family: var(--dp);
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 0.08em;
-                margin-bottom: 20px;
-            }
-            .fvshow .before .tag {
-                color: var(--ink-3);
-            }
-            .fvshow .after .tag {
-                color: var(--red);
-            }
-            .fvpanel {
-                aspect-ratio: 1/1;
-                border-radius: 4px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 24px;
-            }
-            .fvpanel.b {
-                background: #fff;
-                border: 1px dashed var(--line-2);
-                color: var(--ink-3);
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-size: 14px;
-                font-weight: 600;
-            }
-            .fvpanel.a {
-                background: var(--ink);
-                color: #fff;
-            }
-            .fvpanel.a .rib {
-                align-self: flex-start;
-                background: var(--red);
-                font-family: var(--dp);
-                font-size: 11px;
-                font-weight: 700;
-                padding: 5px 11px;
-                border-radius: 3px;
-            }
-            .fvpanel.a .big {
-                font-size: 32px;
-                font-weight: 700;
-                line-height: 1.32;
-            }
-            .fvpanel.a .big u {
-                text-decoration: none;
-                color: #ffc9cb;
-            }
-            .fvpanel.a .row {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-            }
-            .fvpanel.a .row .p {
-                font-family: var(--dp);
-                font-size: 28px;
-                font-weight: 800;
-            }
-            .fvpanel.a .row .f {
-                background: #fff;
-                color: var(--ink);
-                font-size: 11px;
-                font-weight: 700;
-                padding: 4px 9px;
-                border-radius: 3px;
-            }
-
             /* 導入フロー */
             .flow {
                 display: grid;
@@ -1656,7 +1569,6 @@
                 .issue,
                 .reason,
                 .svc-grid,
-                .fvshow,
                 .voices {
                     grid-template-columns: 1fr;
                 }
@@ -1717,7 +1629,7 @@
                     <a href="#issue">課題</a>
                     <a href="#diagnosis">無料診断</a>
                     <a href="#reasons">選ばれる理由</a>
-                    <a href="#works">制作実績</a>
+                    <a href="#flow">ご支援の流れ</a>
                     <a href="#price">料金</a>
                     <span class="nav-div"></span>
                     <a class="nav-cta" href="#cta">無料相談する</a>
@@ -2223,50 +2135,13 @@
             </div>
         </section>
 
-        <section id="works">
-            <div class="wrap">
-                <div class="lede">
-                    <span class="idx">04 制作実績</span>
-                    <h2>勝負を分けるのは、<span class="r">第一画像。</span></h2>
-                    <p class="sub">
-                        どんなに広告を当てても、第一画像が弱ければ空振りします。楽天の勝ち筋から、設計・制作します。
-                    </p>
-                </div>
-                <div class="fvshow" style="margin-top: 48px">
-                    <div class="col before">
-                        <div class="tag">BEFORE</div>
-                        <div class="fvpanel b">
-                            商品写真のみ／<br />訴求・ベネフィットなし
-                        </div>
-                    </div>
-                    <div class="col after">
-                        <div class="tag">AFTER ─ Notre 制作</div>
-                        <div class="fvpanel a">
-                            <span class="rib">楽天ランキング 1位</span>
-                            <div class="big">
-                                全機種対応、<u>“映える”</u>手帳型。
-                            </div>
-                            <div class="row">
-                                <span class="p">¥2,980</span
-                                ><span class="f">送料無料</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price-note" style="margin-top: 18px">
-                    ※掲載は制作イメージです。プランにより制作数が異なります（スタンダード
-                    月5点／プレミアム 月20点）。
-                </p>
-            </div>
-        </section>
-
         <section
             id="flow"
             style="background: var(--paper); border-top: 1px solid var(--line)"
         >
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">05 ご支援の流れ</span>
+                    <span class="idx">04 ご支援の流れ</span>
                     <h2>無料診断から、<span class="r">伴走まで。</span></h2>
                 </div>
                 <div class="flow" style="margin-top: 48px">
@@ -2302,7 +2177,7 @@
         <section id="price">
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">06 料金</span>
+                    <span class="idx">05 料金</span>
                     <h2>
                         固定報酬・月額。<br /><span class="r"
                             >広告費は実費別途。</span
@@ -2380,7 +2255,7 @@
         >
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx">07 お客様の声</span>
+                    <span class="idx">06 お客様の声</span>
                     <h2><span class="r">手残り</span>で語る、ご支援の成果。</h2>
                 </div>
                 <div class="voices" style="margin-top: 44px">
@@ -2409,7 +2284,7 @@
         <section id="faq">
             <div class="wrap" style="max-width: 880px">
                 <div class="lede" style="margin-bottom: 36px">
-                    <span class="idx">08 よくある質問</span>
+                    <span class="idx">07 よくある質問</span>
                 </div>
                 <div class="faq">
                     <div class="qa">
