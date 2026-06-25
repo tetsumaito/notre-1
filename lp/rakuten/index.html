@@ -1099,50 +1099,58 @@
                 font-size: 34px;
             }
             .reasons {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
-                margin-top: 48px;
-            }
-            .reason {
                 display: flex;
                 flex-direction: column;
-                background: #fff;
-                border: 1px solid var(--line);
-                border-radius: 14px;
-                padding: 34px 30px;
+                margin-top: 24px;
+            }
+            .reason {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                padding: 56px 0;
+                border-top: 1px solid var(--line);
+            }
+            .reason:last-child {
+                border-bottom: 1px solid var(--line);
+            }
+            .reason.flip .r-vis {
+                order: -1;
             }
             .r-no {
                 font-family: var(--dp);
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: 700;
-                letter-spacing: 0.04em;
                 color: var(--red);
                 margin-bottom: 14px;
             }
             .r-h {
-                font-size: 20px;
+                font-size: 27px;
                 font-weight: 700;
-                line-height: 1.5;
-                letter-spacing: -0.01em;
+                line-height: 1.45;
                 margin-bottom: 14px;
             }
             .r-p {
-                flex: 1;
-                font-size: 14px;
+                font-size: 15px;
                 color: var(--ink-2);
                 font-weight: 500;
-                line-height: 1.8;
             }
             .r-vis {
-                margin-top: 24px;
                 background: var(--paper);
                 border-radius: var(--r);
+                min-height: 230px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 22px;
+                padding: 32px;
                 border: 1px solid var(--line);
+            }
+            .r-vis-ph {
+                font-family: var(--dp);
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                color: var(--ink-3);
             }
             .vbars {
                 width: 100%;
@@ -1575,7 +1583,7 @@
                     padding: 0 22px;
                 }
                 .issue,
-                .reasons,
+                .reason,
                 .svc-grid,
                 .voices {
                     grid-template-columns: 1fr;
@@ -1983,20 +1991,10 @@
                             </div>
                         </div>
                         <div class="r-vis">
-                            <div class="flowmini">
-                                <div class="step">
-                                    <span class="n">✓</span>RPP・広告枠の最適化
-                                </div>
-                                <div class="step">
-                                    <span class="n">✓</span>検索SEO・ベンチマーク診断
-                                </div>
-                                <div class="step">
-                                    <span class="n">✓</span>セール設計（SS・マラソン）
-                                </div>
-                            </div>
+                            <span class="r-vis-ph">クリエイティブ図解</span>
                         </div>
                     </div>
-                    <div class="reason">
+                    <div class="reason flip">
                         <div>
                             <div class="r-no">理由 02</div>
                             <div class="r-h">
@@ -2007,24 +2005,7 @@
                             </div>
                         </div>
                         <div class="r-vis">
-                            <div class="compare">
-                                <div>
-                                    <span>広告手数料型の代行</span
-                                    ><span class="no"
-                                        >消化するほど報酬↑</span
-                                    >
-                                </div>
-                                <div>
-                                    <span>成果報酬</span
-                                    ><span class="no"
-                                        >ROAS度外視になりがち</span
-                                    >
-                                </div>
-                                <div>
-                                    <span>Notre（固定報酬）</span
-                                    ><span class="yes">広告手数料ゼロ＝利益最優先</span>
-                                </div>
-                            </div>
+                            <span class="r-vis-ph">クリエイティブ図解</span>
                         </div>
                     </div>
                     <div class="reason">
@@ -2038,27 +2019,7 @@
                             </div>
                         </div>
                         <div class="r-vis">
-                            <div class="upcost">
-                                <div class="uc-row">
-                                    <span class="uc-y">上流</span
-                                    ><span class="uc-t"
-                                        >集客戦略・広告全般・LP・ブランド設計</span
-                                    >
-                                </div>
-                                <div class="uc-row">
-                                    <span class="uc-y">楽天</span
-                                    ><span class="uc-t"
-                                        >RPP・広告枠・ページ・セール運用</span
-                                    >
-                                </div>
-                                <div class="uc-eq">
-                                    <span class="uc-bad"
-                                        >楽天だけ最適化 → 頭打ち</span
-                                    ><span class="uc-good"
-                                        >上流から設計 → 伸びしろ拡大</span
-                                    >
-                                </div>
-                            </div>
+                            <span class="r-vis-ph">クリエイティブ図解</span>
                         </div>
                     </div>
                 </div>
