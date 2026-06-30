@@ -9,6 +9,47 @@
             content="楽天市場の売上改善コンサルティング。元楽天ECCが「アクセス×転換×客単価」のどこで負けているかを見極め、効く一手から売上を伸ばします。固定報酬制・無料の“売上”診断から。"
         />
         <link rel="canonical" href="https://notre.co.jp/service/rakuten/" />
+        <!-- Google Tag Manager（Notreコーポレート共通コンテナ） -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-5NCSF7DH");
+        </script>
+        <!-- Meta Pixel（楽天EC_LP_Pixel 1250132826712883 / Notre）: PageView -->
+        <script>
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "1250132826712883");
+            fbq("track", "PageView");
+        </script>
+        <noscript
+            ><img
+                height="1"
+                width="1"
+                style="display: none"
+                src="https://www.facebook.com/tr?id=1250132826712883&ev=PageView&noscript=1"
+        /></noscript>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://notre.co.jp/service/rakuten/" />
         <meta
@@ -2413,6 +2454,15 @@
         </style>
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-5NCSF7DH"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+            ></iframe
+        ></noscript>
         <nav id="nav">
             <div class="wrap nav-in">
                 <div class="brand">
@@ -3362,6 +3412,58 @@
                     if (form.dataset.rcDone === "1") return;
                     e.preventDefault();
                     if (!form.reportValidity()) return;
+
+                    // GA4（GTM）: 送信試行。実CVはサンクスの generate_lead 相当で計測
+                    if (typeof dataLayer !== "undefined") {
+                        dataLayer.push({
+                            event: "form_submit_attempt",
+                            form_name: "rakuten_consulting_diagnosis",
+                        });
+                    }
+
+                    // CAPI/Pixel 用にリード情報を保存。実 Lead はサンクスページで
+                    // eventID 付きで発火し、サーバー側(CAPI)と重複排除する（ここでは発火しない）。
+                    try {
+                        var honey = form.querySelector('[name="wana"]');
+                        if (!honey || !honey.value) {
+                            var eventId =
+                                window.crypto && crypto.randomUUID
+                                    ? crypto.randomUUID()
+                                    : Date.now() +
+                                      "-" +
+                                      Math.random().toString(16).slice(2);
+                            var getCookie = function (n) {
+                                var m = document.cookie.match(
+                                    "(^|;)\\s*" + n + "\\s*=\\s*([^;]+)",
+                                );
+                                return m ? m.pop() : "";
+                            };
+                            var fv = function (nm) {
+                                var el = form.querySelector(
+                                    '[name="' + nm + '"]',
+                                );
+                                return el ? el.value : "";
+                            };
+                            localStorage.setItem(
+                                "notre_capi_lead",
+                                JSON.stringify({
+                                    eventId: eventId,
+                                    email: fv("メールアドレス"),
+                                    phone: fv("電話番号"),
+                                    name: fv("お名前"),
+                                    fbc: getCookie("_fbc"),
+                                    fbp: getCookie("_fbp"),
+                                    eventSourceUrl: location.href,
+                                    value: 5000,
+                                    currency: "JPY",
+                                    ts: Date.now(),
+                                }),
+                            );
+                        }
+                    } catch (err) {
+                        /* localStorage 不可でも送信は継続 */
+                    }
+
                     if (
                         typeof grecaptcha === "undefined" ||
                         !grecaptcha.execute
