@@ -1421,46 +1421,71 @@
                 line-height: 1.75;
             }
 
-            /* 導入フロー */
+            /* 導入フロー — エディトリアル特大ナンバー */
             .flow {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
+                max-width: 880px;
+                margin: 48px auto 0;
             }
             .fstep {
-                padding: 0 24px;
-                position: relative;
-            }
-            .fstep:not(:last-child)::after {
-                content: "";
-                position: absolute;
-                top: 18px;
-                right: -18px;
-                width: 36px;
-                height: 2px;
-                background: var(--line-2);
-            }
-            .fstep .n {
-                font-family: var(--dp);
-                width: 38px;
-                height: 38px;
-                border-radius: 50%;
-                border: 2px solid var(--red);
-                color: var(--red);
-                font-weight: 700;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                margin-bottom: 16px;
+                gap: 36px;
+                padding: 24px 16px;
+                border-top: 1px solid var(--line);
+                transition: background 0.25s ease;
             }
-            .fstep .t {
-                font-size: 15px;
+            .fstep:last-child {
+                border-bottom: 1px solid var(--line);
+            }
+            .fstep:hover {
+                background: linear-gradient(
+                    90deg,
+                    rgba(176, 0, 32, 0.04),
+                    transparent 72%
+                );
+            }
+            .f-no {
+                font-family: var(--dp);
+                font-size: clamp(44px, 6vw, 74px);
+                font-weight: 800;
+                line-height: 1;
+                letter-spacing: -0.04em;
+                min-width: 2.1em;
+                text-align: right;
+                color: transparent;
+                -webkit-text-stroke: 1.5px var(--red);
+                transition:
+                    color 0.25s ease,
+                    -webkit-text-stroke 0.25s ease;
+            }
+            .fstep:hover .f-no,
+            .fstep:last-child .f-no {
+                color: var(--red);
+                -webkit-text-stroke: 0;
+            }
+            .f-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .f-tt {
+                font-size: 21px;
                 font-weight: 700;
-                margin-bottom: 6px;
+                letter-spacing: -0.01em;
             }
-            .fstep .d {
-                font-size: 13px;
+            .f-d {
+                font-size: 14px;
                 color: var(--ink-2);
                 font-weight: 500;
+            }
+            .f-go {
+                font-family: var(--dp);
+                font-size: 22px;
+                color: var(--line-2);
+            }
+            .fstep:last-child .f-go {
+                color: var(--red);
             }
 
             /* 料金 */
@@ -1755,14 +1780,15 @@
                 .svc-grid {
                     grid-template-columns: 1fr 1fr;
                 }
-                .flow {
-                    grid-template-columns: 1fr 1fr;
-                }
-                .fstep::after {
-                    display: none;
-                }
                 .fstep {
-                    padding: 0 0 28px;
+                    gap: 18px;
+                    padding: 20px 4px;
+                }
+                .f-no {
+                    min-width: 1.7em;
+                }
+                .f-tt {
+                    font-size: 18px;
                 }
                 .pc2 {
                     border-right: none;
@@ -2327,40 +2353,52 @@
             </div>
         </section>
 
-        <section
-            id="flow"
-            style="background: var(--paper); border-top: 1px solid var(--line)"
-        >
+        <section id="flow">
             <div class="wrap">
                 <div class="lede">
                     <span class="idx">03 ご支援の流れ</span>
                     <h2>無料診断から、<span class="r">伴走まで。</span></h2>
                 </div>
-                <div class="flow" style="margin-top: 48px">
+                <div class="flow">
                     <div class="fstep">
-                        <div class="n">1</div>
-                        <div class="t">無料“利益”診断</div>
-                        <div class="d">コスト構造・伸びしろを可視化</div>
+                        <span class="f-no">01</span>
+                        <div class="f-body">
+                            <div class="f-tt">無料“利益”診断</div>
+                            <div class="f-d">コスト構造・伸びしろを可視化</div>
+                        </div>
+                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
-                        <div class="n">2</div>
-                        <div class="t">ご提案・お見積り</div>
-                        <div class="d">効く順に優先度を提示</div>
+                        <span class="f-no">02</span>
+                        <div class="f-body">
+                            <div class="f-tt">ご提案・お見積り</div>
+                            <div class="f-d">効く順に優先度を提示</div>
+                        </div>
+                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
-                        <div class="n">3</div>
-                        <div class="t">改善ロードマップ</div>
-                        <div class="d">初月に現状分析と設計</div>
+                        <span class="f-no">03</span>
+                        <div class="f-body">
+                            <div class="f-tt">改善ロードマップ</div>
+                            <div class="f-d">初月に現状分析と設計</div>
+                        </div>
+                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
-                        <div class="n">4</div>
-                        <div class="t">運用・制作・伴走</div>
-                        <div class="d">週次/月次でPDCA</div>
+                        <span class="f-no">04</span>
+                        <div class="f-body">
+                            <div class="f-tt">運用・制作・伴走</div>
+                            <div class="f-d">週次/月次でPDCA</div>
+                        </div>
+                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
-                        <div class="n">5</div>
-                        <div class="t">定例で確認</div>
-                        <div class="d">利益とKPIを一緒に検証</div>
+                        <span class="f-no">05</span>
+                        <div class="f-body">
+                            <div class="f-tt">定例で確認</div>
+                            <div class="f-d">利益とKPIを一緒に検証</div>
+                        </div>
+                        <span class="f-go">◎</span>
                     </div>
                 </div>
             </div>
