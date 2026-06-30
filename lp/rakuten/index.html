@@ -1979,6 +1979,17 @@
                 margin-top: 12px;
                 font-weight: 500;
             }
+            .cform-recaptcha {
+                text-align: center;
+                font-size: 10.5px;
+                line-height: 1.6;
+                color: #a99e9b;
+                margin-top: 10px;
+            }
+            .cform-recaptcha a {
+                color: #a99e9b;
+                text-decoration: underline;
+            }
             footer {
                 background: var(--ink);
                 color: #9a8f8d;
@@ -2848,6 +2859,7 @@
                     </p>
                     <!-- ssgform 専用フォーム（楽天“売上”診断）。通知先/自動返信/リダイレクトはssgform管理画面で設定。 -->
                     <form
+                        id="rakuten-diag-form"
                         class="cta-form"
                         action="https://ssgform.com/s/kVZ7on422xqq"
                         method="post"
@@ -2940,11 +2952,30 @@
                                 >に同意の上、送信します。</span
                             >
                         </label>
-                        <button type="submit" class="btn-red cform-submit">
+                        <button
+                            type="submit"
+                            class="btn-red cform-submit g-recaptcha"
+                            data-sitekey="6LfQgD0tAAAAACQHCSFSLWCkPV0yPcN3yYctck1p"
+                            data-callback="onSubmitRakuten"
+                            data-action="submit"
+                        >
                             無料で“売上”診断を申し込む
                         </button>
                         <p class="cform-note">
                             ※ 費用が発生するのは本契約のみです。
+                        </p>
+                        <p class="cform-recaptcha">
+                            このサイトはreCAPTCHAによって保護されており、Googleの<a
+                                href="https://policies.google.com/privacy"
+                                target="_blank"
+                                rel="noopener"
+                                >プライバシーポリシー</a
+                            >と<a
+                                href="https://policies.google.com/terms"
+                                target="_blank"
+                                rel="noopener"
+                                >利用規約</a
+                            >が適用されます。
                         </p>
                     </form>
                 </div>
@@ -3012,5 +3043,20 @@
                     io.observe(el);
                 });
         </script>
+
+        <!-- reCAPTCHA v3（SSGform）: 送信ボタンクリック→トークン取得→onSubmitRakuten で送信 -->
+        <script>
+            function onSubmitRakuten(token) {
+                const form = document.getElementById("rakuten-diag-form");
+                if (form.reportValidity()) {
+                    form.submit();
+                }
+            }
+        </script>
+        <script
+            src="https://www.google.com/recaptcha/api.js"
+            async
+            defer
+        ></script>
     </body>
 </html>
