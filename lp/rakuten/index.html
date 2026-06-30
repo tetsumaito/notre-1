@@ -1446,12 +1446,15 @@
             }
             .f-no {
                 font-family: var(--dp);
+                font-variant-numeric: tabular-nums;
+                font-feature-settings: "tnum";
                 font-size: clamp(44px, 6vw, 74px);
                 font-weight: 800;
                 line-height: 1;
-                letter-spacing: -0.04em;
-                min-width: 2.1em;
-                text-align: right;
+                letter-spacing: 0;
+                width: 1.9em;
+                flex-shrink: 0;
+                text-align: center;
                 color: transparent;
                 -webkit-text-stroke: 1.5px var(--red);
                 transition:
@@ -1479,13 +1482,16 @@
                 color: var(--ink-2);
                 font-weight: 500;
             }
-            .f-go {
-                font-family: var(--dp);
-                font-size: 22px;
-                color: var(--line-2);
-            }
-            .fstep:last-child .f-go {
+            .f-note {
+                align-self: flex-start;
+                margin-top: 10px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.02em;
                 color: var(--red);
+                background: var(--red-soft);
+                padding: 6px 13px;
+                border-radius: 999px;
             }
 
             /* 料金 */
@@ -2335,8 +2341,8 @@
                         <div class="f-body">
                             <div class="f-tt">無料“利益”診断</div>
                             <div class="f-d">コスト構造・伸びしろを可視化</div>
+                        <span class="f-note">もちろん、すぐに伴走支援の開始も可能です</span>
                         </div>
-                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
                         <span class="f-no">02</span>
@@ -2344,15 +2350,13 @@
                             <div class="f-tt">ご提案・お見積り</div>
                             <div class="f-d">効く順に優先度を提示</div>
                         </div>
-                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
                         <span class="f-no">03</span>
                         <div class="f-body">
-                            <div class="f-tt">改善ロードマップ</div>
-                            <div class="f-d">初月に現状分析と設計</div>
+                            <div class="f-tt">ご契約</div>
+                            <div class="f-d">支援範囲・固定月額に合意してスタート</div>
                         </div>
-                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
                         <span class="f-no">04</span>
@@ -2360,15 +2364,13 @@
                             <div class="f-tt">運用・制作・伴走</div>
                             <div class="f-d">週次/月次でPDCA</div>
                         </div>
-                        <span class="f-go">→</span>
                     </div>
                     <div class="fstep">
                         <span class="f-no">05</span>
                         <div class="f-body">
-                            <div class="f-tt">定例で確認</div>
+                            <div class="f-tt">定例ミーティングですり合わせ</div>
                             <div class="f-d">利益とKPIを一緒に検証</div>
                         </div>
-                        <span class="f-go">◎</span>
                     </div>
                 </div>
             </div>
