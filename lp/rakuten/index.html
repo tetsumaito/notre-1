@@ -1623,35 +1623,6 @@
             }
 
             /* 声 */
-            .voices {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-            .voice {
-                border-left: 3px solid var(--red);
-                padding: 8px 0 8px 26px;
-            }
-            .voice .q {
-                font-size: 18px;
-                font-weight: 700;
-                line-height: 1.7;
-                margin-bottom: 16px;
-            }
-            .voice .q em {
-                font-style: normal;
-                background: var(--red-soft);
-                padding: 0 4px;
-            }
-            .voice .w {
-                font-size: 13px;
-                color: var(--ink-3);
-                font-weight: 500;
-            }
-            .voice .w b {
-                color: var(--ink);
-                font-weight: 700;
-            }
 
             /* FAQ */
             .faq {
@@ -1755,8 +1726,7 @@
                     padding: 0 22px;
                 }
                 .issue,
-                .reason,
-                .voices {
+                .reason {
                     grid-template-columns: 1fr;
                 }
                 h2,
@@ -2479,42 +2449,10 @@
             </div>
         </section>
 
-        <section
-            id="voice"
-            style="background: var(--paper); border-top: 1px solid var(--line)"
-        >
-            <div class="wrap">
-                <div class="lede">
-                    <span class="idx">05 お客様の声</span>
-                    <h2><span class="r">手残り</span>で語る、ご支援の成果。</h2>
-                </div>
-                <div class="voices" style="margin-top: 44px">
-                    <div class="voice">
-                        <div class="q">
-                            「“売上を増やす”ではなく、<em>クーポンと客単価の設計</em>から入ってくれた。意見も早く、本番のセールにしっかり投下できた。」
-                        </div>
-                        <div class="w">
-                            <b>スマホアクセサリー専門店</b
-                            >／月商2,000万規模・大阪　※実在店舗の固有名詞掲載は承諾後
-                        </div>
-                    </div>
-                    <div class="voice">
-                        <div class="q">
-                            「スーパーセールの設計を作り替えて、<em>リアルタイムランキング1位</em>。価格・原価まで一緒に握ってくれた。」
-                        </div>
-                        <div class="w">
-                            <b>食品・ギフト系ショップ</b
-                            >／※SS期間・施策込みの実績。成果には個店差があります
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="faq">
             <div class="wrap" style="max-width: 880px">
                 <div class="lede" style="margin-bottom: 36px">
-                    <span class="idx">06 よくある質問</span>
+                    <span class="idx">05 よくある質問</span>
                 </div>
                 <div class="faq">
                     <div class="qa">
@@ -2632,7 +2570,7 @@
             );
             document
                 .querySelectorAll(
-                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .reasons-head, .bspot, .reason, .voice, .qa, .fstep, .svc-item, .flowq-answer",
+                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .reasons-head, .bspot, .reason, .qa, .fstep, .svc-item, .flowq-answer",
                 )
                 .forEach((el, i) => {
                     el.classList.add("reveal");
