@@ -2192,9 +2192,13 @@
                     font-size: 17px;
                     line-height: 1.55;
                 }
+                /* 選ばれる理由の見出し：縮小して変な改行を防止 */
+                .reasons-head h2 {
+                    font-size: 22px;
+                }
                 /* 因数分解の問い：縮小＋ハイライトを割らない */
                 .fx-q {
-                    font-size: 17px;
+                    font-size: 16px;
                     margin-top: 32px;
                 }
                 .fx-q .hl {
@@ -2358,8 +2362,12 @@
                     display: flex;
                     gap: 14px;
                     overflow-x: auto;
+                    overflow-y: hidden;
+                    touch-action: pan-x;
+                    overscroll-behavior-x: contain;
                     scroll-snap-type: x mandatory;
                     -webkit-overflow-scrolling: touch;
+                    align-items: stretch;
                     padding-bottom: 12px;
                     scrollbar-width: none;
                 }
@@ -2593,7 +2601,9 @@
                 <p class="fx-q">
                     あなたの店舗は、いま<span class="hl"
                         >“どこ”が問題なのか</span
-                    >、もう特定できていますか？
+                    >、<span style="white-space: nowrap"
+                        >もう特定できていますか？</span
+                    >
                 </p>
             </div>
         </section>
@@ -2727,7 +2737,7 @@
                         <span style="white-space: nowrap"
                             >Notre<span class="kana">（ノートル）</span></span
                         >
-                        が選ばれる理由
+                        <span style="white-space: nowrap">が選ばれる理由</span>
                     </h2>
                     <p class="reasons-sub">
                         ただの楽天運用代行とは、ここが違います。
