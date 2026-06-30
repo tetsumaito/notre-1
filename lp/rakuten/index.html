@@ -1508,33 +1508,48 @@
                 padding: 38px 32px;
             }
             .pc2.feat {
-                color: #fff;
+                background: #fff;
+                border: 1px solid var(--line);
                 padding: 42px 36px;
                 position: relative;
                 overflow: hidden;
-                background:
-                    radial-gradient(
-                        120% 120% at 100% 0%,
-                        #ff8a2e 0%,
-                        #ff2d6b 30%,
-                        rgba(199, 0, 40, 0) 62%
-                    ),
-                    linear-gradient(158deg, #c70028 0%, #a6001d 100%);
-                box-shadow: 0 46px 90px -44px rgba(176, 0, 32, 0.7);
+                box-shadow: 0 34px 64px -42px rgba(176, 0, 32, 0.32);
             }
+            .pc2.feat > * {
+                position: relative;
+                z-index: 1;
+            }
+            .pc2.feat::before,
             .pc2.feat::after {
                 content: "";
                 position: absolute;
-                width: 280px;
-                height: 280px;
+                z-index: 0;
                 border-radius: 50%;
-                background: radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.18),
-                    transparent 70%
+                pointer-events: none;
+            }
+            .pc2.feat::before {
+                width: 150px;
+                height: 150px;
+                top: -64px;
+                right: -56px;
+                background: linear-gradient(
+                    135deg,
+                    #ff8a2e,
+                    #ff2d6b 55%,
+                    #c70028
                 );
-                bottom: -150px;
-                left: -90px;
+            }
+            .pc2.feat::after {
+                width: 128px;
+                height: 128px;
+                bottom: -54px;
+                left: -48px;
+                background: linear-gradient(
+                    135deg,
+                    #ff7a5a,
+                    #e4002b 60%,
+                    #b00020
+                );
             }
             .pc2-rec {
                 position: relative;
@@ -1544,8 +1559,8 @@
                 font-size: 11px;
                 font-weight: 800;
                 letter-spacing: 0.14em;
-                background: #fff;
-                color: var(--red);
+                background: var(--red);
+                color: #fff;
                 padding: 6px 14px;
                 border-radius: 999px;
                 margin-bottom: 18px;
@@ -1556,9 +1571,6 @@
                 font-weight: 800;
                 letter-spacing: 0.16em;
                 color: var(--ink-3);
-            }
-            .pc2.feat .pc2-badge {
-                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .pn {
                 font-size: 24px;
@@ -1576,9 +1588,6 @@
                 font-weight: 500;
                 line-height: 1.7;
             }
-            .pc2.feat .pf {
-                color: rgba(255, 255, 255, 0.85);
-            }
             .pc2 .pp {
                 position: relative;
                 z-index: 1;
@@ -1594,15 +1603,13 @@
             }
             .pc2.feat .pp {
                 font-size: 62px;
+                color: var(--red);
             }
             .pc2 .pp small {
                 font-size: 14px;
                 font-weight: 600;
                 color: var(--ink-3);
                 letter-spacing: 0;
-            }
-            .pc2.feat .pp small {
-                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .dz {
                 position: relative;
@@ -1619,8 +1626,8 @@
                 margin-bottom: 22px;
             }
             .pc2.feat .dz {
-                background: rgba(255, 255, 255, 0.16);
-                color: #fff;
+                background: var(--red-soft);
+                color: var(--red-d);
             }
             .pc2 ul {
                 position: relative;
@@ -1630,9 +1637,6 @@
                 color: var(--ink-2);
                 font-weight: 500;
                 flex: 1;
-            }
-            .pc2.feat ul {
-                color: rgba(255, 255, 255, 0.92);
             }
             .pc2 li {
                 padding-left: 22px;
@@ -1651,9 +1655,6 @@
                 border-bottom: 2px solid var(--red);
                 transform: rotate(-45deg);
             }
-            .pc2.feat li::before {
-                border-color: #fff;
-            }
             .pc2 .pbtn {
                 position: relative;
                 z-index: 1;
@@ -1671,12 +1672,12 @@
                 border-color: var(--ink);
             }
             .pc2.feat .pbtn {
-                background: #fff;
-                border-color: #fff;
-                color: var(--red);
+                background: var(--red);
+                border-color: var(--red);
+                color: #fff;
             }
             .pc2.feat .pbtn:hover {
-                background: rgba(255, 255, 255, 0.9);
+                background: var(--red-d);
             }
             .price-note {
                 text-align: center;
@@ -1721,29 +1722,79 @@
 
             /* CTA */
             .cta-band {
-                background: var(--red);
-                color: #fff;
+                background: #fff;
+                color: var(--ink);
+                position: relative;
+                overflow: hidden;
+            }
+            .cta-blobs {
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            .cta-blob {
+                position: absolute;
+                aspect-ratio: 1;
+                opacity: 0.62;
+                filter: blur(6px);
+                will-change: transform;
+            }
+            .cta-blob1 {
+                width: 30%;
+                top: -18%;
+                left: -8%;
+                border-radius: 58% 42% 60% 40% / 48% 55% 45% 52%;
+                background: linear-gradient(
+                    135deg,
+                    #ff8a2e 0%,
+                    #ff2d6b 50%,
+                    #c70028 100%
+                );
+                animation: ctaspin 42s linear infinite;
+            }
+            .cta-blob2 {
+                width: 25%;
+                bottom: -20%;
+                right: -6%;
+                border-radius: 46% 54% 42% 58% / 56% 44% 60% 40%;
+                background: linear-gradient(
+                    210deg,
+                    #ff7a5a 0%,
+                    #e4002b 56%,
+                    #b00020 100%
+                );
+                animation: ctaspin 54s linear infinite reverse;
+            }
+            @keyframes ctaspin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .cta-blob {
+                    animation: none;
+                }
             }
             .cta-in {
-                padding: 88px 0;
+                position: relative;
+                z-index: 1;
+                padding: 104px 0;
                 text-align: center;
             }
             .cta-in h2 {
-                color: #fff;
+                color: var(--ink);
                 font-size: 34px;
             }
+            .cta-in h2 .r {
+                color: var(--red);
+            }
             .cta-in p {
-                color: #ffd9db;
+                color: var(--ink-3);
                 font-size: 15px;
                 margin: 14px 0 30px;
                 font-weight: 500;
-            }
-            .cta-in .btn-w {
-                background: #fff;
-                color: var(--red-d);
-            }
-            .cta-in .btn-w:hover {
-                transform: translateY(-2px);
             }
             footer {
                 background: var(--ink);
@@ -2561,14 +2612,21 @@
         </section>
 
         <div class="cta-band" id="cta">
+            <div class="cta-blobs" aria-hidden="true">
+                <div class="cta-blob cta-blob1"></div>
+                <div class="cta-blob cta-blob2"></div>
+            </div>
             <div class="wrap cta-in">
                 <h2>
-                    「売上を上げます」は、もう全社が言っています。<br />約束するのは、口座に残る金額です。
+                    「売上を上げます」は、もう全社が言っています。<br />約束するのは、<span
+                        class="r"
+                        >口座に残る金額</span
+                    >です。
                 </h2>
                 <p>
                     専任で深く伴走するため、同時にご支援できる店舗数には限りがあります。
                 </p>
-                <a class="btn-w free-cta" href="#"
+                <a class="btn-red free-cta" href="#"
                     ><span class="free">無料</span>楽天“利益”診断を申し込む</a
                 >
             </div>
