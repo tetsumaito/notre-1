@@ -1788,9 +1788,9 @@
                 will-change: transform;
             }
             .cta-blob1 {
-                width: 30%;
-                top: -30%;
-                left: -8%;
+                width: 36%;
+                top: -16%;
+                left: -6%;
                 border-radius: 58% 42% 60% 40% / 48% 55% 45% 52%;
                 background: linear-gradient(
                     135deg,
@@ -1801,9 +1801,10 @@
                 animation: ctaspin 42s linear infinite;
             }
             .cta-blob2 {
-                width: 25%;
-                bottom: 3%;
-                right: -6%;
+                width: 30%;
+                bottom: 2%;
+                left: 8%;
+                right: auto;
                 border-radius: 46% 54% 42% 58% / 56% 44% 60% 40%;
                 background: linear-gradient(
                     210deg,
@@ -1823,16 +1824,21 @@
                     animation: none;
                 }
             }
+            /* PCは2カラム（左コピー／右フォーム）。左の余白は背景のアニメ円で埋める */
             .cta-in {
                 position: relative;
                 z-index: 1;
-                padding: 100px 0;
-                max-width: 700px;
+                padding-top: 104px;
+                padding-bottom: 104px;
+                max-width: 1080px;
                 margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1.04fr;
+                gap: 56px;
+                align-items: center;
             }
             .cta-copy {
-                text-align: center;
-                margin-bottom: 36px;
+                text-align: left;
             }
             .cta-in h2 {
                 color: var(--ink);
@@ -1854,7 +1860,7 @@
                 display: grid;
                 gap: 12px;
                 width: fit-content;
-                margin: 0 auto;
+                margin: 4px 0 0;
                 text-align: left;
             }
             .cta-trust li {
@@ -2096,9 +2102,14 @@
                     grid-template-columns: 1fr;
                     gap: 40px;
                     padding: 72px 22px;
+                    max-width: 700px;
                 }
                 .cta-copy {
                     max-width: none;
+                    text-align: center;
+                }
+                .cta-trust {
+                    margin: 4px auto 0;
                 }
                 h2,
                 .cta-in h2 {
