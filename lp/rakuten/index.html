@@ -1508,48 +1508,33 @@
                 padding: 38px 32px;
             }
             .pc2.feat {
-                background: #fff;
-                border: 1px solid var(--line);
+                color: #fff;
                 padding: 42px 36px;
                 position: relative;
                 overflow: hidden;
-                box-shadow: 0 34px 64px -42px rgba(176, 0, 32, 0.32);
+                background:
+                    radial-gradient(
+                        120% 120% at 100% 0%,
+                        #ff8a2e 0%,
+                        #ff2d6b 30%,
+                        rgba(199, 0, 40, 0) 62%
+                    ),
+                    linear-gradient(158deg, #c70028 0%, #a6001d 100%);
+                box-shadow: 0 46px 90px -44px rgba(176, 0, 32, 0.7);
             }
-            .pc2.feat > * {
-                position: relative;
-                z-index: 1;
-            }
-            .pc2.feat::before,
             .pc2.feat::after {
                 content: "";
                 position: absolute;
-                z-index: 0;
+                width: 280px;
+                height: 280px;
                 border-radius: 50%;
-                pointer-events: none;
-            }
-            .pc2.feat::before {
-                width: 150px;
-                height: 150px;
-                top: -64px;
-                right: -56px;
-                background: linear-gradient(
-                    135deg,
-                    #ff8a2e,
-                    #ff2d6b 55%,
-                    #c70028
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.18),
+                    transparent 70%
                 );
-            }
-            .pc2.feat::after {
-                width: 128px;
-                height: 128px;
-                bottom: -54px;
-                left: -48px;
-                background: linear-gradient(
-                    135deg,
-                    #ff7a5a,
-                    #e4002b 60%,
-                    #b00020
-                );
+                bottom: -150px;
+                left: -90px;
             }
             .pc2-rec {
                 position: relative;
@@ -1559,8 +1544,8 @@
                 font-size: 11px;
                 font-weight: 800;
                 letter-spacing: 0.14em;
-                background: var(--red);
-                color: #fff;
+                background: #fff;
+                color: var(--red);
                 padding: 6px 14px;
                 border-radius: 999px;
                 margin-bottom: 18px;
@@ -1571,6 +1556,9 @@
                 font-weight: 800;
                 letter-spacing: 0.16em;
                 color: var(--ink-3);
+            }
+            .pc2.feat .pc2-badge {
+                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .pn {
                 font-size: 24px;
@@ -1588,6 +1576,9 @@
                 font-weight: 500;
                 line-height: 1.7;
             }
+            .pc2.feat .pf {
+                color: rgba(255, 255, 255, 0.85);
+            }
             .pc2 .pp {
                 position: relative;
                 z-index: 1;
@@ -1603,13 +1594,15 @@
             }
             .pc2.feat .pp {
                 font-size: 62px;
-                color: var(--red);
             }
             .pc2 .pp small {
                 font-size: 14px;
                 font-weight: 600;
                 color: var(--ink-3);
                 letter-spacing: 0;
+            }
+            .pc2.feat .pp small {
+                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .dz {
                 position: relative;
@@ -1626,8 +1619,8 @@
                 margin-bottom: 22px;
             }
             .pc2.feat .dz {
-                background: var(--red-soft);
-                color: var(--red-d);
+                background: rgba(255, 255, 255, 0.16);
+                color: #fff;
             }
             .pc2 ul {
                 position: relative;
@@ -1637,6 +1630,9 @@
                 color: var(--ink-2);
                 font-weight: 500;
                 flex: 1;
+            }
+            .pc2.feat ul {
+                color: rgba(255, 255, 255, 0.92);
             }
             .pc2 li {
                 padding-left: 22px;
@@ -1655,6 +1651,9 @@
                 border-bottom: 2px solid var(--red);
                 transform: rotate(-45deg);
             }
+            .pc2.feat li::before {
+                border-color: #fff;
+            }
             .pc2 .pbtn {
                 position: relative;
                 z-index: 1;
@@ -1672,12 +1671,12 @@
                 border-color: var(--ink);
             }
             .pc2.feat .pbtn {
-                background: var(--red);
-                border-color: var(--red);
-                color: #fff;
+                background: #fff;
+                border-color: #fff;
+                color: var(--red);
             }
             .pc2.feat .pbtn:hover {
-                background: var(--red-d);
+                background: rgba(255, 255, 255, 0.9);
             }
             .price-note {
                 text-align: center;
@@ -1725,13 +1724,14 @@
                 background: #fff;
                 color: var(--ink);
                 position: relative;
-                overflow: hidden;
+                /* 横ははみ出させない（横スクロール防止）が、縦は前セクションへ円を食い込ませる */
+                overflow-x: clip;
+                overflow-y: visible;
             }
             .cta-blobs {
                 position: absolute;
                 inset: 0;
                 z-index: 0;
-                overflow: hidden;
                 pointer-events: none;
             }
             .cta-blob {
@@ -1743,7 +1743,7 @@
             }
             .cta-blob1 {
                 width: 30%;
-                top: -18%;
+                top: -30%;
                 left: -8%;
                 border-radius: 58% 42% 60% 40% / 48% 55% 45% 52%;
                 background: linear-gradient(
@@ -1756,7 +1756,7 @@
             }
             .cta-blob2 {
                 width: 25%;
-                bottom: -20%;
+                bottom: 3%;
                 right: -6%;
                 border-radius: 46% 54% 42% 58% / 56% 44% 60% 40%;
                 background: linear-gradient(
