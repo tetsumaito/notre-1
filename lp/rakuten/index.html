@@ -1494,136 +1494,204 @@
 
             /* 料金 */
             .price-grid {
+                max-width: 1180px;
+                margin: 48px auto 0;
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                border: 1px solid var(--line);
-                border-radius: var(--r);
-                overflow: hidden;
+                grid-template-columns: 1fr 1.18fr 1fr;
+                align-items: center;
+                gap: 18px;
             }
             .pc2 {
-                padding: 34px 30px;
-                border-right: 1px solid var(--line);
                 display: flex;
                 flex-direction: column;
+                border-radius: 18px;
             }
-            .pc2:last-child {
-                border-right: none;
+            .pc2.side {
+                background: #fff;
+                border: 1px solid var(--line);
+                padding: 38px 32px;
             }
             .pc2.feat {
-                background: var(--ink);
                 color: #fff;
+                padding: 48px 38px;
+                position: relative;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        120% 120% at 100% 0%,
+                        #ff8a2e 0%,
+                        #ff2d6b 30%,
+                        rgba(199, 0, 40, 0) 62%
+                    ),
+                    linear-gradient(158deg, #c70028 0%, #a6001d 100%);
+                box-shadow: 0 46px 90px -44px rgba(176, 0, 32, 0.7);
+            }
+            .pc2.feat::after {
+                content: "";
+                position: absolute;
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.18),
+                    transparent 70%
+                );
+                bottom: -150px;
+                left: -90px;
+            }
+            .pc2-rec {
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                font-family: var(--dp);
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                background: #fff;
+                color: var(--red);
+                padding: 6px 14px;
+                border-radius: 999px;
+                margin-bottom: 18px;
             }
             .pc2-badge {
                 font-family: var(--dp);
-                font-size: 11px;
-                font-weight: 700;
-                letter-spacing: 0.06em;
-                color: var(--red);
-                margin-bottom: 8px;
+                font-size: 12px;
+                font-weight: 800;
+                letter-spacing: 0.16em;
+                color: var(--ink-3);
             }
             .pc2.feat .pc2-badge {
-                color: #ff8a90;
+                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .pn {
-                font-size: 20px;
-                font-weight: 700;
-                margin-bottom: 4px;
+                font-size: 24px;
+                font-weight: 800;
+                margin: 6px 0 8px;
+                letter-spacing: -0.01em;
+            }
+            .pc2.feat .pn {
+                font-size: 30px;
             }
             .pc2 .pf {
                 font-size: 12.5px;
                 color: var(--ink-3);
-                min-height: 38px;
+                min-height: 3.4em;
                 font-weight: 500;
+                line-height: 1.7;
             }
             .pc2.feat .pf {
-                color: #a99f9d;
+                color: rgba(255, 255, 255, 0.85);
             }
             .pc2 .pp {
+                position: relative;
+                z-index: 1;
                 font-family: var(--dp);
-                font-size: 40px;
+                display: flex;
+                align-items: baseline;
+                gap: 5px;
+                font-size: 56px;
                 font-weight: 800;
-                letter-spacing: -0.02em;
-                margin: 8px 0;
+                letter-spacing: -0.03em;
+                line-height: 0.9;
+                margin: 20px 0 18px;
+            }
+            .pc2.feat .pp {
+                font-size: 72px;
             }
             .pc2 .pp small {
                 font-size: 14px;
                 font-weight: 600;
                 color: var(--ink-3);
+                letter-spacing: 0;
             }
             .pc2.feat .pp small {
-                color: #a99f9d;
+                color: rgba(255, 255, 255, 0.8);
             }
             .pc2 .dz {
-                font-size: 12px;
-                font-weight: 700;
-                color: var(--red-ink);
-                background: var(--red-soft);
-                padding: 9px 12px;
-                border-radius: 3px;
-                margin: 4px 0 18px;
-                text-align: center;
+                position: relative;
+                z-index: 1;
+                align-self: flex-start;
+                font-family: var(--dp);
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.02em;
+                color: var(--ink);
+                background: var(--paper);
+                padding: 9px 14px;
+                border-radius: 8px;
+                margin-bottom: 22px;
             }
             .pc2.feat .dz {
-                background: var(--red);
+                background: rgba(255, 255, 255, 0.16);
                 color: #fff;
             }
             .pc2 ul {
+                position: relative;
+                z-index: 1;
                 list-style: none;
-                font-size: 13px;
+                font-size: 13.5px;
                 color: var(--ink-2);
                 font-weight: 500;
                 flex: 1;
             }
             .pc2.feat ul {
-                color: #c9c0be;
+                color: rgba(255, 255, 255, 0.92);
             }
             .pc2 li {
-                padding-left: 20px;
+                padding-left: 22px;
                 position: relative;
-                margin-bottom: 8px;
+                margin-bottom: 11px;
                 line-height: 1.5;
             }
             .pc2 li::before {
                 content: "";
                 position: absolute;
                 left: 2px;
-                top: 7px;
-                width: 6px;
+                top: 6px;
+                width: 7px;
                 height: 4px;
                 border-left: 2px solid var(--red);
                 border-bottom: 2px solid var(--red);
                 transform: rotate(-45deg);
             }
             .pc2.feat li::before {
-                border-color: #ff8a90;
+                border-color: #fff;
             }
             .pc2 .pbtn {
-                margin-top: 22px;
+                position: relative;
+                z-index: 1;
+                margin-top: 26px;
                 text-align: center;
                 font-size: 14px;
                 font-weight: 700;
-                padding: 13px;
+                padding: 14px;
                 border-radius: 999px;
                 border: 1.5px solid var(--line-2);
                 color: var(--ink);
-            }
-            .pc2.feat .pbtn {
-                background: var(--red);
-                border-color: var(--red);
-                color: #fff;
-            }
-            .pc2.feat .pbtn:hover {
-                background: var(--red-d);
+                transition: 0.2s;
             }
             .pc2 .pbtn:hover {
                 border-color: var(--ink);
             }
+            .pc2.feat .pbtn {
+                background: #fff;
+                border-color: #fff;
+                color: var(--red);
+            }
+            .pc2.feat .pbtn:hover {
+                background: rgba(255, 255, 255, 0.9);
+            }
             .price-note {
                 text-align: center;
-                font-size: 12.5px;
+                font-size: 13px;
                 color: var(--ink-3);
-                margin-top: 22px;
+                margin-top: 34px;
                 font-weight: 500;
+            }
+            .price-note b {
+                color: var(--red);
+                font-weight: 700;
             }
 
             /* 声 */
@@ -1750,6 +1818,7 @@
                 }
                 .price-grid {
                     grid-template-columns: 1fr;
+                    gap: 16px;
                 }
                 .svc-grid {
                     grid-template-columns: 1fr 1fr;
@@ -1764,9 +1833,8 @@
                 .f-tt {
                     font-size: 18px;
                 }
-                .pc2 {
-                    border-right: none;
-                    border-bottom: 1px solid var(--line);
+                .pc2.feat {
+                    padding: 38px 30px;
                 }
             }
             @media (max-width: 760px) {
@@ -2387,14 +2455,12 @@
                         プランの主な違いはデザイン制作数と支援範囲。真ん中のスタンダードがおすすめです。
                     </p>
                 </div>
-                <div class="price-grid" style="margin-top: 48px">
-                    <div class="pc2">
+                <div class="price-grid">
+                    <div class="pc2 side">
                         <div class="pc2-badge">LIGHT</div>
                         <div class="pn">ライト</div>
-                        <div class="pf">
-                            自店で画像を作れる／内製デザイナーがいる店
-                        </div>
-                        <div class="pp">30<small>万円/月</small></div>
+                        <div class="pf">自店で画像を作れる／内製デザイナーがいる店</div>
+                        <div class="pp">30<small>万円 / 月</small></div>
                         <div class="dz">デザイン：AI生成のみ</div>
                         <ul>
                             <li>楽天“利益”診断＋月次レポート</li>
@@ -2406,12 +2472,11 @@
                         <div class="pbtn">このプランで相談</div>
                     </div>
                     <div class="pc2 feat">
-                        <div class="pc2-badge">おすすめ ・ STANDARD</div>
+                        <span class="pc2-rec">おすすめ</span>
+                        <div class="pc2-badge">STANDARD</div>
                         <div class="pn">スタンダード</div>
-                        <div class="pf">
-                            制作まで任せ、本格的に伸ばしたい成長期の店
-                        </div>
-                        <div class="pp">40<small>万円/月</small></div>
+                        <div class="pf">制作まで任せ、本格的に伸ばしたい成長期の店</div>
+                        <div class="pp">40<small>万円 / 月</small></div>
                         <div class="dz">デザイン：プロ制作 月5点</div>
                         <ul>
                             <li>ライトの全内容</li>
@@ -2423,13 +2488,11 @@
                         </ul>
                         <div class="pbtn">このプランで相談</div>
                     </div>
-                    <div class="pc2">
+                    <div class="pc2 side">
                         <div class="pc2-badge">PREMIUM</div>
                         <div class="pn">プレミアム</div>
-                        <div class="pf">
-                            制作量を増やして一気に作り変えたい拡大期の店
-                        </div>
-                        <div class="pp">50<small>万円/月</small></div>
+                        <div class="pf">制作量を増やして一気に作り変えたい拡大期の店</div>
+                        <div class="pp">50<small>万円 / 月</small></div>
                         <div class="dz">デザイン：プロ制作 月20点</div>
                         <ul>
                             <li>スタンダードの全内容</li>
@@ -2443,8 +2506,7 @@
                     </div>
                 </div>
                 <p class="price-note">
-                    入口：2ヶ月モニター
-                    15万円／月　・　初期費用なし　・　最低契約期間3ヶ月　・　解約は契約満了の1ヶ月前までに通知
+                    入口は <b>2ヶ月モニター 15万円／月</b>　—　初期費用なし／最低契約期間 3ヶ月／解約は契約満了の1ヶ月前までに通知
                 </p>
             </div>
         </section>
