@@ -1,0 +1,4 @@
+# Cloudflare Pages リダイレクト設定
+# 楽天売上改善コンサルLP: /lp/rakuten/ → /service/rakuten/（2026-06-30 パス変更）
+/lp/rakuten        /service/rakuten/          301
+/lp/rakuten/*      /service/rakuten/:splat    301
