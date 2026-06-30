@@ -604,22 +604,64 @@
                 margin-top: 12px;
                 max-width: 34em;
             }
-            .flowq-out {
-                margin-top: 36px;
-                padding-left: 68px;
-                font-size: clamp(22px, 2.7vw, 29px);
-                font-weight: 700;
-                line-height: 1.55;
-                letter-spacing: -0.01em;
+            .flowq-answer {
+                position: relative;
+                max-width: 22em;
+                margin: 64px auto 0;
+                text-align: center;
+                padding: 8px 0;
+            }
+            .flowq-answer::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 52%;
+                width: 132%;
+                height: 230%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                pointer-events: none;
+                background: radial-gradient(
+                    50% 50% at 50% 50%,
+                    rgba(176, 0, 32, 0.09),
+                    transparent 68%
+                );
+            }
+            .fa-rule {
+                position: relative;
+                z-index: 1;
+                display: block;
+                width: 44px;
+                height: 3px;
+                border-radius: 2px;
+                background: var(--red);
+                margin: 0 auto 26px;
+            }
+            .fa-lead {
+                position: relative;
+                z-index: 1;
+                font-size: clamp(16px, 1.9vw, 20px);
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                color: var(--ink-2);
+                margin-bottom: 12px;
+            }
+            .fa-main {
+                position: relative;
+                z-index: 1;
+                font-size: clamp(30px, 5.2vw, 54px);
+                font-weight: 800;
+                line-height: 1.28;
+                letter-spacing: -0.02em;
                 color: var(--ink);
             }
-            .flowq-out .r {
+            .fa-em {
                 color: var(--red);
                 background: linear-gradient(
-                    transparent 58%,
-                    rgba(176, 0, 32, 0.15) 58%
+                    transparent 60%,
+                    rgba(176, 0, 32, 0.16) 60%
                 );
-                padding: 0 3px;
+                padding: 0 6px;
             }
             @media (max-width: 680px) {
                 .qbeat {
@@ -636,8 +678,8 @@
                 .qthread::before {
                     left: 14px;
                 }
-                .flowq-out {
-                    padding-left: 48px;
+                .flowq-answer {
+                    margin-top: 44px;
                 }
             }
 
@@ -1925,10 +1967,13 @@
                         </div>
                     </div>
                 </div>
-                <p class="flowq-out">
-                    その「なぜ」を解くのが、<span class="r">“利益”の設計</span
-                    >です。
-                </p>
+                <div class="flowq-answer">
+                    <span class="fa-rule"></span>
+                    <p class="fa-lead">その「なぜ」を解くのが、</p>
+                    <p class="fa-main">
+                        <span class="fa-em">“利益”の設計</span>です。
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -2507,7 +2552,7 @@
             );
             document
                 .querySelectorAll(
-                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .reasons-head, .bspot, .reason, .voice, .qa, .fstep, .svc-item",
+                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .reasons-head, .bspot, .reason, .voice, .qa, .fstep, .svc-item, .flowq-answer",
                 )
                 .forEach((el, i) => {
                     el.classList.add("reveal");
