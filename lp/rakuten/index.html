@@ -48,6 +48,7 @@
             }
             html {
                 scroll-behavior: smooth;
+                overflow-x: hidden;
             }
             body {
                 background: var(--white);
@@ -253,7 +254,7 @@
                 margin-bottom: 24px;
             }
             h1 {
-                font-size: clamp(38px, 5.6vw, 66px);
+                font-size: clamp(28px, 6.4vw, 66px);
                 font-weight: 700;
                 line-height: 1.3;
                 letter-spacing: -0.02em;
@@ -2124,6 +2125,55 @@
                     border-radius: 12px;
                 }
             }
+
+            /* reCAPTCHA バッジは非表示（Googleの規約文をフォーム内に明記済みのため許容）。
+               右下固定バッジによるモバイルの横はみ出し・エラー表示を防ぐ。 */
+            .grecaptcha-badge {
+                visibility: hidden;
+            }
+
+            /* ===== スマホ最終調整（折り返し・ボタン・支援内容の横スクロール）===== */
+            @media (max-width: 540px) {
+                h2,
+                .cta-in h2 {
+                    font-size: 24px;
+                }
+                .hero-sub {
+                    font-size: 15.5px;
+                }
+                /* ボタンが2行で変な位置に折れないように */
+                .btn-red,
+                .btn-w,
+                .btn-out {
+                    font-size: 14px;
+                    padding: 14px 20px;
+                }
+                .hero-cta .free-cta,
+                .diag-cta .free-cta {
+                    width: 100%;
+                    justify-content: center;
+                }
+                .hero-cta {
+                    width: 100%;
+                }
+                /* 支援内容：横スクロールのカルーセル（次カードがチラ見え＝スワイプを示唆）*/
+                .svc-grid {
+                    display: flex;
+                    gap: 14px;
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    -webkit-overflow-scrolling: touch;
+                    padding-bottom: 12px;
+                    scrollbar-width: none;
+                }
+                .svc-grid::-webkit-scrollbar {
+                    height: 0;
+                }
+                .svc-item {
+                    flex: 0 0 80%;
+                    scroll-snap-align: start;
+                }
+            }
         </style>
     </head>
     <body>
@@ -2840,7 +2890,7 @@
                     <h2>
                         「どこを直せば伸びるか」さえ分かれば、<br />楽天は、<span
                             class="r"
-                            >まだ戦えます。</span
+                            >戦えます。</span
                         >
                     </h2>
                     <p>
