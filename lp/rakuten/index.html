@@ -1384,10 +1384,10 @@
             .svc-item {
                 display: flex;
                 flex-direction: column;
-                padding: 30px 28px;
                 background: #fff;
                 border: 1px solid var(--line);
                 border-radius: 16px;
+                overflow: hidden;
                 box-shadow: 0 18px 40px -34px rgba(28, 23, 25, 0.4);
                 transition:
                     transform 0.35s ease,
@@ -1399,32 +1399,24 @@
                 box-shadow: 0 28px 52px -32px rgba(28, 23, 25, 0.45);
                 border-color: var(--line-2);
             }
-            .svc-top {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 20px;
+            .svc-media {
+                aspect-ratio: 4 / 3;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                overflow: hidden;
             }
-            .svc-ic {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-                background: var(--red-soft);
-                color: var(--red);
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .svc-media img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transition: transform 0.4s ease;
             }
-            .svc-ic svg {
-                width: 24px;
-                height: 24px;
+            .svc-item:hover .svc-media img {
+                transform: scale(1.03);
             }
-            .svc-no {
-                font-family: var(--dp);
-                font-size: 13px;
-                font-weight: 800;
-                letter-spacing: 0.04em;
-                color: var(--line-2);
+            .svc-body {
+                padding: 22px 26px 28px;
             }
             .svc-tt {
                 font-size: 18px;
@@ -2241,52 +2233,94 @@
                 </div>
                 <div class="svc-grid">
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none"/></svg></span>
-                            <span class="svc-no">01</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-strategy.webp"
+                                alt="戦略設計：数字を分解し全体方針を設計するイメージ"
+                                width="760"
+                                height="507"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">戦略設計</div>
-                        <div class="svc-d">まず数字を分解し、どこから手をつけるかを設計。利益が残る全体方針を描きます。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">戦略設計</div>
+                            <div class="svc-d">まず数字を分解し、どこから手をつけるかを設計。利益が残る全体方針を描きます。</div>
+                        </div>
                     </div>
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l6 4V6L7 10H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></span>
-                            <span class="svc-no">02</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-rpp.webp"
+                                alt="RPP広告運用：検索上位の広告枠を最適化するイメージ"
+                                width="760"
+                                height="570"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">RPP広告運用</div>
-                        <div class="svc-d">「いつ・いくらで上げるか」でROASは二極化。利益が残る水準で最適化。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">RPP広告運用</div>
+                            <div class="svc-d">「いつ・いくらで上げるか」でROASは二極化。利益が残る水準で最適化。</div>
+                        </div>
                     </div>
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M5 16.5l4-3.5 3.5 3 2.5-2 4 3.4"/></svg></span>
-                            <span class="svc-no">03</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-page.webp"
+                                alt="商品ページデザイン：第一画像とページ構成を設計するイメージ"
+                                width="760"
+                                height="570"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">商品ページデザイン</div>
-                        <div class="svc-d">第一画像・ページ構成を、クリック率と転換率が伸びる設計で作り込む。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">商品ページデザイン</div>
+                            <div class="svc-d">第一画像・ページ構成を、クリック率と転換率が伸びる設計で作り込む。</div>
+                        </div>
                     </div>
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h2"/><path d="M10 17h10"/><circle cx="8" cy="17" r="2"/></svg></span>
-                            <span class="svc-no">04</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-settings.webp"
+                                alt="各種設定：クーポン・ポイント・送料などの設定最適化のイメージ"
+                                width="760"
+                                height="570"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">各種設定</div>
-                        <div class="svc-d">クーポン・ポイント・送料・在庫など、利益を左右する設定を最適化する。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">各種設定</div>
+                            <div class="svc-d">クーポン・ポイント・送料・在庫など、利益を左右する設定を最適化する。</div>
+                        </div>
                     </div>
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.6-3.6"/></svg></span>
-                            <span class="svc-no">05</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-seo.webp"
+                                alt="SEO対策：検索で見つかるためのキーワード設計のイメージ"
+                                width="760"
+                                height="570"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">SEO対策</div>
-                        <div class="svc-d">検索で見つかるための商品名・キーワード・カテゴリ設計を整える。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">SEO対策</div>
+                            <div class="svc-d">検索で見つかるための商品名・キーワード・カテゴリ設計を整える。</div>
+                        </div>
                     </div>
                     <div class="svc-item">
-                        <div class="svc-top">
-                            <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.3 4.8 5.2.7-3.8 3.6.9 5.1-4.6-2.5-4.6 2.5.9-5.1L4.5 9.5l5.2-.7L12 4Z"/></svg></span>
-                            <span class="svc-no">06</span>
+                        <div class="svc-media">
+                            <img
+                                src="images/svc-review.webp"
+                                alt="レビュー獲得施策：レビューを着実に積み上げるイメージ"
+                                width="760"
+                                height="570"
+                                loading="lazy"
+                            />
                         </div>
-                        <div class="svc-tt">レビュー獲得施策</div>
-                        <div class="svc-d">ばら撒きではなく、メリット訴求とタイミング設計で積み上げる。</div>
+                        <div class="svc-body">
+                            <div class="svc-tt">レビュー獲得施策</div>
+                            <div class="svc-d">ばら撒きではなく、メリット訴求とタイミング設計で積み上げる。</div>
+                        </div>
                     </div>
                 </div>
             </div>
