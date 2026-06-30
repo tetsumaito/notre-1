@@ -1273,30 +1273,30 @@
 
             /* サービス6軸 dark */
             .svc {
-                background: var(--ink);
-                color: #fff;
+                background: #fff;
+                color: var(--ink);
             }
             .svc h2 {
-                color: #fff;
+                color: var(--ink);
             }
             .svc .sub {
-                color: #b6adab;
+                color: var(--ink-2);
             }
             .svc-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 margin-top: 48px;
-                border-top: 1px solid rgba(255, 255, 255, 0.12);
+                border-top: 1px solid var(--line);
             }
             .svc-item {
                 padding: 30px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                border-bottom: 1px solid var(--line);
                 display: flex;
                 gap: 22px;
             }
             .svc-item:nth-child(odd) {
                 padding-right: 48px;
-                border-right: 1px solid rgba(255, 255, 255, 0.12);
+                border-right: 1px solid var(--line);
             }
             .svc-item:nth-child(even) {
                 padding-left: 48px;
@@ -1305,11 +1305,11 @@
                 font-family: var(--dp);
                 font-size: 14px;
                 font-weight: 700;
-                color: #ff8a90;
+                color: var(--red);
                 padding-top: 4px;
             }
             .svc-no .x {
-                color: #ff8a90;
+                color: var(--red);
             }
             .svc-tt {
                 font-size: 18px;
@@ -1318,7 +1318,7 @@
             }
             .svc-d {
                 font-size: 13.5px;
-                color: #a99f9d;
+                color: var(--ink-2);
                 font-weight: 500;
             }
 
@@ -2112,12 +2112,9 @@
         <section class="svc" id="service">
             <div class="wrap">
                 <div class="lede">
-                    <span class="idx" style="color: #ff8a90"
-                        >02 ご支援内容</span
-                    >
+                    <span class="idx">02 ご支援内容</span>
                     <h2>
-                        楽天の戦い方を、<span class="r" style="color: #ff8a90"
-                            >6つの軸</span
+                        楽天の戦い方を、<span class="r">6つの軸</span
                         >で組み替える。
                     </h2>
                     <p class="sub">
