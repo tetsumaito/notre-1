@@ -1795,13 +1795,12 @@
                 position: relative;
                 z-index: 1;
                 padding: 100px 0;
-                display: grid;
-                grid-template-columns: 1fr 1.04fr;
-                gap: 60px;
-                align-items: center;
+                max-width: 700px;
+                margin: 0 auto;
             }
             .cta-copy {
-                max-width: 30em;
+                text-align: center;
+                margin-bottom: 36px;
             }
             .cta-in h2 {
                 color: var(--ink);
@@ -1822,6 +1821,9 @@
                 list-style: none;
                 display: grid;
                 gap: 12px;
+                width: fit-content;
+                margin: 0 auto;
+                text-align: left;
             }
             .cta-trust li {
                 position: relative;
@@ -1858,6 +1860,8 @@
                 border-radius: 20px;
                 padding: 34px 34px 30px;
                 box-shadow: 0 40px 80px -50px rgba(176, 0, 32, 0.42);
+                max-width: 520px;
+                margin: 0 auto;
             }
             .cform-eyebrow {
                 display: flex;
@@ -1887,9 +1891,7 @@
                 margin-bottom: 22px;
             }
             .cta-form .frow {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 14px;
+                display: block;
             }
             .cta-form .field {
                 display: block;
