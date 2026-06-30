@@ -2203,9 +2203,17 @@
                 .cta-in h2 {
                     font-size: 22px;
                 }
-                /* フッター上部の余白を確保 */
+                /* フッター上部の余白を確保（左右パディングは維持）*/
                 .foot-in {
-                    padding: 60px 0 36px;
+                    padding: 60px 22px 36px;
+                }
+                /* フッターリンクは横並びをやめ、長い注記が右にはみ出さないように */
+                .foot-links {
+                    display: block;
+                }
+                .foot-links a {
+                    display: block;
+                    margin-bottom: 12px;
                 }
                 .hero-sub {
                     font-size: 12.5px;
