@@ -1092,65 +1092,110 @@
             /* 選ばれる理由 alternating */
             .reasons-head {
                 text-align: center;
-                max-width: 30em;
+                max-width: 32em;
                 margin: 0 auto;
             }
             .reasons-head h2 {
-                font-size: 34px;
+                font-size: clamp(30px, 4vw, 40px);
+                letter-spacing: -0.01em;
+            }
+            .reasons-sub {
+                margin-top: 16px;
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--ink-3);
             }
             .reasons {
                 display: flex;
                 flex-direction: column;
-                margin-top: 24px;
+                margin-top: 60px;
             }
             .reason {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 60px;
+                grid-template-columns: 1fr 1.08fr;
+                gap: 64px;
                 align-items: center;
-                padding: 56px 0;
-                border-top: 1px solid var(--line);
+                padding: 64px 0;
             }
-            .reason:last-child {
-                border-bottom: 1px solid var(--line);
+            .reason + .reason {
+                border-top: 1px solid var(--line-2);
             }
-            .reason.flip .r-vis {
+            .reason.flip .r-media {
                 order: -1;
             }
-            .r-no {
+            .r-body {
+                position: relative;
+            }
+            .r-idx {
+                position: absolute;
+                top: -58px;
+                left: -8px;
+                z-index: 0;
                 font-family: var(--dp);
-                font-size: 15px;
+                font-size: 128px;
+                font-weight: 800;
+                line-height: 1;
+                letter-spacing: -0.04em;
+                color: rgba(176, 0, 32, 0.07);
+                pointer-events: none;
+            }
+            .r-no {
+                position: relative;
+                z-index: 1;
+                font-family: var(--dp);
+                font-size: 13px;
                 font-weight: 700;
+                letter-spacing: 0.08em;
                 color: var(--red);
-                margin-bottom: 14px;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+            .r-no::after {
+                content: "";
+                width: 28px;
+                height: 2px;
+                background: var(--red);
             }
             .r-h {
-                font-size: 27px;
+                position: relative;
+                z-index: 1;
+                font-size: clamp(22px, 2.4vw, 28px);
                 font-weight: 700;
-                line-height: 1.45;
-                margin-bottom: 14px;
+                line-height: 1.5;
+                letter-spacing: -0.01em;
+                margin-bottom: 16px;
+            }
+            .r-h .r {
+                color: var(--red);
             }
             .r-p {
+                position: relative;
+                z-index: 1;
                 font-size: 15px;
                 color: var(--ink-2);
                 font-weight: 500;
+                line-height: 1.9;
             }
-            .r-vis {
-                background: var(--paper);
-                border-radius: var(--r);
-                min-height: 230px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 32px;
+            .r-media {
+                border-radius: 16px;
+                overflow: hidden;
                 border: 1px solid var(--line);
+                box-shadow: 0 30px 60px -36px rgba(28, 23, 25, 0.45);
+                background: #fff;
+                transition:
+                    transform 0.45s ease,
+                    box-shadow 0.45s ease;
             }
-            .r-vis-ph {
-                font-family: var(--dp);
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: 0.04em;
-                color: var(--ink-3);
+            .r-media:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 40px 72px -34px rgba(28, 23, 25, 0.5);
+            }
+            .r-media img {
+                display: block;
+                width: 100%;
+                height: auto;
             }
             .vbars {
                 width: 100%;
@@ -1592,8 +1637,16 @@
                 .cta-in h2 {
                     font-size: 28px;
                 }
-                .reason.flip .r-vis {
+                .reason {
+                    gap: 32px;
+                    padding: 44px 0;
+                }
+                .reason.flip .r-media {
                     order: 0;
+                }
+                .r-idx {
+                    font-size: 90px;
+                    top: -42px;
                 }
                 .price-grid {
                     grid-template-columns: 1fr;
@@ -1978,48 +2031,78 @@
             <div class="wrap">
                 <div class="reasons-head">
                     <h2>Notre が選ばれる理由</h2>
+                    <p class="reasons-sub">
+                        ただの楽天運用代行とは、ここが違います。
+                    </p>
                 </div>
                 <div class="reasons">
                     <div class="reason">
-                        <div>
+                        <div class="r-body">
+                            <span class="r-idx">01</span>
                             <div class="r-no">理由 01</div>
                             <div class="r-h">
-                                元 楽天ECC が、あなたの店を直接担当する。
+                                元 楽天ECC が、あなたの店を<span class="r"
+                                    >直接担当</span
+                                >する。
                             </div>
                             <div class="r-p">
                                 楽天市場の“中の人”として数多くの店舗を見てきたメンバーが、診断から実行まで直接手を動かします。RPPの挙動・広告枠の選び方・検索SEO・セール設計——外からは掴みにくい楽天の勝ち筋を、内側の知見で握ります。
                             </div>
                         </div>
-                        <div class="r-vis">
-                            <span class="r-vis-ph">クリエイティブ図解</span>
+                        <div class="r-media">
+                            <img
+                                src="images/reason-ecc.webp"
+                                alt="元 楽天ECC 在籍。支援実績1,000店舗以上、SOY・SOA 受賞店舗あり"
+                                width="1200"
+                                height="676"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                     <div class="reason flip">
-                        <div>
+                        <div class="r-body">
+                            <span class="r-idx">02</span>
                             <div class="r-no">理由 02</div>
                             <div class="r-h">
-                                広告手数料を取らないから、ROAS度外視の“消化”が起きない。
+                                広告手数料を取らないから、<span class="r"
+                                    >ROAS度外視の“消化”</span
+                                >が起きない。
                             </div>
                             <div class="r-p">
                                 広告費に連動して報酬が増える仕組みだと、ROASが合わなくても広告を回す力が働きます。私たちは固定報酬で、広告手数料を一切取りません。だから必要なら広告費を“抑える”提案もできる。見ているのは、口座に残る金額だけです。
                             </div>
                         </div>
-                        <div class="r-vis">
-                            <span class="r-vis-ph">クリエイティブ図解</span>
+                        <div class="r-media">
+                            <img
+                                src="images/reason-fee.webp"
+                                alt="固定報酬は広告費が増えても報酬は0円のまま。固定＋広告手数料型は広告費に連動して報酬が増えていく比較図"
+                                width="1200"
+                                height="676"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                     <div class="reason">
-                        <div>
+                        <div class="r-body">
+                            <span class="r-idx">03</span>
                             <div class="r-no">理由 03</div>
                             <div class="r-h">
-                                Webマーケ全般を手がけるから、楽天の“外側”から設計できる。
+                                Webマーケ全般を手がけるから、楽天の<span class="r"
+                                    >“外側”から設計</span
+                                >できる。
                             </div>
                             <div class="r-p">
                                 私たちは楽天運用だけの会社ではありません。集客戦略・広告全般・LP・ブランド設計まで、上流から一貫して支援できます。だから「楽天の中だけ」で頭打ちになりがちな施策も、その手前から組み立て直せます。
                             </div>
                         </div>
-                        <div class="r-vis">
-                            <span class="r-vis-ph">クリエイティブ図解</span>
+                        <div class="r-media">
+                            <img
+                                src="images/reason-scope.webp"
+                                alt="SNS運用・広告運用・サイト制作・EC運用支援を一気通貫で支援"
+                                width="1200"
+                                height="676"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </div>
@@ -2360,7 +2443,7 @@
             );
             document
                 .querySelectorAll(
-                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .bspot, .reason, .voice, .qa, .fstep, .svc-item",
+                    "section .lede, .flowq-intro, .qbeat, .flowq-out, .fx-h, .fx-col, .fx-q, .diag-head, .reasons-head, .bspot, .reason, .voice, .qa, .fstep, .svc-item",
                 )
                 .forEach((el, i) => {
                     el.classList.add("reveal");
