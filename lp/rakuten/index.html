@@ -1794,12 +1794,19 @@
             .cta-in {
                 position: relative;
                 z-index: 1;
-                padding: 104px 0;
-                text-align: center;
+                padding: 100px 0;
+                display: grid;
+                grid-template-columns: 1fr 1.04fr;
+                gap: 60px;
+                align-items: center;
+            }
+            .cta-copy {
+                max-width: 30em;
             }
             .cta-in h2 {
                 color: var(--ink);
-                font-size: 34px;
+                font-size: 33px;
+                line-height: 1.42;
             }
             .cta-in h2 .r {
                 color: var(--red);
@@ -1807,7 +1814,169 @@
             .cta-in p {
                 color: var(--ink-3);
                 font-size: 15px;
-                margin: 14px 0 30px;
+                margin: 16px 0 26px;
+                font-weight: 500;
+                line-height: 1.85;
+            }
+            .cta-trust {
+                list-style: none;
+                display: grid;
+                gap: 12px;
+            }
+            .cta-trust li {
+                position: relative;
+                padding-left: 27px;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--ink-2);
+            }
+            .cta-trust li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 1px;
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                background: var(--red);
+            }
+            .cta-trust li::after {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 6px;
+                width: 6px;
+                height: 3px;
+                border-left: 1.7px solid #fff;
+                border-bottom: 1.7px solid #fff;
+                transform: rotate(-45deg);
+            }
+            /* 申込フォーム */
+            .cta-form-card {
+                background: #fff;
+                border: 1px solid var(--line);
+                border-radius: 20px;
+                padding: 34px 34px 30px;
+                box-shadow: 0 40px 80px -50px rgba(176, 0, 32, 0.42);
+            }
+            .cform-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-family: var(--dp);
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.02em;
+                color: var(--ink);
+                margin-bottom: 4px;
+            }
+            .cform-free {
+                background: var(--red);
+                color: #fff;
+                font-size: 10.5px;
+                font-weight: 800;
+                letter-spacing: 0.04em;
+                line-height: 1;
+                padding: 4px 9px;
+                border-radius: 999px;
+            }
+            .cform-sub {
+                font-size: 12.5px;
+                color: var(--ink-3);
+                font-weight: 500;
+                margin-bottom: 22px;
+            }
+            .cta-form .frow {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .cta-form .field {
+                display: block;
+                margin-bottom: 14px;
+            }
+            .cta-form .field > span {
+                display: block;
+                font-size: 12.5px;
+                font-weight: 700;
+                color: var(--ink-2);
+                margin-bottom: 6px;
+            }
+            .cta-form .req {
+                color: var(--red);
+                margin-left: 3px;
+            }
+            .cta-form .opt {
+                color: var(--ink-3);
+                font-weight: 600;
+                font-size: 11px;
+                margin-left: 4px;
+            }
+            .cta-form input,
+            .cta-form textarea {
+                width: 100%;
+                font-family: var(--jp);
+                font-size: 15px;
+                color: var(--ink);
+                background: #fbf8f7;
+                border: 1px solid var(--line);
+                border-radius: 11px;
+                padding: 12px 14px;
+                transition:
+                    border-color 0.18s ease,
+                    box-shadow 0.18s ease,
+                    background 0.18s ease;
+            }
+            .cta-form input::placeholder,
+            .cta-form textarea::placeholder {
+                color: #bdafac;
+            }
+            .cta-form input:focus,
+            .cta-form textarea:focus {
+                outline: none;
+                border-color: var(--red);
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.1);
+            }
+            .cta-form textarea {
+                min-height: 92px;
+                resize: vertical;
+            }
+            .cta-consent {
+                display: flex;
+                align-items: flex-start;
+                gap: 9px;
+                margin: 4px 0 18px;
+                font-size: 13px;
+                color: var(--ink-2);
+                line-height: 1.6;
+                cursor: pointer;
+            }
+            .cta-consent input {
+                width: 17px;
+                height: 17px;
+                margin-top: 2px;
+                accent-color: var(--red);
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+            .cta-consent a {
+                color: var(--red);
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+            .cform-submit {
+                width: 100%;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                font-family: var(--jp);
+            }
+            .cform-note {
+                text-align: center;
+                font-size: 12px;
+                color: var(--ink-3);
+                margin-top: 12px;
                 font-weight: 500;
             }
             footer {
@@ -1862,6 +2031,14 @@
                 transform: none;
             }
 
+            @media (max-width: 560px) {
+                .cta-form .frow {
+                    grid-template-columns: 1fr;
+                }
+                .cta-form-card {
+                    padding: 26px 22px 24px;
+                }
+            }
             @media (max-width: 920px) {
                 .wrap {
                     padding: 0 22px;
@@ -1869,6 +2046,14 @@
                 .issue,
                 .reason {
                     grid-template-columns: 1fr;
+                }
+                .cta-in {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                    padding: 72px 0;
+                }
+                .cta-copy {
+                    max-width: none;
                 }
                 h2,
                 .cta-in h2 {
@@ -2638,18 +2823,132 @@
                 <div class="cta-blob cta-blob2"></div>
             </div>
             <div class="wrap cta-in">
-                <h2>
-                    「どこを直せば伸びるか」さえ分かれば、<br />楽天は、<span
-                        class="r"
-                        >まだ戦えます。</span
+                <div class="cta-copy">
+                    <h2>
+                        「どこを直せば伸びるか」さえ分かれば、<br />楽天は、<span
+                            class="r"
+                            >まだ戦えます。</span
+                        >
+                    </h2>
+                    <p>
+                        まずは無料の“売上”診断から。あなたの店の“伸びしろ”がどこにあるか、元楽天ECCが一緒に確認します。
+                    </p>
+                    <ul class="cta-trust">
+                        <li>診断・ご相談は無料（費用が発生するのは本契約のみ）</li>
+                        <li>元 楽天ECC が直接対応します</li>
+                        <li>通常2〜3営業日以内にご連絡します</li>
+                    </ul>
+                </div>
+                <div class="cta-form-card">
+                    <div class="cform-eyebrow">
+                        <span class="cform-free">無料</span>楽天“売上”診断を申し込む
+                    </div>
+                    <p class="cform-sub">
+                        必要事項をご記入のうえ、送信してください。
+                    </p>
+                    <!-- TODO: ssgform で「楽天“売上”診断」専用フォームを作成し、action のID（XXXXXXXXXXXX）を差し替える。
+                         ssgform側で「自動返信メール」「通知先メール」「送信後リダイレクト先」を設定すること。 -->
+                    <form
+                        class="cta-form"
+                        action="https://ssgform.com/s/XXXXXXXXXXXX"
+                        method="post"
+                        name="楽天売上診断_申込"
                     >
-                </h2>
-                <p>
-                    専任で深く伴走するため、同時にご支援できる店舗数には限りがあります。
-                </p>
-                <a class="btn-red free-cta" href="#"
-                    ><span class="free">無料</span>楽天“売上”診断を申し込む</a
-                >
+                        <div style="display: none">
+                            <input
+                                type="text"
+                                name="wana"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <input
+                            type="hidden"
+                            name="お問い合わせ種別"
+                            value="楽天“売上”診断（LP）"
+                        />
+                        <div class="frow">
+                            <label class="field">
+                                <span>会社名<span class="req">*</span></span>
+                                <input
+                                    type="text"
+                                    name="会社名"
+                                    placeholder="株式会社○○"
+                                    required
+                                    autocomplete="organization"
+                                />
+                            </label>
+                            <label class="field">
+                                <span>お名前<span class="req">*</span></span>
+                                <input
+                                    type="text"
+                                    name="お名前"
+                                    placeholder="山田 太郎"
+                                    required
+                                    autocomplete="name"
+                                />
+                            </label>
+                        </div>
+                        <div class="frow">
+                            <label class="field">
+                                <span
+                                    >メールアドレス<span class="req">*</span></span
+                                >
+                                <input
+                                    type="email"
+                                    name="メールアドレス"
+                                    placeholder="you@example.com"
+                                    required
+                                    autocomplete="email"
+                                />
+                            </label>
+                            <label class="field">
+                                <span>電話番号<span class="req">*</span></span>
+                                <input
+                                    type="tel"
+                                    name="電話番号"
+                                    placeholder="09012345678"
+                                    required
+                                    autocomplete="tel"
+                                />
+                            </label>
+                        </div>
+                        <label class="field">
+                            <span>楽天店舗URL<span class="req">*</span></span>
+                            <input
+                                type="text"
+                                inputmode="url"
+                                name="楽天店舗URL"
+                                placeholder="https://www.rakuten.co.jp/your-shop/"
+                                required
+                            />
+                        </label>
+                        <label class="field">
+                            <span>ご相談内容<span class="opt">任意</span></span>
+                            <textarea
+                                name="ご相談内容"
+                                placeholder="現状のお悩みや、特に見てほしい点があればご記入ください。"
+                            ></textarea>
+                        </label>
+                        <label class="cta-consent">
+                            <input type="checkbox" name="Confirm" required />
+                            <span
+                                ><a
+                                    href="/privacy_policy.html"
+                                    target="_blank"
+                                    rel="noopener"
+                                    >プライバシーポリシー</a
+                                >に同意の上、送信します。</span
+                            >
+                        </label>
+                        <button type="submit" class="btn-red cform-submit">
+                            無料で“売上”診断を申し込む
+                        </button>
+                        <p class="cform-note">
+                            ※ 費用が発生するのは本契約のみです。
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
 
