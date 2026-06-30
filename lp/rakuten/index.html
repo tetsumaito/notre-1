@@ -1197,6 +1197,33 @@
                 width: 100%;
                 height: auto;
             }
+            /* reasons — soft red gradient wash (light) */
+            #reasons {
+                position: relative;
+                overflow: hidden;
+            }
+            #reasons > .wrap {
+                position: relative;
+                z-index: 1;
+            }
+            #reasons::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                pointer-events: none;
+                background-image:
+                    radial-gradient(
+                        82% 72% at 86% 14%,
+                        rgba(231, 96, 92, 0.22),
+                        rgba(231, 96, 92, 0) 60%
+                    ),
+                    radial-gradient(
+                        64% 74% at 6% 100%,
+                        rgba(231, 96, 92, 0.1),
+                        rgba(231, 96, 92, 0) 58%
+                    );
+            }
             .vbars {
                 width: 100%;
             }
