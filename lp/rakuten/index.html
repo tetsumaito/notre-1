@@ -2064,7 +2064,7 @@
                 .cta-in {
                     grid-template-columns: 1fr;
                     gap: 40px;
-                    padding: 72px 0;
+                    padding: 72px 22px;
                 }
                 .cta-copy {
                     max-width: none;
@@ -2149,6 +2149,60 @@
                 .fx-h {
                     font-size: 17px;
                     line-height: 1.55;
+                }
+                /* 因数分解の問い：縮小＋ハイライトを割らない */
+                .fx-q {
+                    font-size: 17px;
+                    margin-top: 32px;
+                }
+                .fx-q .hl {
+                    white-space: nowrap;
+                }
+                /* レバーは縦積みカードをやめ、横並びの小チップに（冗長さ解消）*/
+                .fx-levers {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 6px;
+                    margin-top: 12px;
+                    padding-top: 12px;
+                }
+                .fx-levers li {
+                    padding: 6px 12px;
+                    font-size: 12.5px;
+                }
+                .fx-etc {
+                    text-align: center;
+                }
+                /* 診断見出し：縮小して2行に */
+                #diagnosis .diag-head h2 {
+                    font-size: 21px;
+                }
+                /* 料金：スマホ縦並びではスタンダードを大きくしない（他カードと均一）*/
+                .pc2.feat {
+                    padding: 38px 30px;
+                }
+                .pc2.feat .pn {
+                    font-size: 24px;
+                }
+                .pc2.feat .pp {
+                    font-size: 56px;
+                }
+                /* 最終CTA：円が前セクション(FAQ)へ食い込みすぎるのを止め、内側に収める */
+                .cta-band {
+                    overflow: clip;
+                }
+                .cta-blob1 {
+                    top: 2%;
+                    left: -12%;
+                    width: 40%;
+                }
+                .cta-in h2 {
+                    font-size: 22px;
+                }
+                /* フッター上部の余白を確保 */
+                .foot-in {
+                    padding: 60px 0 36px;
                 }
                 .hero-sub {
                     font-size: 12.5px;
@@ -2951,10 +3005,9 @@
             <div class="wrap cta-in">
                 <div class="cta-copy">
                     <h2>
-                        「どこを直せば伸びるか」さえ分かれば、<br />楽天は、<span
-                            class="r"
-                            >戦えます。</span
-                        >
+                        「どこを直せば伸びるか」さえ<span style="white-space: nowrap"
+                            >分かれば、</span
+                        ><br />楽天は、<span class="r">戦えます。</span>
                     </h2>
                     <p>
                         まずは無料の“売上”診断から。あなたの店の“伸びしろ”がどこにあるか、元楽天ECCが一緒に確認します。
